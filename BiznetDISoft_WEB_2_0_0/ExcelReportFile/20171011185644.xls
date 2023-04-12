@@ -1,0 +1,217 @@
+<Html>
+<Head>
+<Style>
+tr 
+{mso-height-source:auto;} 
+ col 
+{mso-width-source:auto;} 
+ br 
+{mso-data-placement:same-cell;} 
+ .style0 
+{mso-number-format:General; 
+text-align:general; 
+vertical-align:top; 
+white-space:normal; 
+mso-rotate:0; 
+mso-background-source:auto; 
+mso-pattern:auto; 
+color:black; 
+font-size:11.0pt; 
+font-weight:400; 
+font-style:normal; 
+text-decoration:none; 
+font-family:Calibri, sans-serif; 
+mso-font-charset:0; 
+border:none; 
+mso-protection:locked visible; 
+mso-style-name:Normal; 
+mso-style-id:0;} 
+td 
+{mso-style-parent:style0; 
+padding-top:1pt; 
+padding-right:1pt; 
+padding-left:1pt; 
+mso-ignore:padding; 
+color:black; 
+font-size:11.0pt; 
+font-weight:400; 
+font-style:normal; 
+text-decoration:none; 
+font-family:Calibri, sans-serif; 
+mso-font-charset:0; 
+mso-number-format:General; 
+text-align:general; 
+vertical-align:bottom; 
+border:none; 
+mso-background-source:auto; 
+mso-pattern:auto; 
+mso-protection:locked visible; 
+white-space:nowrap; 
+mso-rotate:0;} 
+
+
+.SSPL1
+{mso-style-parent:style0; 
+mso-height-source:userset; 
+height:11pt;
+vertical-align:top;
+text-align:left;
+font-family:Verdana;
+font-size:11pt;
+mso-number-format:"\@";
+}
+
+.SSPL2
+{mso-style-parent:style0; 
+mso-height-source:userset; 
+height:16pt;
+vertical-align:middle;
+text-align:center;
+font-family:Verdana;
+font-size:12pt;
+font-weight:bold;
+color:Maroon;
+mso-number-format:"\@";
+}
+
+.SSPL3
+{mso-style-parent:style0; 
+mso-height-source:userset; 
+height:16pt;
+vertical-align:top;
+text-align:left;
+font-family:Verdana;
+font-size:12pt;
+font-weight:bold;
+color:Maroon;
+mso-number-format:"\@";
+}
+
+.SSPL4
+{mso-style-parent:style0; 
+mso-height-source:userset; 
+height:16pt;
+vertical-align:top;
+text-align:right;
+font-family:Verdana;
+font-size:12pt;
+font-weight:bold;
+color:Maroon;
+mso-number-format:"\@";
+}
+
+.SSPL5
+{mso-style-parent:style0; 
+mso-height-source:userset; 
+height:15pt;
+vertical-align:top;
+text-align:center;
+font-family:Verdana;
+font-size:11pt;
+font-weight:bold;
+border-top-style:solid;
+border-top-width:0.5pt;
+border-top-color:Black;
+border-left-style:solid;
+border-left-width:0.5pt;
+border-left-color:Black;
+border-bottom-style:solid;
+border-bottom-width:0.5pt;
+border-bottom-color:Black;
+border-right-style:solid;
+border-right-width:0.5pt;
+border-right-color:Black;
+mso-number-format:"\@";
+}
+
+.SSPL6
+{mso-style-parent:style0; 
+mso-height-source:userset; 
+height:13.5pt;
+vertical-align:top;
+text-align:left;
+font-family:Verdana;
+font-size:11pt;
+border-top-style:solid;
+border-top-width:0.5pt;
+border-top-color:Black;
+border-left-style:solid;
+border-left-width:0.5pt;
+border-left-color:Black;
+border-bottom-style:solid;
+border-bottom-width:0.5pt;
+border-bottom-color:Black;
+border-right-style:solid;
+border-right-width:0.5pt;
+border-right-color:Black;
+mso-number-format:"\@";
+}
+
+</Style>
+</Head>
+<Body>
+<Table  border=0 cellpadding=0 cellspacing=0  style='border-collapse: collapse;table-layout:fixed;'>
+<TR Style='mso-height-source:userset; height:16pt'>
+<td colspan=18  class=SSPL2> Lambda Therapeutic Research.</td>
+</TR>
+
+<TR Style='mso-height-source:userset; height:16pt'>
+<td colspan=18  class=SSPL2>Project Report</td>
+</TR>
+
+<TR Style='mso-height-source:userset; height:16pt'>
+<td colspan=18  class=SSPL2>Period: 01-Jan-2017 To 11-Oct-2017</td>
+</TR>
+
+<TR Style='mso-height-source:userset; height:16pt'>
+<td colspan=3  class=SSPL3>Printed Date: 11-Oct-2017&nbsp;18:56</td><td colspan=15  class=SSPL4>Printed By: CPM_Yesha</td>
+</TR>
+
+<TR Style='mso-height-source:userset; height:15pt'>
+<td colspan=1  class=SSPL5>Project No</td><td colspan=1  class=SSPL5>Sponsor Name</td><td colspan=1  class=SSPL5>Drug Name</td><td colspan=1  class=SSPL5>FastFed</td><td colspan=1  class=SSPL5>ProjectTypeName</td><td colspan=1  class=SSPL5>ProjectSubTypeName</td><td colspan=1  class=SSPL5>Study Type</td><td colspan=1  class=SSPL5>Submission</td><td colspan=1  class=SSPL5>ServiceName</td><td colspan=1  class=SSPL5>Location</td><td colspan=1  class=SSPL5>No Of Subjects</td><td colspan=1  class=SSPL5>Project Manager</td><td colspan=1  class=SSPL5>Clinical StartDate</td><td colspan=1  class=SSPL5>Clinical EndDate</td><td colspan=1  class=SSPL5>Analysis StartDate</td><td colspan=1  class=SSPL5></td><td colspan=1  class=SSPL5>Report Dispatch Date</td><td colspan=1  class=SSPL5>Project Status</td>
+</TR>
+
+<TR Style='mso-height-source:userset; height:13.5pt'>
+<td colspan=1  class=SSPL6>0006-17</td><td colspan=1  class=SSPL6>Biofarma</td><td colspan=1  class=SSPL6>Bendamustine</td><td colspan=1  class=SSPL6>Fed</td><td colspan=1  class=SSPL6>BA-BE</td><td colspan=1  class=SSPL6>Bioavailability Study</td><td colspan=1  class=SSPL6>Pivotal</td><td colspan=1  class=SSPL6>MCC</td><td colspan=1  class=SSPL6>DM</td><td colspan=1  class=SSPL6>Ahmedabad</td><td colspan=1  class=SSPL6>30</td><td colspan=1  class=SSPL6>dipeshmenon  (PMUser)</td><td colspan=1  class=SSPL6></td><td colspan=1  class=SSPL6></td><td colspan=1  class=SSPL6></td><td colspan=1  class=SSPL6></td><td colspan=1  class=SSPL6></td><td colspan=1  class=SSPL6>Study </td>
+</TR>
+
+<TR Style='mso-height-source:userset; height:13.5pt'>
+<td colspan=1  class=SSPL6>0021-17</td><td colspan=1  class=SSPL6>AceBIOS</td><td colspan=1  class=SSPL6>Acetretin</td><td colspan=1  class=SSPL6>Fed</td><td colspan=1  class=SSPL6>BA-BE</td><td colspan=1  class=SSPL6>Bioavailability Study</td><td colspan=1  class=SSPL6>Pilot</td><td colspan=1  class=SSPL6>USFDA</td><td colspan=1  class=SSPL6>Clinic + PK&Stat only</td><td colspan=1  class=SSPL6>Ahmedabad</td><td colspan=1  class=SSPL6>62</td><td colspan=1  class=SSPL6>dipeshmenon  (PMUser)</td><td colspan=1  class=SSPL6></td><td colspan=1  class=SSPL6></td><td colspan=1  class=SSPL6></td><td colspan=1  class=SSPL6></td><td colspan=1  class=SSPL6></td><td colspan=1  class=SSPL6>Study </td>
+</TR>
+
+<TR Style='mso-height-source:userset; height:13.5pt'>
+<td colspan=1  class=SSPL6>0041-17</td><td colspan=1  class=SSPL6>ACG-Worldwide</td><td colspan=1  class=SSPL6>Aspirin</td><td colspan=1  class=SSPL6>Fed</td><td colspan=1  class=SSPL6>BA-BE</td><td colspan=1  class=SSPL6>Bioequivalence Study</td><td colspan=1  class=SSPL6>Pivotal</td><td colspan=1  class=SSPL6>Turkey</td><td colspan=1  class=SSPL6>BA</td><td colspan=1  class=SSPL6>Ahmedabad</td><td colspan=1  class=SSPL6>22</td><td colspan=1  class=SSPL6>dipeshmenon  (PMUser)</td><td colspan=1  class=SSPL6></td><td colspan=1  class=SSPL6></td><td colspan=1  class=SSPL6></td><td colspan=1  class=SSPL6></td><td colspan=1  class=SSPL6></td><td colspan=1  class=SSPL6>Study </td>
+</TR>
+
+<TR Style='mso-height-source:userset; height:13.5pt'>
+<td colspan=1  class=SSPL6>0044-17</td><td colspan=1  class=SSPL6>Chemo Research S.L.</td><td colspan=1  class=SSPL6>Aspirin</td><td colspan=1  class=SSPL6>Fed</td><td colspan=1  class=SSPL6>BA-BE</td><td colspan=1  class=SSPL6>Bioequivalence Study</td><td colspan=1  class=SSPL6>Pivotal</td><td colspan=1  class=SSPL6>Pilot</td><td colspan=1  class=SSPL6>Clinic only</td><td colspan=1  class=SSPL6>Ahmedabad</td><td colspan=1  class=SSPL6>30</td><td colspan=1  class=SSPL6>dipeshmenon  (PMUser)</td><td colspan=1  class=SSPL6></td><td colspan=1  class=SSPL6></td><td colspan=1  class=SSPL6></td><td colspan=1  class=SSPL6></td><td colspan=1  class=SSPL6></td><td colspan=1  class=SSPL6>Study </td>
+</TR>
+
+<TR Style='mso-height-source:userset; height:13.5pt'>
+<td colspan=1  class=SSPL6>0057-17</td><td colspan=1  class=SSPL6>Lambda</td><td colspan=1  class=SSPL6>In-house</td><td colspan=1  class=SSPL6>Fed</td><td colspan=1  class=SSPL6>Other</td><td colspan=1  class=SSPL6>In-House</td><td colspan=1  class=SSPL6>Pivotal</td><td colspan=1  class=SSPL6>Default</td><td colspan=1  class=SSPL6>Clinic + PK&Stat only</td><td colspan=1  class=SSPL6>Ahmedabad</td><td colspan=1  class=SSPL6>22</td><td colspan=1  class=SSPL6>dipeshmenon  (PMUser)</td><td colspan=1  class=SSPL6></td><td colspan=1  class=SSPL6></td><td colspan=1  class=SSPL6></td><td colspan=1  class=SSPL6></td><td colspan=1  class=SSPL6></td><td colspan=1  class=SSPL6>Study </td>
+</TR>
+
+<TR Style='mso-height-source:userset; height:13.5pt'>
+<td colspan=1  class=SSPL6>0086-17</td><td colspan=1  class=SSPL6>Accupharma s.c.</td><td colspan=1  class=SSPL6>Amlodipine3</td><td colspan=1  class=SSPL6>Fed</td><td colspan=1  class=SSPL6>Phase II</td><td colspan=1  class=SSPL6></td><td colspan=1  class=SSPL6>Pivotal</td><td colspan=1  class=SSPL6>Belgique</td><td colspan=1  class=SSPL6>Clinic + BA 4</td><td colspan=1  class=SSPL6>Ahmedabad</td><td colspan=1  class=SSPL6>30</td><td colspan=1  class=SSPL6>dipeshmenon  (PMUser)</td><td colspan=1  class=SSPL6></td><td colspan=1  class=SSPL6></td><td colspan=1  class=SSPL6></td><td colspan=1  class=SSPL6></td><td colspan=1  class=SSPL6></td><td colspan=1  class=SSPL6>Study </td>
+</TR>
+
+<TR Style='mso-height-source:userset; height:13.5pt'>
+<td colspan=1  class=SSPL6>0092-17</td><td colspan=1  class=SSPL6>Abdi Ibrahim</td><td colspan=1  class=SSPL6>Amoxicillin Capsules</td><td colspan=1  class=SSPL6>Fed</td><td colspan=1  class=SSPL6>Housing</td><td colspan=1  class=SSPL6></td><td colspan=1  class=SSPL6>Pivotal</td><td colspan=1  class=SSPL6>ASEAN/EU</td><td colspan=1  class=SSPL6>Clinic + PK&Stat only</td><td colspan=1  class=SSPL6>Ahmedabad</td><td colspan=1  class=SSPL6>300</td><td colspan=1  class=SSPL6>dipeshmenon  (PMUser)</td><td colspan=1  class=SSPL6></td><td colspan=1  class=SSPL6></td><td colspan=1  class=SSPL6></td><td colspan=1  class=SSPL6></td><td colspan=1  class=SSPL6></td><td colspan=1  class=SSPL6>Study </td>
+</TR>
+
+<TR Style='mso-height-source:userset; height:13.5pt'>
+<td colspan=1  class=SSPL6>0095-17</td><td colspan=1  class=SSPL6>Accord HealthCare Inc.</td><td colspan=1  class=SSPL6>Amlodipin/Valsartan 10 mg/320 mg Film Tablet</td><td colspan=1  class=SSPL6>Fed</td><td colspan=1  class=SSPL6>Phase III</td><td colspan=1  class=SSPL6></td><td colspan=1  class=SSPL6>Pivotal</td><td colspan=1  class=SSPL6>ANZ</td><td colspan=1  class=SSPL6>Full Study</td><td colspan=1  class=SSPL6>Ahmedabad</td><td colspan=1  class=SSPL6>30</td><td colspan=1  class=SSPL6>dipeshmenon  (PMUser)</td><td colspan=1  class=SSPL6></td><td colspan=1  class=SSPL6></td><td colspan=1  class=SSPL6></td><td colspan=1  class=SSPL6></td><td colspan=1  class=SSPL6></td><td colspan=1  class=SSPL6>Study </td>
+</TR>
+
+<TR Style='mso-height-source:userset; height:13.5pt'>
+<td colspan=1  class=SSPL6>0100-17</td><td colspan=1  class=SSPL6>Abdi Ibrahim Ilaç San. ve Tic. A.S.</td><td colspan=1  class=SSPL6>Amiodarone</td><td colspan=1  class=SSPL6>Fed</td><td colspan=1  class=SSPL6>BA-BE</td><td colspan=1  class=SSPL6>Bioavailability Study</td><td colspan=1  class=SSPL6>Pivotal</td><td colspan=1  class=SSPL6>Belgique</td><td colspan=1  class=SSPL6>Clinic + PK&Stat only</td><td colspan=1  class=SSPL6>Ahmedabad</td><td colspan=1  class=SSPL6>22</td><td colspan=1  class=SSPL6>dipeshmenon  (PMUser)</td><td colspan=1  class=SSPL6></td><td colspan=1  class=SSPL6></td><td colspan=1  class=SSPL6></td><td colspan=1  class=SSPL6></td><td colspan=1  class=SSPL6></td><td colspan=1  class=SSPL6>Study </td>
+</TR>
+
+<TR Style='mso-height-source:userset; height:13.5pt'>
+<td colspan=1  class=SSPL6>0103-17</td><td colspan=1  class=SSPL6>Accure Labs Pvt. Ltd</td><td colspan=1  class=SSPL6>Aspirin (enteric-coated) Capsules 100 mg</td><td colspan=1  class=SSPL6>Fed</td><td colspan=1  class=SSPL6>Clinical Trial</td><td colspan=1  class=SSPL6>Phase II</td><td colspan=1  class=SSPL6>Pivotal</td><td colspan=1  class=SSPL6>Spain</td><td colspan=1  class=SSPL6>Clinic + BA 4</td><td colspan=1  class=SSPL6>Ahmedabad</td><td colspan=1  class=SSPL6>22</td><td colspan=1  class=SSPL6>dipeshmenon  (PMUser)</td><td colspan=1  class=SSPL6></td><td colspan=1  class=SSPL6></td><td colspan=1  class=SSPL6></td><td colspan=1  class=SSPL6></td><td colspan=1  class=SSPL6></td><td colspan=1  class=SSPL6>Study </td>
+</TR>
+
+
+</Table>
+</Body>
+</Html>

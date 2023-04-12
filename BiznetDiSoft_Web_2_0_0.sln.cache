@@ -1,0 +1,532 @@
+﻿<Project DefaultTargets="Build" ToolsVersion="3.5" InitialTargets="ValidateSolutionConfiguration;ValidateToolsVersions" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_SolutionProjectConfiguration>Debug|Any CPU</_SolutionProjectConfiguration>
+    <_SolutionProjectToolsVersion>3.5</_SolutionProjectToolsVersion>
+    <_SolutionProjectCacheVersion>3.5</_SolutionProjectCacheVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <_SolutionProjectProjects Include="G:\Jaimin Office\Code_Test\DISoft _C\BusinessOperation\BusinessOperation.csproj" />
+    <_SolutionProjectProjects Include="G:\Jaimin Office\Code_Test\DISoft _C\DatabaseOperation\DatabaseOperation.csproj" />
+    <_SolutionProjectProjects Include="G:\Jaimin Office\Code_Test\DISoft _C\DICOM\DICOM.csproj" />
+    <_SolutionProjectProjects Include="G:\Jaimin Office\Code_Test\DISoft _C\DTO\DTO.csproj" />
+    <_SolutionProjectProjects Include="G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging\MedicalImaging.csproj" />
+    <_SolutionProjectProjects Include="G:\Jaimin Office\Code_Test\DISoft _C\MIApi\MIApi.csproj" />
+    <_SolutionProjectProjects Include="G:\Jaimin Office\Code_Test\DISoft _C\Utility\Utility.csproj" />
+  </ItemGroup>
+  <ItemGroup Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ">
+    <BuildLevel0 Include="G:\Jaimin Office\Code_Test\DISoft _C\DICOM\DICOM.csproj">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </BuildLevel0>
+    <BuildLevel0 Include="G:\Jaimin Office\Code_Test\DISoft _C\DTO\DTO.csproj">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </BuildLevel0>
+    <BuildLevel0 Include="G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging\MedicalImaging.csproj">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </BuildLevel0>
+    <BuildLevel0 Include="G:\Jaimin Office\Code_Test\DISoft _C\MIApi\MIApi.csproj">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </BuildLevel0>
+    <BuildLevel0 Include="G:\Jaimin Office\Code_Test\DISoft _C\Utility\Utility.csproj">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </BuildLevel0>
+    <BuildLevel2 Include="G:\Jaimin Office\Code_Test\DISoft _C\BusinessOperation\BusinessOperation.csproj">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </BuildLevel2>
+    <BuildLevel1 Include="G:\Jaimin Office\Code_Test\DISoft _C\DatabaseOperation\DatabaseOperation.csproj">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </BuildLevel1>
+  </ItemGroup>
+  <ItemGroup Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') ">
+    <BuildLevel0 Include="G:\Jaimin Office\Code_Test\DISoft _C\DICOM\DICOM.csproj">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </BuildLevel0>
+    <BuildLevel0 Include="G:\Jaimin Office\Code_Test\DISoft _C\DTO\DTO.csproj">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </BuildLevel0>
+    <BuildLevel0 Include="G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging\MedicalImaging.csproj">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </BuildLevel0>
+    <BuildLevel0 Include="G:\Jaimin Office\Code_Test\DISoft _C\MIApi\MIApi.csproj">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </BuildLevel0>
+    <BuildLevel0 Include="G:\Jaimin Office\Code_Test\DISoft _C\Utility\Utility.csproj">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </BuildLevel0>
+    <BuildLevel2 Include="G:\Jaimin Office\Code_Test\DISoft _C\BusinessOperation\BusinessOperation.csproj">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </BuildLevel2>
+    <BuildLevel1 Include="G:\Jaimin Office\Code_Test\DISoft _C\DatabaseOperation\DatabaseOperation.csproj">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </BuildLevel1>
+  </ItemGroup>
+  <UsingTask TaskName="Microsoft.Build.Tasks.CreateTemporaryVCProject" AssemblyName="Microsoft.Build.Tasks.v3.5, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <UsingTask TaskName="Microsoft.Build.Tasks.ResolveVCProjectOutput" AssemblyName="Microsoft.Build.Tasks.v3.5, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <PropertyGroup Condition=" '$(Configuration)' == '' ">
+    <Configuration>Debug</Configuration>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == '' ">
+    <Platform>Any CPU</Platform>
+  </PropertyGroup>
+  <PropertyGroup Condition=" ('$(AspNetConfiguration)' == '') ">
+    <AspNetConfiguration>$(Configuration)</AspNetConfiguration>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SolutionDir>G:\Jaimin Office\Code_Test\DISoft _C\</SolutionDir>
+    <SolutionExt>.sln</SolutionExt>
+    <SolutionFileName>BiznetDiSoft_Web_2_0_0.sln</SolutionFileName>
+    <SolutionName>BiznetDiSoft_Web_2_0_0</SolutionName>
+    <SolutionPath>G:\Jaimin Office\Code_Test\DISoft _C\BiznetDiSoft_Web_2_0_0.sln</SolutionPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFrameworkVersion Condition="'$(TargetFrameworkVersion)' == '' and '$(MSBuildToolsVersion)' == '2.0'">v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion Condition="'$(TargetFrameworkVersion)' == '' and '$(MSBuildToolsVersion)' != '2.0'">v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ">
+    <CurrentSolutionConfigurationContents>
+      <SolutionConfiguration xmlns="">
+        <ProjectConfiguration Project="{7004F2FB-B8E7-43ED-8272-B0483AEB2CA5}">Debug|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{F2060B3A-1EC9-4834-95FB-AB96DA8621B3}">Debug|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{340D9BCC-0076-4835-A88F-D2EF5C0AC471}">Debug|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{1420579E-C56F-4F14-9965-754E0C53AD00}">Debug|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{99F627AF-7959-4273-A4E5-3235E0A5A731}">Debug|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{CF549FE9-3059-4F89-A777-BA7F647C196E}">Debug|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{82BF46EC-5CCF-47C0-97FC-29B8CF9100C4}">Debug|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{CD07FEF1-B920-47D9-8001-48B1A131E68B}">Debug|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{7C6F27A0-E3B6-46CE-B904-3D2E863289FC}">Debug|AnyCPU</ProjectConfiguration>
+      </SolutionConfiguration>
+    </CurrentSolutionConfigurationContents>
+  </PropertyGroup>
+  <PropertyGroup Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') ">
+    <CurrentSolutionConfigurationContents>
+      <SolutionConfiguration xmlns="">
+        <ProjectConfiguration Project="{7004F2FB-B8E7-43ED-8272-B0483AEB2CA5}">Debug|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{F2060B3A-1EC9-4834-95FB-AB96DA8621B3}">Debug|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{340D9BCC-0076-4835-A88F-D2EF5C0AC471}">Release|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{1420579E-C56F-4F14-9965-754E0C53AD00}">Release|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{99F627AF-7959-4273-A4E5-3235E0A5A731}">Release|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{CF549FE9-3059-4F89-A777-BA7F647C196E}">Release|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{82BF46EC-5CCF-47C0-97FC-29B8CF9100C4}">Release|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{CD07FEF1-B920-47D9-8001-48B1A131E68B}">Release|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{7C6F27A0-E3B6-46CE-B904-3D2E863289FC}">Release|AnyCPU</ProjectConfiguration>
+      </SolutionConfiguration>
+    </CurrentSolutionConfigurationContents>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(AspNetConfiguration)' == 'Debug' ">
+    <Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetVirtualPath>/BiznetDiSoft_Web_2_0_0</Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetVirtualPath>
+    <Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetPhysicalPath>G:\Jaimin Office\Code_Test\DISoft _C\BiznetDISoft_WEB_2_0_0\</Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetPhysicalPath>
+    <Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetTargetPath>PrecompiledWeb\BiznetDiSoft_Web_2_0_0\</Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetTargetPath>
+    <Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetForce>true</Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetForce>
+    <Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetUpdateable>true</Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetUpdateable>
+    <Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetDebug>True</Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetDebug>
+    <Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetKeyFile>
+    </Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetKeyFile>
+    <Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetKeyContainer>
+    </Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetKeyContainer>
+    <Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetDelaySign>
+    </Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetDelaySign>
+    <Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetAPTCA>
+    </Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetAPTCA>
+    <Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetFixedNames>false</Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetFixedNames>
+    <Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetTargetPath Condition=" '$(OutDir)' != '' ">$(OutDir)_PublishedWebsites\BiznetDISoft_WEB_2_0_0\</Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetTargetPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(AspNetConfiguration)' == 'Release' ">
+    <Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetVirtualPath>/BiznetDiSoft_Web_2_0_0</Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetVirtualPath>
+    <Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetPhysicalPath>G:\Jaimin Office\Code_Test\DISoft _C\BiznetDISoft_WEB_2_0_0\</Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetPhysicalPath>
+    <Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetTargetPath>PrecompiledWeb\BiznetDiSoft_Web_2_0_0\</Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetTargetPath>
+    <Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetForce>true</Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetForce>
+    <Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetUpdateable>true</Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetUpdateable>
+    <Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetDebug>False</Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetDebug>
+    <Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetKeyFile>
+    </Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetKeyFile>
+    <Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetKeyContainer>
+    </Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetKeyContainer>
+    <Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetDelaySign>
+    </Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetDelaySign>
+    <Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetAPTCA>
+    </Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetAPTCA>
+    <Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetFixedNames>false</Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetFixedNames>
+    <Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetTargetPath Condition=" '$(OutDir)' != '' ">$(OutDir)_PublishedWebsites\BiznetDISoft_WEB_2_0_0\</Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetTargetPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(AspNetConfiguration)' == 'Debug' ">
+    <Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetVirtualPath>/BiznetDISoft_WS_2_0_0</Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetVirtualPath>
+    <Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetPhysicalPath>G:\Jaimin Office\Code_Test\DISoft _C\BiznetDISoft_WS_2_0_0\</Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetPhysicalPath>
+    <Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetTargetPath>PrecompiledWeb\BiznetDISoft_WS_2_0_0\</Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetTargetPath>
+    <Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetForce>true</Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetForce>
+    <Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetUpdateable>true</Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetUpdateable>
+    <Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetDebug>True</Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetDebug>
+    <Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetKeyFile>
+    </Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetKeyFile>
+    <Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetKeyContainer>
+    </Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetKeyContainer>
+    <Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetDelaySign>
+    </Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetDelaySign>
+    <Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetAPTCA>
+    </Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetAPTCA>
+    <Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetFixedNames>false</Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetFixedNames>
+    <Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetTargetPath Condition=" '$(OutDir)' != '' ">$(OutDir)_PublishedWebsites\BiznetDISoft_WS_2_0_0\</Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetTargetPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(AspNetConfiguration)' == 'Release' ">
+    <Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetVirtualPath>/BiznetDISoft_WS_2_0_0</Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetVirtualPath>
+    <Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetPhysicalPath>G:\Jaimin Office\Code_Test\DISoft _C\BiznetDISoft_WS_2_0_0\</Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetPhysicalPath>
+    <Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetTargetPath>PrecompiledWeb\BiznetDISoft_WS_2_0_0\</Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetTargetPath>
+    <Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetForce>true</Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetForce>
+    <Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetUpdateable>true</Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetUpdateable>
+    <Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetDebug>False</Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetDebug>
+    <Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetKeyFile>
+    </Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetKeyFile>
+    <Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetKeyContainer>
+    </Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetKeyContainer>
+    <Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetDelaySign>
+    </Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetDelaySign>
+    <Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetAPTCA>
+    </Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetAPTCA>
+    <Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetFixedNames>false</Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetFixedNames>
+    <Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetTargetPath Condition=" '$(OutDir)' != '' ">$(OutDir)_PublishedWebsites\BiznetDISoft_WS_2_0_0\</Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetTargetPath>
+  </PropertyGroup>
+  <Target Name="ValidateSolutionConfiguration">
+    <Error Text="The specified solution configuration &quot;$(Configuration)|$(Platform)&quot; is invalid. Please specify a valid solution configuration using the Configuration and Platform properties (e.g. MSBuild.exe Solution.sln /p:Configuration=Debug /p:Platform=&quot;Any CPU&quot;) or leave those properties blank to use the default solution configuration." Code="MSB4126" HelpKeyword="MSBuild.SolutionInvalidSolutionConfiguration" Condition="('$(CurrentSolutionConfigurationContents)' == '') and ('$(SkipInvalidConfigurations)' != 'true')" />
+    <Warning Text="The specified solution configuration &quot;$(Configuration)|$(Platform)&quot; is invalid. Please specify a valid solution configuration using the Configuration and Platform properties (e.g. MSBuild.exe Solution.sln /p:Configuration=Debug /p:Platform=&quot;Any CPU&quot;) or leave those properties blank to use the default solution configuration." Code="MSB4126" HelpKeyword="MSBuild.SolutionInvalidSolutionConfiguration" Condition="('$(CurrentSolutionConfigurationContents)' == '') and ('$(SkipInvalidConfigurations)' == 'true')" />
+    <Message Text="Building solution configuration &quot;$(Configuration)|$(Platform)&quot;." Condition="'$(CurrentSolutionConfigurationContents)' != ''" />
+  </Target>
+  <Target Name="ValidateToolsVersions">
+    <Error Text="The tools version &quot;$(MSBuildToolsVersion)&quot; of the solution does not support building projects with a different tools version." Code="MSB4149" HelpKeyword="MSBuild.SolutionToolsVersionDoesNotSupportProjectToolsVersion" Condition="'$(MSBuildToolsVersion)' == '2.0' and ('$(ProjectToolsVersion)' != '2.0' and '$(ProjectToolsVersion)' != '')" />
+  </Target>
+  <Target Name="GetFrameworkPathAndRedistList">
+    <GetFrameworkPath>
+      <Output TaskParameter="Path" ItemName="_CombinedTargetFrameworkDirectoriesItem" Condition="'$(MSBuildToolsVersion)' == '2.0'" />
+      <Output TaskParameter="FrameworkVersion35Path" ItemName="_CombinedTargetFrameworkDirectoriesItem" Condition=" '$(TargetFrameworkVersion)' == 'v3.5' and '$(MSBuildToolsVersion)' != '2.0'" />
+      <Output TaskParameter="FrameworkVersion30Path" ItemName="_CombinedTargetFrameworkDirectoriesItem" Condition=" ('$(TargetFrameworkVersion)' == 'v3.0' or '$(TargetFrameworkVersion)' == 'v3.5') and '$(MSBuildToolsVersion)' != '2.0'" />
+      <Output TaskParameter="FrameworkVersion20Path" ItemName="_CombinedTargetFrameworkDirectoriesItem" Condition=" ('$(TargetFrameworkVersion)' == 'v2.0' or '$(TargetFrameworkVersion)' == 'v3.0' or '$(TargetFrameworkVersion)' == 'v3.5') and '$(MSBuildToolsVersion)' != '2.0'" />
+    </GetFrameworkPath>
+    <CreateItem Include="@(_CombinedTargetFrameworkDirectoriesItem->'%(Identity)\RedistList\*.xml')">
+      <Output TaskParameter="Include" ItemName="InstalledAssemblyTables" />
+    </CreateItem>
+  </Target>
+  <Target Name="BiznetDiSoft_Web_2_0_0" DependsOnTargets=";GetFrameworkPathAndRedistList" Condition=" ('$(CurrentSolutionConfigurationContents)' != '') and (false or ( ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ) or ( ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') )) ">
+    <CreateItem Include="$(Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetPhysicalPath)\Bin\*.refresh">
+      <Output TaskParameter="Include" ItemName="Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_References_RefreshFile" />
+    </CreateItem>
+    <ReadLinesFromFile File="%(Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_References_RefreshFile.Identity)" Condition=" '%(Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_References_RefreshFile.Identity)' != '' ">
+      <Output TaskParameter="Lines" ItemName="Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_References_ReferenceRelPath" />
+    </ReadLinesFromFile>
+    <CombinePath BasePath="$(Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetPhysicalPath)" Paths="@(Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_References_ReferenceRelPath)">
+      <Output TaskParameter="CombinedPaths" ItemName="Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_References" />
+    </CombinePath>
+    <Copy SourceFiles="@(Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_References->'%(FullPath)')" DestinationFolder="$(Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetPhysicalPath)\Bin\" Condition="!Exists('%(Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_References.Identity)')" ContinueOnError="true" />
+    <ResolveAssemblyReference Assemblies="@(Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_References->'%(FullPath)')" TargetFrameworkDirectories="@(_CombinedTargetFrameworkDirectoriesItem)" InstalledAssemblyTables="@(InstalledAssemblyTables)" SearchPaths="{RawFileName};{TargetFrameworkDirectory};{GAC}" FindDependencies="true" FindSatellites="true" FindSerializationAssemblies="true" FindRelatedFiles="true" Condition="Exists('%(Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_References.Identity)')">
+      <Output TaskParameter="CopyLocalFiles" ItemName="Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_References_CopyLocalFiles" />
+    </ResolveAssemblyReference>
+    <Copy SourceFiles="@(Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_References_CopyLocalFiles)" DestinationFiles="@(Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_References_CopyLocalFiles->'$(Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetPhysicalPath)\Bin\%(DestinationSubDirectory)%(Filename)%(Extension)')" Condition="(false) or ('$(AspNetConfiguration)' == 'Debug') or ('$(AspNetConfiguration)' == 'Release')" />
+    <AspNetCompiler VirtualPath="$(Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetVirtualPath)" PhysicalPath="$(Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetPhysicalPath)" TargetPath="$(Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetTargetPath)" Force="$(Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetForce)" Updateable="$(Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetUpdateable)" Debug="$(Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetDebug)" KeyFile="$(Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetKeyFile)" KeyContainer="$(Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetKeyContainer)" DelaySign="$(Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetDelaySign)" AllowPartiallyTrustedCallers="$(Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetAPTCA)" FixedNames="$(Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetFixedNames)" Condition="(false) or ('$(AspNetConfiguration)' == 'Debug') or ('$(AspNetConfiguration)' == 'Release')" />
+    <Message Text="Skipping because the &quot;$(AspNetConfiguration)&quot; configuration is not supported for this web project.  You can use the AspNetConfiguration property to override the configuration used for building web projects, by adding /p:AspNetConfiguration=&lt;value&gt; to the command line. Currently web projects only support Debug and Release configurations." Condition="!((false) or ('$(AspNetConfiguration)' == 'Debug') or ('$(AspNetConfiguration)' == 'Release'))" />
+  </Target>
+  <Target Name="BiznetDiSoft_Web_2_0_0:Clean" DependsOnTargets=";GetFrameworkPathAndRedistList">
+    <Message Text="Web projects do not support the &quot;Clean&quot; target.  Continuing with remaining projects ..." />
+  </Target>
+  <Target Name="BiznetDiSoft_Web_2_0_0:Rebuild" DependsOnTargets=";GetFrameworkPathAndRedistList" Condition=" ('$(CurrentSolutionConfigurationContents)' != '') and (false or ( ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ) or ( ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') )) ">
+    <CreateItem Include="$(Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetPhysicalPath)\Bin\*.refresh">
+      <Output TaskParameter="Include" ItemName="Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_References_Rebuild_RefreshFile" />
+    </CreateItem>
+    <ReadLinesFromFile File="%(Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_References_Rebuild_RefreshFile.Identity)" Condition=" '%(Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_References_Rebuild_RefreshFile.Identity)' != '' ">
+      <Output TaskParameter="Lines" ItemName="Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_References_Rebuild_ReferenceRelPath" />
+    </ReadLinesFromFile>
+    <CombinePath BasePath="$(Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetPhysicalPath)" Paths="@(Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_References_Rebuild_ReferenceRelPath)">
+      <Output TaskParameter="CombinedPaths" ItemName="Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_References_Rebuild" />
+    </CombinePath>
+    <Copy SourceFiles="@(Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_References_Rebuild->'%(FullPath)')" DestinationFolder="$(Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetPhysicalPath)\Bin\" Condition="!Exists('%(Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_References_Rebuild.Identity)')" ContinueOnError="true" />
+    <ResolveAssemblyReference Assemblies="@(Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_References_Rebuild->'%(FullPath)')" TargetFrameworkDirectories="@(_CombinedTargetFrameworkDirectoriesItem)" InstalledAssemblyTables="@(InstalledAssemblyTables)" SearchPaths="{RawFileName};{TargetFrameworkDirectory};{GAC}" FindDependencies="true" FindSatellites="true" FindSerializationAssemblies="true" FindRelatedFiles="true" Condition="Exists('%(Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_References_Rebuild.Identity)')">
+      <Output TaskParameter="CopyLocalFiles" ItemName="Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_References_Rebuild_CopyLocalFiles" />
+    </ResolveAssemblyReference>
+    <Copy SourceFiles="@(Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_References_Rebuild_CopyLocalFiles)" DestinationFiles="@(Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_References_Rebuild_CopyLocalFiles->'$(Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetPhysicalPath)\Bin\%(DestinationSubDirectory)%(Filename)%(Extension)')" Condition="(false) or ('$(AspNetConfiguration)' == 'Debug') or ('$(AspNetConfiguration)' == 'Release')" />
+    <AspNetCompiler VirtualPath="$(Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetVirtualPath)" PhysicalPath="$(Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetPhysicalPath)" TargetPath="$(Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetTargetPath)" Force="$(Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetForce)" Updateable="$(Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetUpdateable)" Debug="$(Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetDebug)" KeyFile="$(Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetKeyFile)" KeyContainer="$(Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetKeyContainer)" DelaySign="$(Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetDelaySign)" AllowPartiallyTrustedCallers="$(Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetAPTCA)" FixedNames="$(Project_7004F2FB-B8E7-43ED-8272-B0483AEB2CA5_AspNetFixedNames)" Condition="(false) or ('$(AspNetConfiguration)' == 'Debug') or ('$(AspNetConfiguration)' == 'Release')" />
+    <Message Text="Skipping because the &quot;$(AspNetConfiguration)&quot; configuration is not supported for this web project.  You can use the AspNetConfiguration property to override the configuration used for building web projects, by adding /p:AspNetConfiguration=&lt;value&gt; to the command line. Currently web projects only support Debug and Release configurations." Condition="!((false) or ('$(AspNetConfiguration)' == 'Debug') or ('$(AspNetConfiguration)' == 'Release'))" />
+  </Target>
+  <Target Name="BiznetDiSoft_Web_2_0_0:Publish" DependsOnTargets=";GetFrameworkPathAndRedistList">
+    <Message Text="Web projects do not support the &quot;Publish&quot; target.  Continuing with remaining projects ..." />
+  </Target>
+  <Target Name="BiznetDISoft_WS_2_0_0" DependsOnTargets=";GetFrameworkPathAndRedistList" Condition=" ('$(CurrentSolutionConfigurationContents)' != '') and (false or ( ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ) or ( ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') )) ">
+    <CreateItem Include="$(Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetPhysicalPath)\Bin\*.refresh">
+      <Output TaskParameter="Include" ItemName="Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_References_RefreshFile" />
+    </CreateItem>
+    <ReadLinesFromFile File="%(Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_References_RefreshFile.Identity)" Condition=" '%(Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_References_RefreshFile.Identity)' != '' ">
+      <Output TaskParameter="Lines" ItemName="Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_References_ReferenceRelPath" />
+    </ReadLinesFromFile>
+    <CombinePath BasePath="$(Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetPhysicalPath)" Paths="@(Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_References_ReferenceRelPath)">
+      <Output TaskParameter="CombinedPaths" ItemName="Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_References" />
+    </CombinePath>
+    <Copy SourceFiles="@(Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_References->'%(FullPath)')" DestinationFolder="$(Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetPhysicalPath)\Bin\" Condition="!Exists('%(Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_References.Identity)')" ContinueOnError="true" />
+    <ResolveAssemblyReference Assemblies="@(Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_References->'%(FullPath)')" TargetFrameworkDirectories="@(_CombinedTargetFrameworkDirectoriesItem)" InstalledAssemblyTables="@(InstalledAssemblyTables)" SearchPaths="{RawFileName};{TargetFrameworkDirectory};{GAC}" FindDependencies="true" FindSatellites="true" FindSerializationAssemblies="true" FindRelatedFiles="true" Condition="Exists('%(Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_References.Identity)')">
+      <Output TaskParameter="CopyLocalFiles" ItemName="Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_References_CopyLocalFiles" />
+    </ResolveAssemblyReference>
+    <Copy SourceFiles="@(Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_References_CopyLocalFiles)" DestinationFiles="@(Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_References_CopyLocalFiles->'$(Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetPhysicalPath)\Bin\%(DestinationSubDirectory)%(Filename)%(Extension)')" Condition="(false) or ('$(AspNetConfiguration)' == 'Debug') or ('$(AspNetConfiguration)' == 'Release')" />
+    <AspNetCompiler VirtualPath="$(Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetVirtualPath)" PhysicalPath="$(Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetPhysicalPath)" TargetPath="$(Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetTargetPath)" Force="$(Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetForce)" Updateable="$(Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetUpdateable)" Debug="$(Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetDebug)" KeyFile="$(Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetKeyFile)" KeyContainer="$(Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetKeyContainer)" DelaySign="$(Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetDelaySign)" AllowPartiallyTrustedCallers="$(Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetAPTCA)" FixedNames="$(Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetFixedNames)" Condition="(false) or ('$(AspNetConfiguration)' == 'Debug') or ('$(AspNetConfiguration)' == 'Release')" />
+    <Message Text="Skipping because the &quot;$(AspNetConfiguration)&quot; configuration is not supported for this web project.  You can use the AspNetConfiguration property to override the configuration used for building web projects, by adding /p:AspNetConfiguration=&lt;value&gt; to the command line. Currently web projects only support Debug and Release configurations." Condition="!((false) or ('$(AspNetConfiguration)' == 'Debug') or ('$(AspNetConfiguration)' == 'Release'))" />
+  </Target>
+  <Target Name="BiznetDISoft_WS_2_0_0:Clean" DependsOnTargets=";GetFrameworkPathAndRedistList">
+    <Message Text="Web projects do not support the &quot;Clean&quot; target.  Continuing with remaining projects ..." />
+  </Target>
+  <Target Name="BiznetDISoft_WS_2_0_0:Rebuild" DependsOnTargets=";GetFrameworkPathAndRedistList" Condition=" ('$(CurrentSolutionConfigurationContents)' != '') and (false or ( ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ) or ( ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') )) ">
+    <CreateItem Include="$(Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetPhysicalPath)\Bin\*.refresh">
+      <Output TaskParameter="Include" ItemName="Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_References_Rebuild_RefreshFile" />
+    </CreateItem>
+    <ReadLinesFromFile File="%(Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_References_Rebuild_RefreshFile.Identity)" Condition=" '%(Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_References_Rebuild_RefreshFile.Identity)' != '' ">
+      <Output TaskParameter="Lines" ItemName="Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_References_Rebuild_ReferenceRelPath" />
+    </ReadLinesFromFile>
+    <CombinePath BasePath="$(Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetPhysicalPath)" Paths="@(Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_References_Rebuild_ReferenceRelPath)">
+      <Output TaskParameter="CombinedPaths" ItemName="Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_References_Rebuild" />
+    </CombinePath>
+    <Copy SourceFiles="@(Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_References_Rebuild->'%(FullPath)')" DestinationFolder="$(Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetPhysicalPath)\Bin\" Condition="!Exists('%(Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_References_Rebuild.Identity)')" ContinueOnError="true" />
+    <ResolveAssemblyReference Assemblies="@(Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_References_Rebuild->'%(FullPath)')" TargetFrameworkDirectories="@(_CombinedTargetFrameworkDirectoriesItem)" InstalledAssemblyTables="@(InstalledAssemblyTables)" SearchPaths="{RawFileName};{TargetFrameworkDirectory};{GAC}" FindDependencies="true" FindSatellites="true" FindSerializationAssemblies="true" FindRelatedFiles="true" Condition="Exists('%(Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_References_Rebuild.Identity)')">
+      <Output TaskParameter="CopyLocalFiles" ItemName="Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_References_Rebuild_CopyLocalFiles" />
+    </ResolveAssemblyReference>
+    <Copy SourceFiles="@(Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_References_Rebuild_CopyLocalFiles)" DestinationFiles="@(Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_References_Rebuild_CopyLocalFiles->'$(Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetPhysicalPath)\Bin\%(DestinationSubDirectory)%(Filename)%(Extension)')" Condition="(false) or ('$(AspNetConfiguration)' == 'Debug') or ('$(AspNetConfiguration)' == 'Release')" />
+    <AspNetCompiler VirtualPath="$(Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetVirtualPath)" PhysicalPath="$(Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetPhysicalPath)" TargetPath="$(Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetTargetPath)" Force="$(Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetForce)" Updateable="$(Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetUpdateable)" Debug="$(Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetDebug)" KeyFile="$(Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetKeyFile)" KeyContainer="$(Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetKeyContainer)" DelaySign="$(Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetDelaySign)" AllowPartiallyTrustedCallers="$(Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetAPTCA)" FixedNames="$(Project_F2060B3A-1EC9-4834-95FB-AB96DA8621B3_AspNetFixedNames)" Condition="(false) or ('$(AspNetConfiguration)' == 'Debug') or ('$(AspNetConfiguration)' == 'Release')" />
+    <Message Text="Skipping because the &quot;$(AspNetConfiguration)&quot; configuration is not supported for this web project.  You can use the AspNetConfiguration property to override the configuration used for building web projects, by adding /p:AspNetConfiguration=&lt;value&gt; to the command line. Currently web projects only support Debug and Release configurations." Condition="!((false) or ('$(AspNetConfiguration)' == 'Debug') or ('$(AspNetConfiguration)' == 'Release'))" />
+  </Target>
+  <Target Name="BiznetDISoft_WS_2_0_0:Publish" DependsOnTargets=";GetFrameworkPathAndRedistList">
+    <Message Text="Web projects do not support the &quot;Publish&quot; target.  Continuing with remaining projects ..." />
+  </Target>
+  <Target Name="MedicalImaging" Condition="'$(CurrentSolutionConfigurationContents)' != ''" Outputs="@(MedicalImagingBuildOutput)">
+    <MSBuild Projects="G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging\MedicalImaging.csproj" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="MedicalImagingBuildOutput" />
+    </MSBuild>
+    <MSBuild Projects="G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging\MedicalImaging.csproj" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="MedicalImagingBuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="MedicalImaging:Clean" Condition="'$(CurrentSolutionConfigurationContents)' != ''">
+    <MSBuild Projects="G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging\MedicalImaging.csproj" Targets="Clean" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging\MedicalImaging.csproj" Targets="Clean" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') " />
+  </Target>
+  <Target Name="MedicalImaging:Rebuild" Condition="'$(CurrentSolutionConfigurationContents)' != ''" Outputs="@(MedicalImagingBuildOutput)">
+    <MSBuild Projects="G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging\MedicalImaging.csproj" Targets="Rebuild" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="MedicalImagingBuildOutput" />
+    </MSBuild>
+    <MSBuild Projects="G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging\MedicalImaging.csproj" Targets="Rebuild" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="MedicalImagingBuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="MedicalImaging:Publish" Condition="'$(CurrentSolutionConfigurationContents)' != ''">
+    <MSBuild Projects="G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging\MedicalImaging.csproj" Targets="Publish" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging\MedicalImaging.csproj" Targets="Publish" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') " />
+  </Target>
+  <Target Name="MIApi" Condition="'$(CurrentSolutionConfigurationContents)' != ''" Outputs="@(MIApiBuildOutput)">
+    <MSBuild Projects="G:\Jaimin Office\Code_Test\DISoft _C\MIApi\MIApi.csproj" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="MIApiBuildOutput" />
+    </MSBuild>
+    <MSBuild Projects="G:\Jaimin Office\Code_Test\DISoft _C\MIApi\MIApi.csproj" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="MIApiBuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="MIApi:Clean" Condition="'$(CurrentSolutionConfigurationContents)' != ''">
+    <MSBuild Projects="G:\Jaimin Office\Code_Test\DISoft _C\MIApi\MIApi.csproj" Targets="Clean" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="G:\Jaimin Office\Code_Test\DISoft _C\MIApi\MIApi.csproj" Targets="Clean" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') " />
+  </Target>
+  <Target Name="MIApi:Rebuild" Condition="'$(CurrentSolutionConfigurationContents)' != ''" Outputs="@(MIApiBuildOutput)">
+    <MSBuild Projects="G:\Jaimin Office\Code_Test\DISoft _C\MIApi\MIApi.csproj" Targets="Rebuild" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="MIApiBuildOutput" />
+    </MSBuild>
+    <MSBuild Projects="G:\Jaimin Office\Code_Test\DISoft _C\MIApi\MIApi.csproj" Targets="Rebuild" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="MIApiBuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="MIApi:Publish" Condition="'$(CurrentSolutionConfigurationContents)' != ''">
+    <MSBuild Projects="G:\Jaimin Office\Code_Test\DISoft _C\MIApi\MIApi.csproj" Targets="Publish" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="G:\Jaimin Office\Code_Test\DISoft _C\MIApi\MIApi.csproj" Targets="Publish" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') " />
+  </Target>
+  <Target Name="DTO" Condition="'$(CurrentSolutionConfigurationContents)' != ''" Outputs="@(DTOBuildOutput)">
+    <MSBuild Projects="G:\Jaimin Office\Code_Test\DISoft _C\DTO\DTO.csproj" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="DTOBuildOutput" />
+    </MSBuild>
+    <MSBuild Projects="G:\Jaimin Office\Code_Test\DISoft _C\DTO\DTO.csproj" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="DTOBuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="DTO:Clean" Condition="'$(CurrentSolutionConfigurationContents)' != ''">
+    <MSBuild Projects="G:\Jaimin Office\Code_Test\DISoft _C\DTO\DTO.csproj" Targets="Clean" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="G:\Jaimin Office\Code_Test\DISoft _C\DTO\DTO.csproj" Targets="Clean" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') " />
+  </Target>
+  <Target Name="DTO:Rebuild" Condition="'$(CurrentSolutionConfigurationContents)' != ''" Outputs="@(DTOBuildOutput)">
+    <MSBuild Projects="G:\Jaimin Office\Code_Test\DISoft _C\DTO\DTO.csproj" Targets="Rebuild" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="DTOBuildOutput" />
+    </MSBuild>
+    <MSBuild Projects="G:\Jaimin Office\Code_Test\DISoft _C\DTO\DTO.csproj" Targets="Rebuild" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="DTOBuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="DTO:Publish" Condition="'$(CurrentSolutionConfigurationContents)' != ''">
+    <MSBuild Projects="G:\Jaimin Office\Code_Test\DISoft _C\DTO\DTO.csproj" Targets="Publish" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="G:\Jaimin Office\Code_Test\DISoft _C\DTO\DTO.csproj" Targets="Publish" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') " />
+  </Target>
+  <Target Name="BusinessOperation" DependsOnTargets="DatabaseOperation;DTO;Utility" Condition="'$(CurrentSolutionConfigurationContents)' != ''" Outputs="@(BusinessOperationBuildOutput)">
+    <MSBuild Projects="G:\Jaimin Office\Code_Test\DISoft _C\BusinessOperation\BusinessOperation.csproj" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="BusinessOperationBuildOutput" />
+    </MSBuild>
+    <MSBuild Projects="G:\Jaimin Office\Code_Test\DISoft _C\BusinessOperation\BusinessOperation.csproj" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="BusinessOperationBuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="BusinessOperation:Clean" DependsOnTargets="DatabaseOperation:Clean;DTO:Clean;Utility:Clean" Condition="'$(CurrentSolutionConfigurationContents)' != ''">
+    <MSBuild Projects="G:\Jaimin Office\Code_Test\DISoft _C\BusinessOperation\BusinessOperation.csproj" Targets="Clean" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="G:\Jaimin Office\Code_Test\DISoft _C\BusinessOperation\BusinessOperation.csproj" Targets="Clean" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') " />
+  </Target>
+  <Target Name="BusinessOperation:Rebuild" DependsOnTargets="DatabaseOperation:Rebuild;DTO:Rebuild;Utility:Rebuild" Condition="'$(CurrentSolutionConfigurationContents)' != ''" Outputs="@(BusinessOperationBuildOutput)">
+    <MSBuild Projects="G:\Jaimin Office\Code_Test\DISoft _C\BusinessOperation\BusinessOperation.csproj" Targets="Rebuild" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="BusinessOperationBuildOutput" />
+    </MSBuild>
+    <MSBuild Projects="G:\Jaimin Office\Code_Test\DISoft _C\BusinessOperation\BusinessOperation.csproj" Targets="Rebuild" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="BusinessOperationBuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="BusinessOperation:Publish" DependsOnTargets="DatabaseOperation:Publish;DTO:Publish;Utility:Publish" Condition="'$(CurrentSolutionConfigurationContents)' != ''">
+    <MSBuild Projects="G:\Jaimin Office\Code_Test\DISoft _C\BusinessOperation\BusinessOperation.csproj" Targets="Publish" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="G:\Jaimin Office\Code_Test\DISoft _C\BusinessOperation\BusinessOperation.csproj" Targets="Publish" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') " />
+  </Target>
+  <Target Name="DatabaseOperation" DependsOnTargets="DTO;Utility" Condition="'$(CurrentSolutionConfigurationContents)' != ''" Outputs="@(DatabaseOperationBuildOutput)">
+    <MSBuild Projects="G:\Jaimin Office\Code_Test\DISoft _C\DatabaseOperation\DatabaseOperation.csproj" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="DatabaseOperationBuildOutput" />
+    </MSBuild>
+    <MSBuild Projects="G:\Jaimin Office\Code_Test\DISoft _C\DatabaseOperation\DatabaseOperation.csproj" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="DatabaseOperationBuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="DatabaseOperation:Clean" DependsOnTargets="DTO:Clean;Utility:Clean" Condition="'$(CurrentSolutionConfigurationContents)' != ''">
+    <MSBuild Projects="G:\Jaimin Office\Code_Test\DISoft _C\DatabaseOperation\DatabaseOperation.csproj" Targets="Clean" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="G:\Jaimin Office\Code_Test\DISoft _C\DatabaseOperation\DatabaseOperation.csproj" Targets="Clean" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') " />
+  </Target>
+  <Target Name="DatabaseOperation:Rebuild" DependsOnTargets="DTO:Rebuild;Utility:Rebuild" Condition="'$(CurrentSolutionConfigurationContents)' != ''" Outputs="@(DatabaseOperationBuildOutput)">
+    <MSBuild Projects="G:\Jaimin Office\Code_Test\DISoft _C\DatabaseOperation\DatabaseOperation.csproj" Targets="Rebuild" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="DatabaseOperationBuildOutput" />
+    </MSBuild>
+    <MSBuild Projects="G:\Jaimin Office\Code_Test\DISoft _C\DatabaseOperation\DatabaseOperation.csproj" Targets="Rebuild" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="DatabaseOperationBuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="DatabaseOperation:Publish" DependsOnTargets="DTO:Publish;Utility:Publish" Condition="'$(CurrentSolutionConfigurationContents)' != ''">
+    <MSBuild Projects="G:\Jaimin Office\Code_Test\DISoft _C\DatabaseOperation\DatabaseOperation.csproj" Targets="Publish" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="G:\Jaimin Office\Code_Test\DISoft _C\DatabaseOperation\DatabaseOperation.csproj" Targets="Publish" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') " />
+  </Target>
+  <Target Name="Utility" Condition="'$(CurrentSolutionConfigurationContents)' != ''" Outputs="@(UtilityBuildOutput)">
+    <MSBuild Projects="G:\Jaimin Office\Code_Test\DISoft _C\Utility\Utility.csproj" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="UtilityBuildOutput" />
+    </MSBuild>
+    <MSBuild Projects="G:\Jaimin Office\Code_Test\DISoft _C\Utility\Utility.csproj" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="UtilityBuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="Utility:Clean" Condition="'$(CurrentSolutionConfigurationContents)' != ''">
+    <MSBuild Projects="G:\Jaimin Office\Code_Test\DISoft _C\Utility\Utility.csproj" Targets="Clean" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="G:\Jaimin Office\Code_Test\DISoft _C\Utility\Utility.csproj" Targets="Clean" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') " />
+  </Target>
+  <Target Name="Utility:Rebuild" Condition="'$(CurrentSolutionConfigurationContents)' != ''" Outputs="@(UtilityBuildOutput)">
+    <MSBuild Projects="G:\Jaimin Office\Code_Test\DISoft _C\Utility\Utility.csproj" Targets="Rebuild" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="UtilityBuildOutput" />
+    </MSBuild>
+    <MSBuild Projects="G:\Jaimin Office\Code_Test\DISoft _C\Utility\Utility.csproj" Targets="Rebuild" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="UtilityBuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="Utility:Publish" Condition="'$(CurrentSolutionConfigurationContents)' != ''">
+    <MSBuild Projects="G:\Jaimin Office\Code_Test\DISoft _C\Utility\Utility.csproj" Targets="Publish" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="G:\Jaimin Office\Code_Test\DISoft _C\Utility\Utility.csproj" Targets="Publish" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') " />
+  </Target>
+  <Target Name="DICOM" Condition="'$(CurrentSolutionConfigurationContents)' != ''" Outputs="@(DICOMBuildOutput)">
+    <MSBuild Projects="G:\Jaimin Office\Code_Test\DISoft _C\DICOM\DICOM.csproj" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="DICOMBuildOutput" />
+    </MSBuild>
+    <MSBuild Projects="G:\Jaimin Office\Code_Test\DISoft _C\DICOM\DICOM.csproj" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="DICOMBuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="DICOM:Clean" Condition="'$(CurrentSolutionConfigurationContents)' != ''">
+    <MSBuild Projects="G:\Jaimin Office\Code_Test\DISoft _C\DICOM\DICOM.csproj" Targets="Clean" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="G:\Jaimin Office\Code_Test\DISoft _C\DICOM\DICOM.csproj" Targets="Clean" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') " />
+  </Target>
+  <Target Name="DICOM:Rebuild" Condition="'$(CurrentSolutionConfigurationContents)' != ''" Outputs="@(DICOMBuildOutput)">
+    <MSBuild Projects="G:\Jaimin Office\Code_Test\DISoft _C\DICOM\DICOM.csproj" Targets="Rebuild" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="DICOMBuildOutput" />
+    </MSBuild>
+    <MSBuild Projects="G:\Jaimin Office\Code_Test\DISoft _C\DICOM\DICOM.csproj" Targets="Rebuild" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="DICOMBuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="DICOM:Publish" Condition="'$(CurrentSolutionConfigurationContents)' != ''">
+    <MSBuild Projects="G:\Jaimin Office\Code_Test\DISoft _C\DICOM\DICOM.csproj" Targets="Publish" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="G:\Jaimin Office\Code_Test\DISoft _C\DICOM\DICOM.csproj" Targets="Publish" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') " />
+  </Target>
+  <Target Name="Build" Condition="'$(CurrentSolutionConfigurationContents)' != ''" Outputs="@(CollectedBuildOutput)">
+    <MSBuild Condition="@(BuildLevel0) != ''" Projects="@(BuildLevel0)" Properties="Configuration=%(Configuration); Platform=%(Platform); BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" BuildInParallel="true" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)">
+      <Output TaskParameter="TargetOutputs" ItemName="CollectedBuildOutput" />
+    </MSBuild>
+    <Message Text="The project &quot;%(SkipLevel0.Identity)&quot; is not selected for building in solution configuration &quot;$(Configuration)|$(Platform)&quot;." Condition="@(SkipLevel0) != ''" />
+    <Warning Text="The project configuration for project &quot;%(MissingConfigLevel0.Identity)&quot; was not specified in the solution file for the solution configuration &quot;$(Configuration)|$(Platform)&quot;." Code="MSB4121" HelpKeyword="MSBuild.SolutionProjectConfigurationMissing" Condition="@(MissingConfigLevel0) != ''" />
+    <CallTarget Targets="BiznetDiSoft_Web_2_0_0;BiznetDISoft_WS_2_0_0" RunEachTargetSeparately="true" />
+    <MSBuild Condition="@(BuildLevel1) != ''" Projects="@(BuildLevel1)" Properties="Configuration=%(Configuration); Platform=%(Platform); BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" BuildInParallel="true" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)">
+      <Output TaskParameter="TargetOutputs" ItemName="CollectedBuildOutput" />
+    </MSBuild>
+    <Message Text="The project &quot;%(SkipLevel1.Identity)&quot; is not selected for building in solution configuration &quot;$(Configuration)|$(Platform)&quot;." Condition="@(SkipLevel1) != ''" />
+    <Warning Text="The project configuration for project &quot;%(MissingConfigLevel1.Identity)&quot; was not specified in the solution file for the solution configuration &quot;$(Configuration)|$(Platform)&quot;." Code="MSB4121" HelpKeyword="MSBuild.SolutionProjectConfigurationMissing" Condition="@(MissingConfigLevel1) != ''" />
+    <MSBuild Condition="@(BuildLevel2) != ''" Projects="@(BuildLevel2)" Properties="Configuration=%(Configuration); Platform=%(Platform); BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" BuildInParallel="true" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)">
+      <Output TaskParameter="TargetOutputs" ItemName="CollectedBuildOutput" />
+    </MSBuild>
+    <Message Text="The project &quot;%(SkipLevel2.Identity)&quot; is not selected for building in solution configuration &quot;$(Configuration)|$(Platform)&quot;." Condition="@(SkipLevel2) != ''" />
+    <Warning Text="The project configuration for project &quot;%(MissingConfigLevel2.Identity)&quot; was not specified in the solution file for the solution configuration &quot;$(Configuration)|$(Platform)&quot;." Code="MSB4121" HelpKeyword="MSBuild.SolutionProjectConfigurationMissing" Condition="@(MissingConfigLevel2) != ''" />
+  </Target>
+  <Target Name="Clean" Condition="'$(CurrentSolutionConfigurationContents)' != ''">
+    <MSBuild Condition="@(BuildLevel0) != ''" Projects="@(BuildLevel0)" Properties="Configuration=%(Configuration); Platform=%(Platform); BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" Targets="Clean" ToolsVersion="$(ProjectToolsVersion)" BuildInParallel="true" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" />
+    <Message Text="The project &quot;%(SkipLevel0.Identity)&quot; is not selected for building in solution configuration &quot;$(Configuration)|$(Platform)&quot;." Condition="@(SkipLevel0) != ''" />
+    <Warning Text="The project configuration for project &quot;%(MissingConfigLevel0.Identity)&quot; was not specified in the solution file for the solution configuration &quot;$(Configuration)|$(Platform)&quot;." Code="MSB4121" HelpKeyword="MSBuild.SolutionProjectConfigurationMissing" Condition="@(MissingConfigLevel0) != ''" />
+    <CallTarget Targets="BiznetDiSoft_Web_2_0_0:Clean;BiznetDISoft_WS_2_0_0:Clean" RunEachTargetSeparately="true" />
+    <MSBuild Condition="@(BuildLevel1) != ''" Projects="@(BuildLevel1)" Properties="Configuration=%(Configuration); Platform=%(Platform); BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" Targets="Clean" ToolsVersion="$(ProjectToolsVersion)" BuildInParallel="true" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" />
+    <Message Text="The project &quot;%(SkipLevel1.Identity)&quot; is not selected for building in solution configuration &quot;$(Configuration)|$(Platform)&quot;." Condition="@(SkipLevel1) != ''" />
+    <Warning Text="The project configuration for project &quot;%(MissingConfigLevel1.Identity)&quot; was not specified in the solution file for the solution configuration &quot;$(Configuration)|$(Platform)&quot;." Code="MSB4121" HelpKeyword="MSBuild.SolutionProjectConfigurationMissing" Condition="@(MissingConfigLevel1) != ''" />
+    <MSBuild Condition="@(BuildLevel2) != ''" Projects="@(BuildLevel2)" Properties="Configuration=%(Configuration); Platform=%(Platform); BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" Targets="Clean" ToolsVersion="$(ProjectToolsVersion)" BuildInParallel="true" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" />
+    <Message Text="The project &quot;%(SkipLevel2.Identity)&quot; is not selected for building in solution configuration &quot;$(Configuration)|$(Platform)&quot;." Condition="@(SkipLevel2) != ''" />
+    <Warning Text="The project configuration for project &quot;%(MissingConfigLevel2.Identity)&quot; was not specified in the solution file for the solution configuration &quot;$(Configuration)|$(Platform)&quot;." Code="MSB4121" HelpKeyword="MSBuild.SolutionProjectConfigurationMissing" Condition="@(MissingConfigLevel2) != ''" />
+    <Delete Files="BiznetDiSoft_Web_2_0_0.sln.cache" />
+  </Target>
+  <Target Name="Rebuild" Condition="'$(CurrentSolutionConfigurationContents)' != ''" Outputs="@(CollectedBuildOutput)">
+    <MSBuild Condition="@(BuildLevel0) != ''" Projects="@(BuildLevel0)" Properties="Configuration=%(Configuration); Platform=%(Platform); BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" Targets="Rebuild" ToolsVersion="$(ProjectToolsVersion)" BuildInParallel="true" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)">
+      <Output TaskParameter="TargetOutputs" ItemName="CollectedBuildOutput" />
+    </MSBuild>
+    <Message Text="The project &quot;%(SkipLevel0.Identity)&quot; is not selected for building in solution configuration &quot;$(Configuration)|$(Platform)&quot;." Condition="@(SkipLevel0) != ''" />
+    <Warning Text="The project configuration for project &quot;%(MissingConfigLevel0.Identity)&quot; was not specified in the solution file for the solution configuration &quot;$(Configuration)|$(Platform)&quot;." Code="MSB4121" HelpKeyword="MSBuild.SolutionProjectConfigurationMissing" Condition="@(MissingConfigLevel0) != ''" />
+    <CallTarget Targets="BiznetDiSoft_Web_2_0_0:Rebuild;BiznetDISoft_WS_2_0_0:Rebuild" RunEachTargetSeparately="true" />
+    <MSBuild Condition="@(BuildLevel1) != ''" Projects="@(BuildLevel1)" Properties="Configuration=%(Configuration); Platform=%(Platform); BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" Targets="Rebuild" ToolsVersion="$(ProjectToolsVersion)" BuildInParallel="true" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)">
+      <Output TaskParameter="TargetOutputs" ItemName="CollectedBuildOutput" />
+    </MSBuild>
+    <Message Text="The project &quot;%(SkipLevel1.Identity)&quot; is not selected for building in solution configuration &quot;$(Configuration)|$(Platform)&quot;." Condition="@(SkipLevel1) != ''" />
+    <Warning Text="The project configuration for project &quot;%(MissingConfigLevel1.Identity)&quot; was not specified in the solution file for the solution configuration &quot;$(Configuration)|$(Platform)&quot;." Code="MSB4121" HelpKeyword="MSBuild.SolutionProjectConfigurationMissing" Condition="@(MissingConfigLevel1) != ''" />
+    <MSBuild Condition="@(BuildLevel2) != ''" Projects="@(BuildLevel2)" Properties="Configuration=%(Configuration); Platform=%(Platform); BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" Targets="Rebuild" ToolsVersion="$(ProjectToolsVersion)" BuildInParallel="true" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)">
+      <Output TaskParameter="TargetOutputs" ItemName="CollectedBuildOutput" />
+    </MSBuild>
+    <Message Text="The project &quot;%(SkipLevel2.Identity)&quot; is not selected for building in solution configuration &quot;$(Configuration)|$(Platform)&quot;." Condition="@(SkipLevel2) != ''" />
+    <Warning Text="The project configuration for project &quot;%(MissingConfigLevel2.Identity)&quot; was not specified in the solution file for the solution configuration &quot;$(Configuration)|$(Platform)&quot;." Code="MSB4121" HelpKeyword="MSBuild.SolutionProjectConfigurationMissing" Condition="@(MissingConfigLevel2) != ''" />
+  </Target>
+  <Target Name="Publish" Condition="'$(CurrentSolutionConfigurationContents)' != ''">
+    <MSBuild Condition="@(BuildLevel0) != ''" Projects="@(BuildLevel0)" Properties="Configuration=%(Configuration); Platform=%(Platform); BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" Targets="Publish" ToolsVersion="$(ProjectToolsVersion)" BuildInParallel="true" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" />
+    <Message Text="The project &quot;%(SkipLevel0.Identity)&quot; is not selected for building in solution configuration &quot;$(Configuration)|$(Platform)&quot;." Condition="@(SkipLevel0) != ''" />
+    <Warning Text="The project configuration for project &quot;%(MissingConfigLevel0.Identity)&quot; was not specified in the solution file for the solution configuration &quot;$(Configuration)|$(Platform)&quot;." Code="MSB4121" HelpKeyword="MSBuild.SolutionProjectConfigurationMissing" Condition="@(MissingConfigLevel0) != ''" />
+    <CallTarget Targets="BiznetDiSoft_Web_2_0_0:Publish;BiznetDISoft_WS_2_0_0:Publish" RunEachTargetSeparately="true" />
+    <MSBuild Condition="@(BuildLevel1) != ''" Projects="@(BuildLevel1)" Properties="Configuration=%(Configuration); Platform=%(Platform); BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" Targets="Publish" ToolsVersion="$(ProjectToolsVersion)" BuildInParallel="true" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" />
+    <Message Text="The project &quot;%(SkipLevel1.Identity)&quot; is not selected for building in solution configuration &quot;$(Configuration)|$(Platform)&quot;." Condition="@(SkipLevel1) != ''" />
+    <Warning Text="The project configuration for project &quot;%(MissingConfigLevel1.Identity)&quot; was not specified in the solution file for the solution configuration &quot;$(Configuration)|$(Platform)&quot;." Code="MSB4121" HelpKeyword="MSBuild.SolutionProjectConfigurationMissing" Condition="@(MissingConfigLevel1) != ''" />
+    <MSBuild Condition="@(BuildLevel2) != ''" Projects="@(BuildLevel2)" Properties="Configuration=%(Configuration); Platform=%(Platform); BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" Targets="Publish" ToolsVersion="$(ProjectToolsVersion)" BuildInParallel="true" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" />
+    <Message Text="The project &quot;%(SkipLevel2.Identity)&quot; is not selected for building in solution configuration &quot;$(Configuration)|$(Platform)&quot;." Condition="@(SkipLevel2) != ''" />
+    <Warning Text="The project configuration for project &quot;%(MissingConfigLevel2.Identity)&quot; was not specified in the solution file for the solution configuration &quot;$(Configuration)|$(Platform)&quot;." Code="MSB4121" HelpKeyword="MSBuild.SolutionProjectConfigurationMissing" Condition="@(MissingConfigLevel2) != ''" />
+  </Target>
+</Project>

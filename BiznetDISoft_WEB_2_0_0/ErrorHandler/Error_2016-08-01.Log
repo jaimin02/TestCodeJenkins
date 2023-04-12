@@ -1,0 +1,75 @@
+Err.Date: 8/1/2016 6:16:01 PM
+System.Web.Services.Protocols.SoapException: Server was unable to process request. ---> System.Data.SqlClient.SqlException: Invalid object name 'Test'.
+   at ClsDataLogic_New.ExecuteQuery_DataSet(String strQuery, String strTableName) in D:\BizNET\BizNETCTM\DiSOft_WS\App_Code\ClsDataLogic_New.vb:line 510
+   at WS_HelpDbTable.GetResultSet(String strQuery, String strTableNAme) in D:\BizNET\BizNETCTM\DiSOft_WS\App_Code\WS_HelpDbTable.vb:line 359
+   --- End of inner exception stack trace ---<BR> ....ddlMedDRA_SelectedIndexChanged
+UserNo :
+UserName :SuperUser
+User Division :
+URL:http://localhost/BizNETCTM_WEB/frmCTMMeddraBrowse.aspx?nRefMasterNo=26
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+
+Err.Date: 8/1/2016 6:16:15 PM
+System.Web.Services.Protocols.SoapException: Server was unable to process request. ---> System.Data.SqlClient.SqlException: Invalid object name 'Test'.
+   at ClsDataLogic_New.ExecuteQuery_DataSet(String strQuery, String strTableName) in D:\BizNET\BizNETCTM\DiSOft_WS\App_Code\ClsDataLogic_New.vb:line 510
+   at WS_HelpDbTable.GetResultSet(String strQuery, String strTableNAme) in D:\BizNET\BizNETCTM\DiSOft_WS\App_Code\WS_HelpDbTable.vb:line 359
+   --- End of inner exception stack trace ---<BR> ....ddlMedDRA_SelectedIndexChanged
+UserNo :
+UserName :SuperUser
+User Division :
+URL:http://localhost/BizNETCTM_WEB/frmCTMMeddraBrowse.aspx?nRefMasterNo=26
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+
+Err.Date: 8/1/2016 6:16:27 PM
+System.Web.Services.Protocols.SoapException: Server was unable to process request. ---> System.Data.SqlClient.SqlException: Invalid object name 'Test'.
+   at ClsDataLogic_New.ExecuteQuery_DataSet(String strQuery, String strTableName) in D:\BizNET\BizNETCTM\DiSOft_WS\App_Code\ClsDataLogic_New.vb:line 510
+   at WS_HelpDbTable.GetResultSet(String strQuery, String strTableNAme) in D:\BizNET\BizNETCTM\DiSOft_WS\App_Code\WS_HelpDbTable.vb:line 359
+   --- End of inner exception stack trace ---<BR> ....ddlMedDRA_SelectedIndexChanged
+UserNo :
+UserName :SuperUser
+User Division :
+URL:http://localhost/BizNETCTM_WEB/frmCTMMeddraBrowse.aspx?nRefMasterNo=26
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+
+Err.Date: 8/1/2016 6:21:54 PM
+System.Web.Services.Protocols.SoapException: Server was unable to process request. ---> System.Data.SqlClient.SqlException: Invalid object name 'Test'.
+   at ClsDataLogic_New.ExecuteQuery_DataSet(String strQuery, String strTableName) in D:\BizNET\BizNETCTM\DiSOft_WS\App_Code\ClsDataLogic_New.vb:line 510
+   at WS_HelpDbTable.GetResultSet(String strQuery, String strTableNAme) in D:\BizNET\BizNETCTM\DiSOft_WS\App_Code\WS_HelpDbTable.vb:line 359
+   --- End of inner exception stack trace ---<BR> ....ddlMedDRA_SelectedIndexChanged
+UserNo :
+UserName :SuperUser
+User Division :
+URL:http://localhost/BizNETCTM_WEB/frmCTMMeddraBrowse.aspx?nRefMasterNo=29
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+
+Err.Date: 8/1/2016 6:23:48 PM
+System.Web.Services.Protocols.SoapException: Server was unable to process request. ---> System.Data.SqlClient.SqlException: Invalid object name 'MEDRA21'.
+   at ClsDataLogic_New.ExecuteQuery_DataSet(String strQuery, String strTableName) in D:\BizNET\BizNETCTM\DiSOft_WS\App_Code\ClsDataLogic_New.vb:line 510
+   at WS_HelpDbTable.GetResultSet(String strQuery, String strTableNAme) in D:\BizNET\BizNETCTM\DiSOft_WS\App_Code\WS_HelpDbTable.vb:line 359
+   --- End of inner exception stack trace ---<BR> ....ddlMedDRA_SelectedIndexChanged
+UserNo :
+UserName :SuperUser
+User Division :
+URL:http://localhost/BizNETCTM_WEB/frmCTMMeddraBrowse.aspx?nRefMasterNo=25
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+

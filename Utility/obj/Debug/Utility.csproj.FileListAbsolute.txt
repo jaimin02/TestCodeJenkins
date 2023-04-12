@@ -1,0 +1,5 @@
+E:\Application\DISoft_C\DISoft _C\Utility\bin\Debug\Utility.dll
+E:\Application\DISoft_C\DISoft _C\Utility\bin\Debug\Utility.pdb
+E:\Application\DISoft_C\DISoft _C\Utility\obj\Debug\Utility.csprojResolveAssemblyReference.cache
+E:\Application\DISoft_C\DISoft _C\Utility\obj\Debug\Utility.dll
+E:\Application\DISoft_C\DISoft _C\Utility\obj\Debug\Utility.pdb

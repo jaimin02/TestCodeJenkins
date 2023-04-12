@@ -1,0 +1,488 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{340D9BCC-0076-4835-A88F-D2EF5C0AC471}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MedicalImaging</RootNamespace>
+    <AssemblyName>MedicalImaging</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>S3CSubversionScc</SccProvider>
+    <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Graph, Version=3.9.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Shared\SS.Mail\SS.Mail\DLL\Microsoft.Graph.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Identity.Client, Version=4.14.0.0, Culture=neutral, PublicKeyToken=0a613f4dd989e8ae, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Shared\SS.Mail\SS.Mail\DLL\Microsoft.Identity.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SS.Mail, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Shared\SS.Mail\SS.Mail\DLL\SS.Mail.dll</HintPath>
+    </Reference>
+    <Reference Include="SS.Web, Version=2.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\shared\SS.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Shared\SS.Mail\SS.Mail\DLL\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Shared\SS.Mail\SS.Mail\DLL\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics.Vectors, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Shared\SS.Mail\SS.Mail\DLL\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\FileDownloadController.cs" />
+    <Compile Include="Controllers\MIAnatomyController.cs" />
+    <Compile Include="Controllers\MIBizNETAdjudicatorResponseController.cs" />
+    <Compile Include="Controllers\MIBizNETImageReviewController.cs" />
+    <Compile Include="Controllers\MICheckListProjectController.cs" />
+    <Compile Include="Controllers\MICheckListTemplateController.cs" />
+    <Compile Include="Controllers\MIDicomStudyController.cs" />
+    <Compile Include="Controllers\MIDicomStudyDataController.cs" />
+    <Compile Include="Controllers\MIDicomStudyViewerController.cs" />
+    <Compile Include="Controllers\MIDicomViewerController.cs" />
+    <Compile Include="Controllers\MIHomeController.cs" />
+    <Compile Include="Controllers\MIImageReviewController.cs" />
+    <Compile Include="Controllers\MILoginController.cs" />
+    <Compile Include="Controllers\MIModalityController.cs" />
+    <Compile Include="Controllers\MIStatisticsReportController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MIBiznetImageTransmittal.cs" />
+    <Compile Include="Models\MICommon.cs" />
+    <Compile Include="Models\MIDicom.cs" />
+    <Compile Include="Models\MIImageTransmittal.cs" />
+    <Compile Include="Models\MiLogin.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\clsCommon.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="Contents\Themes\Css\AdminLTE.min.css" />
+    <Content Include="Contents\Themes\Css\blue.css" />
+    <Content Include="Contents\Themes\Css\bootstrap.min.css" />
+    <Content Include="Contents\Themes\Css\bootstrap3-wysihtml5.min.css" />
+    <Content Include="Contents\Themes\Css\component.css" />
+    <Content Include="Contents\Themes\Css\Custom.css" />
+    <Content Include="Contents\Themes\Css\daterangepicker.css" />
+    <Content Include="Contents\Themes\Css\demo.css" />
+    <Content Include="Contents\Themes\Css\Dicom.css" />
+    <Content Include="Contents\Themes\Css\font-awesome.min.css" />
+    <Content Include="Contents\Themes\Css\jquery-jvectormap-1.2.2.css" />
+    <Content Include="Contents\Themes\Css\Login.css" />
+    <Content Include="Contents\Themes\Css\main-color-1.css" />
+    <Content Include="Contents\Themes\Css\material.min.css" />
+    <Content Include="Contents\Themes\Css\morris.css" />
+    <Content Include="Contents\Themes\Css\skin-blue.min.css" />
+    <Content Include="Contents\Themes\Css\style.css" />
+    <Content Include="Contents\Themes\Css\style2.css" />
+    <Content Include="Contents\Themes\Css\_all-skins.min.css" />
+    <Content Include="Contents\Themes\Fonts\codropsicons.svg" />
+    <Content Include="Contents\Themes\Fonts\ecoicon.dev.svg" />
+    <Content Include="Contents\Themes\Fonts\ecoicon.svg" />
+    <Content Include="Contents\Themes\Fonts\fontawesome-webfont3295.svg" />
+    <Content Include="Contents\Themes\Fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Contents\Themes\Fonts\license.txt" />
+    <Content Include="Contents\Themes\Images\1.jpg" />
+    <Content Include="Contents\Themes\Images\2.jpg" />
+    <Content Include="Contents\Themes\Images\3.jpg" />
+    <Content Include="Contents\Themes\Images\4.jpg" />
+    <Content Include="Contents\Themes\Images\5.jpg" />
+    <Content Include="Contents\Themes\Images\6.jpg" />
+    <Content Include="Contents\Themes\Images\back.png" />
+    <Content Include="Contents\Themes\Images\boxed-bg.jpg" />
+    <Content Include="Contents\Themes\Images\default-50x50.gif" />
+    <Content Include="Contents\Themes\Images\DI_LOGO.ico" />
+    <Content Include="Contents\Themes\Images\DI_LOGO_BLACK.png" />
+    <Content Include="Contents\Themes\Images\DI_LOGO_WHITE.png" />
+    <Content Include="Contents\Themes\Images\Information.png" />
+    <Content Include="Contents\Themes\Images\loader.GIF" />
+    <Content Include="Contents\Themes\Images\logo.png" />
+    <Content Include="Contents\Themes\Images\MI_LOGO.ico" />
+    <Content Include="Contents\Themes\Images\MI_LOGO.png" />
+    <Content Include="Contents\Themes\Images\photo1.png" />
+    <Content Include="Contents\Themes\Images\photo2.png" />
+    <Content Include="Contents\Themes\Images\photo3.jpg" />
+    <Content Include="Contents\Themes\Images\photo4.jpg" />
+    <Content Include="Contents\Themes\Images\user1-128x128.jpg" />
+    <Content Include="Contents\Themes\Images\user2-160x160.jpg" />
+    <Content Include="Contents\Themes\Images\user3-128x128.jpg" />
+    <Content Include="Contents\Themes\Images\user4-128x128.jpg" />
+    <Content Include="Contents\Themes\Images\user5-128x128.jpg" />
+    <Content Include="Contents\Themes\Images\user6-128x128.jpg" />
+    <Content Include="Contents\Themes\Images\user7-128x128.jpg" />
+    <Content Include="Contents\Themes\Images\user8-128x128.jpg" />
+    <Content Include="Contents\Themes\Js\app.min.js" />
+    <Content Include="Contents\Themes\Js\bootstrap-datepicker.js" />
+    <Content Include="Contents\Themes\Js\bootstrap.min.js" />
+    <Content Include="Contents\Themes\Js\bootstrap3-wysihtml5.all.min.js" />
+    <Content Include="Contents\Themes\Js\color-switcher.js" />
+    <Content Include="Contents\Themes\Js\dashboard.js" />
+    <Content Include="Contents\Themes\Js\dashboard2.js" />
+    <Content Include="Contents\Themes\Js\daterangepicker.js" />
+    <Content Include="Contents\Themes\Js\demo.js" />
+    <Content Include="Contents\Themes\Js\fastclick.js" />
+    <Content Include="Contents\Themes\Js\jquery-1.12.4.js" />
+    <Content Include="Contents\Themes\Js\jquery-2.2.2.min.js" />
+    <Content Include="Contents\Themes\Js\jquery-2.2.3.min.js" />
+    <Content Include="Contents\Themes\Js\jquery-3.6.1.js" />
+    <Content Include="Contents\Themes\Js\jquery-3.6.1.min.js" />
+    <Content Include="Contents\Themes\Js\jquery-jvectormap-1.2.2.min.js" />
+    <Content Include="Contents\Themes\Js\jquery-jvectormap-world-mill-en.js" />
+    <Content Include="Contents\Themes\Js\jquery-ui.js" />
+    <Content Include="Contents\Themes\Js\jquery-ui.min.js" />
+    <Content Include="Contents\Themes\Js\jquery.knob.js" />
+    <Content Include="Contents\Themes\Js\jquery.slimscroll.min.js" />
+    <Content Include="Contents\Themes\Js\jquery.sparkline.min.js" />
+    <Content Include="Contents\Themes\Js\jquery.validate.min.js" />
+    <Content Include="Contents\Themes\Js\main.js" />
+    <Content Include="Contents\Themes\Js\material.min.js" />
+    <Content Include="Contents\Themes\Js\modernizr.custom.86080.js" />
+    <Content Include="Contents\Themes\Js\moment.min.js" />
+    <Content Include="Contents\Themes\Js\morris.min.js" />
+    <Content Include="Contents\Themes\Js\raphael-min.js" />
+    <Content Include="Contents\Themes\Plugins\AutoComplete\select2.css" />
+    <Content Include="Contents\Themes\Plugins\AutoComplete\select2.full.js" />
+    <Content Include="Contents\Themes\Plugins\AutoComplete\typeahead.js" />
+    <Content Include="Contents\Themes\Plugins\Confirm\Css\jquery-confirm.css" />
+    <Content Include="Contents\Themes\Plugins\Confirm\Js\jquery-confirm.js" />
+    <Content Include="Contents\Themes\Plugins\DataTable\Css\buttons.dataTables.min.css" />
+    <Content Include="Contents\Themes\Plugins\DataTable\Css\dataTables.bootstrap.css" />
+    <Content Include="Contents\Themes\Plugins\DataTable\Css\jquery.dataTables.css" />
+    <Content Include="Contents\Themes\Plugins\DataTable\Css\jquery.dataTables.min.css" />
+    <Content Include="Contents\Themes\Plugins\DataTable\Css\jquery.dataTables_themeroller.css" />
+    <Content Include="Contents\Themes\Plugins\DataTable\Js\buttons.flash.min.js" />
+    <Content Include="Contents\Themes\Plugins\DataTable\Js\buttons.html5.min.js" />
+    <Content Include="Contents\Themes\Plugins\DataTable\Js\buttons.print.min.js" />
+    <Content Include="Contents\Themes\Plugins\DataTable\Js\dataTables.bootstrap.js" />
+    <Content Include="Contents\Themes\Plugins\DataTable\Js\dataTables.bootstrap.min.js" />
+    <Content Include="Contents\Themes\Plugins\DataTable\Js\jquery.dataTables.js" />
+    <Content Include="Contents\Themes\Plugins\DataTable\Js\jquery.dataTables.min.js" />
+    <Content Include="Contents\Themes\Plugins\DataTable\Js\jszip.min.js" />
+    <Content Include="Contents\Themes\Plugins\DataTable\Js\pdfmake.min.js" />
+    <Content Include="Contents\Themes\Plugins\DataTable\Js\vfs_fonts.js" />
+    <Content Include="Contents\Themes\Plugins\Dicom\Css\bootstrap.min.css" />
+    <Content Include="Contents\Themes\Plugins\Dicom\Css\cornerstone.css" />
+    <Content Include="Contents\Themes\Plugins\Dicom\Css\cornerstone.min.css" />
+    <Content Include="Contents\Themes\Plugins\Dicom\Css\cornerstoneDemo.css" />
+    <Content Include="Contents\Themes\Plugins\Dicom\Css\dialogPolyfill.css" />
+    <Content Include="Contents\Themes\Plugins\Dicom\Css\font-awesome.min.css" />
+    <Content Include="Contents\Themes\Plugins\Dicom\fonts\fontawesome-webfont.svg" />
+    <Content Include="Contents\Themes\Plugins\Dicom\Js\about.js" />
+    <Content Include="Contents\Themes\Plugins\Dicom\Js\bootstrap.min.js" />
+    <Content Include="Contents\Themes\Plugins\Dicom\Js\cornerstone.js" />
+    <Content Include="Contents\Themes\Plugins\Dicom\Js\cornerstone.min.js" />
+    <Content Include="Contents\Themes\Plugins\Dicom\Js\cornerstoneMath.js" />
+    <Content Include="Contents\Themes\Plugins\Dicom\Js\cornerstoneTools.js" />
+    <Content Include="Contents\Themes\Plugins\Dicom\Js\cornerstoneWADOImageLoader.js" />
+    <Content Include="Contents\Themes\Plugins\Dicom\Js\cornerstoneWADOImageLoader.min.js" />
+    <Content Include="Contents\Themes\Plugins\Dicom\Js\cornerstoneWebImageLoader.js" />
+    <Content Include="Contents\Themes\Plugins\Dicom\Js\cornerstoneWebImageLoader.min.js" />
+    <Content Include="Contents\Themes\Plugins\Dicom\Js\dialogPolyfill.js" />
+    <Content Include="Contents\Themes\Plugins\Dicom\Js\DicomMain.js" />
+    <Content Include="Contents\Themes\Plugins\Dicom\Js\dicomParser.js" />
+    <Content Include="Contents\Themes\Plugins\Dicom\Js\dicomParser.min.js" />
+    <Content Include="Contents\Themes\Plugins\Dicom\Js\disableAllTools.js" />
+    <Content Include="Contents\Themes\Plugins\Dicom\Js\displayThumbnail.js" />
+    <Content Include="Contents\Themes\Plugins\Dicom\Js\exampleImageIdLoader.js" />
+    <Content Include="Contents\Themes\Plugins\Dicom\Js\exampleImageLoader.js" />
+    <Content Include="Contents\Themes\Plugins\Dicom\Js\exampleMetaDataProvider.js" />
+    <Content Include="Contents\Themes\Plugins\Dicom\Js\forEachViewport.js" />
+    <Content Include="Contents\Themes\Plugins\Dicom\Js\hammer.min.js" />
+    <Content Include="Contents\Themes\Plugins\Dicom\Js\help.js" />
+    <Content Include="Contents\Themes\Plugins\Dicom\Js\imageViewer.js" />
+    <Content Include="Contents\Themes\Plugins\Dicom\Js\jquery-ui.min.js" />
+    <Content Include="Contents\Themes\Plugins\Dicom\Js\jquery.min.js" />
+    <Content Include="Contents\Themes\Plugins\Dicom\Js\libCharLS.js" />
+    <Content Include="Contents\Themes\Plugins\Dicom\Js\libopenjpeg.js" />
+    <Content Include="Contents\Themes\Plugins\Dicom\Js\loadStudy.js" />
+    <Content Include="Contents\Themes\Plugins\Dicom\Js\loadTemplate.js" />
+    <Content Include="Contents\Themes\Plugins\Dicom\Js\setupButtons.js" />
+    <Content Include="Contents\Themes\Plugins\Dicom\Js\setupViewport.js" />
+    <Content Include="Contents\Themes\Plugins\Dicom\Js\setupViewportOverlays.js" />
+    <Content Include="Contents\Themes\Plugins\Dicom\Js\touch-emulator.js" />
+    <Content Include="Contents\Themes\Plugins\Dicom\Js\uids.js" />
+    <Content Include="Contents\Themes\Plugins\MultiSelect\bootstrap-multiselect.css" />
+    <Content Include="Contents\Themes\Plugins\MultiSelect\bootstrap-multiselect.js" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\Dicom.js" />
+    <Content Include="Scripts\General.js" />
+    <Content Include="Scripts\Layout.js" />
+    <Content Include="Scripts\MIAnatomy.js" />
+    <Content Include="Scripts\MIBizNETAdjudicatorResponse.js" />
+    <Content Include="Scripts\MIBizNETImageReview.js" />
+    <Content Include="Scripts\MICheckListProject.js" />
+    <Content Include="Scripts\MICheckListTemplate.js" />
+    <Content Include="Scripts\MIDicom.js" />
+    <Content Include="Scripts\MIDicomStudy.js" />
+    <Content Include="Scripts\MIDicomStudyData.js" />
+    <Content Include="Scripts\MIHome.js" />
+    <Content Include="Scripts\MIImageReview.js" />
+    <Content Include="Scripts\MILogin.js" />
+    <Content Include="Contents\Themes\Css\ionicons.min.css" />
+    <Content Include="Contents\Themes\Css\datepicker3.css" />
+    <Content Include="Scripts\MIModality.js" />
+    <Content Include="Scripts\MIStatisticsReport.js" />
+    <Content Include="Scripts\Validation.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Styles\" />
+    <Folder Include="Uploader\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\MILogin\Login.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Contents\Themes\Fonts\ecoicon.eot" />
+    <Content Include="Contents\Themes\Fonts\ecoicon.ttf" />
+    <Content Include="Contents\Themes\Fonts\ecoicon.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Contents\Themes\Fonts\.DS_Store" />
+    <Content Include="Contents\Themes\Fonts\fontawesome-webfont3295.eot" />
+    <Content Include="Contents\Themes\Fonts\fontawesome-webfont3295.ttf" />
+    <Content Include="Contents\Themes\Fonts\fontawesome-webfont3295.woff" />
+    <Content Include="Contents\Themes\Fonts\fontawesome-webfont3295.woff2" />
+    <Content Include="Contents\Themes\Fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="Contents\Themes\Fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Contents\Themes\Fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Contents\Themes\Fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Contents\Themes\Fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Contents\Themes\Fonts\glyphicons-halflings-regulard41d.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Contents\Themes\Fonts\codropsicons.eot" />
+    <Content Include="Contents\Themes\Fonts\codropsicons.ttf" />
+    <Content Include="Contents\Themes\Fonts\codropsicons.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{99F627AF-7959-4273-A4E5-3235E0A5A731}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MIApi\MIApi.csproj">
+      <Project>{1420579E-C56F-4F14-9965-754E0C53AD00}</Project>
+      <Name>MIApi</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utility\Utility.csproj">
+      <Project>{cd07fef1-b920-47d9-8001-48b1a131e68b}</Project>
+      <Name>Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\MIHome\Home.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\MIModality\MIModality.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\MIAnatomy\MIAnatomy.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\MICheckListTemplate\MICheckListTemplate.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\MICheckListProject\MICheckListProject.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\MIDicomViewer\MIDicomViewer.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Contents\Themes\Plugins\Dicom\fonts\fontawesome-webfont.eot" />
+    <Content Include="Contents\Themes\Plugins\Dicom\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Contents\Themes\Plugins\Dicom\fonts\fontawesome-webfont.woff" />
+    <Content Include="Contents\Themes\Plugins\Dicom\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Contents\Themes\Plugins\Dicom\fonts\FontAwesome.otf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\MIImageReview\MIImageReview.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\MIBizNETImageReview\MIBizNETImageReview.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\MIDicomStudy\MIDicomStudy.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Contents\Themes\Plugins\DataTable\Js\dataTables.buttons.min.js" />
+    <Content Include="Contents\Themes\Fonts\password.ttf" />
+    <None Include="Properties\PublishProfiles\MI.pubxml" />
+    <Content Include="Views\MIStatisticsReport\MIStatisticsReport.cshtml" />
+    <Content Include="Views\MIDicomStudyData\MIDicomStudyData.cshtml" />
+    <Content Include="Views\MIDicomStudyViewer\MIDicomStudyViewer.cshtml" />
+    <Content Include="Views\MIBizNETAdjudicatorResponse\MIBizNETAdjudicatorResponse.cshtml" />
+    <Content Include="Views\MILogin\ChangePassword.cshtml" />
+    <Content Include="Views\MILogin\ForgotPassword.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:51577/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

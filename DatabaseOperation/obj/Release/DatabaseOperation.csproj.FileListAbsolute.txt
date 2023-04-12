@@ -1,0 +1,20 @@
+E:\Application\DISoft_C\DISoft _C\DatabaseOperation\obj\Release\DatabaseOperation.csprojResolveAssemblyReference.cache
+E:\Application\DISoft_C\DISoft _C\DatabaseOperation\bin\Release\DatabaseOperation.dll
+E:\Application\DISoft_C\DISoft _C\DatabaseOperation\bin\Release\DatabaseOperation.pdb
+E:\Application\DISoft_C\DISoft _C\DatabaseOperation\bin\Release\DTO.dll
+E:\Application\DISoft_C\DISoft _C\DatabaseOperation\bin\Release\Utility.dll
+E:\Application\DISoft_C\DISoft _C\DatabaseOperation\bin\Release\DTO.pdb
+E:\Application\DISoft_C\DISoft _C\DatabaseOperation\bin\Release\Utility.pdb
+E:\Application\DISoft_C\DISoft _C\DatabaseOperation\obj\Release\DatabaseOperation.dll
+E:\Application\DISoft_C\DISoft _C\DatabaseOperation\obj\Release\DatabaseOperation.pdb
+G:\Jaimin Office\Code_Test\DISoft _C\DatabaseOperation\bin\Release\DatabaseOperation.dll
+G:\Jaimin Office\Code_Test\DISoft _C\DatabaseOperation\bin\Release\DatabaseOperation.pdb
+G:\Jaimin Office\Code_Test\DISoft _C\DatabaseOperation\bin\Release\DTO.dll
+G:\Jaimin Office\Code_Test\DISoft _C\DatabaseOperation\bin\Release\Utility.dll
+G:\Jaimin Office\Code_Test\DISoft _C\DatabaseOperation\bin\Release\DTO.pdb
+G:\Jaimin Office\Code_Test\DISoft _C\DatabaseOperation\bin\Release\Utility.pdb
+G:\Jaimin Office\Code_Test\DISoft _C\DatabaseOperation\obj\Release\DatabaseOperation.csproj.AssemblyReference.cache
+G:\Jaimin Office\Code_Test\DISoft _C\DatabaseOperation\obj\Release\DatabaseOperation.csproj.CoreCompileInputs.cache
+G:\Jaimin Office\Code_Test\DISoft _C\DatabaseOperation\obj\Release\DatabaseOperation.csproj.CopyComplete
+G:\Jaimin Office\Code_Test\DISoft _C\DatabaseOperation\obj\Release\DatabaseOperation.dll
+G:\Jaimin Office\Code_Test\DISoft _C\DatabaseOperation\obj\Release\DatabaseOperation.pdb

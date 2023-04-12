@@ -1,0 +1,1010 @@
+﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="frmCRFVersionReport.aspx.vb" Inherits="frmCRFVersionReport" MasterPageFile="~/MasterPage.master" %>
+
+
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="CPHLAMBDA" runat="Server">
+
+
+      <script src="Script/jquery-1.4.3.min.js" type="text/javascript"></script>
+    <script src="Script/jquery-1.7.2.min.js" type="text/javascript"></script>
+
+    <style type="text/css">
+        .widget
+        {
+            float: left;
+            margin: 1%;
+            margin-bottom: 1%;
+            margin-top: 7px;
+            height: 430px;
+            max-height: 700px;
+            border-top: 3px solid #B8DBF8;
+            border-left: 3px solid #B9DEFC;
+            border-bottom: 3px solid #B3D8F6;
+            border-right: 3px solid #BAE0FF;
+            -webkit-border-radius: 30px;
+            border-radius: 18px;
+            font: 10pt Georgia,Times,serif;
+            padding: -41px;
+            width: 47%;
+            overflow: hidden;
+            background: #fbfdff; /* Old browsers */ /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+            background: url(data:image/svg+xml;
+            base64: ,,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSI1NyUiIHN0b3AtY29sb3I9IiNmYmZkZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZjNmYWZmIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2YzZmFmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmMmY5ZmUiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZjJmOWZlIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2VjZjZmZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+            background: -moz-linear-gradient(top, #fbfdff 57%, #f3faff 100%, #f3faff 100%, #f2f9fe 100%, #f2f9fe 100%, #ecf6fe 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(57%,#fbfdff), color-stop(100%,#f3faff), color-stop(100%,#f3faff), color-stop(100%,#f2f9fe), color-stop(100%,#f2f9fe), color-stop(100%,#ecf6fe)); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top, #fbfdff 57%,#f3faff 100%,#f3faff 100%,#f2f9fe 100%,#f2f9fe 100%,#ecf6fe 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top, #fbfdff 57%,#f3faff 100%,#f3faff 100%,#f2f9fe 100%,#f2f9fe 100%,#ecf6fe 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(top, #fbfdff 57%,#f3faff 100%,#f3faff 100%,#f2f9fe 100%,#f2f9fe 100%,#ecf6fe 100%); /* IE10+ */
+            background: linear-gradient(to bottom, #fbfdff 57%,#f3faff 100%,#f3faff 100%,#f2f9fe 100%,#f2f9fe 100%,#ecf6fe 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=     '#fbfdff' ,endColorstr= '#ecf6fe' ,GradientType=0); /* IE6-8 */
+        }
+        .divHDR
+        {
+            background: #379CEB; /* Old browsers */ /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+            background: url(data:image/svg+xml;
+            base64: ,,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzBmNzBiYiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjM2Q5ZmUxIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiMzZDlmZTEiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzRkYWNlZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjNGRhY2VmIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iNzQlIiBzdG9wLWNvbG9yPSIjZGNlN2VmIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==); /*background: -moz-linear-gradient(top,  #0f70bb 0%, #3d9fe1 0%, #3d9fe1 0%, #4dacef 0%, #4dacef 0%, #dce7ef 74%); /* FF3.6+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=     '#0f70bb' ,endColorstr= '#dce7ef' ,GradientType=0); /* IE6-8 */
+            height: 58px;
+            margin: 0px;
+            margin-bottom: 0px;
+            padding-top: 10px;
+            top: 0px;
+            text-align: left;
+            vertical-align: middle;
+            position: relative;
+            font-family: Verdana;
+            font-size: 14pximportant;
+            font-weight: bolder;
+            font-variant: small-caps;
+            color: #FFFFFF !important;
+        }
+        .divBODY
+        {
+            font-family: Verdana;
+            font-size: 14px !important;
+            font-variant: small-caps;
+            text-align: left;
+        }
+        .ULParentActivity
+        {
+            text-align: left;
+            padding: 0 0 2px 0;
+            height: 5px;
+            padding-left: 10px;
+        }
+        .LIChildActivity
+        {
+            text-align: left;
+            margin-left: 50px;
+            padding: 10px 0 0 10px;
+        }
+        
+        .ULChangedActivity
+        {
+            height: auto;
+            text-align: left;
+            margin: 1px;
+            padding: 7px 0 0 0;
+            color: green;
+           
+        }
+        .LIChangedActivity
+        {
+        	text-align: left;
+            margin-left: 50px;
+            padding: 10px 0 0 10px;
+            color:Green;
+        }
+        .ULDeletedActivity
+        {
+            height: auto;
+            text-align: left;
+            margin: 1px;
+            padding: 0px 0px 10px 0px;
+            color: red;
+        }
+        .LIDeletedActivity
+        {
+        	text-align: left;
+            margin-left: 50px;
+            padding: 10px 0 0 10px;
+            color:red;
+        }
+        .divParentActivity
+        {
+            text-align: left;
+            padding: 0 0 10px 0;
+        }
+        .ActivityName
+        {
+            color: black;
+            font-family: Verdana;
+            font-size: medium;
+            font-style: normal;
+        }
+        .dropDown
+        {
+            box-sizing: border-box;
+            -webkit-box-align: center;
+            border: 1px solid;
+            border-top-width: 1px;
+            border-right-width: 1px;
+            border-bottom-width: 1px;
+            border-left-width: 1px;
+            border-top-style: solid;
+            border-right-style: solid;
+            border-bottom-style: solid;
+            border-left-style: solid;
+            border-color: #2372b2;
+            white-space: pre;
+            -webkit-rtl-ordering: logical;
+            color: navy;
+            font-weight: small;
+            cursor: default;
+        }
+        .divMain
+        {
+            /*border: 2px solid;*/
+            border-radius: 5px;
+            padding-left: 135px;
+            padding-top: 14px;
+            width: 85%;
+            margin-left: 9px;
+            margin-top: 5px; /*-webkit-box-shadow: 0 0 7px 2px #BBD4ED;
+            -moz-box-shadow: 0 0 7px 2px #BBD4ED;*/
+            box-shadow: 0 0 3px 3px #BBD4ED;
+        }
+        .tblSortable
+        {
+            /*border: 2px solid;*/
+            border-color: #BBD4ED;
+            width: 98%;
+            margin-top: 20px;
+            margin-left: 12px; /*padding-left:3px;*/ /*-webkit-box-shadow: 0 0 7px 2px #BBD4ED;
+            -moz-box-shadow: 0 0 7px 2px #BBD4ED;*/
+            box-shadow: 0 0 3px 3px #BBD4ED;
+            border-radius: 5px;
+        }
+        .line
+        {
+            margin-top: 23px;
+            margin-left: -1px;
+            width: 107%;
+            border: 1px medium; /*-webkit-box-shadow: 0 0 7px 2px #BBD4ED;
+            -moz-box-shadow: 0 0 7px 2px #BBD4ED;*/
+            box-shadow: 0 0 2px 1px #BBD4ED;
+            border-radius: 5px;
+        }
+        .headerlbl
+        {
+            color: navy;
+            font-weight: bold;
+            margin-left: 6px;
+            margin-right: 48px font-family: Verdana;
+            font-size: 8px;
+            font-variant: small-caps;
+        }
+        .tdInnerHtml
+        {
+            font-family: Calibri;
+            font-size: small;
+        }
+        .Img
+        {
+            width: 10%;
+            text-align: right;
+            opacity: 0.8;
+            padding-left: 13px;
+        }
+        .tdheader
+        {
+            width: 204px;
+        }
+        .FieldSetBox
+        {
+            border: #BBD4ED 1px solid;
+            z-index: 0px;
+            border-radius: -3px;
+        }
+        .PDFimg
+        {
+            width: 44px;
+            height: 44px;
+            border-radius: 16px;
+            box-shadow: -8px -9px 10px rgba(110, 182, 238, 2.67);
+            cursor: pointer;
+        }
+        .button
+        {
+            border-right: navy 2px solid;
+            border-top: navy 2px solid;
+            font-size: x-small;
+            background: white;
+            border-left: navy 2px solid;
+            border-bottom: navy 2px solid;
+            font-style: normal;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            color: #284E98;
+            font-size: smaller;
+            width: auto;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .hr
+        {
+            width: 80%;
+            color: black;
+            height: 3px;
+        }
+    </style>
+    <asp:ScriptManagerProxy ID="ScriptManagerProxy1" runat="server">
+    </asp:ScriptManagerProxy>
+    <div id="Main" class="divMain">
+        <table style="width: 90%; margin: auto;">
+            <tr>
+                <td style="width: 20%; text-align: right;">
+                    <b>Project Name:</b>
+                </td>
+                <td align="left" class="Label" style="text-align: left; width: 80%;">
+                    <asp:TextBox ID="txtProject" runat="server" CssClass="textBox" Style="width: 60%"
+                        ToolTip="Enter Project No "></asp:TextBox>
+                    <asp:HiddenField ID="HProjectId" runat="server" />
+                    <asp:HiddenField ID="HProjectNo" runat="server" />
+                    <asp:HiddenField ID="HVersionNo" runat="server" />
+                    <asp:HiddenField ID="HFreezeStatus" runat="server" />
+                    <asp:HiddenField ID="HFreezedDate" runat="server" />
+                    <asp:HiddenField ID="HinnerHTML" runat="server" />
+                    <asp:HiddenField ID="HHeaderText" runat="server" />
+                    <asp:HiddenField ID="HPDFCombine" runat="server" />
+                    <asp:Button ID="getPDF" runat="server" Style="display: none" UseSubmitBehavior="false" />
+                    
+                    <asp:Button Style="display: none" ID="btnSetProject" runat="server" Text=" Project"
+                        OnClientClick="return funRadioList();"></asp:Button>
+                    <cc1:AutoCompleteExtender ID="AutoCompleteExtender1" runat="server" BehaviorID="AutoCompleteExtender1"
+                        CompletionListCssClass="autocomplete_list" CompletionListHighlightedItemCssClass="autocomplete_highlighted_listitem"
+                        CompletionListItemCssClass="autocomplete_listitem" MinimumPrefixLength="1" OnClientItemSelected="OnSelected"
+                        OnClientShowing="ClientPopulated" ServiceMethod="GetCrfVersionProjectList" ServicePath="AutoComplete.asmx"
+                        TargetControlID="txtProject" UseContextKey="True" CompletionListElementID="pnlProjectList">
+                    </cc1:AutoCompleteExtender>
+                    <asp:Panel ID="pnlProjectList" runat="server" Style="max-height: 200px; overflow: auto;
+                        overflow-x: hidden" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td style="text-align: left;" usesubmitbehavior="false">
+                    <asp:RadioButtonList runat="server" class="rbl" RepeatDirection="Horizontal" ID="rblActivity"
+                        Style="display: none;">
+                        <asp:ListItem Text="ActivityWise-Report" Value="Activity"></asp:ListItem>
+                        <asp:ListItem Text="AttributeWise-Report" Value="Attribute"></asp:ListItem>
+                    </asp:RadioButtonList>
+                </td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td>
+                    <div id="divact"><b>Activity:</b></div>
+                </td>
+                <td style="text-align: left;">
+                    <div id="divDDLActivity">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+            </tr>
+        </table>
+    </div>
+    <table id="tblmain" class="tblSortable" style="display: none">
+        <tr>
+            <td id="Td1" style="width: auto%; float: left;">
+                <span>CRF Version Report</span>
+            </td>
+            <td id="tdcanal" style="text-align: left; width: auto; float: right">
+                <table id="canal" style="width: auto; height: 3px; display: none;" class="FieldSetBox">
+                    <tr>
+                        <td style="background-color: green; width: 14px; height: 7px; border-radius: 8px;">
+                        </td>
+                        <td>
+                            -N
+                        </td>
+                        <td style="background-color: Red; width: 14px; height: 7px; border-radius: 8px;">
+                        </td>
+                        <td>
+                            -D
+                        </td>
+                        <td style="width: 2px">
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td width="14%">
+                <span>Legends</span>
+                <img id="imgShow" src="images/question.gif" alt="Legends" onmouseover="funShowLegends();" />
+            </td>
+        </tr>
+        <tr>
+            <td id="tdline" width="100%">
+                <hr id="hdrline" class="line" />
+            </td>
+        </tr>
+        <tr align="center">
+            <td colspan="3" style="width: 44%">
+                <input type="button" class="btn btnpdf" id="btnPDF"
+                     onclick="return fun()" />
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 100%" colspan="3">
+                <div id="maindiv" class="1">
+                </div>
+            </td>
+        </tr>
+    </table>
+    <table id="tblGeneratePDF" width="98%" style="margin-top: 20px; margin-left: 12px;
+        display: none">
+        <tr align="center">
+            <td>
+                <asp:Button ID="GeneratePDF" runat="server" CssClass="btn btnpdf" Text=""
+                    OnClientClick="return validateForm();" ToolTip="Generate PDF" />
+                <asp:HiddenField ID="HheaderHTML" runat="server" />
+                <asp:HiddenField ID="HFVersionNumber" runat="server" />
+                <asp:HiddenField ID="HFSponsor" runat="server" />
+                <asp:HiddenField ID="HFActivityName" runat="server" />
+            </td>
+        </tr>
+    </table>
+    <div id="divHeaderPDF" style="display: none;" runat="server" align="left">
+        <table style="padding: 2px; margin: auto; border: solid 1px black; width: 91%; font-family: Verdana;"
+            align="left">
+            <tr>
+                <td>
+                    <table>
+                        <tr>
+                            <td colspan="4" style="vertical-align: top;">
+                                <table>
+                                    <tr>
+                                        <td style="vertical-align: top; font-size: large; font-weight: 900">
+                                            Lambda Therapeutic Research
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="vertical-align: top; font-size: larger; font-weight: 700">
+                                            <span id="spnBaBe" runat="server"></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                    </tr>
+                                    <tr>
+                                        <td style="vertical-align: bottom; font-size: medium; font-weight: 600; text-align: right">
+                                            CRF Version Report
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">
+                                Project No:
+                            </td>
+                            <td style="border: thin solid #000000;">
+                                <asp:Label ID="lblProjectNo" runat="server" Text="_"></asp:Label>
+                            </td>
+                            <td align="right">
+                                <span id="SpnSubject" runat="server">Sponsor Name: </span>
+                            </td>
+                            <td style="border: thin solid #000000;">
+                                <asp:Label ID="lblSponsor" runat="server" Text="_"></asp:Label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">
+                                <span id="Span2" runat="server">Version no: </span>
+                            </td>
+                            <td style="border: thin solid #000000;">
+                                <asp:Label ID="lblVersionNo" runat="server" Text="_"></asp:Label>
+                            </td>
+                            <td id="tdSiteName" align="right" runat="server">
+                                <span id="SpnSite" runat="server">Freezed Date: </span>
+                            </td>
+                            <td id="tdSiteId" runat="server" style="border: thin solid #000000;">
+                                <asp:Label ID="lblfreezedDate" runat="server" Text="_"></asp:Label>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td valign="top">
+                    <img alt="" runat="server" id="ImgLogo" src="images/lambda_logo.jpg" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="divCombineHeader" style="display: none;" runat="server" align="left">
+        <asp:HiddenField ID="HFcombineHeader" runat="server" />
+        <table style="padding: 2px; margin: auto; border: solid 1px black; width: 91%; font-family: Verdana;"
+            align="left">
+            <tr>
+                <td>
+                    <table>
+                        <tr>
+                            <td colspan="4" style="vertical-align: top;">
+                                <table>
+                                    <tr>
+                                        <td style="vertical-align: top; font-size: large; font-weight: 900">
+                                            Lambda Therapeutic Research
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="vertical-align: top; font-size: larger; font-weight: 700">
+                                            <span id="Span1" runat="server"></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                    </tr>
+                                    <tr>
+                                        <td style="vertical-align: bottom; font-size: medium; font-weight: 600; text-align: right">
+                                            CRF Version Report
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">
+                                Project No:
+                            </td>
+                            <td style="border: thin solid #000000;">
+                                <asp:Label ID="lblCombineProjectNo" runat="server" Text="_"></asp:Label>
+                            </td>
+                            <td align="right">
+                                <span id="Span3" runat="server">Sponsor Name: </span>
+                            </td>
+                            <td style="border: thin solid #000000;">
+                                <asp:Label ID="lblSponsorName" runat="server" Text="_"></asp:Label>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td valign="top">
+                    <img alt="" runat="server" id="Img1" src="images/lambda_logo.jpg" />
+                    <asp:HiddenField ID="HFJsonObject" runat="server" />
+                    <asp:HiddenField ID="hfServerOffset" runat="server" />
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+
+
+    <script src="Script/slimScroll.min.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="Script/AutoComplete.js"></script>
+
+    <script type="text/javascript" src="Script/jquery-ui-1.8.20.custom.min.js"></script>
+
+    <script type="text/javascript">
+
+
+        var jsonObj;
+        function ClientPopulated(sender, e) {
+            ProjectClientShowingCRFVersion('AutoCompleteExtender1', $get('<%= txtProject.ClientId %>'));
+        }
+
+        function OnSelected(sender, e) {
+            ProjectOnItemSelectedCRFVersion(e.get_value(), $get('<%= txtProject.clientid %>'),
+            $get('<%= HProjectId.clientid %>'), $get('<%= HFreezeStatus.clientid %>'),
+            $get('<%= HVersionNo.clientid %>'), $get('<%=HFreezedDate.ClientID%>'), $get('<%=HFSponsor.ClientID%>'), document.getElementById('<%= btnSetProject.ClientId %>'));
+        }
+        $("document").ready(function (e) {
+            debugger;
+            $('#displayheaderhtml').hide();
+            $("#divact").hide();
+           
+        });
+        $("#tblsortable").hide();
+        $("input:radio").click(function (e) {
+            GenCall()   //Changed by Dipen Shah
+            //$("#tblmain").show();
+            $("#tblsortable").show();
+//            $("#tblGeneratePDF").show();
+            
+        });
+        var VersionNo = ''
+        var test = ''
+        var Version =''
+        var FreezeStatus=''
+
+        function GenCall() {
+      
+             // Commented by Dipen Shah on 27 Aug 2014
+//            test = document.getElementById('ctl00_lblTime').innerText.split(" ")[4];
+//            test += document.getElementById('ctl00_lblTime').innerText.split(" ")[5];
+//            test += document.getElementById('ctl00_lblTime').innerText.split(" ")[6];
+
+            test= document.getElementById('ctl00_lblTime').innerText.split(" ")[2] +
+                  document.getElementById('ctl00_lblTime').innerText.split(" ")[3] 
+                  
+             Version = document.getElementById('<%= HVersionNo.clientid %>').value;
+             FreezeStatus = document.getElementById('<%= HFreezeStatus.clientid %>').value;
+            if (Version == 0 && FreezeStatus == 'U') {
+                msgalert("For this Project Any Version is not Freezed !");
+               //$("#tblmain").hide();
+               $("#tblmain").css("display","none");
+               $("#tblGeneratePDF").css("display","none");
+           
+                return false;
+            }
+            else if (Version > 0 && FreezeStatus == 'U') {
+                VersionNo = Version - 1;
+                $("#tblmain").css("display","table");
+                $("#tblGeneratePDF").show();
+            }
+            else {
+                debugger;
+                VersionNo = Version;
+                if (VersionNo==0)
+                {
+                    $("#tblmain").css("display","none");
+                    $("#tblGeneratePDF").hide();
+                }
+                else
+                {
+                    $("#tblmain").css("display","table");
+                    $("#tblGeneratePDF").show();
+                } 
+            }
+            GenCall_ShowUI(VersionNo)
+         }
+        // call data and bind it to divBody+i
+        function GenCall_ShowUI(VersionNo) {
+           
+            if(VersionNo==0)
+            {
+                msgalert("There is no version for this project !")
+                return false;
+            }
+            $(".widget").remove();
+            var obj = new Object();
+            debugger;
+            obj.TableName = "View_cdc_crfversionMst";
+            obj.ColumnNames = "*";
+//            obj.WhereCondition = "vWorkSpcaeid=" + document.getElementById('<%= HProjectId.clientid %>').value + "  " + "and" + " " + "freezeStatus='F'" + "  " + "and" + " " + "Operation=3" + "";
+              obj.WhereCondition = "vWorkSpaceid=" + document.getElementById('<%= HProjectId.clientid %>').value + "  " + "and" + " " + "freezeStatus='F'";
+            var JsonText = JSON.stringify(obj);
+            $.ajax({
+                type: "POST",
+                url: "WS_HelpDB_JSON.asmx/CDCGetData",
+                data: JsonText,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+
+                success: function (response) {
+                    debugger;
+                    //alert(response.d);
+                    jsonObj = $.parseJSON(response.d);
+                    $('#<%=HFJsonObject.ClientID%>').val(jsonObj);
+                    for (var k = 0; k <= VersionNo; k++) {
+                        debugger;
+                        $([k]).each(function () {
+                            var i = this;
+                            debugger;
+                            var da = new Date(parseInt(jsonObj[i].freezeddate.replace('/Date(', '')));
+//                          debugger;
+                            
+                            var divelement = document.createElement("div");
+                            divelement.id = "Div" + i;
+                            divelement.className = "widget";
+                            document.getElementById("maindiv").appendChild(divelement);
+                            
+                            var divHDR = document.createElement("div");
+                            divHDR.id = "DivHeader" + i;
+                            divHDR.className = "divHDR";
+                            
+                            var divBODY = document.createElement("div");
+                            divBODY.id = "DivBody" + i;
+                            divBODY.className = "divBODY";
+                            document.getElementById("Div" + i).appendChild(divHDR);
+                            document.getElementById("Div" + i).appendChild(divBODY);
+
+                            var td = document.createElement("td");
+                            td.id = "td" + i;
+                            td.className = "tdheader";
+                            document.getElementById("DivHeader" + i).appendChild(td);
+                            debugger;
+                            document.getElementById("td" + i).innerHTML = "Version - " + jsonObj[i].VersionNo + "&nbsp" + "&nbsp" + "</br>" + "Freezed On - " + da.format("dd-MMM-yyyy HH:mm ") + test + "</br>" + "Freezed By - " + jsonObj[i].ModifyBy + " - " + $( "#ctl00_ddlProfile option:selected" ).text()
+                            var img = document.createElement("td");
+                            img.id = "img" + i;
+                            img.className = "Img";
+
+                            document.getElementById("DivHeader" + i).appendChild(img);
+                            document.getElementById("img" + i).innerHTML = "<img id='PDFimg" + i + "' src='Images/pdf.png'  title='Generate PDF' class='PDFimg' onClick='PDFclick(this);' ; />";
+							 $(".divBODY").mouseover(function () {
+                                $(this).slimScroll({
+                                    height: '360px',
+                                    size: '8px',
+                                    color: '#379CEB',
+                                    railVisible: true,
+                                    railColor: '#379CEB',
+                                    alwaysVisible: false
+                                });
+                            });
+                            if (i == 0) {
+                            var wstr = document.getElementById('<%= HProjectId.clientid %>').value + "##" + 0 + "##" + 0;
+                            }
+                            else {
+                                var wstr = document.getElementById('<%= HProjectId.clientid %>').value + "##" + i.toString() + "##" + (i - 1).toString();
+                            }
+                            if ($('.rbl input:radio:checked').val() == "Activity") {
+                                debugger;
+                                document.getElementById("divDDLActivity").style.display = 'none';
+                                document.getElementById("divact").style.display = 'none';
+                                document.getElementById("btnPDF").style.display = 'block';
+                                document.getElementById("<%=GeneratePDF.ClientID%>").style.display = 'block';
+                                document.getElementById("Td1").innerHTML = "<B><Span>Activity-wise CRF Version Report</span></B>";
+                                var obj = new Object();
+                                obj.Parameters = wstr.toString();
+                                var JsonText = JSON.stringify(obj);
+                                $.ajax({
+                                    type: "POST",
+                                    url: "WS_HelpDB_JSON.asmx/Proc_ActivityWiseVersionControl",
+                                    data: JsonText,
+                                    contentType: "application/json; charset=utf-8",
+                                    dataType: "json",
+                                    success: function (response) {
+                                        debugger;
+                                        var ActivityData = $.parseJSON(response.d);
+                                        debugger;
+
+                                        var tbl = document.createElement("table");
+                                        tbl.id = "yy";
+                                        for (var j = 0; j < parseInt(ActivityData.length) ; j++) {
+                                            var tr = document.createElement("tr");
+                                            tr.id = j;
+                                            var td = document.createElement("td");
+                                            td.id = j;
+                                            if (i == 0) {
+                                                if (ActivityData.toString() == "") {
+                                                    var divAttribute = document.createElement("div");
+                                                    divAttribute.id = i;
+                                                    divAttribute.innerHTML = "This Activity Is Not Declared In This Version"
+                                                    divAttribute.className = "divParentActivity";
+                                                    document.getElementById("DivBody" + i).appendChild(divAttribute);
+                                                }
+                                                if (ActivityData[j].iParentNodeId == 1) {
+
+                                                    divParentActivity = document.createElement("ul");
+                                                    divParentActivity.id = "divParentActivity" + i + ActivityData[j].iNodeId;
+                                                    divParentActivity.innerHTML = ActivityData[j].vNodeDisplayName;
+                                                    divParentActivity.className = "ULParentActivity";
+
+
+                                                    tbl.appendChild(tr);
+                                                    tr.appendChild(td);
+                                                    td.appendChild(divParentActivity);
+                                                    document.getElementById("DivBody" + i).appendChild(tbl);
+                                                    //alert(document.getElementById("DivBody" + i).innerHTML);
+                                                }
+                                                else {
+                                                    divChildActivity = document.createElement("li");
+                                                    divChildActivity.id = "divChildActivity" + i + ActivityData[j].iNodeId;
+                                                    divChildActivity.innerHTML = ActivityData[j].vNodeDisplayName;
+                                                    divChildActivity.className = "LIChildActivity";
+                                                    //alert(divParentActivity.id);
+                                                    tbl.appendChild(tr);
+                                                    tr.appendChild(td);
+                                                    td.appendChild(divChildActivity);
+                                                    //document.getElementById("divParentActivity" + i + ActivityData[j].iNodeId).appendChild(tbl);
+                                                    //alert(tbl.innerHTML);
+                                                }
+                                            }
+                                            if (i > 0) {
+                                                debugger;
+                                                //alert(i);
+                                                if (ActivityData.toString() == "") {
+                                                    var divAttribute = document.createElement("div");
+                                                    divAttribute.id = i;
+                                                    divAttribute.innerHTML = "No Activity -----"
+                                                    divAttribute.className = "divParentActivity";
+                                                    document.getElementById("DivBody" + i).appendChild(divAttribute);
+                                                }
+                                                if (ActivityData[j].cFlag == 'A') {
+                                                    //alert(ActivityData[j].cFlag);
+                                                    var ele = i.toString() + parseInt(ActivityData[j].iNodeId).toString();
+                                                    if (ActivityData[j].iParentNodeId == 1) {
+                                                        
+                                                        //document.getElementById("divParentActivity" + ele).className = "ULChangedActivity";
+                                                        divParentChangedActivity = document.createElement("ul");
+                                                        divParentChangedActivity.id = "divParentActivity" + i + ActivityData[j].iNodeId;
+                                                        divParentChangedActivity.innerHTML = ActivityData[j].vNodeDisplayName;
+
+                                                        divParentChangedActivity.className = "ULChangedActivity";
+
+
+                                                        tbl.appendChild(tr);
+                                                        tr.appendChild(td);
+                                                        td.appendChild(divParentChangedActivity);
+                                                        document.getElementById("DivBody" + i).appendChild(tbl);
+
+                                                    }
+                                                    else {
+                                                        debugger;
+                                                        //document.getElementById("divChildActivity" + ele).style.marginLeft = "40px";
+                                                        //document.getElementById("divChildActivity" + ele).className = "ULChangedActivity";
+                                                        divChangedChildActivity = document.createElement("li");
+                                                        divChangedChildActivity.id = "divChildActivity" + i + ActivityData[j].iNodeId;
+                                                        divChangedChildActivity.innerHTML = ActivityData[j].vNodeDisplayName;
+                                                        divChangedChildActivity.className = "LIChangedActivity";
+                                                        //alert(divParentActivity.id);
+
+
+                                                        tbl.appendChild(tr);
+                                                        tr.appendChild(td);
+                                                        td.appendChild(divChangedChildActivity);
+                                                        document.getElementById("DivBody" + i).appendChild(tbl)
+                                                    }
+                                                }
+                                                if (ActivityData[j].cFlag == 'D') {
+                                                    //alert(ActivityData[j].cFlag);
+                                                     var ele = i.toString() + parseInt(ActivityData[j].iNodeId).toString();
+                                                    if (ActivityData[j].iParentNodeId == 1) {
+                                                       
+                                                        //document.getElementById("divParentActivity" + ele).className = "ULDeletedActivity"
+                                                        divParentDeleteActivity = document.createElement("ul");
+                                                        divParentDeleteActivity.id = "divParentActivity" + i + ActivityData[j].iNodeId;
+                                                        divParentDeleteActivity.innerHTML = ActivityData[j].vNodeDisplayName;
+
+                                                        divParentDeleteActivity.className = "ULDeletedActivity";
+
+
+                                                        tbl.appendChild(tr);
+                                                        tr.appendChild(td);
+                                                        td.appendChild(divParentDeleteActivity);
+                                                        document.getElementById("DivBody" + i).appendChild(tbl);
+                                                    }
+                                                    else {
+                                                        var ele = i.toString() + parseInt(ActivityData[j].iNodeId).toString();
+                                                        //document.getElementById("divChildActivity" + ele).className = "ULDeletedActivity"
+                                                        //document.getElementById("divChildActivity" + ele).style.marginLeft = "40px";
+                                                        divDeletedChildActivity = document.createElement("li");
+                                                        divDeletedChildActivity.id = "divChildActivity" + i + ActivityData[j].iNodeId;
+                                                        divDeletedChildActivity.innerHTML = ActivityData[j].vNodeDisplayName;
+                                                        divDeletedChildActivity.className = "LIDeletedActivity";
+
+                                                        //alert(divParentActivity.id);
+
+
+                                                        tbl.appendChild(tr);
+                                                        tr.appendChild(td);
+                                                        td.appendChild(divDeletedChildActivity);
+                                                        document.getElementById("DivBody" + i).appendChild(tbl)
+
+                                                    }
+
+                                                }
+                                            }
+                                        }
+
+                                    },
+                                    failure: function (msg) {
+                                        msgalert(msg);
+                                    }
+                                });
+                            }
+                            if ($('.rbl input:radio:checked').val() == "Attribute") {
+                                //debugger;
+                                document.getElementById("divDDLActivity").style.display = 'block';
+                                 document.getElementById("divact").style.display = 'block';
+                                document.getElementById("btnPDF").style.display = 'none';
+                                document.getElementById("<%=GeneratePDF.ClientID%>").style.display = 'none';
+                               
+                                document.getElementById("Td1").innerHTML = "<B><Span>Attribute-Wise CRF Version Report</span></B>";
+                                if (i == 0) {
+                                    //debugger;
+                                    var obj = new Object();
+                                    obj.TableName = "View_GetActivityForCRFVersion";
+                                    obj.ColumnNames = "*";
+                                    obj.WhereCondition = "vWorkSpaceId=" + document.getElementById('<%= HProjectId.clientid %>').value + "";
+                                    var JsonText = JSON.stringify(obj);
+
+                                    $.ajax({
+                                        type: "POST",
+                                        url: "WS_HelpDB_JSON.asmx/GetData_JSON",
+                                        data: JsonText,
+                                        contentType: "application/json; charset=utf-8",
+                                        dataType: "json",
+
+                                        success: function (response) {
+                                            document.getElementById("divDDLActivity").innerHTML = response.d;
+                                            document.getElementById("ddlAcitivity").className = "dropDown";
+                                            $('#ddlAcitivity option').each(function () {
+                                                var str = $(this).val();
+                                                var Version_ddlSelectedValue = str.split(",");
+                                                if (Version_ddlSelectedValue[1] > 0)
+                                                 $(this).css('color', 'navy');
+                                            });
+                                            debugger;
+
+                                        },
+                                        failure: function (error) {
+                                            msgalert(error);
+                                        }
+                                    });
+                                }
+
+                             }
+                    });
+                    }
+                },
+                failure: function (error) {
+                    msgalert(error);
+                }
+            });
+        };
+        function fnOnSelectedIndexChange(ele) {
+            debugger;
+            $('#<%=HFActivityName.ClientID%>').val($("#ddlAcitivity option:selected").text());
+            if (document.getElementById("ddlAcitivity").selectedIndex != 0) {
+                var iNodeId = document.getElementById("ddlAcitivity").value.split(",")[0].toString();
+                for (k = 0; k <= VersionNo; k++) {
+                    $([k]).each(function () {
+                        var i = this;
+                        if (i == 0) {
+                            var wstr = document.getElementById('<%= HProjectId.clientid %>').value + "##" + 0 + "##" + 0 + "##" + iNodeId.toString();
+                        }
+                        else {
+                            var wstr = document.getElementById('<%= HProjectId.clientid %>').value + "##" + i.toString() + "##" + (i - 1).toString() + "##" + iNodeId.toString();
+                        }
+                        document.getElementById("DivBody" + i).innerHTML = "";
+                        var obj = new Object();
+                        obj.Parameters = wstr.toString();
+                        var JsonText = JSON.stringify(obj);
+                        $.ajax(
+                        {
+                            type: "POST",
+                            url: "WS_HelpDB_JSON.asmx/Proc_AttributeWiseVersionControl",
+                            data: JsonText,
+                            contentType: "application/json; charset=utf-8",
+                            dataType: "json",
+                            success: function (response) {
+                                var AttributeData = $.parseJSON(response.d);
+                                if (AttributeData.toString() == "") {
+                                    var divAttribute = document.createElement("div");
+                                    divAttribute.id = "divAttribute" + i + iNodeId;
+                                    divAttribute.innerHTML = "This Activity Is Not Declared In This Version"
+                                    divAttribute.className = "divParentActivity";
+                                    document.getElementById("DivBody" + i).appendChild(divAttribute);
+                                }
+                                for (var j = 0; j < parseInt(AttributeData.length) ; j++) {
+                                    var divAttribute = document.createElement("div");
+                                    divAttribute.id = "divAttribute" + i + AttributeData[j].nMedExWorkSpaceDtlNo;
+                                    divAttribute.innerHTML = AttributeData[j].vMedExDesc;
+                                    divAttribute.className = "divParentActivity";
+                                    document.getElementById("DivBody" + i).appendChild(divAttribute);
+                                    if (i > 0) {
+                                        if (AttributeData[j].cFlag == 'A') {
+                                            var ele = i.toString() + parseInt(AttributeData[j].nMedExWorkSpaceDtlNo).toString();
+                                            document.getElementById("divAttribute" + ele).className = "ULChangedActivity";
+                                        }
+                                        if (AttributeData[j].cFlag == 'D') {
+                                            var ele = i.toString() + parseInt(AttributeData[j].nMedExWorkSpaceDtlNo).toString();
+                                            document.getElementById("divAttribute" + ele).className = "ULDeletedActivity";
+                                        }
+                                    }
+                                }
+                            },
+                            failure: function (error) {
+                                msgalert(error);
+                            }
+                        });
+                    });
+                }
+            }
+            else {
+                for (k = 0; k <= VersionNo; k++) {
+                    $([k]).each(function () {
+                        var i = this;
+                        document.getElementById("DivBody" + i).innerHTML = "";
+                    });
+                }
+            }
+        }
+        function validateForm() {
+            debugger;
+            $('#<%=lblCombineProjectNo.ClientID%>').text($('#<%=txtProject.ClientID%>').val().split(']')[0].split('[')[1]);
+            var Sponsor = document.getElementById('<%=HFSponsor.ClientID%>').value;
+            $('#<%=lblSponsorName.ClientID%>').text(Sponsor);
+            document.getElementById('<%=HPDFCombine.ClientID%>').value = '';
+            document.getElementById('<%=HFVersionNumber.ClientID%>').value = document.getElementById(this);
+            document.getElementById('<%=HheaderHTML.ClientID%>').value = document.getElementById('<%=divHeaderPDF.ClientID%>').innerHTML;
+            document.getElementById('<%=HFcombineHeader.ClientID%>').value = document.getElementById('<%=divCombineHeader.ClientID%>').innerHTML
+
+            if ($('#maindiv').children().length == 0)
+            {
+                msgalert("No Data Found.")
+                return false;
+            }
+            else
+            {
+            for (var i = 0; i <= $('#maindiv').children().length - 1; i++) {
+                if (i < $('#maindiv').children().length - 1) {
+                    document.getElementById('<%=HPDFCombine.ClientID%>').value += document.getElementById("Div" + i).innerHTML;
+                    document.getElementById('<%=HPDFCombine.ClientID%>').value += '<hr>';
+                }
+                else {
+                    document.getElementById('<%=HPDFCombine.ClientID%>').value += document.getElementById("Div" + i).innerHTML;
+                }
+            }
+
+          }
+        }
+        function funShowLegends() {
+            $("#canal").slideToggle('slow');
+        }
+        function fun() {
+            debugger;
+            if ($('#maindiv').children().length == 0)
+            {
+                msgalert("No Data Found.")
+            }
+            else
+            {
+            document.getElementById("<%=GeneratePDF.ClientID%>").click();
+            }
+        }
+        function PDFclick(e) {
+
+            debugger;
+            
+            var Sponsor = document.getElementById('<%=HFSponsor.ClientID%>').value;
+            var id = e.id.split('PDFimg')[1];
+            var freezedDate = $("#td" + id).html().split("<br>")[1].split(" ")[3];
+//            var freezedDate = document.getElementById('<%=HFreezedDate.ClientID%>').value.split(" ")[0];
+            $('#<%=HinnerHTML.clientid%>').val($("#DivBody" + id).html());
+            document.getElementById('<%=HFVersionNumber.ClientID%>').value =document.getElementById('td' + id).innerHTML.split('-')[1].split('&')[0].split(' ')[1]
+            var Split = $('<%=txtProject.ClientID%>').val();
+            $('#<%=lblProjectNo.ClientID%>').text($('#<%=txtProject.ClientID%>').val().split(']')[0].split('[')[1]);
+            $('#<%=lblVersionNo.ClientID%>').text(document.getElementById('td' + id).innerHTML.split('-')[1].split('&')[0].split(' ')[1]);
+//            freezedDate=GetDate(freezedDate)
+            $('#<%=lblfreezedDate.ClientID%>').text(freezedDate);
+            $('#<%=lblSponsor.ClientID%>').text(Sponsor);
+            document.getElementById('<%=HheaderHTML.ClientID%>').value = document.getElementById('<%=divHeaderPDF.ClientID%>').innerHTML;
+            $('#<%=getPDF.ClientID%>').click();
+           }
+        
+function funRadioList() {
+            debugger;
+              if ($('#<%=txtProject.ClientID%>').val() == "")
+            {
+                $(".rbl").css("display","none");
+                return false;
+            }
+            else 
+           {
+                $('.tblSortable').hide();
+                $('#tblGeneratePDF').hide();
+                $('.rbl input:radio:checked').removeAttr('checked');
+                $(".rbl").css("display", "block");
+                return false;
+          }
+        }
+//function GetDate(freezedDate)
+//{
+//    if(freezedDate.indexOf("/")!=-1)
+//    {
+//        var arr = freezedDate.split("/");
+//    }
+//    if(freezedDate.indexOf("-")!=-1)
+//    {
+//        var arr = freezedDate.split("-");
+//    }
+//        var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun','Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+//        var i = arr[1]
+//        var formatddate = arr[0]  + '-' + months[i-1] + '-' + arr[2]; 
+//        return formatddate;
+//}
+    </script>
+
+</asp:Content>

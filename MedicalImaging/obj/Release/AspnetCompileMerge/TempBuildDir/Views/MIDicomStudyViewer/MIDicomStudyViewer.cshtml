@@ -1,0 +1,402 @@
+﻿@{
+    Layout = null;
+    ViewBag.Title = "DI : DICOM STUDY VIEWER";
+}
+
+<meta http-equiv="expires" content="Mon, 26 Jul 1997 05:00:00 GMT" />
+<meta http-equiv="pragma" content="no-cache" />
+<!DOCTYPE html>
+<html>
+<meta http-equiv="expires" content="Mon, 26 Jul 1997 05:00:00 GMT" />
+<meta http-equiv="pragma" content="no-cache" />
+<head>
+    <link rel="icon" href="~/Contents/Themes/Images/DI_LOGO.ico">
+    <meta Http-Equiv="Cache-Control" Content="no-cache">
+    <meta Http-Equiv="Pragma" Content="no-cache">
+    <meta Http-Equiv="Expires" Content="0">
+    <meta Http-Equiv="Pragma-directive: no-cache">
+    <meta Http-Equiv="Cache-directive: no-cache">
+    <meta Http-Equiv="Cache" content="no-cache">
+    <meta Http-Equiv="Pragma-Control" content="no-cache">
+    <meta Http-Equiv="Cache-directive" Content="no-cache">
+    <meta Http-Equiv="Pragma-directive" Content="no-cache">            
+    <meta Http-Equiv="Pragma-directive: no-cache">
+    <meta Http-Equiv="Cache-directive: no-cache">
+    <meta http-equiv="cache-control" content="max-age=0">    
+    <meta http-equiv="expires" content="-1">
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 11:00:00 GMT">
+
+
+
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <!-- support for mobile touch devices -->
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+
+    <script type="text/javascript">
+        var ApiURL = "@System.Configuration.ConfigurationManager.AppSettings["Api_Url"].ToString()"
+        var WebURL = "@System.Configuration.ConfigurationManager.AppSettings["Web_Url"].ToString()"
+        var DicomURL_1 = "@System.Configuration.ConfigurationManager.AppSettings["DicomURL_1"].ToString()"
+        var DicomURL_2 = "@System.Configuration.ConfigurationManager.AppSettings["DicomURL_2"].ToString()"
+        <!-- Theme style -->
+    document.write('<link href="@Url.Content("~/Contents/Themes/Css/AdminLTE.min.css")?' + Math.random() + '" rel="stylesheet" type="text/css">');
+
+        //<!-- twitter bootstrap CSS stylesheet - not required by cornerstoneTools -->
+        document.write('<link href="@Url.Content("~/Contents/Themes/Plugins/Dicom/Css/bootstrap.min.css")?' + Math.random() + '" rel="stylesheet" type="text/css">');
+        document.write('<link href="@Url.Content("~/Contents/Themes/Plugins/Dicom/Css/dialogPolyfill.css")?' + Math.random() + '" rel="stylesheet" type="text/css">');
+        document.write('<link href="@Url.Content("~/Contents/Themes/Plugins/Dicom/Css/cornerstone.min.css")?' + Math.random() + '" rel="stylesheet" type="text/css">');
+        document.write('<link href="@Url.Content("~/Contents/Themes/Plugins/Dicom/Css/font-awesome.min.css")?' + Math.random() + '" rel="stylesheet" type="text/css">');
+        document.write('<link href="@Url.Content("~/Contents/Themes/Plugins/Dicom/Css/cornerstoneDemo.css")?' + Math.random() + '" rel="stylesheet" type="text/css">');
+
+        document.write('<link href="@Url.Content("~/Contents/Themes/Css/Dicom.css")?' + Math.random() + '" rel="stylesheet" type="text/css">');
+
+        //<!-- DataTables -->
+        document.write('<link href="@Url.Content("~/Contents/Themes/Plugins/DataTable/Css/dataTables.bootstrap.css")?' + Math.random() + '" rel="stylesheet" type="text/css">');
+
+        document.write('<link href="@Url.Content("~/Contents/Themes/Plugins/Confirm/Css/jquery-confirm.css")?' + Math.random() + '" rel="stylesheet" type="text/css">');
+    </script>
+
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="page-header">
+            <h3>Dicom Viewer
+            </h3>
+            <div class="dicomhead" style="width: 100%; display: inline-block;">
+                <div class="leftpart" style="float: left;" id="divHeader">
+                </div>
+
+                <div class="text-center rightpart" id="divLesion" style="float: right;">
+                </div>
+            </div>
+        </div>
+        <div class="viewer" id="divViewer">
+            @*<div class="col-lg-2 col-sm-2 col-xs-12">
+                </div>*@
+            <!-- Toolbar -->
+            <div class="text-center">
+                <div class="btn-group" id="dicomButtonGroup" style="text-align: center; margin-left: 7%">
+                  
+                </div>
+            </div>
+
+            <!-- Viewer -->
+            <div class="imageViewer">
+            </div>
+        </div>
+        <div class="row" id="divRow">
+            <div class="col-lg-2 col-sm-2 col-xs-12">
+
+                <label id="lblmagLevelRange" for="magLevelRange" style="display: none">Magnification Level</label>
+                <input id="magLevelRange" type="range" min="1" value="2" max="10" style="display: none">
+                <br>
+                <label id="lblmagSizeRange" for="magSizeRange" style="display: none">Magnifying glass size</label>
+                <input id="magSizeRange" type="range" min="100" value="225" max="300" step="25" style="display: none">
+
+                <label id="lblloop" style="display: none">Loop</label>
+                <input type="checkbox" id="loop" checked="" style="display: none">
+                <input type="range" id="slice-range" min="0" step="1" max="-1" style="display: none">
+            </div>
+            <div class="col-lg-7 col-lg-offset-1 col-sm-10 col-xs-12" style="">
+                <div style="width: 100%; height: 78%; position: relative; display: inline-block; color: white;"
+                    oncontextmenu="return false"
+                    class='cornerstone-enabled-image'
+                    unselectable='on'
+                    onselectstart='return false;'
+                    onmousedown='return false;'>
+                    <div id="dicomImage"
+                        style="width: 100%; height: 100%; top: 0px; left: 0px; position: absolute;">
+                    </div>
+                    <div id="mrtopleft" style="position: absolute; top: 3px; left: 3px; display:none">
+                        <div><span id="pagecoords">PageX, PageY</span></div>
+                        <div><span id="pixelcoords">PixelX, PixelY</span></div>
+                    </div>
+                    <div id="mrtopright" style="position: absolute; top: 3px; right: 3px">
+                        <div id="sliceThickness" style="display: none">Thickness: </div>
+                         <div id="sliceInterval" style="display: none">Interval: </div>
+                        <span id="rotation"></span>
+                        <div id="acquisitionDate" style="display: none">Acquisition Date : </div>
+                        <div id="subjectName" style="display: none">Subject Name : </div>
+                    </div>
+                    <div id="mrbottomright" style="position: absolute; top: 477px; bottom:0px; right: 3px; display:none">
+                        <div id="zoomText">Zoom: </div>
+                        <div id="sliceText">Image: </div>
+                    </div>
+                    <div id="mrbottomleft" style="position: absolute; top: 477px; bottom:0px; left: 3px">
+                        <div id="frameRate"></div>
+                        <div id="wwwc"></div>
+                        @*<span id="rotation" style="display: none"></span>*@
+                        
+                    </div>                  
+                </div>
+            </div>
+        </div>
+
+
+        <div class="modal fade" id="LesionModel" role="dialog" style="background: none;">
+        </div>
+
+        @*   <div class="modal fade" id="MarkModel" role="dialog" style="background: none;" >
+        </div>*@
+
+
+        <div class="modal fade" id="LesionModelData" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="btn btn-info btn-sm pull-right box-tools" data-widget="remove" data-dismiss="modal" data-toggle="tooltip" title="" data-original-title="Remove">
+                            <i class="fa fa-times"></i>
+                        </button>
+                        <h4 class="modal-title">Detail</h4>
+                    </div>
+                    <div class="modal-body">
+                        <table id="tblLesionDetail" class="table table-bordered table-striped dataTable">
+                        </table>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default pull-left" data-dismiss="modal" id="btnClose">Close</button>
+                        @*<button type="button" class="btn btn-primary" id="btnSaveAnatomy">Save changes</button>*@
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="modal fade" id="MILesionModelData" role="dialog">
+        </div>
+
+        <div class="modal fade" id="MIeSign" role="dialog">
+        </div>
+
+        <div class="modal fade" id="ModalMIeSignature" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="btn btn-info btn-sm pull-right box-tools" data-widget="remove" data-dismiss="modal" data-toggle="tooltip" title="" data-original-title="Remove">
+                            <i class="fa fa-times"></i>
+                        </button>
+                        <h4 class="modal-title">e-Signature Authentication</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-xs-12 form-group">
+                                <div class="col-sm-12">
+                                    <div class="col-sm-12">
+                                        <label for="" id="lblUser">User :</label>
+                                        <label for="" id="lblUserName"></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 form-group">
+                                <div class="col-sm-12">
+                                    <label for="" id="lblDate">DateTime :</label>
+                                    <label for="" id="lblDateDetail"></label>
+                                </div>
+
+                            </div>
+                            <div class="col-xs-12 form-group">
+                                <div class="col-sm-12">
+                                    <label for="txtPassword">Password*</label>
+                                </div>
+                                <div class="col-sm-12">
+                                    <input type="password" class="form-control" id="txtPassword" placeholder="e-Signature" tabindex="1">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 form-group">
+                                <div class="col-sm-12">
+                                    <label id="lbleSignature" for="">I Here by Confirm Signing of this Record Electronically.</label>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default pull-left" data-dismiss="modal" id="btnCloseMIeSignature">Close</button>
+                        <button type="button" class="btn btn-primary" id="btnMIeSignatureVerification">Submit</button>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        @*For MI*@
+
+        <input type="hidden" id="hdnUserNameWithProfile"  value="@ViewBag.hdnUserNameWithProfile" />
+        <input type="hidden" id="hdnUserName"             value="@ViewBag.hdnUserName" />
+
+        <input type="hidden" id="hdniImgTransmittalHdrId" value="@ViewBag.hdniImgTransmittalHdrId" />
+        <input type="hidden" id="hdniImgTransmittalDtlId" value="@ViewBag.hdniImgTransmittalDtlId" />
+        <input type="hidden" id="hdniImageStatus"         value="@ViewBag.hdniImageStatus" />
+        <input type="hidden" id="hdnuserid"               value="@ViewBag.hdnuserid"/>
+        <input type="hidden" id="hdnIpAddress"            value="@ViewBag.hdnIpAddress" />
+        <input type="hidden" id="hdnvWorkspaceId"         value="@ViewBag.hdnvWorkspaceId" />
+        <input type="hidden" id="hdnvProjectNo"           value="@ViewBag.hdnvProjectNo" />
+        <input type="hidden" id="hdnvSubjectId"           value="@ViewBag.hdnvSubjectId" />
+        <input type="hidden" id="hdniNodeId"              value="@ViewBag.hdniNodeId" />
+        <input type="hidden" id="hdniModalityNo"          value="@ViewBag.hdniModalityNo" />
+        <input type="hidden" id="hdniAnatomyNo"           value="@ViewBag.hdniAnatomyNo" />
+        <input type="hidden" id="hdnvParentWorkspaceId"   value="@ViewBag.hdnvParentWorkspaceId" />
+        <input type="hidden" id="hdnvMySubjectNo"         value="@ViewBag.hdnvMySubjectNo" />
+        <input type="hidden" id="hdniMySubjectNo"         value="@ViewBag.hdniMySubjectNo" />
+        <input type="hidden" id="hdnvActivityId"          value="@ViewBag.hdnvActivityId" />
+        <input type="hidden" id="hdniPeriod"              value="@ViewBag.hdniPeriod" />
+        <input type="hidden" id="hdnvSubActivityId"       value="@ViewBag.hdnvSubActivityId" />
+        <input type="hidden" id="hdniSubNodeId"           value="@ViewBag.hdniSubNodeId" />
+        <input type="hidden" id="hdnvActivityName"        value="@ViewBag.hdnvActivityName" />
+        <input type="hidden" id="hdnvSubActivityName"     value="@ViewBag.hdnvSubActivityName" />
+        <input type="hidden" id="hdncReviewStatus"        value="@ViewBag.hdncReviewStatus" />
+        <input type="hidden" id="hdncTLReviewStatus"      value="@ViewBag.hdncTLReviewStatus" />
+        <input type="hidden" id="hdncNTLReviewStatus"     value="@ViewBag.hdncNTLReviewStatus" />
+
+        <input type="hidden" id="hdncRadiologist"         value="@ViewBag.hdncRadiologist" />
+
+        <input type="hidden" id="hdncR1TLReviewStatus"    value="@ViewBag.hdncR1TLReviewStatus" />
+        <input type="hidden" id="hdncR1NTLReviewStatus"   value="@ViewBag.hdncR1NTLReviewStatus" />
+        <input type="hidden" id="hdncR2TLReviewStatus"    value="@ViewBag.hdncR2TLReviewStatus" />
+        <input type="hidden" id="hdncR2NTLReviewStatus"   value="@ViewBag.hdncR2NTLReviewStatus" />
+
+        <input type="hidden" id="hdnMIDicomPath"          value="@ViewBag.hdnMIDicomPath" />
+
+        <input type="hidden" id="hdnvSkipVisit"           value="@ViewBag.hdnvSkipVisit" />
+
+        <input type="hidden" id="hdniImageCount"          value="@ViewBag.hdniImageCount" />
+
+        <input type="hidden" id="hdnEditPreviousVisit"    value="@ViewBag.hdnEditPreviousVisit" />
+
+        <input type="hidden" id="hdnSelectedvParentNodeDisplayName"    value="@ViewBag.hdnSelectedvParentNodeDisplayName" />
+        <input type="hidden" id="hdnSelectedvChildNodeDisplayName"     value="@ViewBag.hdnSelectedvChildNodeDisplayName" />
+
+        <input type="hidden" id="hdnSelectedvActivityId"               value="@ViewBag.hdnSelectedvActivityId" />
+        <input type="hidden" id="hdnSelectediPeriod"                   value="@ViewBag.hdnSelectediPeriod" />
+
+        <input type="hidden" id="hdnSelectedvSubActivityId"            value="@ViewBag.hdnSelectedvSubActivityId" />
+        <input type="hidden" id="hdnSelectediSubNodeId"                value="@ViewBag.hdnSelectediSubNodeId" />
+
+        <input type="hidden" id="hdnImgTransmittalDtl_iImageTranNo"         value="@ViewBag.hdnImgTransmittalDtl_iImageTranNo">
+        <input type="hidden" id="hdnImageTransmittalImgDtl_iImageTranNo"    value="@ViewBag.hdnImageTransmittalImgDtl_iImageTranNo">
+
+        <input type="hidden" id="hdncReviewStatusValue"        value="@ViewBag.hdncReviewStatusValue" />
+
+        <input type="hidden" id="hdnUserTypeName"        value="@ViewBag.hdnUserTypeName" />
+
+        <input type="hidden" id="hdnUserTypeCode"        value="@ViewBag.hdnUserTypeCode" />
+
+
+
+
+        @*For Biznet*@
+        <input type="hidden" id="hdnImgTransmittalHdrId" value="@ViewBag.hdnImgTransmittalHdrId" />
+        <input type="hidden" id="hdnImgTransmittalDtlId" value="@ViewBag.hdnImgTransmittalDtlId" />
+        <input type="hidden" id="hdnImageStatus"         value="@ViewBag.hdnImageStatus" />
+        <input type="hidden" id="hdnProjectNo"           value="@ViewBag.hdnProjectNo" />
+        <input type="hidden" id="hdnModalityNo"          value="@ViewBag.hdnModalityNo" />
+        <input type="hidden" id="hdnAnatomyNo"           value="@ViewBag.hdnAnatomyNo" />
+        <input type="hidden" id="hdnVisitId"             value="@ViewBag.hdnVisitId" />
+        <input type="hidden" id="hdnWorkspaceId"         value="@ViewBag.hdnWorkspaceId"/>
+        <input type="hidden" id="hdnActivityID"          value="@ViewBag.hdnActivityID" />
+        <input type="hidden" id="hdnNodeID"              value="@ViewBag.hdnNodeID" />
+        <input type="hidden" id="hdnActivityDef"         value="@ViewBag.hdnActivityDef" />
+        <input type="hidden" id="hdnMySubjectNo"         value="@ViewBag.hdnMySubjectNo" />
+        <input type="hidden" id="hdnScreenNo"            value="@ViewBag.hdnScreenNo" />
+        <input type="hidden" id="hdnParentWorkSpaceId"   value="@ViewBag.hdnParentWorkSpaceId" />
+        <input type="hidden" id="hdnPeriodId"            value="@ViewBag.hdnPeriodId" />
+        <input type="hidden" id="hdnSubjectId"           value="@ViewBag.hdnSubjectId" />
+
+        @Html.Hidden("RedirectToHome", Url.Action("Home", "MIHome"))
+        @Html.Hidden("RedirectToLogin", Url.Action("Login", "MILogin"))
+
+        <div class="modal fade" id="msgPopUp" role="dialog"></div>
+        <div id="loader" class="modal"></div>
+        <div id="updateProgress" class="updateProgress" style="display: none; vertical-align: middle;">
+            <div align="center">
+                <table>
+                    <tr>
+                        <td>
+                            <font class="updateText" style="margin-right: 22px">Please Wait ...</font>
+                        </td>
+                        <td style="height: 100px;">
+                            <div title="Wait" class="updateImage">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="spinner" style="display: none">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+</body>
+
+    <script type="text/javascript">
+        //<!-- jquery - currently a dependency and thus required for using cornerstoneWADOImageLoader -->        
+        document.write('<scr' + 'ipt src="@Url.Content("~/Contents/Themes/Plugins/Dicom/Js/jquery.min.js")?' + Math.random() + '" type="text/javascript"></scr' + 'ipt>');
+
+        //<!-- bootstrap -->
+        document.write('<scr' + 'ipt src="@Url.Content("~/Contents/Themes/Plugins/Dicom/Js/bootstrap.min.js")?' + Math.random() + '" type="text/javascript"></scr' + 'ipt>');
+
+        //<!-- include the hammer.fakemultitouch so we can test with a mouse -->
+        document.write('<scr' + 'ipt src="@Url.Content("~/Contents/Themes/Plugins/Dicom/Js/touch-emulator.js")?' + Math.random() + '" type="text/javascript"></scr' + 'ipt>');
+
+        //<!-- include the hammer.js library for touch gestures-->
+        document.write('<scr' + 'ipt src="@Url.Content("~/Contents/Themes/Plugins/Dicom/Js/hammer.min.js")?' + Math.random() + '" type="text/javascript"></scr' + 'ipt>');
+
+        //<!-- include the cornerstone library -->
+        document.write('<scr' + 'ipt src="@Url.Content("~/Contents/Themes/Plugins/Dicom/Js/cornerstone.js")?' + Math.random() + '" type="text/javascript"></scr' + 'ipt>');
+        document.write('<scr' + 'ipt src="@Url.Content("~/Contents/Themes/Plugins/Dicom/Js/cornerstoneMath.js")?' + Math.random() + '" type="text/javascript"></scr' + 'ipt>');
+        document.write('<scr' + 'ipt src="@Url.Content("~/Contents/Themes/Plugins/Dicom/Js/cornerstoneTools.js")?' + Math.random() + '" type="text/javascript"></scr' + 'ipt>');
+
+
+        //<!-- include the dicomParser library as the WADO image loader depends on it -->
+        document.write('<scr' + 'ipt src="@Url.Content("~/Contents/Themes/Plugins/Dicom/Js/dicomParser.js")?' + Math.random() + '" type="text/javascript"></scr' + 'ipt>');
+
+        //<!-- OpenJPEG based jpeg 2000 codec -->
+        document.write('<scr' + 'ipt src="@Url.Content("~/Contents/Themes/Plugins/Dicom/Js/libopenjpeg.js")?' + Math.random() + '" type="text/javascript"></scr' + 'ipt>');    
+
+        @*<!-- PDF.js based jpeg 2000 codec -->
+        <!-- NOTE: do not load the OpenJPEG codec if you use this one -->
+        <!-- <script src="../jpx.min.js"></script> -->*@
+
+        //<!-- JPEG-LS codec -->
+        document.write('<scr' + 'ipt src="@Url.Content("~/Contents/Themes/Plugins/Dicom/Js/libCharLS.js")?' + Math.random() + '" type="text/javascript"></scr' + 'ipt>');
+
+        //<!-- include the cornerstoneWADOImageLoader library -->
+        document.write('<scr' + 'ipt src="@Url.Content("~/Contents/Themes/Plugins/Dicom/Js/cornerstoneWADOImageLoader.js")?' + Math.random() + '" type="text/javascript"></scr' + 'ipt>');
+
+        //<!-- include the cornerstoneWebImageLoader library -->
+        document.write('<scr' + 'ipt src="@Url.Content("~/Contents/Themes/Plugins/Dicom/Js/cornerstoneWebImageLoader.js")?' + Math.random() + '" type="text/javascript"></scr' + 'ipt>');
+
+        //<!-- uids -->
+        document.write('<scr' + 'ipt src="@Url.Content("~/Contents/Themes/Plugins/Dicom/Js/uids.js")?' + Math.random() + '" type="text/javascript"></scr' + 'ipt>');    
+
+        @*<!-- include special code for these examples which provides images -->
+        <script src="http://localhost/Dicom_Viewer2/Theme/JS/exampleImageLoader.js"></script>
+        <script src="http://localhost/Dicom_Viewer2/Theme/JS/dialogPolyfill.js"></script>
+        <script src="http://localhost/Dicom_Viewer2/Theme/JS/exampleMetaDataProvider.js"></script>*@
+
+        //<!-- DataTables -->
+        document.write('<scr' + 'ipt src="@Url.Content("~/Contents/Themes/Plugins/DataTable/Js/jquery.dataTables.min.js")?' + Math.random() + '" type="text/javascript"></scr' + 'ipt>');
+        document.write('<scr' + 'ipt src="@Url.Content("~/Contents/Themes/Plugins/DataTable/Js/dataTables.bootstrap.min.js")?' + Math.random() + '" type="text/javascript"></scr' + 'ipt>');
+
+        document.write('<scr' + 'ipt src="@Url.Content("~/Scripts/General.js")?' + Math.random() + '" type="text/javascript"></scr' + 'ipt>');
+        document.write('<scr' + 'ipt src="@Url.Content("~/Scripts/Validation.js")?' + Math.random() + '" type="text/javascript"></scr' + 'ipt>');
+        document.write('<scr' + 'ipt src="@Url.Content("~/Scripts/General.js")?' + Math.random() + '" type="text/javascript"></scr' + 'ipt>');
+        document.write('<scr' + 'ipt src="@Url.Content("~/Scripts/MIDicom.js")?' + Math.random() + '" type="text/javascript"></scr' + 'ipt>');
+
+
+        document.write('<scr' + 'ipt src="@Url.Content("~/Contents/Themes/Plugins/Confirm/Js/jquery-confirm.js")?' + Math.random() + '" type="text/javascript"></scr' + 'ipt>');    
+
+</script>
+
+
+
+
+
+</html>

@@ -1,0 +1,125 @@
+﻿footer .ftr p {
+    float: left;
+    width: 100%;
+    background: rgba(0,0,0,0.2);
+    position: fixed;
+    bottom: 0px;
+    color: #fff;
+}
+
+.text-center {
+    margin-top: 120px;
+}
+
+body, html {
+    overflow: hidden;
+}
+
+.ftr a {
+    color: #fff;
+}
+
+.hi-icon-wrap.hi-icon-effect-8 a {
+    background-color: #aa3e03;
+    color: #fff;
+}
+
+.hi-icon-effect-8 .hi-icon:hover {
+    background-color: #2196F3;
+    color: #aa3e03;
+}
+/*.toggler { width: 500px; height: 200px; position: relative; }*/
+#button {
+    padding: .5em 1em;
+    text-decoration: none;
+}
+
+#effect {
+    width: 240px;
+    height: 170px;
+    padding: 0.4em;
+    position: relative;
+}
+
+    #effect h3 {
+        margin: 0;
+        padding: 0.4em;
+        text-align: center;
+    }
+
+.ui-effects-transfer {
+    border: 2px dotted gray;
+}
+
+
+.jconfirm .jconfirm-box.jconfirm-animation-news {
+    transform: rotate(400deg) scale(0);
+}
+
+.jconfirm .jconfirm-box.hilight.jconfirm-hilight-random {
+    transform: translate3d(0,0,0);
+    animation: random 2s;
+}
+
+@keyframes random {
+    10%, 90% {
+        transform: rotate(-2deg);
+    }
+
+    20%, 80% {
+        transform: rotate(4deg);
+    }
+
+    30%, 50%, 70% {
+        transform: rotate(-8deg);
+    }
+
+    40%, 60% {
+        transform: rotate(8deg);
+    }
+}
+
+.element_focus {
+    border-color: #2196F3;
+    border-width: 2px;
+}
+
+.element_error {
+    border-color: red;
+    border-width: 2px;
+}
+
+
+.btneffect {
+    display: inline-block;
+    padding: 0 20px 0 70px;
+    background-color: coral;
+    color: white;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    position: relative;
+    height: 40px;
+    line-height: 45px;
+    overflow: hidden;
+    border-radius: 3px;
+    /*transition: background-color 250ms linear;*/
+}
+ 
+  .num{
+    display:inline-block;
+    background-color:rgba(0,0,0,.075);
+    width:50px;
+    position:absolute;
+    left:0px;
+    top:0px;
+  }
+  .faf{
+    line-height:45px;
+    margin:0 0 0 20px;
+    width:50px;
+    background-color:rgba(255,255,255,.2);
+    position:absolute;
+    right:-50px;
+    top:0px;
+  }

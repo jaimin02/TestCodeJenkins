@@ -1,0 +1,16 @@
+E:\Application\DISoft_C\DISoft _C\BusinessOperation\bin\Debug\BusinessOperation.dll
+E:\Application\DISoft_C\DISoft _C\BusinessOperation\bin\Debug\BusinessOperation.pdb
+E:\Application\DISoft_C\DISoft _C\BusinessOperation\bin\Debug\DatabaseOperation.dll
+E:\Application\DISoft_C\DISoft _C\BusinessOperation\bin\Debug\DTO.dll
+E:\Application\DISoft_C\DISoft _C\BusinessOperation\bin\Debug\System.Web.Http.dll
+E:\Application\DISoft_C\DISoft _C\BusinessOperation\bin\Debug\Utility.dll
+E:\Application\DISoft_C\DISoft _C\BusinessOperation\bin\Debug\SS.Web.dll
+E:\Application\DISoft_C\DISoft _C\BusinessOperation\bin\Debug\System.Net.Http.Formatting.dll
+E:\Application\DISoft_C\DISoft _C\BusinessOperation\bin\Debug\DatabaseOperation.pdb
+E:\Application\DISoft_C\DISoft _C\BusinessOperation\bin\Debug\DTO.pdb
+E:\Application\DISoft_C\DISoft _C\BusinessOperation\bin\Debug\Utility.pdb
+E:\Application\DISoft_C\DISoft _C\BusinessOperation\bin\Debug\System.Web.Http.xml
+E:\Application\DISoft_C\DISoft _C\BusinessOperation\bin\Debug\System.Net.Http.Formatting.xml
+E:\Application\DISoft_C\DISoft _C\BusinessOperation\obj\Debug\BusinessOperation.csprojResolveAssemblyReference.cache
+E:\Application\DISoft_C\DISoft _C\BusinessOperation\obj\Debug\BusinessOperation.dll
+E:\Application\DISoft_C\DISoft _C\BusinessOperation\obj\Debug\BusinessOperation.pdb

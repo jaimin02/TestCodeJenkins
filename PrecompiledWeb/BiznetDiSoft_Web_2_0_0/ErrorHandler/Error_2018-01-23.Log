@@ -1,0 +1,48 @@
+Err.Date: 1/23/2018 1:33:26 PM
+Object reference not set to an instance of an object.<BR> ...GenCall
+UserNo :
+UserName :
+User Division :
+URL:http://localhost/BizNETCTM_WEB/frmWorkspaceDefaultWorkflowUserDtl.aspx
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+
+Err.Date: 1/23/2018 1:36:05 PM
+Conversion from string " : " to type 'Double' is not valid.<BR> .....GenCall_ShowUI
+UserNo :
+UserName :vvkc
+User Division :
+URL:http://localhost/BizNETCTM_WEB/frmWorkspaceDefaultWorkflowUserDtl.aspx?mode=1&page=frmMyProject&Type=ALL&WorkspaceId=0000009612&WorkspaceName=BA-BE-Perindopril/Amlodipin 8/10 mg Tablets-Sarjen System-AH&ProjectNo=0076-17
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+
+Err.Date: 1/23/2018 1:44:40 PM
+Conversion from string " : " to type 'Double' is not valid.<BR> .....GenCall_ShowUI
+UserNo :
+UserName :vvkc
+User Division :
+URL:http://localhost/BizNETCTM_WEB/frmWorkspaceDefaultWorkflowUserDtl.aspx?mode=1&page=frmMyProject&Type=ALL&WorkspaceId=0000009612&WorkspaceName=BA-BE-Perindopril/Amlodipin 8/10 mg Tablets-Sarjen System-AH&ProjectNo=0076-17
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+
+Err.Date: 1/23/2018 1:49:50 PM
+A field or property with the name 'DisplayProject' was not found on the selected data source.<BR> ...FillGrid
+UserNo :
+UserName :vvkc
+User Division :
+URL:http://localhost/BizNETCTM_WEB/frmWorkspaceDefaultWorkflowUserDtl.aspx?mode=1&page=frmMyProject&Type=ALL&WorkspaceId=0000009612&WorkspaceName=BA-BE-Perindopril/Amlodipin 8/10 mg Tablets-Sarjen System-AH&ProjectNo=0076-17
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+

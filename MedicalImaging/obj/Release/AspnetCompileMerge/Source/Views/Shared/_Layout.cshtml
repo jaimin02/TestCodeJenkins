@@ -1,0 +1,298 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="icon" href="~/Contents/Themes/Images/DI_LOGO.ico">
+    
+    <meta name="viewport" content="width=device-width" />
+    @*<title>@ViewBag.Title</title>*@
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>@ViewBag.Title</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.6 -->
+    <link rel="stylesheet" href="@Url.Content("~/Contents/Themes/Css/bootstrap.min.css")">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="@Url.Content("~/Contents/Themes/Css/font-awesome.min.css")">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="@Url.Content("~/Contents/Themes/Css/ionicons.min.css")">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="@Url.Content("~/Contents/Themes/Css/AdminLTE.min.css")">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="@Url.Content("~/Contents/Themes/Css/_all-skins.min.css")">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="@Url.Content("~/Contents/Themes/Css/blue.css")">
+    <!-- Morris chart -->
+    <link rel="stylesheet" href="@Url.Content("~/Contents/Themes/Css/morris.css")">
+    <!-- jvectormap -->
+    <link rel="stylesheet" href="@Url.Content("~/Contents/Themes/Css/jquery-jvectormap-1.2.2.css")">
+    <!-- Date Picker -->
+    <link rel="stylesheet" href="@Url.Content("~/Contents/Themes/Css/datepicker3.css")">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="@Url.Content("~/Contents/Themes/Css/daterangepicker.css")">
+    <!-- bootstrap wysihtml5 - text editor -->
+    <link rel="stylesheet" href="@Url.Content("~/Contents/Themes/Css/bootstrap3-wysihtml5.min.css")">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="@Url.Content("~/Contents/Themes/Plugins/DataTable/Css/dataTables.bootstrap.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Contents/Themes/Plugins/DataTable/Css/buttons.dataTables.min.css")">
+    <!-- Custom CSS-->
+    <link rel="stylesheet" href="@Url.Content("~/Contents/Themes/Css/Custom.css")">
+
+    <link rel="stylesheet" href="@Url.Content("~/Contents/Themes/Plugins/AutoComplete/select2.css")"/>
+    <script type="text/javascript">
+        document.write('<link href="@Url.Content("~/Contents/Themes/Plugins/Confirm/Css/jquery-confirm.css")?' + Math.random() + '" rel="stylesheet" type="text/css">');
+    </script>
+
+    <script type="text/javascript" language="javascript">
+        var ApiURL = "@System.Configuration.ConfigurationManager.AppSettings["Api_Url"].ToString()"
+        var WebURL = "@System.Configuration.ConfigurationManager.AppSettings["Web_Url"].ToString()"
+        var DicomURL_1 = "@System.Configuration.ConfigurationManager.AppSettings["DicomURL_1"].ToString()"
+        var DicomURL_2 = "@System.Configuration.ConfigurationManager.AppSettings["DicomURL_2"].ToString()"
+        var QCUserCode = "@System.Configuration.ConfigurationManager.AppSettings["QCUserCode"].ToString()"
+        var QC2UserCode = "@System.Configuration.ConfigurationManager.AppSettings["QC2UserCode"].ToString()"
+        var CAUserCode = "@System.Configuration.ConfigurationManager.AppSettings["CAUserCode"].ToString()"
+        var GraderUserCode = "@System.Configuration.ConfigurationManager.AppSettings["GraderUserCode"].ToString()"
+    </script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+
+    <div class="wrapper">
+
+        <header class="main-header">
+            <!-- Logo -->
+            <a href="@Url.Action("Home", "MIHome")" class="logo">
+                <!-- mini logo for sidebar mini 50x50 pixels -->
+                <span class="logo-mini"><b>D</b>I</span>
+                <!-- logo for regular state and mobile devices -->
+                <span class="logo-lg"><b>D</b>I</span>
+            </a>
+            <!-- Header Navbar: style can be found in header.less -->
+            <nav class="navbar navbar-static-top">
+                <!-- Sidebar toggle button-->
+                <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <!-- Messages: style can be found in dropdown.less-->
+                     
+                        <!-- User Account: style can be found in dropdown.less -->
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">                                
+                                <span class="hidden-xs" id="userName"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <!-- User image -->
+                                <li class="user-header">
+                                    <p>
+                                        <span id="userDept"></span>
+                                        <br />
+                                        <span id="userLocation"></span>
+
+                                    </p>
+                                </li>
+                                <!-- Menu Body -->
+                               
+                                <!-- Menu Footer-->
+                                <li class="user-footer">                               
+                                    <div class="pull-right">
+                                       @* <button class="btn btn-default btn-flat" type="submit" name="Sign out" id="signOut" value="Sign out">
+                                            Sign out                             
+                                        </button>   *@
+                                        
+                                         <button type="button" type="submit" name="Sign out" id="signOut" value="Sign out" class="btn btn-primary btnchange btngeneraleffect " title="Go" tabindex="4">
+                                          <span class="num">
+                                        <i class="fa fa-sign-in" style=" line-height:35px;"></i>
+                                    </span>
+                                     LOG OUT
+                                    <i class="faf fa fa-sign-in"></i>
+
+                                    </button>
+                                        
+                                        
+                                                                             
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- Control Sidebar Toggle Button -->
+                        @*<li>
+                            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                        </li>*@
+                    </ul>
+                </div>
+
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a aria-expanded="true">
+                                <span>Session Expires In:</span>
+                                <span class="hidden-xs" id="sessionExpired"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- Left side column. contains the logo and sidebar -->
+        <aside class="main-sidebar">
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar">
+                <!-- Sidebar user panel -->
+                <div class="user-panel">
+                    <div class="pull-left image">                        
+                        <img class="" alt="">
+                    </div>
+                    <div class="pull-left info">
+                        <p>
+                            <span id="userFullName"></span>
+                        </p>                        
+                    </div>
+                </div>
+                <!-- search form -->
+                <form action="#" method="get" class="sidebar-form">
+                    <div class="input-group">                        
+                    </div>
+                </form>
+                <!-- /.search form -->
+                <!-- sidebar menu: : style can be found in sidebar.less -->
+                <ul class="sidebar-menu">
+                    <li class="header" id="userMenu">MAIN NAVIGATION</li>                  
+                </ul>
+            </section>
+            <!-- /.sidebar -->
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                @RenderSection("Header", false)
+            </section>
+
+            <!-- Main content -->
+            <section class="content">
+                @RenderBody()
+                <!-- Small boxes (Stat box) -->               
+                <!-- /.row -->
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                <b>Version</b> 2.1.<label style="font-weight: 100;" onclick="UnLockInspect();">0</label>
+                
+            </div>
+            @*<strong>Copyright &copy; 2017-2018 <a href="http://www.sarjen.com/">Sarjen Systems Pvt. Ltd.</a>.</strong> All rights*@
+            <strong>Copyright &copy; @DateTime.Now.Year <a href="http://www.sarjen.com/">Sarjen Systems Pvt. Ltd.</a>.</strong> All rights reserved.
+        </footer>
+
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Create the tabs -->
+            <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+                <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>                
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <!-- Home tab content -->
+                <div class="tab-pane" id="control-sidebar-home-tab">                    
+                    <ul class="control-sidebar-menu">   
+                    </ul>
+                    <!-- /.control-sidebar-menu -->
+                    
+                    <ul class="control-sidebar-menu">                      
+                    </ul>
+                    <!-- /.control-sidebar-menu -->
+                </div>
+                <!-- /.tab-pane -->
+                <!-- Stats tab content -->
+                <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
+                <!-- /.tab-pane -->
+                <!-- Settings tab content -->
+               
+                <!-- /.tab-pane -->
+            </div>
+        </aside>
+        <!-- /.control-sidebar -->
+        <!-- Add the sidebar's background. This div must be placed
+       immediately after the control sidebar -->
+        <div class="control-sidebar-bg"></div>
+    </div>
+    <!-- ./wrapper -->
+    <div class="modal fade" id="msgPopUp" role="dialog"></div>
+    <div class="spinner" style="display: none">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <!-- jQuery 2.2.3 -->
+    @*<script src="@Url.Content("~/Contents/Themes/Js/jquery-2.2.3.min.js")"></script>*@
+    <!-- jQuery 3.6.1 -->
+    <script src="@Url.Content("~/Contents/Themes/Js/jquery-3.6.1.min.js")"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="@Url.Content("~/Contents/Themes/Js/jquery-ui.min.js")"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+        $.widget.bridge('uibutton', $.ui.button);
+    </script>
+    <!-- Bootstrap 3.3.6 -->
+    <script src="@Url.Content("~/Contents/Themes/Js/bootstrap.min.js")"></script>    
+    <script src="@Url.Content("~/Contents/Themes/Js/jquery.slimscroll.min.js")"></script>    
+    <!-- AdminLTE App -->
+    <script src="@Url.Content("~/Contents/Themes/Js/app.min.js")"></script>    
+    <!-- AdminLTE for demo purposes -->
+    <script src="@Url.Content("~/Contents/Themes/Js/demo.js")"></script>
+    <!-- DataTables -->
+    <script src="@Url.Content("~/Contents/Themes/Plugins/DataTable/Js/jquery.dataTables.min.js")"></script>
+    <script src="@Url.Content("~/Contents/Themes/Plugins/DataTable/Js/dataTables.bootstrap.min.js")"></script>    
+
+    <script src="@Url.Content("~/Contents/Themes/Plugins/DataTable/Js/dataTables.buttons.min.js")"></script>    
+    <script src="@Url.Content("~/Contents/Themes/Plugins/DataTable/Js/buttons.flash.min.js")"></script>    
+    <script src="@Url.Content("~/Contents/Themes/Plugins/DataTable/Js/jszip.min.js")"></script>    
+    <script src="@Url.Content("~/Contents/Themes/Plugins/DataTable/Js/pdfmake.min.js")"></script>    
+    <script src="@Url.Content("~/Contents/Themes/Plugins/DataTable/Js/vfs_fonts.js")"></script>    
+    <script src="@Url.Content("~/Contents/Themes/Plugins/DataTable/Js/buttons.html5.min.js")"></script>
+    <script src="@Url.Content("~/Contents/Themes/Plugins/DataTable/Js/buttons.print.min.js")"></script>
+
+    <script src="@Url.Content("~/Contents/Themes/Plugins/MultiSelect/bootstrap-multiselect.js")"></script>
+    <script src="@Url.Content("~/Scripts/General.js")"></script>
+    <script src="@Url.Content("~/Scripts/Validation.js")"></script>
+    <script src="@Url.Content("~/Scripts/Layout.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Contents/Themes/Plugins/AutoComplete/select2.full.js")"></script>
+    <script type="text/javascript">
+        document.write('<scr' + 'ipt src="@Url.Content("~/Contents/Themes/Plugins/Confirm/Js/jquery-confirm.js")?' + Math.random() + '" type="text/javascript"></scr' + 'ipt>');    
+    </script>
+
+    <!-- ./wrapper -->
+    <input type="hidden" value="@ViewBag.hdnUserTypeCode" id="hdnUserTypeCode" />
+    <input type="hidden" value="@ViewBag.hdnUserLocationCode" id="hdnUserLocationCode" />
+    <input type="hidden" value="@ViewBag.hdnUserNameWithProfile" id="hdnUserNameWithProfile" />
+    <input type="hidden" value="@ViewBag.hdnuserid" id="hdnuserid" />
+    <input type="hidden" value="@ViewBag.hdnlogintime" id="hdnlogintime" />
+    <input type="hidden" value="@ViewBag.hdnUserName" id="hdnUserName" />
+    <input type="hidden" value="@ViewBag.hdnscopevalues" id="hdnscopevalues" />
+    <input type="hidden" value="@ViewBag.hdnOperationcode" id="hdnOperationcode" />
+    <input type="hidden" value="@ViewBag.hdnViewModeID" id="hdnViewModeID" />
+    <input type="hidden" value="@ViewBag.hdnIpAddress" id="hdnIpAddress" />
+    <input type="hidden" value="@ViewBag.hdnDeptName" id="hdnDeptName" />
+    <input type="hidden" value="@ViewBag.hdnLocationName" id="hdnLocationName" />
+    <input type="hidden" value="@ViewBag.hdnUserFullName" id="hdnUserFullName" />
+    <input type="hidden" value="@ViewBag.hdnLoginPass" id="hdnLoginPass" />
+
+    @Html.Hidden("RedirectToHome", Url.Action("Home", "MIHome"))
+    @Html.Hidden("RedirectToLogin", Url.Action("Login", "MILogin"))
+
+</body>
+</html>

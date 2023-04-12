@@ -1,0 +1,46 @@
+Err.Date: 6/2/2018 1:50:04 PM
+Database Not Connected. <BR> 'table' argument cannot be null.
+Parameter name: table
+UserNo :
+UserName :vvk
+User Division :
+URL:http://localhost/BiznetDisoft_Web/default.aspx
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+
+Err.Date: 6/2/2018 3:46:13 PM
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at frmMainPage.btnSetProject_Click(Object sender, EventArgs e) in D:\Applications\BiznetDiSoft\BiznetDisoft_Web\frmMainPage.aspx.vb:line 2896
+   at frmMainPage.Page_Load(Object sender, EventArgs e) in D:\Applications\BiznetDiSoft\BiznetDisoft_Web\frmMainPage.aspx.vb:line 242<BR> ...PageLoad
+UserNo :
+UserName :vvk
+User Division :
+URL:http://localhost/BiznetDisoft_Web/frmMainPage.aspx?usertype=0098
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+
+Err.Date: 6/2/2018 3:48:10 PM
+System.InvalidCastException: Conversion from string "0000009822##" to type 'Double' is not valid. ---> System.FormatException: Input string was not in a correct format.
+   at Microsoft.VisualBasic.CompilerServices.Conversions.ParseDouble(String Value, NumberFormatInfo NumberFormat)
+   at Microsoft.VisualBasic.CompilerServices.Conversions.ToDouble(String Value, NumberFormatInfo NumberFormat)
+   --- End of inner exception stack trace ---
+   at Microsoft.VisualBasic.CompilerServices.Conversions.ToDouble(String Value, NumberFormatInfo NumberFormat)
+   at Microsoft.VisualBasic.CompilerServices.Conversions.ToDouble(String Value)
+   at frmMainPage.btnSetProject_Click(Object sender, EventArgs e) in D:\Applications\BiznetDiSoft\BiznetDisoft_Web\frmMainPage.aspx.vb:line 2890
+   at frmMainPage.Page_Load(Object sender, EventArgs e) in D:\Applications\BiznetDiSoft\BiznetDisoft_Web\frmMainPage.aspx.vb:line 242<BR> ...PageLoad
+UserNo :
+UserName :vvk
+User Division :
+URL:http://localhost/BiznetDisoft_Web/frmMainPage.aspx?usertype=0098
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+

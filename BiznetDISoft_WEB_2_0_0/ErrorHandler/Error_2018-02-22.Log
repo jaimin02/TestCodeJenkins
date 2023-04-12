@@ -1,0 +1,84 @@
+Err.Date: 2/22/2018 11:56:29 AM
+Object reference not set to an instance of an object.<BR> 
+UserNo :
+UserName :hirenpatel
+User Division :
+URL:http://localhost/BizNETCTM_WEB/frmDocumentDetail_New.aspx
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+
+Err.Date: 2/22/2018 11:56:38 AM
+Object reference not set to an instance of an object.<BR> 
+UserNo :
+UserName :hirenpatel
+User Division :
+URL:http://localhost/BizNETCTM_WEB/frmDocumentDetail_New.aspx
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+
+Err.Date: 2/22/2018 11:59:18 AM
+Column ' vStageDesc' does not belong to underlying table 'VIEW_PROJECTNODEUSERRIGHTSDETAILS'.<BR> 
+UserNo :
+UserName :hirenpatel
+User Division :
+URL:http://localhost/BizNETCTM_WEB/frmDocumentDetail.aspx?WorkSpaceId=0000011096&NodeId=42&Mode=1&Page=frmMyProject&Page2=frmProjectDetailMst&Type=All&QC=N
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+
+Err.Date: 2/22/2018 12:00:19 PM
+Conversion from string "" to type 'Double' is not valid.<BR> 
+UserNo :
+UserName :hirenpatel
+User Division :
+URL:http://localhost/BizNETCTM_WEB/frmDocumentDetail.aspx?WorkSpaceId=0000011096&NodeId=42&Mode=1&Page=frmMyProject&Page2=frmProjectDetailMst&Type=All&QC=N
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+
+Err.Date: 2/22/2018 5:11:37 PM
+Object reference not set to an instance of an object.<BR> 
+UserNo :
+UserName :
+User Division :
+URL:http://localhost/BizNETCTM_WEB/frmDocumentDetail_New.aspx
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+
+Err.Date: 2/22/2018 5:16:14 PM
+Column 'dExpiryDate' does not belong to table CHECKEDOUTFILEDETAIL.<BR> 
+UserNo :
+UserName :hirenpatel
+User Division :
+URL:http://localhost/BizNETCTM_WEB/frmDocumentDetail_New.aspx?WorkSpaceId=0000011096&NodeId=48&Mode=1&Page=frmMyProject&Page2=frmProjectDetailMst&Type=OPERATIONAL&QC=N&DMS=Y
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+
+Err.Date: 2/22/2018 5:18:04 PM
+Object reference not set to an instance of an object.<BR> 
+UserNo :
+UserName :hirenpatel
+User Division :
+URL:http://localhost/BizNETCTM_WEB/frmDocumentDetail.aspx
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+

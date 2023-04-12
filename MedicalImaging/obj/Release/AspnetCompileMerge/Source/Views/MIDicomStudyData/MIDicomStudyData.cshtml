@@ -1,0 +1,165 @@
+﻿@{
+    ViewBag.Title = "DI : DICOM STUDY Data";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<h2>MIDicomStudyData</h2>*@
+@using (Html.BeginForm())
+{
+    @section Header
+    {
+        <h1>Dicom<small>Study</small></h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i>Study</a></li>
+            <li class="active">Dicom Study Data</li>
+        </ol>
+    } 
+    
+    <!-- Small boxes (Stat box) -->
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header" style="text-align: right">
+                    <div class="row">
+                    </div>
+                </div>
+
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-xs-6 form-group">
+                            <div class="col-sm-12">
+                                <label for="ddlProject">Project</label>
+                                <select class="form-control select2" id="ddlProject" tabindex="1">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 form-group">
+                            <div class="col-sm-12">
+                                <label for="ddlProject">Screening No</label>
+                                <select class="form-control select2" id="ddlSubject" tabindex="2">
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 form-group">
+                            <div class="col-sm-12">
+                                <label for="ddlTemplate">Activity</label>
+                                <select class="form-control select2" id="ddlActivity" tabindex="3">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 form-group">
+                            <div class="col-sm-12">
+                                <label for="ddlTemplate">Sub Activity</label>
+                                <select class="form-control select2" id="ddlSubActivity" tabindex="4">
+                                </select>
+                            </div>
+                        </div>
+                        <!-- ./col -->
+                    </div>
+                    <div class="row" style="text-align: right;">
+                        <div class="col-xs-12 form-group">
+                            <div class="col-sm-12">
+                                <span>
+                                    @*<button type="button" id="btnGo" class="btn btn-primary " title="Go" tabindex="4">Go</button>*@
+                                    <button type="button" id="btnGo" class="btn btn-primary btnchange btneffect" title="Go" tabindex="4">
+                                        <span class="num">
+                                            <i class="fa fa-sign-in" style="line-height: 35px;"></i>
+                                        </span>
+                                        GO
+                                    <i class="faf fa fa-sign-in"></i>
+
+                                    </button>
+                                </span>
+                                <span>
+                                    @*<button type="button" id="btnClear" class="btn btn-danger " title="CLEAR" tabindex="5">CLEAR</button>*@
+                                    <button type="button" id="btnClear" class="btn btn-primary btnchange btndangereffect" title="CLEAR" tabindex="5">
+                                        <span class="num">
+                                            <i class="fa fa-close" style="line-height: 35px;"></i>
+                                        </span>
+                                        CLEAR
+                                    <i class="faf fa fa-sign-in"></i>
+                                    </button>
+                                </span>
+
+                                <span>
+                                    <button style="display:none" type="button" id="btnSkip" class="btn btn-primary btnchange btnwarningeffect" title="SKIP" tabindex="5"
+                                        onclick="MIDicomStudy.skipVisit();">
+                                        <span class="num">
+                                            <i class="fa fa-sign-in" style="line-height: 35px;"></i>
+                                        </span>
+                                        PROCEED
+                                        <i class="faf fa fa-sign-in"></i>
+                                    </button>
+                                </span>
+                                <span id="spanSkip">
+                                    @*<button type="button" id="Skip" class="btn btn-warning" title="Skip" tabindex="5">Skip</button>*@
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="text-align: right;" id="legend">
+                        <div class="col-xs-12 form-group">
+                            <div class="col-sm-12">
+                                <span>
+                                    <canvas id="myCanvasOriginal" width="12" height="12" class="original"></canvas>
+                                </span>
+                                <span class="">Original Image</span>
+                                <span>
+                                    <canvas id="myCanvasReviewed" width="12" height="12" class="reviewed"></canvas>
+                                </span>
+                                <span class="">Reviewed Image</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 form-group">
+                            <div class="col-sm-12">
+                                <div id="divTblSubjectReviewList">
+                                    <table id="tblSubjectReviewList" class="table table-bordered table-striped dataTable">
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+        </div>
+    </div>
+    <!-- /.row --> 
+    
+    <!-- Small boxes (Stat box) -->@*
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header" style="text-align: right">
+                    <button style="text-align: right" type="button" id="btnBack" class="btn btn-primary margin" title="Back" onclick="@("window.location.href='" + @Url.Action("MIDicomStudy", "MIDicomStudy") + "'");">Back</button>                    
+                </div>
+
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <table id="tblSubjectReviewList" class="table table-bordered table-striped dataTable">
+                     </table>
+                </div>
+                <!-- /.box-body -->
+            </div>
+        </div>
+    </div>*@
+    <!-- /.row -->     
+    
+    <div id="loader" class="modal"></div>  
+    
+    
+}
+
+@*<script type="text/javascript" src="@Url.Content("~/Contents/Themes/Js/jquery-2.2.3.min.js")"></script>*@
+<script type="text/javascript" src="@Url.Content("~/Contents/Themes/Js/jquery-3.6.1.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/General.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/MIDicomStudyData.js")"></script>
+@Html.Hidden("RedirectToImageReview", Url.Action("MIImageReview", "MIImageReview"))
+@Html.Hidden("DicomViewer", Url.Action("MIDicomStudyViewer", "MIDicomStudyViewer"))
+
+

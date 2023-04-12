@@ -1,0 +1,9 @@
+.elevator.opening, .elevator.closing { border-color: #faebcc; }
+
+.elevator.opening > .panel-heading, .elevator.closing > .panel-heading { color: #8a6d3b; background-color: #fcf8e3; border-color: #faebcc; }
+
+.elevator.open { border-color: #d6e9c6; }
+
+.elevator.open > .panel-heading { color: #3c763d; background-color: #dff0d8; border-color: #d6e9c6; }
+
+/*# sourceMappingURL=jquery.tcg-elevator.css.map */

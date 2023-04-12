@@ -1,0 +1,38 @@
+Err.Date: 7/14/2016 6:14:16 PM
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at frmMainPage.Page_Load(Object sender, EventArgs e) in D:\BizNET\BizNETCTM\BizNETCTM_WEB\frmMainPage.aspx.vb:line 118<BR> ...PageLoad
+UserNo :
+UserName :CPMAAdmin
+User Division :
+URL:http://localhost/BizNETCTM_WEB/frmMainPage.aspx?usertype=0005
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+
+Err.Date: 7/14/2016 6:14:52 PM
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at frmMainPage.Page_Load(Object sender, EventArgs e) in D:\BizNET\BizNETCTM\BizNETCTM_WEB\frmMainPage.aspx.vb:line 118<BR> ...PageLoad
+UserNo :
+UserName :CPMAAdmin
+User Division :
+URL:http://localhost/BizNETCTM_WEB/frmMainPage.aspx?usertype=0005
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+
+Err.Date: 7/14/2016 6:16:09 PM
+Column 'vSubjectIdForLab' does not belong to underlying table 'VIEW_WORKSPACESUBJECTMST'.<BR> ............BtnGeneratePdf_Click
+UserNo :
+UserName :CPMAAdmin
+User Division :
+URL:http://localhost/BizNETCTM_Web/frmcrfprint_New.aspx?UserId=3
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+

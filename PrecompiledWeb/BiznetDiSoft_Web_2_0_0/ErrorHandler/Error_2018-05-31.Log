@@ -1,0 +1,17 @@
+Err.Date: 5/31/2018 9:54:41 AM
+System.Net.WebException: The operation has timed out
+   at System.Web.Services.Protocols.WebClientProtocol.GetWebResponse(WebRequest request)
+   at System.Web.Services.Protocols.HttpWebClientProtocol.GetWebResponse(WebRequest request)
+   at System.Web.Services.Protocols.SoapHttpClientProtocol.Invoke(String methodName, Object[] parameters)
+   at WS_HelpDbTable.WS_HelpDbTable.getLocationMst(String WhereCondition_1, DataRetrievalModeEnum DataRetrieval_1, DataSet& Sql_DataSet, String& eStr_Retu) in c:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\biznetdisoft_web\4e1ce5ce\770d7547\App_WebReferences.63krgf-f.2.cs:line 48200
+   at frmMainPage.Page_Load(Object sender, EventArgs e) in D:\Applications\BiznetDiSoft\BiznetDisoft_Web\frmMainPage.aspx.vb:line 134<BR> ...PageLoad
+UserNo :
+UserName :
+User Division :
+URL:http://localhost/BiznetDisoft_Web/frmMainPage.aspx
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+

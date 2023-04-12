@@ -1,0 +1,9 @@
+E:\Application\DISoft_C\DISoft _C\DatabaseOperation\bin\Debug\DatabaseOperation.dll
+E:\Application\DISoft_C\DISoft _C\DatabaseOperation\bin\Debug\DatabaseOperation.pdb
+E:\Application\DISoft_C\DISoft _C\DatabaseOperation\bin\Debug\DTO.dll
+E:\Application\DISoft_C\DISoft _C\DatabaseOperation\bin\Debug\Utility.dll
+E:\Application\DISoft_C\DISoft _C\DatabaseOperation\bin\Debug\DTO.pdb
+E:\Application\DISoft_C\DISoft _C\DatabaseOperation\bin\Debug\Utility.pdb
+E:\Application\DISoft_C\DISoft _C\DatabaseOperation\obj\Debug\DatabaseOperation.csprojResolveAssemblyReference.cache
+E:\Application\DISoft_C\DISoft _C\DatabaseOperation\obj\Debug\DatabaseOperation.dll
+E:\Application\DISoft_C\DISoft _C\DatabaseOperation\obj\Debug\DatabaseOperation.pdb

@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "DI : IMAGE REVIEW";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm()) 
+{ 
+    @section Header
+        {
+        <h1>Image Review<small></small></h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i>Review</a></li>
+            <li class="active">Image Review</li>
+        </ol>
+        }
+    <!-- Small boxes (Stat box) -->
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header" style="text-align: right">
+                    <button style="text-align: right" type="button" id="btnBack" class="btn btn-primary margin" title="Back" onclick="@("window.location.href='" + @Url.Action("MIDicomStudy", "MIDicomStudy") + "'");">Back</button>                    
+                </div>
+
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <table id="tblSubjectReviewList" class="table table-bordered table-striped dataTable">
+                     </table>
+                </div>
+                <!-- /.box-body -->
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->  
+    
+     @*<script type="text/javascript" src="@Url.Content("~/Contents/Themes/Js/jquery-2.2.3.min.js")"></script>*@
+    <script type="text/javascript" src="@Url.Content("~/Contents/Themes/Js/jquery-3.6.1.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/General.js")"></script>        
+    <script type="text/javascript" src="@Url.Content("~/Scripts/MIImageReview.js")"></script>  
+
+    @Html.Hidden("DicomViewer",Url.Action("MIDicomViewer","MIDicomViewer"))    
+    //@Html.ActionLink("MIImageReview","MIImageReview", "MIImageReview")
+    //@Html.ActionLink("Viewer", "Action", new {controller="MIDicomViewer"}, new {target="_blank",@class="edit"})
+    
+    <input type="hidden" name="dicomStudyvParentWorkspaceId" id="dicomStudyvParentWorkspaceId" value="@ViewBag.dicomStudyvParentWorkspaceId" />
+    <input type="hidden" name="dicomStudyvWorkSpaceId" id="dicomStudyvWorkSpaceId" value="@ViewBag.dicomStudyvWorkSpaceId" />
+    <input type="hidden" name="dicomStudyvSubjectId" id="dicomStudyvSubjectId" value="@ViewBag.dicomStudyvSubjectId" />
+    <input type="hidden" name="dicomStudyvMySubjectNo" id="dicomStudyvMySubjectNo" value="@ViewBag.dicomStudyvMySubjectNo" />
+    <input type="hidden" name="dicomStudyiMySubjectNo" id="dicomStudyiMySubjectNo" value="@ViewBag.dicomStudyiMySubjectNo" />
+    <input type="hidden" name="dicomStudyiPeriod" id="dicomStudyiPeriod" value="@ViewBag.dicomStudyiPeriod" />
+    <input type="hidden" name="dicomStudyvActivityId" id="dicomStudyvActivityId" value="@ViewBag.dicomStudyvActivityId" />
+    <input type="hidden" name="dicomStudyiNodeId" id="dicomStudyiNodeId" value="@ViewBag.dicomStudyiNodeId" />        
+    <input type="hidden" name="dicomStudyvSubActivityId" id="dicomStudyvSubActivityId" value="@ViewBag.dicomStudyvSubActivityId" />
+    <input type="hidden" name="dicomStudyiSubNodeId" id="dicomStudyiSubNodeId" value="@ViewBag.dicomStudyiSubNodeId" />        
+    <input type="hidden" name="dicomStudyvActivityName" id="dicomStudyvActivityName" value="@ViewBag.dicomStudyvActivityName" />  
+    <input type="hidden" name="dicomStudyvSubActivityName" id="dicomStudyvSubActivityName" value="@ViewBag.dicomStudyvSubActivityName" />   
+}

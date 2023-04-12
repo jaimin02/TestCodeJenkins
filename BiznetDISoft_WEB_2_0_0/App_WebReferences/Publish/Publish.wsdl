@@ -1,0 +1,1674 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="saveSubmissionDtl">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="subType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="workspaceId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="applicationNumber" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="projectPublishType" type="s1:char" />
+            <s:element minOccurs="0" maxOccurs="1" name="currentSeqNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastPublishedVersion" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dos" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="relatedSeqNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="subMode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="isRMSSelected" type="s1:char" />
+            <s:element minOccurs="0" maxOccurs="1" name="subVariationMode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="addTT" type="s1:char" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastConfirmedSubmissionPath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="baseWorkFolder" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="subDesc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="selectedCMS" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="trackCMS" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="eStr_Reru" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="saveSubmissionDtlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="saveSubmissionDtlResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="eStr_Reru" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getWorkspaceTreeNodesForLeafs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Param" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sql_DataSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="eStr_Retu" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getWorkspaceTreeNodesForLeafsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getWorkspaceTreeNodesForLeafsResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sql_DataSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="eStr_Retu" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="View_GetCMSCountry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WhereCondition_1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DataRetrieval_1" type="tns:DataRetrievalModeEnum" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ds_Retrun">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="eStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="DataRetrievalModeEnum">
+        <s:restriction base="s:string">
+          <s:enumeration value="DataTable_Empty" />
+          <s:enumeration value="DataTable_AllRecords" />
+          <s:enumeration value="DataTable_WithWhereCondition" />
+          <s:enumeration value="DatatTable_Query" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="View_GetCMSCountryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="View_GetCMSCountryResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ds_Retrun">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="eStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSubmissionTypeMst">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WhereCondition_1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DataRetrieval_1" type="tns:DataRetrievalModeEnum" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ds_Retrun">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="eStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSubmissionTypeMstResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetSubmissionTypeMstResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ds_Retrun">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="eStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMyProjectCompletionList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="prefixText" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="count" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="contextKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMyProjectCompletionListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMyProjectCompletionListResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Proc_GetAttributeSpecificParentNodes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WorkspaceId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NodeId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sql_DataSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="eStr_Retu" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Proc_GetAttributeSpecificParentNodesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Proc_GetAttributeSpecificParentNodesResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sql_DataSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="eStr_Retu" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insert_WorkspaceNodeAttrDetail_ForEctd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Choice_1" type="tns:DataObjOpenSaveModeEnum" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ds_WorkspaceNodeAttrDetail_ForEctd">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="UserCode_1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="eStr_Retu" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="DataObjOpenSaveModeEnum">
+        <s:restriction base="s:string">
+          <s:enumeration value="DataObjOpenMode_None" />
+          <s:enumeration value="DataObjOpenMode_Add" />
+          <s:enumeration value="DataObjOpenMode_Edit" />
+          <s:enumeration value="DataObjOpenMode_Delete" />
+          <s:enumeration value="DataObjOpenMode_View" />
+          <s:enumeration value="DataObjOpenMode_Rearrange" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="Insert_WorkspaceNodeAttrDetail_ForEctdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Insert_WorkspaceNodeAttrDetail_ForEctdResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="eStr_Retu" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getWorkspaceSubmissionInfoEU14DtlBySubmissionId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WhereCondition_1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DataRetrieval_1" type="tns:DataRetrievalModeEnum" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ds_Retrun">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="eStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getWorkspaceSubmissionInfoEU14DtlBySubmissionIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getWorkspaceSubmissionInfoEU14DtlBySubmissionIdResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ds_Retrun">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="eStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Proc_ViewInternalLabel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WorkspaceId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sql_DataSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="eStr_Retu" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Proc_ViewInternalLabelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Proc_ViewInternalLabelResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sql_DataSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="eStr_Retu" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="proc_SubmissionNodeDtl">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WorkspaceId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="iLabelNo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sql_DataSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="eStr_Retu" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="proc_SubmissionNodeDtlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="proc_SubmissionNodeDtlResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sql_DataSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="eStr_Retu" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="proc_publishVersion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vWorkspaceId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sql_DataSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="eStr_Retu" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="proc_publishVersionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="proc_publishVersionResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sql_DataSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="eStr_Retu" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insert_SubmittedWorkspaceNodeDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Choice_1" type="tns:DataObjOpenSaveModeEnum" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ds_SubmittedWorkspaceNodeDetail">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="UserCode_1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="eStr_Retu" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insert_SubmittedWorkspaceNodeDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Insert_SubmittedWorkspaceNodeDetailResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="eStr_Retu" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insert_SubmissionInfoEU14Dtl">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ParamOut_1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Choice_1" type="tns:DataObjOpenSaveModeEnum" />
+            <s:element minOccurs="0" maxOccurs="1" name="Dt_SubmissionInfoEU14Dtl">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="eStr_Retu" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insert_SubmissionInfoEU14DtlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Insert_SubmissionInfoEU14DtlResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="eStr_Retu" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSubmissionInfoEU14Dtl">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wStr" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DataRetrieval_1" type="tns:DataRetrievalModeEnum" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sql_DataSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="eStr_Retu" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSubmissionInfoEU14DtlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getSubmissionInfoEU14DtlResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sql_DataSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="eStr_Retu" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getsubmittedWorkspacenodedetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WhereCondition_1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DataRetrieval_1" type="tns:DataRetrievalModeEnum" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ds_Retrun">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="eStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getsubmittedWorkspacenodedetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getsubmittedWorkspacenodedetailResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ds_Retrun">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="eStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="view_commonworkspaceDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wStr" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DataRetrieval_1" type="tns:DataRetrievalModeEnum" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sql_DataSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="eStr_Retu" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="view_commonworkspaceDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="view_commonworkspaceDetailResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sql_DataSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="eStr_Retu" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getcreateWorkspaceLabel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="workspaceId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dsInternalLabelMst">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="eStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getcreateWorkspaceLabelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getcreateWorkspaceLabelResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="dsInternalLabelMst">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="eStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Proc_NewTranNo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Choice" type="tns:DataObjOpenSaveModeEnum" />
+            <s:element minOccurs="0" maxOccurs="1" name="DsWsEctdDtl">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="UserCode_1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="eStr_Retu" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="iTranNo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Proc_NewTranNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Proc_NewTranNoResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="eStr_Retu" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="iTranNo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWorkspaceDtlEctd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WhereCondition_1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DataRetrieval_1" type="tns:DataRetrievalModeEnum" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sql_DataSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="eStr_Retu" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWorkspaceDtlEctdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetWorkspaceDtlEctdResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sql_DataSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="eStr_Retu" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="publishWorkspaceSubmission">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dtoSubmissionMst">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="dtoInternalLabelMst">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="currentSeqNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="relatedSeqNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="publishDestinationPath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sourcePath" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="isRMSSelected" type="s1:char" />
+            <s:element minOccurs="0" maxOccurs="1" name="subVariationMode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="addTT" type="s1:char" />
+            <s:element minOccurs="0" maxOccurs="1" name="leafIds" type="tns:ArrayOfInt" />
+            <s:element minOccurs="1" maxOccurs="1" name="dos" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="subType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="baseWorkFolder" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="eStr_Retu" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="publishWorkspaceSubmissionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="publishWorkspaceSubmissionResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtoSubmissionMst">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="dtoInternalLabelMst">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="eStr_Retu" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getWorkspaceSubmissionInfoUSDtlBySubmissionId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WhereCondition_1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DataRetrieval_1" type="tns:DataRetrievalModeEnum" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ds_Retrun">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="eStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getWorkspaceSubmissionInfoUSDtlBySubmissionIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getWorkspaceSubmissionInfoUSDtlBySubmissionIdResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ds_Retrun">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="eStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getWorkspaceSubmissionInfoCADtlBySubmissionId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WhereCondition_1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DataRetrieval_1" type="tns:DataRetrievalModeEnum" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ds_Retrun">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="eStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getWorkspaceSubmissionInfoCADtlBySubmissionIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getWorkspaceSubmissionInfoCADtlBySubmissionIdResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ds_Retrun">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="eStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insert_SubmissionInfoCADtl">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ParamOut_1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Choice_1" type="tns:DataObjOpenSaveModeEnum" />
+            <s:element minOccurs="0" maxOccurs="1" name="Dt_SubmissionInfoEU14Dtl">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="eStr_Retu" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insert_SubmissionInfoCADtlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Insert_SubmissionInfoCADtlResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="eStr_Retu" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insert_SubmissionInfoUSDtl">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ParamOut_1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Choice_1" type="tns:DataObjOpenSaveModeEnum" />
+            <s:element minOccurs="0" maxOccurs="1" name="Dt_SubmissionInfoEU14Dtl">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="eStr_Retu" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insert_SubmissionInfoUSDtlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Insert_SubmissionInfoUSDtlResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="eStr_Retu" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getWorkspaceRMSSubmissionInfoEU14">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WhereCondition_1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DataRetrieval_1" type="tns:DataRetrievalModeEnum" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ds_Retrun">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="eStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getWorkspaceRMSSubmissionInfoEU14Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getWorkspaceRMSSubmissionInfoEU14Result" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ds_Retrun">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="eStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="ArrayOfString" nillable="true" type="tns:ArrayOfString" />
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="char">
+        <s:restriction base="s:unsignedShort" />
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="saveSubmissionDtlSoapIn">
+    <wsdl:part name="parameters" element="tns:saveSubmissionDtl" />
+  </wsdl:message>
+  <wsdl:message name="saveSubmissionDtlSoapOut">
+    <wsdl:part name="parameters" element="tns:saveSubmissionDtlResponse" />
+  </wsdl:message>
+  <wsdl:message name="getWorkspaceTreeNodesForLeafsSoapIn">
+    <wsdl:part name="parameters" element="tns:getWorkspaceTreeNodesForLeafs" />
+  </wsdl:message>
+  <wsdl:message name="getWorkspaceTreeNodesForLeafsSoapOut">
+    <wsdl:part name="parameters" element="tns:getWorkspaceTreeNodesForLeafsResponse" />
+  </wsdl:message>
+  <wsdl:message name="View_GetCMSCountrySoapIn">
+    <wsdl:part name="parameters" element="tns:View_GetCMSCountry" />
+  </wsdl:message>
+  <wsdl:message name="View_GetCMSCountrySoapOut">
+    <wsdl:part name="parameters" element="tns:View_GetCMSCountryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSubmissionTypeMstSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSubmissionTypeMst" />
+  </wsdl:message>
+  <wsdl:message name="GetSubmissionTypeMstSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSubmissionTypeMstResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMyProjectCompletionListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMyProjectCompletionList" />
+  </wsdl:message>
+  <wsdl:message name="GetMyProjectCompletionListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMyProjectCompletionListResponse" />
+  </wsdl:message>
+  <wsdl:message name="Proc_GetAttributeSpecificParentNodesSoapIn">
+    <wsdl:part name="parameters" element="tns:Proc_GetAttributeSpecificParentNodes" />
+  </wsdl:message>
+  <wsdl:message name="Proc_GetAttributeSpecificParentNodesSoapOut">
+    <wsdl:part name="parameters" element="tns:Proc_GetAttributeSpecificParentNodesResponse" />
+  </wsdl:message>
+  <wsdl:message name="Insert_WorkspaceNodeAttrDetail_ForEctdSoapIn">
+    <wsdl:part name="parameters" element="tns:Insert_WorkspaceNodeAttrDetail_ForEctd" />
+  </wsdl:message>
+  <wsdl:message name="Insert_WorkspaceNodeAttrDetail_ForEctdSoapOut">
+    <wsdl:part name="parameters" element="tns:Insert_WorkspaceNodeAttrDetail_ForEctdResponse" />
+  </wsdl:message>
+  <wsdl:message name="getWorkspaceSubmissionInfoEU14DtlBySubmissionIdSoapIn">
+    <wsdl:part name="parameters" element="tns:getWorkspaceSubmissionInfoEU14DtlBySubmissionId" />
+  </wsdl:message>
+  <wsdl:message name="getWorkspaceSubmissionInfoEU14DtlBySubmissionIdSoapOut">
+    <wsdl:part name="parameters" element="tns:getWorkspaceSubmissionInfoEU14DtlBySubmissionIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="Proc_ViewInternalLabelSoapIn">
+    <wsdl:part name="parameters" element="tns:Proc_ViewInternalLabel" />
+  </wsdl:message>
+  <wsdl:message name="Proc_ViewInternalLabelSoapOut">
+    <wsdl:part name="parameters" element="tns:Proc_ViewInternalLabelResponse" />
+  </wsdl:message>
+  <wsdl:message name="proc_SubmissionNodeDtlSoapIn">
+    <wsdl:part name="parameters" element="tns:proc_SubmissionNodeDtl" />
+  </wsdl:message>
+  <wsdl:message name="proc_SubmissionNodeDtlSoapOut">
+    <wsdl:part name="parameters" element="tns:proc_SubmissionNodeDtlResponse" />
+  </wsdl:message>
+  <wsdl:message name="proc_publishVersionSoapIn">
+    <wsdl:part name="parameters" element="tns:proc_publishVersion" />
+  </wsdl:message>
+  <wsdl:message name="proc_publishVersionSoapOut">
+    <wsdl:part name="parameters" element="tns:proc_publishVersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="Insert_SubmittedWorkspaceNodeDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:Insert_SubmittedWorkspaceNodeDetail" />
+  </wsdl:message>
+  <wsdl:message name="Insert_SubmittedWorkspaceNodeDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:Insert_SubmittedWorkspaceNodeDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="Insert_SubmissionInfoEU14DtlSoapIn">
+    <wsdl:part name="parameters" element="tns:Insert_SubmissionInfoEU14Dtl" />
+  </wsdl:message>
+  <wsdl:message name="Insert_SubmissionInfoEU14DtlSoapOut">
+    <wsdl:part name="parameters" element="tns:Insert_SubmissionInfoEU14DtlResponse" />
+  </wsdl:message>
+  <wsdl:message name="getSubmissionInfoEU14DtlSoapIn">
+    <wsdl:part name="parameters" element="tns:getSubmissionInfoEU14Dtl" />
+  </wsdl:message>
+  <wsdl:message name="getSubmissionInfoEU14DtlSoapOut">
+    <wsdl:part name="parameters" element="tns:getSubmissionInfoEU14DtlResponse" />
+  </wsdl:message>
+  <wsdl:message name="getsubmittedWorkspacenodedetailSoapIn">
+    <wsdl:part name="parameters" element="tns:getsubmittedWorkspacenodedetail" />
+  </wsdl:message>
+  <wsdl:message name="getsubmittedWorkspacenodedetailSoapOut">
+    <wsdl:part name="parameters" element="tns:getsubmittedWorkspacenodedetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="view_commonworkspaceDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:view_commonworkspaceDetail" />
+  </wsdl:message>
+  <wsdl:message name="view_commonworkspaceDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:view_commonworkspaceDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="getcreateWorkspaceLabelSoapIn">
+    <wsdl:part name="parameters" element="tns:getcreateWorkspaceLabel" />
+  </wsdl:message>
+  <wsdl:message name="getcreateWorkspaceLabelSoapOut">
+    <wsdl:part name="parameters" element="tns:getcreateWorkspaceLabelResponse" />
+  </wsdl:message>
+  <wsdl:message name="Proc_NewTranNoSoapIn">
+    <wsdl:part name="parameters" element="tns:Proc_NewTranNo" />
+  </wsdl:message>
+  <wsdl:message name="Proc_NewTranNoSoapOut">
+    <wsdl:part name="parameters" element="tns:Proc_NewTranNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkspaceDtlEctdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWorkspaceDtlEctd" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkspaceDtlEctdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWorkspaceDtlEctdResponse" />
+  </wsdl:message>
+  <wsdl:message name="publishWorkspaceSubmissionSoapIn">
+    <wsdl:part name="parameters" element="tns:publishWorkspaceSubmission" />
+  </wsdl:message>
+  <wsdl:message name="publishWorkspaceSubmissionSoapOut">
+    <wsdl:part name="parameters" element="tns:publishWorkspaceSubmissionResponse" />
+  </wsdl:message>
+  <wsdl:message name="getWorkspaceSubmissionInfoUSDtlBySubmissionIdSoapIn">
+    <wsdl:part name="parameters" element="tns:getWorkspaceSubmissionInfoUSDtlBySubmissionId" />
+  </wsdl:message>
+  <wsdl:message name="getWorkspaceSubmissionInfoUSDtlBySubmissionIdSoapOut">
+    <wsdl:part name="parameters" element="tns:getWorkspaceSubmissionInfoUSDtlBySubmissionIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="getWorkspaceSubmissionInfoCADtlBySubmissionIdSoapIn">
+    <wsdl:part name="parameters" element="tns:getWorkspaceSubmissionInfoCADtlBySubmissionId" />
+  </wsdl:message>
+  <wsdl:message name="getWorkspaceSubmissionInfoCADtlBySubmissionIdSoapOut">
+    <wsdl:part name="parameters" element="tns:getWorkspaceSubmissionInfoCADtlBySubmissionIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="Insert_SubmissionInfoCADtlSoapIn">
+    <wsdl:part name="parameters" element="tns:Insert_SubmissionInfoCADtl" />
+  </wsdl:message>
+  <wsdl:message name="Insert_SubmissionInfoCADtlSoapOut">
+    <wsdl:part name="parameters" element="tns:Insert_SubmissionInfoCADtlResponse" />
+  </wsdl:message>
+  <wsdl:message name="Insert_SubmissionInfoUSDtlSoapIn">
+    <wsdl:part name="parameters" element="tns:Insert_SubmissionInfoUSDtl" />
+  </wsdl:message>
+  <wsdl:message name="Insert_SubmissionInfoUSDtlSoapOut">
+    <wsdl:part name="parameters" element="tns:Insert_SubmissionInfoUSDtlResponse" />
+  </wsdl:message>
+  <wsdl:message name="getWorkspaceRMSSubmissionInfoEU14SoapIn">
+    <wsdl:part name="parameters" element="tns:getWorkspaceRMSSubmissionInfoEU14" />
+  </wsdl:message>
+  <wsdl:message name="getWorkspaceRMSSubmissionInfoEU14SoapOut">
+    <wsdl:part name="parameters" element="tns:getWorkspaceRMSSubmissionInfoEU14Response" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldHttpGetIn" />
+  <wsdl:message name="HelloWorldHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMyProjectCompletionListHttpGetIn">
+    <wsdl:part name="prefixText" type="s:string" />
+    <wsdl:part name="count" type="s:string" />
+    <wsdl:part name="contextKey" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMyProjectCompletionListHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldHttpPostIn" />
+  <wsdl:message name="HelloWorldHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMyProjectCompletionListHttpPostIn">
+    <wsdl:part name="prefixText" type="s:string" />
+    <wsdl:part name="count" type="s:string" />
+    <wsdl:part name="contextKey" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMyProjectCompletionListHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:portType name="WS_KnowledgeNETPublishSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="saveSubmissionDtl">
+      <wsdl:input message="tns:saveSubmissionDtlSoapIn" />
+      <wsdl:output message="tns:saveSubmissionDtlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getWorkspaceTreeNodesForLeafs">
+      <wsdl:input message="tns:getWorkspaceTreeNodesForLeafsSoapIn" />
+      <wsdl:output message="tns:getWorkspaceTreeNodesForLeafsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="View_GetCMSCountry">
+      <wsdl:input message="tns:View_GetCMSCountrySoapIn" />
+      <wsdl:output message="tns:View_GetCMSCountrySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubmissionTypeMst">
+      <wsdl:input message="tns:GetSubmissionTypeMstSoapIn" />
+      <wsdl:output message="tns:GetSubmissionTypeMstSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMyProjectCompletionList">
+      <wsdl:input message="tns:GetMyProjectCompletionListSoapIn" />
+      <wsdl:output message="tns:GetMyProjectCompletionListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Proc_GetAttributeSpecificParentNodes">
+      <wsdl:input message="tns:Proc_GetAttributeSpecificParentNodesSoapIn" />
+      <wsdl:output message="tns:Proc_GetAttributeSpecificParentNodesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Insert_WorkspaceNodeAttrDetail_ForEctd">
+      <wsdl:input message="tns:Insert_WorkspaceNodeAttrDetail_ForEctdSoapIn" />
+      <wsdl:output message="tns:Insert_WorkspaceNodeAttrDetail_ForEctdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getWorkspaceSubmissionInfoEU14DtlBySubmissionId">
+      <wsdl:input message="tns:getWorkspaceSubmissionInfoEU14DtlBySubmissionIdSoapIn" />
+      <wsdl:output message="tns:getWorkspaceSubmissionInfoEU14DtlBySubmissionIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Proc_ViewInternalLabel">
+      <wsdl:input message="tns:Proc_ViewInternalLabelSoapIn" />
+      <wsdl:output message="tns:Proc_ViewInternalLabelSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="proc_SubmissionNodeDtl">
+      <wsdl:input message="tns:proc_SubmissionNodeDtlSoapIn" />
+      <wsdl:output message="tns:proc_SubmissionNodeDtlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="proc_publishVersion">
+      <wsdl:input message="tns:proc_publishVersionSoapIn" />
+      <wsdl:output message="tns:proc_publishVersionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Insert_SubmittedWorkspaceNodeDetail">
+      <wsdl:input message="tns:Insert_SubmittedWorkspaceNodeDetailSoapIn" />
+      <wsdl:output message="tns:Insert_SubmittedWorkspaceNodeDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Insert_SubmissionInfoEU14Dtl">
+      <wsdl:input message="tns:Insert_SubmissionInfoEU14DtlSoapIn" />
+      <wsdl:output message="tns:Insert_SubmissionInfoEU14DtlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getSubmissionInfoEU14Dtl">
+      <wsdl:input message="tns:getSubmissionInfoEU14DtlSoapIn" />
+      <wsdl:output message="tns:getSubmissionInfoEU14DtlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getsubmittedWorkspacenodedetail">
+      <wsdl:input message="tns:getsubmittedWorkspacenodedetailSoapIn" />
+      <wsdl:output message="tns:getsubmittedWorkspacenodedetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="view_commonworkspaceDetail">
+      <wsdl:input message="tns:view_commonworkspaceDetailSoapIn" />
+      <wsdl:output message="tns:view_commonworkspaceDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getcreateWorkspaceLabel">
+      <wsdl:input message="tns:getcreateWorkspaceLabelSoapIn" />
+      <wsdl:output message="tns:getcreateWorkspaceLabelSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Proc_NewTranNo">
+      <wsdl:input message="tns:Proc_NewTranNoSoapIn" />
+      <wsdl:output message="tns:Proc_NewTranNoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkspaceDtlEctd">
+      <wsdl:input message="tns:GetWorkspaceDtlEctdSoapIn" />
+      <wsdl:output message="tns:GetWorkspaceDtlEctdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="publishWorkspaceSubmission">
+      <wsdl:input message="tns:publishWorkspaceSubmissionSoapIn" />
+      <wsdl:output message="tns:publishWorkspaceSubmissionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getWorkspaceSubmissionInfoUSDtlBySubmissionId">
+      <wsdl:input message="tns:getWorkspaceSubmissionInfoUSDtlBySubmissionIdSoapIn" />
+      <wsdl:output message="tns:getWorkspaceSubmissionInfoUSDtlBySubmissionIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getWorkspaceSubmissionInfoCADtlBySubmissionId">
+      <wsdl:input message="tns:getWorkspaceSubmissionInfoCADtlBySubmissionIdSoapIn" />
+      <wsdl:output message="tns:getWorkspaceSubmissionInfoCADtlBySubmissionIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Insert_SubmissionInfoCADtl">
+      <wsdl:input message="tns:Insert_SubmissionInfoCADtlSoapIn" />
+      <wsdl:output message="tns:Insert_SubmissionInfoCADtlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Insert_SubmissionInfoUSDtl">
+      <wsdl:input message="tns:Insert_SubmissionInfoUSDtlSoapIn" />
+      <wsdl:output message="tns:Insert_SubmissionInfoUSDtlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getWorkspaceRMSSubmissionInfoEU14">
+      <wsdl:input message="tns:getWorkspaceRMSSubmissionInfoEU14SoapIn" />
+      <wsdl:output message="tns:getWorkspaceRMSSubmissionInfoEU14SoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WS_KnowledgeNETPublishHttpGet">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldHttpGetIn" />
+      <wsdl:output message="tns:HelloWorldHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMyProjectCompletionList">
+      <wsdl:input message="tns:GetMyProjectCompletionListHttpGetIn" />
+      <wsdl:output message="tns:GetMyProjectCompletionListHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WS_KnowledgeNETPublishHttpPost">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldHttpPostIn" />
+      <wsdl:output message="tns:HelloWorldHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMyProjectCompletionList">
+      <wsdl:input message="tns:GetMyProjectCompletionListHttpPostIn" />
+      <wsdl:output message="tns:GetMyProjectCompletionListHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WS_KnowledgeNETPublishSoap" type="tns:WS_KnowledgeNETPublishSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveSubmissionDtl">
+      <soap:operation soapAction="http://tempuri.org/saveSubmissionDtl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWorkspaceTreeNodesForLeafs">
+      <soap:operation soapAction="http://tempuri.org/getWorkspaceTreeNodesForLeafs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="View_GetCMSCountry">
+      <soap:operation soapAction="http://tempuri.org/View_GetCMSCountry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubmissionTypeMst">
+      <soap:operation soapAction="http://tempuri.org/GetSubmissionTypeMst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMyProjectCompletionList">
+      <soap:operation soapAction="http://tempuri.org/GetMyProjectCompletionList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Proc_GetAttributeSpecificParentNodes">
+      <soap:operation soapAction="http://tempuri.org/Proc_GetAttributeSpecificParentNodes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_WorkspaceNodeAttrDetail_ForEctd">
+      <soap:operation soapAction="http://tempuri.org/Insert_WorkspaceNodeAttrDetail_ForEctd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWorkspaceSubmissionInfoEU14DtlBySubmissionId">
+      <soap:operation soapAction="http://tempuri.org/getWorkspaceSubmissionInfoEU14DtlBySubmissionId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Proc_ViewInternalLabel">
+      <soap:operation soapAction="http://tempuri.org/Proc_ViewInternalLabel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="proc_SubmissionNodeDtl">
+      <soap:operation soapAction="http://tempuri.org/proc_SubmissionNodeDtl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="proc_publishVersion">
+      <soap:operation soapAction="http://tempuri.org/proc_publishVersion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_SubmittedWorkspaceNodeDetail">
+      <soap:operation soapAction="http://tempuri.org/Insert_SubmittedWorkspaceNodeDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_SubmissionInfoEU14Dtl">
+      <soap:operation soapAction="http://tempuri.org/Insert_SubmissionInfoEU14Dtl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSubmissionInfoEU14Dtl">
+      <soap:operation soapAction="http://tempuri.org/getSubmissionInfoEU14Dtl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getsubmittedWorkspacenodedetail">
+      <soap:operation soapAction="http://tempuri.org/getsubmittedWorkspacenodedetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="view_commonworkspaceDetail">
+      <soap:operation soapAction="http://tempuri.org/view_commonworkspaceDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getcreateWorkspaceLabel">
+      <soap:operation soapAction="http://tempuri.org/getcreateWorkspaceLabel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Proc_NewTranNo">
+      <soap:operation soapAction="http://tempuri.org/Proc_NewTranNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkspaceDtlEctd">
+      <soap:operation soapAction="http://tempuri.org/GetWorkspaceDtlEctd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="publishWorkspaceSubmission">
+      <soap:operation soapAction="http://tempuri.org/publishWorkspaceSubmission" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWorkspaceSubmissionInfoUSDtlBySubmissionId">
+      <soap:operation soapAction="http://tempuri.org/getWorkspaceSubmissionInfoUSDtlBySubmissionId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWorkspaceSubmissionInfoCADtlBySubmissionId">
+      <soap:operation soapAction="http://tempuri.org/getWorkspaceSubmissionInfoCADtlBySubmissionId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_SubmissionInfoCADtl">
+      <soap:operation soapAction="http://tempuri.org/Insert_SubmissionInfoCADtl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_SubmissionInfoUSDtl">
+      <soap:operation soapAction="http://tempuri.org/Insert_SubmissionInfoUSDtl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWorkspaceRMSSubmissionInfoEU14">
+      <soap:operation soapAction="http://tempuri.org/getWorkspaceRMSSubmissionInfoEU14" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WS_KnowledgeNETPublishSoap12" type="tns:WS_KnowledgeNETPublishSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveSubmissionDtl">
+      <soap12:operation soapAction="http://tempuri.org/saveSubmissionDtl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWorkspaceTreeNodesForLeafs">
+      <soap12:operation soapAction="http://tempuri.org/getWorkspaceTreeNodesForLeafs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="View_GetCMSCountry">
+      <soap12:operation soapAction="http://tempuri.org/View_GetCMSCountry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubmissionTypeMst">
+      <soap12:operation soapAction="http://tempuri.org/GetSubmissionTypeMst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMyProjectCompletionList">
+      <soap12:operation soapAction="http://tempuri.org/GetMyProjectCompletionList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Proc_GetAttributeSpecificParentNodes">
+      <soap12:operation soapAction="http://tempuri.org/Proc_GetAttributeSpecificParentNodes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_WorkspaceNodeAttrDetail_ForEctd">
+      <soap12:operation soapAction="http://tempuri.org/Insert_WorkspaceNodeAttrDetail_ForEctd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWorkspaceSubmissionInfoEU14DtlBySubmissionId">
+      <soap12:operation soapAction="http://tempuri.org/getWorkspaceSubmissionInfoEU14DtlBySubmissionId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Proc_ViewInternalLabel">
+      <soap12:operation soapAction="http://tempuri.org/Proc_ViewInternalLabel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="proc_SubmissionNodeDtl">
+      <soap12:operation soapAction="http://tempuri.org/proc_SubmissionNodeDtl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="proc_publishVersion">
+      <soap12:operation soapAction="http://tempuri.org/proc_publishVersion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_SubmittedWorkspaceNodeDetail">
+      <soap12:operation soapAction="http://tempuri.org/Insert_SubmittedWorkspaceNodeDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_SubmissionInfoEU14Dtl">
+      <soap12:operation soapAction="http://tempuri.org/Insert_SubmissionInfoEU14Dtl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSubmissionInfoEU14Dtl">
+      <soap12:operation soapAction="http://tempuri.org/getSubmissionInfoEU14Dtl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getsubmittedWorkspacenodedetail">
+      <soap12:operation soapAction="http://tempuri.org/getsubmittedWorkspacenodedetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="view_commonworkspaceDetail">
+      <soap12:operation soapAction="http://tempuri.org/view_commonworkspaceDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getcreateWorkspaceLabel">
+      <soap12:operation soapAction="http://tempuri.org/getcreateWorkspaceLabel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Proc_NewTranNo">
+      <soap12:operation soapAction="http://tempuri.org/Proc_NewTranNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkspaceDtlEctd">
+      <soap12:operation soapAction="http://tempuri.org/GetWorkspaceDtlEctd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="publishWorkspaceSubmission">
+      <soap12:operation soapAction="http://tempuri.org/publishWorkspaceSubmission" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWorkspaceSubmissionInfoUSDtlBySubmissionId">
+      <soap12:operation soapAction="http://tempuri.org/getWorkspaceSubmissionInfoUSDtlBySubmissionId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWorkspaceSubmissionInfoCADtlBySubmissionId">
+      <soap12:operation soapAction="http://tempuri.org/getWorkspaceSubmissionInfoCADtlBySubmissionId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_SubmissionInfoCADtl">
+      <soap12:operation soapAction="http://tempuri.org/Insert_SubmissionInfoCADtl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_SubmissionInfoUSDtl">
+      <soap12:operation soapAction="http://tempuri.org/Insert_SubmissionInfoUSDtl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWorkspaceRMSSubmissionInfoEU14">
+      <soap12:operation soapAction="http://tempuri.org/getWorkspaceRMSSubmissionInfoEU14" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WS_KnowledgeNETPublishHttpGet" type="tns:WS_KnowledgeNETPublishHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="HelloWorld">
+      <http:operation location="/HelloWorld" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMyProjectCompletionList">
+      <http:operation location="/GetMyProjectCompletionList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WS_KnowledgeNETPublishHttpPost" type="tns:WS_KnowledgeNETPublishHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="HelloWorld">
+      <http:operation location="/HelloWorld" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMyProjectCompletionList">
+      <http:operation location="/GetMyProjectCompletionList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WS_KnowledgeNETPublish">
+    <wsdl:port name="WS_KnowledgeNETPublishSoap" binding="tns:WS_KnowledgeNETPublishSoap">
+      <soap:address location="http://localhost/BiznetDISoft_WS_2_0_0/Publish.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WS_KnowledgeNETPublishSoap12" binding="tns:WS_KnowledgeNETPublishSoap12">
+      <soap12:address location="http://localhost/BiznetDISoft_WS_2_0_0/Publish.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WS_KnowledgeNETPublishHttpGet" binding="tns:WS_KnowledgeNETPublishHttpGet">
+      <http:address location="http://localhost/BiznetDISoft_WS_2_0_0/Publish.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WS_KnowledgeNETPublishHttpPost" binding="tns:WS_KnowledgeNETPublishHttpPost">
+      <http:address location="http://localhost/BiznetDISoft_WS_2_0_0/Publish.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

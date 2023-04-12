@@ -1,0 +1,148 @@
+﻿@{
+    ViewBag.Title = "DI : ANATOMY MASTER";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{ 
+    @section Header{
+        <h1>Anatomy<small>Master</small></h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i>Home</a></li>
+            <li class="active">Anatomy</li>
+        </ol>
+    }
+    
+    <!-- Small boxes (Stat box) -->
+   
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header" style="text-align: right">
+                    <div class="row">
+                        @*<button  type="button" id="btnAddAnatomy" class="btn btn-primary margin" data-toggle="modal" data-target="#AnatomyModel" title="Add Anatomy " data-tooltip="tooltip">+ Add Anatomy</button>*@
+                        <button type="button" id="btnAddAnatomy" style="margin-right: 1.5%" class="btn btn-primary btnchange btndefaulteffect" data-toggle="modal" data-target="#AnatomyModel" title="Add Anatomy " data-tooltip="tooltip">
+                            <span class="num">
+                                <i class="fa fa-plus" style="line-height: 35px;"></i>
+                            </span>
+                            Add Anatomy
+                                    <i class="faf fa fa-sign-in"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <div class="row" style="text-align: right;" id="legend">
+                        <div class="col-xs-12 form-group">
+                            <div class="col-sm-12">
+                                <span>
+                                    <canvas id="myCanvasOriginal" width="12" height="12" class="original"></canvas>
+                                </span>
+                                <span class="">Active Record</span>
+                                <span>
+                                    <canvas id="myCanvasReviewed" width="12" height="12" class="reviewed"></canvas>
+                                </span>
+                                <span class="">InActive Record</span>
+                            </div>
+                        </div>
+                    </div>
+                    <table id="tblAnatomyMst" class="table table-bordered table-striped dataTable">
+                    </table>
+                </div>
+                <!-- /.box-body -->
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->     
+        
+    <div class="modal fade" id="AnatomyModel" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn btn-info btn-sm pull-right box-tools" data-toggle="tooltip" data-placement="left" data-widget="remove" data-dismiss="modal" title="" data-original-title="Remove"><i class="fa fa-times"></i></button>
+                    <h4 class="modal-title">Anatomy</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <input type="hidden" id="hdnnAnatomyNo" />
+                        <div class="col-xs-6 form-group">
+                            <div class="col-sm-12">
+                                <label for="txtAnatomyName">Anatomy Name*</label>
+                            </div>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="txtAnatomyName" placeholder="Anatomy Name" tabindex="1">
+                            </div>
+                            <div class="col-sm-2">
+                                <span class="fa fa-fw fa-file-text-o AuditControl" id="adtvAnatomyDesc" onclick="AuditTrail(this)" data-toggle="modal" data-target="#AnatomyAuditTrailModel" titlename="Anatomy Name"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-6 form-group">
+                            <div class="col-sm-12">
+                                <label id="lblAnatomyRemarks" for="txtAnatomyRemarks">Anatomy Remarks</label>
+                            </div>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="txtAnatomyRemarks" placeholder="Anatomy Remarks" tabindex="2">
+                            </div>
+                            <div class="col-sm-2">
+                            </div>
+                        </div>
+
+                        <div class="col-xs-4 form-group">
+                            <div class="col-sm-12">
+                            </div>
+                            <div class="col-sm-12">
+                            </div>
+                        </div>
+                        <!-- ./col -->
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal" id="btnClose">Close</button>
+                  @*  <button type="button" id="btnClose" class="btn btn-primary pull-left btnchange btndangereffect" data-dismiss="modal" data-tooltip="tooltip">
+                        <span class="num">
+                            <i class="fa fa-close" style="line-height: 35px;"></i>
+                        </span>
+                        Close
+                                    <i class="faf fa fa-sign-in"></i>
+                    </button>*@
+                    <button type="button" class="btn btn-primary" id="btnSaveAnatomy">Save changes</button>
+
+                   @* <button type="button" class="btn btn-primary btnchange btndangereffect" id="btnSaveAnatomy" >
+                        <span class="num">
+                           <i class="fa fa-close" style="line-height: 35px;"></i>
+                        </span>
+                        Save changes
+                                    <i class="faf fa fa-sign-in"></i>
+                    </button>*@
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="AnatomyAuditTrailModel" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn btn-info btn-sm pull-right box-tools" data-toggle="tooltip" data-placement="left" data-widget="remove" data-dismiss="modal" title="" data-original-title="Remove"><i class="fa fa-times"></i></button>
+                    <h4 class="modal-title">Anatomy AuditTrail</h4>
+                </div>
+                <div class="modal-body">
+                    <table id="tblAnatomyAuditTrail" class="table table-bordered table-striped dataTable">
+                    </table>
+                    <!-- ./col -->
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    @*<script type="text/javascript" src="@Url.Content("~/Contents/Themes/Js/jquery-2.2.3.min.js")"></script>*@
+    <script type="text/javascript" src = "@Url.Content("~/Contents/Themes/Js/jquery-3.6.1.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/General.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/MIAnatomy.js")"></script>    
+}
+

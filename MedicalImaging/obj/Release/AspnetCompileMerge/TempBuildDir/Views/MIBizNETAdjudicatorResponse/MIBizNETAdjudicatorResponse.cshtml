@@ -1,0 +1,221 @@
+﻿@{
+    ViewBag.Title = "DI : Adjudicator Response";
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="icon" href="~/Contents/Themes/Images/DI_LOGO.ico">
+    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>DI</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.6 -->
+    <link rel="stylesheet" href="@Url.Content("~/Contents/Themes/Css/bootstrap.min.css")">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="@Url.Content("~/Contents/Themes/Css/font-awesome.min.css")">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="@Url.Content("~/Contents/Themes/Css/ionicons.min.css")">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="@Url.Content("~/Contents/Themes/Css/AdminLTE.min.css")">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="@Url.Content("~/Contents/Themes/Css/_all-skins.min.css")">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="@Url.Content("~/Contents/Themes/Css/blue.css")">
+    <!-- Morris chart -->
+    <link rel="stylesheet" href="@Url.Content("~/Contents/Themes/Css/morris.css")">
+    <!-- jvectormap -->
+    <link rel="stylesheet" href="@Url.Content("~/Contents/Themes/Css/jquery-jvectormap-1.2.2.css")">
+    <!-- Date Picker -->
+    <link rel="stylesheet" href="@Url.Content("~/Contents/Themes/Css/datepicker3.css")">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="@Url.Content("~/Contents/Themes/Css/daterangepicker.css")">
+    <!-- bootstrap wysihtml5 - text editor -->
+    <link rel="stylesheet" href="@Url.Content("~/Contents/Themes/Css/bootstrap3-wysihtml5.min.css")">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="@Url.Content("~/Contents/Themes/Plugins/DataTable/Css/dataTables.bootstrap.css")">
+    <!-- Custom CSS-->
+    <link rel="stylesheet" href="@Url.Content("~/Contents/Themes/Css/Custom.css")">
+
+    <link rel="stylesheet" href="@Url.Content("~/Contents/Themes/Plugins/AutoComplete/select2.css")" />
+
+    <style type="text/css">
+        .content-wrapper, .right-side, .main-footer {
+            margin-left: 0px !important;
+        }
+    </style>
+    <script type="text/javascript" language="javascript">
+        var ApiURL = "@System.Configuration.ConfigurationManager.AppSettings["Api_Url"].ToString()"
+        var WebURL = "@System.Configuration.ConfigurationManager.AppSettings["Web_Url"].ToString()"
+        var DicomURL_1 = "@System.Configuration.ConfigurationManager.AppSettings["DicomURL_1"].ToString()"
+        var DicomURL_2 = "@System.Configuration.ConfigurationManager.AppSettings["DicomURL_2"].ToString()"
+    </script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+
+    <div class="wrapper">
+
+        <header class="main-header">
+            <!-- Logo -->
+            <a class="logo">
+                <!-- mini logo for sidebar mini 50x50 pixels -->
+                <span class="logo-mini"><b>D</b>I</span>
+                <!-- logo for regular state and mobile devices -->
+                <span class="logo-lg"><b>D</b>I</span>
+            </a>
+            <!-- Header Navbar: style can be found in header.less -->
+            <nav class="navbar navbar-static-top">
+                <!-- Sidebar toggle button-->
+
+
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <!-- Messages: style can be found in dropdown.less-->
+                        <!-- User Account: style can be found in dropdown.less -->
+                        <!-- Control Sidebar Toggle Button -->
+
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- Left side column. contains the logo and sidebar -->
+        <!-- Content Wrapper. Contains page content -->
+        
+        <!-- /.content-wrapper -->
+        @*<footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                <b>Version</b> 1.0.0
+            </div>
+            <strong>Copyright &copy; 2016-2017 <a href="http://www.sarjen.com/">Sarjen Systems Pvt. Ltd.</a>.</strong> All rights
+            reserved.
+        </footer>*@
+
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Create the tabs -->
+            <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+                <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+                @*<li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>*@
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <!-- Home tab content -->
+                <div class="tab-pane" id="control-sidebar-home-tab">
+
+                    <ul class="control-sidebar-menu"></ul>
+                    <!-- /.control-sidebar-menu -->
+                    <ul class="control-sidebar-menu"></ul>
+                    <!-- /.control-sidebar-menu -->
+
+                </div>
+                <!-- /.tab-pane -->
+                <!-- Stats tab content -->
+                <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
+                <!-- /.tab-pane -->
+                <!-- Settings tab content -->
+                <!-- /.tab-pane -->
+                <input type="hidden" id="hdnuserid" value="@ViewBag.hdnuserid" />
+                <input type="hidden" id="hdnUserName" value="@ViewBag.hdnUserName" />
+                <input type="hidden" id="hdnUserNameWithProfile" value="@ViewBag.hdnUserNameWithProfile" />
+                <input type="hidden" id="hdnUserTypeCode" value="@ViewBag.hdnUserTypeCode" />
+                <input type="hidden" id="hdnIpAddress" value="@ViewBag.hdnIpAddress" />
+                <input type="hidden" id="hdnUserAgent" value="@ViewBag.hdnUserAgent" />
+            </div>
+        </aside>
+        <!-- /.control-sidebar -->
+        <!-- Add the sidebar's background. This div must be placed
+        immediately after the control sidebar -->
+        <div class="control-sidebar-bg"></div>
+    </div>
+    <!-- ./wrapper -->
+    <div class="modal fade" id="msgPopUp" role="dialog"></div>
+    <!-- jQuery 2.2.3 -->
+    @*<script src="@Url.Content("~/Contents/Themes/Js/jquery-2.2.3.min.js")"></script>*@
+    <!-- jQuery 3.6.1 -->
+    <script src="@Url.Content("~/Contents/Themes/Js/jquery-3.6.1.min.js")"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="@Url.Content("~/Contents/Themes/Js/jquery-ui.min.js")"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+        $.widget.bridge('uibutton', $.ui.button);
+    </script>
+    <!-- Bootstrap 3.3.6 -->
+    <script src="@Url.Content("~/Contents/Themes/Js/bootstrap.min.js")"></script>
+    <!-- Slimscroll -->
+    <script src="@Url.Content("~/Contents/Themes/Js/jquery.slimscroll.min.js")"></script>
+    <!-- FastClick -->
+    @*<script src="@Url.Content("~/Contents/Themes/Js/fastclick.js")"></script>*@
+    <!-- AdminLTE App -->
+    <script src="@Url.Content("~/Contents/Themes/Js/app.min.js")"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="@Url.Content("~/Contents/Themes/Js/demo.js")"></script>
+    <!-- DataTables -->
+    <script src="@Url.Content("~/Contents/Themes/Plugins/DataTable/Js/jquery.dataTables.min.js")"></script>
+    <script src="@Url.Content("~/Contents/Themes/Plugins/DataTable/Js/dataTables.bootstrap.min.js")"></script>
+
+    @*<script src="@Url.Content("~/Contents/Themes/Plugins/AutoComplete/typeahead.js")"></script>*@
+    <script src="@Url.Content("~/Contents/Themes/Plugins/MultiSelect/bootstrap-multiselect.js")"></script>
+    <script src="@Url.Content("~/Scripts/General.js")"></script>
+    <script src="@Url.Content("~/Scripts/Validation.js")"></script>
+    @*<script src="@Url.Content("~/Scripts/Layout.js")"></script> *@
+    <script type="text/javascript" src="@Url.Content("~/Contents/Themes/Plugins/AutoComplete/select2.full.js")"></script>
+    <script src="@Url.Content("~/Scripts/MIBizNETAdjudicatorResponse.js")"></script>
+
+    <!-- ./wrapper -->
+    <input type="hidden" value="@ViewBag.hdnUserTypeCode" id="hdnUserTypeCode" />
+    <input type="hidden" value="@ViewBag.hdnUserLocationCode" id="hdnUserLocationCode" />
+    <input type="hidden" value="@ViewBag.hdnUserNameWithProfile" id="hdnUserNameWithProfile" />
+    <input type="hidden" value="@ViewBag.hdnuserid" id="hdnuserid" />
+    <input type="hidden" value="@ViewBag.hdnlogintime" id="hdnlogintime" />
+    <input type="hidden" value="@ViewBag.hdnUserName" id="hdnUserName" />
+    <input type="hidden" value="@ViewBag.hdnscopevalues" id="hdnscopevalues" />
+    <input type="hidden" value="@ViewBag.hdnOperationcode" id="hdnOperationcode" />
+    <input type="hidden" value="@ViewBag.hdnViewModeID" id="hdnViewModeID" />
+    <input type="hidden" value="@ViewBag.hdnIpAddress" id="hdnIpAddress" />
+    <input type="hidden" value="@ViewBag.hdnDeptName" id="hdnDeptName" />
+    <input type="hidden" value="@ViewBag.hdnLocationName" id="hdnLocationName" />
+    <input type="hidden" value="@ViewBag.hdnUserFullName" id="hdnUserFullName" />
+
+
+
+    @Html.Hidden("RedirectToHome", Url.Action("Home", "MIHome"))
+    @Html.Hidden("RedirectToLogin", Url.Action("Login", "MILogin"))
+
+    @Html.Hidden("DicomViewer", Url.Action("MIDicomViewer", "MIDicomViewer"))
+
+    <input type="hidden" id="hdniUserId" value="" />
+    <input type="hidden" id="hdnActivityID" value="">
+    <input type="hidden" id="hdnNodeID" value="">
+    <input type="hidden" id="hdnActivityDef" value="">
+    <input type="hidden" id="hdniMySubjectNo" value="">
+    <input type="hidden" id="hdnScreenNo" value="">
+    <input type="hidden" id="hdnParentWorkSpaceId" value="">
+    <input type="hidden" id="hdnPeriodId" value="">
+    <input type="hidden" id="hdnActivityName" value="">
+    <input type="hidden" id="hdnSubActivityName" value="">
+    <input type="hidden" id="hdnsubinodeID" value="">
+    <input type="hidden" id="hdnparentActivityID" value="">
+    <input type="hidden" id="hdnAdjUserId" value="">
+    <input type="hidden" id="hdnUserTypeCode" value="">
+
+    <div class="spinner" style="display: none">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+</body>
+</html>

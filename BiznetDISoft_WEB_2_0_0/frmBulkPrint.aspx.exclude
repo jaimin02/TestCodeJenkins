@@ -1,0 +1,579 @@
+﻿<%@ Page Language="VB" MasterPageFile="~/ECTDMasterPage.master" AutoEventWireup="false"
+    CodeFile="frmBulkPrint.aspx.vb" Inherits="frmBulkPrint" %>
+
+<%@ Register Assembly="System.Web.Extensions" Namespace="System.Web.UI" TagPrefix="asp" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="CPHLAMBDA" runat="Server">
+    <style type="text/css">
+        #ctl00_CPHLAMBDA_pnlReleasedetail tr:nth-child(even) textarea, #ctl00_CPHLAMBDA_gvParentAuditTrail tr:nth-child(even) textarea, #ctl00_CPHLAMBDA_gvAuditTrail tr:nth-child(even) textarea { background: white; border: 0; }
+        #ctl00_CPHLAMBDA_pnlReleasedetail tr:nth-child(odd) textarea, #ctl00_CPHLAMBDA_gvParentAuditTrail tr:nth-child(odd) textarea, #ctl00_CPHLAMBDA_gvAuditTrail tr:nth-child(odd) textarea { background: #CEE3ED; border: 0; }
+        #ctl00_CPHLAMBDA_lblDocLastId { text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15); font-size: 14px !important; color: #1560A1 !important; font-weight: bold; letter-spacing: 1pt; }
+        @media print {
+            /* All your print styles go here */    #header, #footer, #nav { display: block !important; }
+        }
+    </style>
+    <asp:HiddenField ID="hdnStartDate" runat="server" />
+    <asp:HiddenField ID="hdnEndDate" runat="server" />
+    <asp:HiddenField ID="hdnPath" runat="server" />
+    <div style="width: 100%">
+        <asp:UpdatePanel ID="upMain" runat="server">
+            <ContentTemplate>
+                <table style="width: 100%">
+                    <tr style="border-top-style: solid; border-top-width: thin">
+                        <td id="tdContent" style="top: 5px; vertical-align: top; overflow: auto; display: block;"
+                            align="center">
+                            <fieldset id="fldReleaseDocTrail" class="detailsbox" runat="server" style="padding: 10px;
+                                width: 90%">
+                                <legend class="LabelBold" style="color: Black">&nbsp;&nbsp;Bulk Print&nbsp;&nbsp;</legend>
+                                <table style="width: 100%" cellpadding="2">
+                                    <tr>
+                                        <td style="width: 40%; text-align: right" class="labelbold">
+                                            Select Department :
+                                        </td>
+                                        <td style="text-align: left; padding-left: 10px">
+                                            <asp:DropDownList ID="ddlProject" runat="server" CssClass="dropDownList" AutoPostBack="true"
+                                                TabIndex="1">
+                                            </asp:DropDownList>
+                                            <asp:CheckBox ID="chkAllProjects" runat="server" Text="All Departments" onclick="return AllProject();"
+                                                TabIndex="2" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 40%; text-align: right" class="labelbold">
+                                            Select SOP :
+                                        </td>
+                                        <td style="text-align: left; padding-left: 10px">
+                                            <asp:DropDownList ID="ddlSOPNo" runat="server" CssClass="dropDownList" AutoPostBack="true"
+                                                TabIndex="3">
+                                            </asp:DropDownList>
+                                            <asp:CheckBox ID="chkAllSOP" runat="server" Text="All SOP" onclick="return AllSOP();"
+                                                TabIndex="4" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 40%; text-align: right" class="labelbold">
+                                            Select Form :
+                                        </td>
+                                        <td style="text-align: left; padding-left: 10px">
+                                            <asp:DropDownList ID="ddlCategory" runat="server" CssClass="dropDownList" AutoPostBack="true"
+                                                TabIndex="5">
+                                            </asp:DropDownList>
+                                            <asp:CheckBox ID="chkAllCategories" runat="server" Text="All Forms" onclick="return AllCategories();"
+                                                TabIndex="6" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 40%; text-align: right" class="labelbold">
+                                            Select Document :
+                                        </td>
+                                        <td style="text-align: left; padding-left: 10px">
+                                            <asp:DropDownList ID="ddlDocument" runat="server" CssClass="dropDownList" AutoPostBack="true"
+                                                TabIndex="7">
+                                            </asp:DropDownList>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 40%; text-align: right" class="labelbold">
+                                            Released By :
+                                        </td>
+                                        <td style="text-align: left; padding-left: 10px">
+                                            <asp:DropDownList ID="ddlReleasedBy" runat="server" CssClass="dropDownList" TabIndex="8">
+                                            </asp:DropDownList>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 40%; text-align: right" class="labelbold">
+                                            Printer Name :
+                                        </td>
+                                        <td style="text-align: left; padding-left: 10px">
+                                            <asp:DropDownList ID="ddlPrinters" runat="server" CssClass="dropDownList" TabIndex="9">
+                                            </asp:DropDownList>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 40%; text-align: right" class="labelbold">
+                                            Released On :
+                                        </td>
+                                        <td style="text-align: left; padding-left: 10px">
+                                            <asp:RadioButtonList ID="rdoDate" runat="server" CssClass="radiobutton" RepeatDirection="Horizontal"
+                                                CellSpacing="5" onClick="DisplayDate();" TabIndex="9">
+                                                <asp:ListItem Value="0" Selected="True">All</asp:ListItem>
+                                                <asp:ListItem Value="1">Specific</asp:ListItem>
+                                            </asp:RadioButtonList>
+                                        </td>
+                                    </tr>
+                                    <%--<tr>                                   
+                                        <td style="width: 40%; text-align: right" class="labelbold">
+                                          base:  <asp:Label ID ="lblBase" runat="server" ></asp:Label>
+                                        </td>
+                                        <td style="text-align: left; padding-left: 10px">
+                                            <asp:Label ID ="lblsource" runat="server" ></asp:Label>   
+                                                                                    
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 40%; text-align: right" class="labelbold">
+                                            <asp:Label ID="lbldest" runat="server" ></asp:Label> 
+                                        </td>
+                                        <td style="width: 40%; text-align: right" class="labelbold">
+                                            <asp:Label ID="lblsavefile" runat="server" ></asp:Label>
+                                        </td>
+                                    </tr>--%>
+                                    <tr id="trDateText" runat="server" style="display: none">
+                                        <td style="width: 40%; text-align: right" class="labelbold">
+                                        </td>
+                                        <td style="text-align: left; padding-left: 10px">
+                                            <asp:TextBox ID="txtStartDate" runat="server" CssClass="textBox" ReadOnly="true"
+                                                TabIndex="10"></asp:TextBox>
+                                            <cc1:CalendarExtender ID="calStartDate" runat="server" TargetControlID="txtStartDate"
+                                                Format="dd-MMM-yyyy">
+                                            </cc1:CalendarExtender>
+                                            &nbsp;To&nbsp;
+                                            <asp:TextBox ID="txtEndDate" runat="server" CssClass="textBox" ReadOnly="true" TabIndex="11"></asp:TextBox>
+                                            <cc1:CalendarExtender ID="CalendarExtender1" runat="server" TargetControlID="txtEndDate"
+                                                Format="dd-MMM-yyyy">
+                                            </cc1:CalendarExtender>
+                                        </td>
+                                    </tr>
+                                    <tr id="trbtnSearch" runat="server">
+                                        <td style="width: 40%; text-align: right; vertical-align: top; padding-top: 11px;"
+                                            class="labelbold">
+                                        </td>
+                                        <td style="text-align: left; padding-left: 10px; padding-top: 10px">
+                                            <asp:Label ID="lblDocLastId" runat="server" CssClass="labelbold" Style="font-family: @Verdana;
+                                                font-size: medium; color: Black; font-weight: bold; display: none"></asp:Label>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <asp:Button ID="btnSearch" runat="server" Text="Search" CssClass="btn btnnew" 
+                                                OnClientClick="return Validation();" TabIndex="12" />
+                                            <%--<asp:Button ID="btnPrinted" runat="server" Text="Show Printed Documents" CssClass="button"
+                                                Width="210px" OnClientClick="return Validation();" />--%>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </fieldset>
+                        </td>
+                    </tr>
+                    <tr id="trReleaseDetail" runat="server">
+                        <td style="top: 5px; vertical-align: top; overflow: auto; display: block; padding-top: 10px"
+                            align="center">
+                            <asp:HiddenField ID="hdnNodeId" runat="server" />
+                            <asp:HiddenField ID="hdnFilePath" runat="server" />
+                            <%--<fieldset id="fldReleaseDetail" class="detailsbox" runat="server" style="width: 90%;
+                                display: none">
+                                <legend class="LabelBold" style="color: Black">&nbsp;&nbsp;Released Documents&nbsp;&nbsp;</legend>
+                                <div>
+                                    <table style="width: 100%">
+                                        <tr>
+                                            <td align="center">
+                                                <asp:Button ID="btnExportgvReleaseDetail" runat="server" Text="Export To Excel" Style="width: auto"
+                                                    class="button" />
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <asp:Panel ID="pnlReleasedetail" runat="server" Style="width: 100%; max-height: 500px"
+                                    ScrollBars="Auto">
+                                    <asp:GridView ID="gvReleaseDetail" runat="server" SkinID="grdViewDocs" AutoGenerateColumns="false"
+                                        ShowFooter="false" Style="width: 99%; margin: 5px;" AllowPaging="true" PageSize="50">
+                                        <Columns>
+                                            <asp:BoundField DataFormatString="number" HeaderText="Sr No.">
+                                                <ItemStyle HorizontalAlign="Center" Width="5"></ItemStyle>
+                                            </asp:BoundField>
+                                            <asp:BoundField DataField="nAutoID">
+                                                <ItemStyle HorizontalAlign="Center" Width="5"></ItemStyle>
+                                                <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle"></HeaderStyle>
+                                            </asp:BoundField>
+                                            <asp:TemplateField HeaderText="Print">
+                                                <ItemStyle HorizontalAlign="Center" Width="25"></ItemStyle>
+                                                <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle"></HeaderStyle>
+                                                <ItemTemplate>
+                                                    <asp:ImageButton ID="ImgPrint" AlternateText="Image Not Found" runat="server" ImageUrl="~/images/Print.png"
+                                                        Height="23px" Width="23px" OnClientClick="return Confirm();" />
+                                                </ItemTemplate>
+                                                <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                                            </asp:TemplateField>
+                                            <asp:BoundField DataField="vWorkspaceId">
+                                                <ItemStyle HorizontalAlign="Center" Width="5"></ItemStyle>
+                                                <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle"></HeaderStyle>
+                                            </asp:BoundField>
+                                            <asp:BoundField DataField="vWorkSpaceDesc" HeaderText="Department">
+                                                <ItemStyle HorizontalAlign="Left" Width="170"></ItemStyle>
+                                                <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle"></HeaderStyle>
+                                            </asp:BoundField>
+                                            <asp:BoundField DataField="vNodeDisplayName" HeaderText="Form">
+                                                <ItemStyle HorizontalAlign="Left" Width="100"></ItemStyle>
+                                                <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle"></HeaderStyle>
+                                            </asp:BoundField>
+                                            <asp:BoundField DataField="vFileName" HeaderText="File Name">
+                                                <ItemStyle HorizontalAlign="Left" Width="170"></ItemStyle>
+                                                <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle"></HeaderStyle>
+                                            </asp:BoundField>
+                                            <asp:BoundField DataField="iParentNodeId" HeaderText="iParentNodeid">
+                                                <ItemStyle HorizontalAlign="Left"></ItemStyle>
+                                                <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle"></HeaderStyle>
+                                            </asp:BoundField>
+                                            <asp:BoundField DataField="iStartId" HeaderText="iStartId">
+                                                <ItemStyle HorizontalAlign="Center" Width="150" Wrap="false"></ItemStyle>
+                                                <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle"></HeaderStyle>
+                                            </asp:BoundField>
+                                            <asp:BoundField DataField="vStartId" HeaderText="From">
+                                                <ItemStyle HorizontalAlign="Center" Width="150" Wrap="false"></ItemStyle>
+                                                <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle"></HeaderStyle>
+                                            </asp:BoundField>
+                                            <asp:BoundField DataField="vEndId" HeaderText="To">
+                                                <ItemStyle HorizontalAlign="Center" Width="170" Wrap="false"></ItemStyle>
+                                                <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle"></HeaderStyle>
+                                            </asp:BoundField>
+                                            <asp:BoundField DataField="iEndId" HeaderText="iEndId">
+                                                <ItemStyle HorizontalAlign="Center" Width="170" Wrap="false"></ItemStyle>
+                                                <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle"></HeaderStyle>
+                                            </asp:BoundField>
+                                            <asp:BoundField DataField="iReleasedBy" HeaderText="iReleasedBy">
+                                                <ItemStyle HorizontalAlign="Center" Width="250"></ItemStyle>
+                                                <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle"></HeaderStyle>
+                                            </asp:BoundField>
+                                            <asp:BoundField DataField="vUserName" HeaderText="Released By">
+                                                <ItemStyle HorizontalAlign="Center" Width="120" Wrap="false"></ItemStyle>
+                                                <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle"></HeaderStyle>
+                                            </asp:BoundField>
+                                            <asp:BoundField DataField="iWorkspaceNodeHistoryTranNo" HeaderText="WorkspaceHistoryTranNo">
+                                                <ItemStyle HorizontalAlign="Center" Width="50" Wrap="false"></ItemStyle>
+                                                <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle"></HeaderStyle>
+                                            </asp:BoundField>
+                                            <asp:BoundField DataField="dReleaseDate_IST" DataFormatString="{0:dd'-'MMM'-'yyyy H:mm:ss}"
+                                                HeaderText="Released On">
+                                                <ItemStyle HorizontalAlign="Center" Width="100" Wrap="false"></ItemStyle>
+                                                <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle"></HeaderStyle>
+                                            </asp:BoundField>
+                                        </Columns>
+                                    </asp:GridView>
+                                </asp:Panel>
+                            </fieldset>--%>
+                            <fieldset id="fldPrinted" class="detailsbox" runat="server" style="width: 90%; display: none">
+                                <legend class="LabelBold" style="color: Black">&nbsp;&nbsp;Printed Documents&nbsp;&nbsp;</legend>
+                                <div>
+                                    <table style="width: 100%">
+                                        <tr>
+                                            <td align="center">
+                                                <asp:Button ID="btnExportgvPrinted" runat="server" Style="width: auto"
+                                                    class="btn btnexcel" />
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <asp:Panel ID="Panel1" runat="server" Style="width: 100%; max-height: 500px" ScrollBars="Auto">
+                                    <asp:GridView ID="gvPrinted" runat="server" SkinID="grdViewDocs" AutoGenerateColumns="false"
+                                        Style="width: 99%; margin: 5px" AllowPaging="true" PageSize="50">
+                                        <Columns>
+                                            <asp:BoundField DataFormatString="number" HeaderText="Sr No.">
+                                                <ItemStyle HorizontalAlign="Center" Width="5"></ItemStyle>
+                                            </asp:BoundField>
+                                            <asp:BoundField DataField="nAutoID">
+                                                <ItemStyle HorizontalAlign="Center" Width="5"></ItemStyle>
+                                                <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle"></HeaderStyle>
+                                            </asp:BoundField>
+                                            <asp:TemplateField HeaderText="Print">
+                                                <ItemStyle HorizontalAlign="Center" Width="25"></ItemStyle>
+                                                <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle"></HeaderStyle>
+                                                <ItemTemplate>
+                                                    <asp:ImageButton ID="ImgPrint" AlternateText="Image Not Found" runat="server" ImageUrl="~/images/Print.png"
+                                                        Height="23px" Width="23px" />
+                                                </ItemTemplate>
+                                                <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                                            </asp:TemplateField>
+                                            <asp:BoundField DataField="vWorkspaceId">
+                                                <ItemStyle HorizontalAlign="Center" Width="5"></ItemStyle>
+                                                <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle"></HeaderStyle>
+                                            </asp:BoundField>
+                                            <asp:BoundField DataField="vWorkSpaceDesc" HeaderText="Department">
+                                                <ItemStyle HorizontalAlign="Left" Width="200"></ItemStyle>
+                                                <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle"></HeaderStyle>
+                                            </asp:BoundField>
+                                            <asp:BoundField DataField="vNodeDisplayName" HeaderText="Form">
+                                                <ItemStyle HorizontalAlign="Left" Width="100" Wrap="true"></ItemStyle>
+                                                <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle"></HeaderStyle>
+                                            </asp:BoundField>
+                                            <asp:BoundField DataField="vFileName" HeaderText="File Name">
+                                                <ItemStyle HorizontalAlign="Left" Width="150"></ItemStyle>
+                                                <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle"></HeaderStyle>
+                                            </asp:BoundField>
+                                            <asp:BoundField DataField="ProjectNumber" HeaderText="Project No.">
+                                                <ItemStyle HorizontalAlign="Left" Width="150"></ItemStyle>
+                                                <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle"></HeaderStyle>
+                                            </asp:BoundField>
+                                            <asp:BoundField DataField="iParentNodeId" HeaderText="iParentNodeid">
+                                                <ItemStyle HorizontalAlign="Left"></ItemStyle>
+                                                <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle"></HeaderStyle>
+                                            </asp:BoundField>
+                                            <asp:BoundField DataField="iStartId" HeaderText="iStartId">
+                                                <ItemStyle HorizontalAlign="Center" Width="120" Wrap="false"></ItemStyle>
+                                                <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle"></HeaderStyle>
+                                            </asp:BoundField>
+                                            <asp:BoundField DataField="vStartId" HeaderText="From">
+                                                <ItemStyle HorizontalAlign="Center" Width="120" Wrap="false"></ItemStyle>
+                                                <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle"></HeaderStyle>
+                                            </asp:BoundField>
+                                            <asp:BoundField DataField="vEndId" HeaderText="To">
+                                                <ItemStyle HorizontalAlign="Center" Width="120" Wrap="false"></ItemStyle>
+                                                <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle"></HeaderStyle>
+                                            </asp:BoundField>
+                                            <asp:BoundField DataField="iEndId" HeaderText="iEndId">
+                                                <ItemStyle HorizontalAlign="Center" Width="120" Wrap="false"></ItemStyle>
+                                                <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle"></HeaderStyle>
+                                            </asp:BoundField>
+                                            <asp:BoundField DataField="iReleasedBy" HeaderText="iReleasedBy">
+                                                <ItemStyle HorizontalAlign="Center" Width="100" Wrap="true"></ItemStyle>
+                                                <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle"></HeaderStyle>
+                                            </asp:BoundField>
+                                            <asp:BoundField DataField="vUserName" HeaderText="Released By">
+                                                <ItemStyle HorizontalAlign="Left" Width="70" Wrap="true"></ItemStyle>
+                                                <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle"></HeaderStyle>
+                                            </asp:BoundField>
+                                            <asp:BoundField DataField="dReleaseDate_IST" DataFormatString="{0:dd'-'MMM'-'yyyy HH:mm}"
+                                                HeaderText="Released On">
+                                                <ItemStyle HorizontalAlign="Center" Width="100" Wrap="true"></ItemStyle>
+                                                <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle"></HeaderStyle>
+                                            </asp:BoundField>
+                                            <asp:BoundField DataField="iWorkspaceNodeHistoryTranNo" HeaderText="WorkspaceHistoryTranNo">
+                                                <ItemStyle HorizontalAlign="Center" Width="50" Wrap="false"></ItemStyle>
+                                                <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle"></HeaderStyle>
+                                            </asp:BoundField>
+                                            <asp:TemplateField HeaderText="Print Comments">
+                                                <ItemStyle HorizontalAlign="Left" VerticalAlign="Top" Width="50" Wrap="true"></ItemStyle>
+                                                <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle"></HeaderStyle>
+                                                <ItemTemplate>
+                                                    <asp:TextBox ID="txtPrintComments" runat="server" Text='<%#eval("vPrintComments") %>'
+                                                        TextMode="MultiLine" MaxLength="250" Style="float: left; width: 80%;"></asp:TextBox>
+                                                </ItemTemplate>
+                                                <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                                            </asp:TemplateField>
+                                        </Columns>
+                                    </asp:GridView>
+                                </asp:Panel>
+                            </fieldset>
+                            <fieldset id="fldReleaseMsg" class="detailsbox" runat="server" style="width: 90%;
+                                display: none">
+                                <legend class="LabelBold" style="color: Black">&nbsp;&nbsp;Printed Documents&nbsp;&nbsp;</legend>
+                                <asp:Panel ID="pnlReleaseMsg" runat="server" Style="width: 850px; max-height: 30px"
+                                    ScrollBars="Auto">
+                                    <asp:Label ID="lblMsg" runat="server" Text="No Data Found" CssClass="labelbold" Style="background-color: Silver;
+                                        font-weight: bold; color: Navy">&nbsp;&nbsp;NO DATA FOUND&nbsp;&nbsp;</asp:Label>
+                                </asp:Panel>
+                            </fieldset>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center">
+                            <input type="button" onclick="onUpdating();document.location.href='frmMainPage.aspx?mode=1';"
+                                value="Exit" class="button" tabindex="13" />
+                        </td>
+                    </tr>
+                </table>
+            </ContentTemplate>
+            <Triggers>
+                <%--<asp:PostBackTrigger ControlID="btnExportgvReleaseDetail" />--%>
+                <asp:PostBackTrigger ControlID="btnExportgvPrinted" />
+            </Triggers>
+        </asp:UpdatePanel>
+    </div>
+
+    <script type="text/javascript">
+
+        function AllProject() {
+            document.getElementById('ctl00_CPHLAMBDA_chkAllSOP').checked = false;
+            document.getElementById('ctl00_CPHLAMBDA_chkAllCategories').checked = false;
+
+            if (document.getElementById('ctl00_CPHLAMBDA_chkAllProjects').checked) {
+                document.getElementById('ctl00_CPHLAMBDA_ddlProject').disabled = true;
+                document.getElementById('ctl00_CPHLAMBDA_ddlSOPNo').disabled = true;
+                document.getElementById('ctl00_CPHLAMBDA_ddlCategory').disabled = true;
+                document.getElementById('ctl00_CPHLAMBDA_chkAllSOP').disabled = true;
+                document.getElementById('ctl00_CPHLAMBDA_chkAllCategories').disabled = true;
+            }
+            else {
+                document.getElementById('ctl00_CPHLAMBDA_ddlProject').disabled = false;
+                document.getElementById('ctl00_CPHLAMBDA_ddlSOPNo').disabled = false;
+                document.getElementById('ctl00_CPHLAMBDA_ddlCategory').disabled = false;
+                document.getElementById('ctl00_CPHLAMBDA_chkAllSOP').disabled = false;
+                document.getElementById('ctl00_CPHLAMBDA_chkAllCategories').disabled = false;
+            }
+        }
+
+        function AllSOP() {
+
+            document.getElementById('ctl00_CPHLAMBDA_chkAllProjects').checked = false;
+            document.getElementById('ctl00_CPHLAMBDA_chkAllCategories').checked = false;
+
+            if (document.getElementById('ctl00_CPHLAMBDA_chkAllSOP').checked) {
+                document.getElementById('ctl00_CPHLAMBDA_ddlSOPNo').disabled = true;
+                document.getElementById('ctl00_CPHLAMBDA_ddlCategory').disabled = true;
+                document.getElementById('ctl00_CPHLAMBDA_chkAllCategories').disabled = true;
+            }
+            else {
+                document.getElementById('ctl00_CPHLAMBDA_ddlSOPNo').disabled = false;
+                document.getElementById('ctl00_CPHLAMBDA_ddlCategory').disabled = false;
+                document.getElementById('ctl00_CPHLAMBDA_chkAllCategories').disabled = false;
+            }
+        }
+
+        function AllCategories() {
+            if (document.getElementById('ctl00_CPHLAMBDA_chkAllCategories').checked) {
+                document.getElementById('ctl00_CPHLAMBDA_ddlCategory').disabled = true;
+            }
+            else {
+                document.getElementById('ctl00_CPHLAMBDA_ddlCategory').disabled = false;
+            }
+        }
+
+        function DisplayDate() {
+            if (document.getElementById('ctl00_CPHLAMBDA_rdoDate_1').checked) {
+                document.getElementById('ctl00_CPHLAMBDA_trDateText').style.display = '';
+            }
+            else {
+                document.getElementById('ctl00_CPHLAMBDA_trDateText').style.display = 'none';
+            }
+            return false;
+        }
+
+        function Validation() {
+
+            /// Fires when nothing is checked.
+            if (!document.getElementById('ctl00_CPHLAMBDA_chkAllProjects').checked)// || !document.getElementById('ctl00_CPHLAMBDA_chkAllSOP').checked || !document.getElementById('ctl00_CPHLAMBDA_chkAllCategories').checked)
+            {
+                if (document.getElementById('<%=ddlProject.ClientID%>').selectedIndex <= 0) {
+                    msgalert('Please Select Department !');
+                    document.getElementById('<%=ddlProject.ClientID%>').focus();
+                    document.getElementById('<%=ddlProject.ClientID%>').style.backgroundColor = "#FFE6F7";
+                    return false;
+                }
+                if (!document.getElementById('ctl00_CPHLAMBDA_chkAllSOP').checked) {
+                    if (document.getElementById('<%=ddlSOPNo.ClientID%>').selectedIndex <= 0) {
+                        msgalert('Please Select SOP !');
+                        document.getElementById('<%=ddlSOPNo.ClientID%>').focus();
+                        document.getElementById('<%=ddlSOPNo.ClientID%>').style.backgroundColor = "#FFE6F7";
+                        return false;
+                    }
+                }
+            }
+
+            /// Fires when ALL SOP checked
+            if (document.getElementById('ctl00_CPHLAMBDA_chkAllSOP').checked) {
+                if (document.getElementById('<%=ddlProject.ClientID%>').selectedIndex <= 0) {
+                    msgalert('Please Select Department !');
+                    document.getElementById('<%=ddlProject.ClientID%>').focus();
+                    document.getElementById('<%=ddlProject.ClientID%>').style.backgroundColor = "#FFE6F7";
+                    return false;
+                }
+            }
+
+            /// Fires when all categories chekced
+            if (document.getElementById('ctl00_CPHLAMBDA_chkAllCategories').checked) {
+                if (document.getElementById('<%=ddlProject.ClientID%>').selectedIndex <= 0) {
+                    msgalert('Please Select Department !');
+                    document.getElementById('<%=ddlProject.ClientID%>').focus();
+                    document.getElementById('<%=ddlProject.ClientID%>').style.backgroundColor = "#FFE6F7";
+                    return false;
+                }
+                else if (document.getElementById('<%=ddlSOPNo.ClientID%>').selectedIndex <= 0) {
+                    msgalert('Please Select SOP !');
+                    document.getElementById('<%=ddlSOPNo.ClientID%>').focus();
+                    document.getElementById('<%=ddlSOPNo.ClientID%>').style.backgroundColor = "#FFE6F7";
+                    return false;
+                }
+            }
+
+            if (!document.getElementById('ctl00_CPHLAMBDA_chkAllProjects').checked && !document.getElementById('ctl00_CPHLAMBDA_chkAllSOP').checked && !document.getElementById('ctl00_CPHLAMBDA_chkAllCategories').checked && document.getElementById('<%=ddlCategory.ClientID%>').selectedIndex <= 0) {
+                msgalert('Please Select Form !');
+                document.getElementById('<%=ddlCategory.ClientID%>').focus();
+                document.getElementById('<%=ddlCategory.ClientID%>').style.backgroundColor = "#FFE6F7";
+                return false;
+            }
+
+
+
+            if (document.getElementById('ctl00_CPHLAMBDA_rdoDate_1').checked) {
+                if (document.getElementById('ctl00_CPHLAMBDA_txtStartDate').value == '') {
+                    msgalert("Please Enter Start Date !");
+                    document.getElementById('ctl00_CPHLAMBDA_txtStartDate').focus();
+                    document.getElementById('ctl00_CPHLAMBDA_txtStartDate').style.backgroundColor = "#FFE6F7";
+                    return false;
+                }
+                else if (document.getElementById('ctl00_CPHLAMBDA_txtEndDate').value == '') {
+                    msgalert("Please Enter End Date !");
+                    document.getElementById('ctl00_CPHLAMBDA_txtEndDate').focus();
+                    document.getElementById('ctl00_CPHLAMBDA_txtEndDate').style.backgroundColor = "#FFE6F7";
+                    return false;
+                }
+            }
+
+            document.getElementById('ctl00_CPHLAMBDA_hdnStartDate').value = document.getElementById('ctl00_CPHLAMBDA_txtStartDate').value;
+            document.getElementById('ctl00_CPHLAMBDA_hdnEndDate').value = document.getElementById('ctl00_CPHLAMBDA_txtEndDate').value;
+        }
+
+        function Confirm() {
+            debugger;
+            var Result;
+            Result = window.confirm('Are you sure you want to print?');
+            if (Result) {
+                return true;
+            }
+            return false;
+        }
+
+//        function printDocument(filePath) {
+//            debugger;
+//            $("#iFramePdf").each(function() {
+//                $(this).remove();
+//            });
+
+//            //filePath ='/DocMgmtLambda/0000005202/Merge199.pdf'; //document.getElementById('ctl00_CPHLAMBDA_hdnPath').value;
+//            filePath = filePath.substring(filePath.indexOf("DocMgmtLambda"), filePath.length);
+//            //filePath =window.location.href.substring(0,window.location.href.indexOf("DocMgmtLambda"))+filePath;
+
+//            var iframe = document.createElement("iframe");
+//            iframe.id = "iFramePdf";
+//            iframe.style.display = "none";
+//            iframe.src = filePath;
+//            document.body.appendChild(iframe);
+
+//            $("#iFramePdf").contents().find("body").attr("oncontextmenu", "return false;");
+
+//            var div = document.createElement('div');
+//            div.id = "tempDiv";
+//            div.style.top = '45%';
+//            div.style.left = '30%';
+//            div.style.color = "#AAA";
+//            div.style.zindex = '10000';
+//            div.style.position = 'fixed';
+//            div.style.fontWeight = 'bold';
+//            div.style.fontSize = '50px';
+//            div.innerHTML = 'Printing in progress...';
+//            //$('body,html').click( function(e){ e.preventDefault(); return false;}); 
+//            var ele = $('body');
+//            $(ele).append(div);
+//            $('#iFramePdf').load(function() {
+//                debugger;
+//                setTimeout("$('#tempDiv').remove();$('#iFramePdf').get(0).contentWindow.print();$('#MPEAction_backgroundElement').css('display','none');", 5000);
+
+//                //                setTimeout("$('#tempDiv').remove();$('#MPEAction_backgroundElement').css('display','none');", 5000);
+//                //                iframe.focus();
+//                //                iframe.print();
+//                //HtmlPage.window.eval("document.getElementById('iFramePdf'),contentWindow.print();");
+
+//                //              window.frames.iFramePdf.focus();
+//                //              window.print();
+//                //              setTimeout("$('#tempDiv').remove();$('#MPEAction_backgroundElement').css('display','none');", 5000);
+//                //                setTimeout("$('#tempDiv').remove();$('#MPEAction_backgroundElement').css('display','none');", 5000);
+//                //                var divPrint=document.createElement('div');
+//                //                divPrint.id = "divPrintPdf";
+//                //                divPrint.innerHTML = $('#iFramePdf').get(0).contentWindow.print();
+//                //                $(ele).append(divPrint);
+//                // setTimeout("$('#tempDiv').remove();$('#MPEAction_backgroundElement').css('display','none');", 5000);
+//            });
+
+
+//        }
+        
+    </script>
+
+</asp:Content>

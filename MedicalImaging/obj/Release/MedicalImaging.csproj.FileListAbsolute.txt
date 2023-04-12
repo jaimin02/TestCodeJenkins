@@ -1,0 +1,89 @@
+E:\Application\DISoft_C\DISoft _C\MedicalImaging\bin\MedicalImaging.dll.config
+E:\Application\DISoft_C\DISoft _C\MedicalImaging\bin\MedicalImaging.dll
+E:\Application\DISoft_C\DISoft _C\MedicalImaging\bin\MedicalImaging.pdb
+E:\Application\DISoft_C\DISoft _C\MedicalImaging\bin\DTO.dll
+E:\Application\DISoft_C\DISoft _C\MedicalImaging\bin\MIApi.dll
+E:\Application\DISoft_C\DISoft _C\MedicalImaging\bin\Microsoft.Web.Infrastructure.dll
+E:\Application\DISoft_C\DISoft _C\MedicalImaging\bin\Newtonsoft.Json.dll
+E:\Application\DISoft_C\DISoft _C\MedicalImaging\bin\System.Net.Http.Formatting.dll
+E:\Application\DISoft_C\DISoft _C\MedicalImaging\bin\System.Web.Helpers.dll
+E:\Application\DISoft_C\DISoft _C\MedicalImaging\bin\System.Web.Http.dll
+E:\Application\DISoft_C\DISoft _C\MedicalImaging\bin\System.Web.Http.WebHost.dll
+E:\Application\DISoft_C\DISoft _C\MedicalImaging\bin\System.Web.Mvc.dll
+E:\Application\DISoft_C\DISoft _C\MedicalImaging\bin\System.Web.Razor.dll
+E:\Application\DISoft_C\DISoft _C\MedicalImaging\bin\System.Web.WebPages.Deployment.dll
+E:\Application\DISoft_C\DISoft _C\MedicalImaging\bin\System.Web.WebPages.dll
+E:\Application\DISoft_C\DISoft _C\MedicalImaging\bin\System.Web.WebPages.Razor.dll
+E:\Application\DISoft_C\DISoft _C\MedicalImaging\bin\Utility.dll
+E:\Application\DISoft_C\DISoft _C\MedicalImaging\bin\System.Web.Optimization.dll
+E:\Application\DISoft_C\DISoft _C\MedicalImaging\bin\BusinessOperation.dll
+E:\Application\DISoft_C\DISoft _C\MedicalImaging\bin\Dicom.Core.dll
+E:\Application\DISoft_C\DISoft _C\MedicalImaging\bin\Ionic.Zip.Reduced.dll
+E:\Application\DISoft_C\DISoft _C\MedicalImaging\bin\WebGrease.dll
+E:\Application\DISoft_C\DISoft _C\MedicalImaging\bin\DatabaseOperation.dll
+E:\Application\DISoft_C\DISoft _C\MedicalImaging\bin\Antlr3.Runtime.dll
+E:\Application\DISoft_C\DISoft _C\MedicalImaging\bin\DTO.pdb
+E:\Application\DISoft_C\DISoft _C\MedicalImaging\bin\MIApi.pdb
+E:\Application\DISoft_C\DISoft _C\MedicalImaging\bin\Utility.pdb
+E:\Application\DISoft_C\DISoft _C\MedicalImaging\bin\System.Net.Http.Formatting.xml
+E:\Application\DISoft_C\DISoft _C\MedicalImaging\bin\System.Web.Helpers.xml
+E:\Application\DISoft_C\DISoft _C\MedicalImaging\bin\System.Web.Http.xml
+E:\Application\DISoft_C\DISoft _C\MedicalImaging\bin\System.Web.Http.WebHost.xml
+E:\Application\DISoft_C\DISoft _C\MedicalImaging\bin\System.Web.Mvc.xml
+E:\Application\DISoft_C\DISoft _C\MedicalImaging\bin\System.Web.Razor.xml
+E:\Application\DISoft_C\DISoft _C\MedicalImaging\bin\System.Web.WebPages.xml
+E:\Application\DISoft_C\DISoft _C\MedicalImaging\bin\System.Web.WebPages.Deployment.xml
+E:\Application\DISoft_C\DISoft _C\MedicalImaging\bin\System.Web.WebPages.Razor.xml
+E:\Application\DISoft_C\DISoft _C\MedicalImaging\bin\BusinessOperation.pdb
+E:\Application\DISoft_C\DISoft _C\MedicalImaging\bin\DatabaseOperation.pdb
+E:\Application\DISoft_C\DISoft _C\MedicalImaging\obj\Release\MedicalImaging.csprojResolveAssemblyReference.cache
+E:\Application\DISoft_C\DISoft _C\MedicalImaging\obj\Release\MedicalImaging.dll
+E:\Application\DISoft_C\DISoft _C\MedicalImaging\obj\Release\MedicalImaging.pdb
+E:\Application\DISoft_C\DISoft _C\MedicalImaging\bin\Newtonsoft.Json.pdb
+G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging\bin\MedicalImaging.dll.config
+G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging\bin\MedicalImaging.dll
+G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging\bin\MedicalImaging.pdb
+G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging\bin\DTO.dll
+G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging\bin\MIApi.dll
+G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging\bin\Microsoft.Web.Infrastructure.dll
+G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging\bin\System.Diagnostics.DiagnosticSource.dll
+G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging\bin\System.Memory.dll
+G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging\bin\System.Net.Http.Formatting.dll
+G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging\bin\System.Numerics.Vectors.dll
+G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging\bin\System.Web.Helpers.dll
+G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging\bin\System.Web.Http.dll
+G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging\bin\System.Web.Http.WebHost.dll
+G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging\bin\System.Web.Mvc.dll
+G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging\bin\System.Web.Razor.dll
+G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging\bin\System.Web.WebPages.Deployment.dll
+G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging\bin\System.Web.WebPages.dll
+G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging\bin\System.Web.WebPages.Razor.dll
+G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging\bin\Utility.dll
+G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging\bin\System.Web.Optimization.dll
+G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging\bin\BusinessOperation.dll
+G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging\bin\Dicom.Core.dll
+G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging\bin\Ionic.Zip.Reduced.dll
+G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging\bin\System.Buffers.dll
+G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging\bin\WebGrease.dll
+G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging\bin\DatabaseOperation.dll
+G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging\bin\Antlr3.Runtime.dll
+G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging\bin\DTO.pdb
+G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging\bin\MIApi.pdb
+G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging\bin\MIApi.dll.config
+G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging\bin\Utility.pdb
+G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging\bin\System.Net.Http.Formatting.xml
+G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging\bin\System.Web.Helpers.xml
+G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging\bin\System.Web.Http.xml
+G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging\bin\System.Web.Http.WebHost.xml
+G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging\bin\System.Web.Mvc.xml
+G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging\bin\System.Web.Razor.xml
+G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging\bin\System.Web.WebPages.xml
+G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging\bin\System.Web.WebPages.Deployment.xml
+G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging\bin\System.Web.WebPages.Razor.xml
+G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging\bin\BusinessOperation.pdb
+G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging\bin\DatabaseOperation.pdb
+G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging\obj\Release\MedicalImaging.csproj.AssemblyReference.cache
+G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging\obj\Release\MedicalImaging.csproj.CoreCompileInputs.cache
+G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging\obj\Release\MedicalImaging.csproj.CopyComplete
+G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging\obj\Release\MedicalImaging.dll
+G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging\obj\Release\MedicalImaging.pdb

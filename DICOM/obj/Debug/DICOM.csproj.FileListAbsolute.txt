@@ -1,0 +1,13 @@
+E:\Application\DISoft_C\DISoft _C\DICOM\bin\DICOM.dll.config
+E:\Application\DISoft_C\DISoft _C\DICOM\bin\DICOM.dll
+E:\Application\DISoft_C\DISoft _C\DICOM\bin\DICOM.pdb
+E:\Application\DISoft_C\DISoft _C\DICOM\bin\Newtonsoft.Json.dll
+E:\Application\DISoft_C\DISoft _C\DICOM\bin\System.Net.Http.Formatting.dll
+E:\Application\DISoft_C\DISoft _C\DICOM\bin\System.Web.Http.dll
+E:\Application\DISoft_C\DISoft _C\DICOM\bin\System.Web.Http.WebHost.dll
+E:\Application\DISoft_C\DISoft _C\DICOM\bin\System.Net.Http.Formatting.xml
+E:\Application\DISoft_C\DISoft _C\DICOM\bin\System.Web.Http.xml
+E:\Application\DISoft_C\DISoft _C\DICOM\bin\System.Web.Http.WebHost.xml
+E:\Application\DISoft_C\DISoft _C\DICOM\obj\Debug\DICOM.csprojResolveAssemblyReference.cache
+E:\Application\DISoft_C\DISoft _C\DICOM\obj\Debug\DICOM.dll
+E:\Application\DISoft_C\DISoft _C\DICOM\obj\Debug\DICOM.pdb

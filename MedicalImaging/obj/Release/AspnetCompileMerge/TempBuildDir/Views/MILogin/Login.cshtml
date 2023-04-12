@@ -1,0 +1,295 @@
+﻿@model MedicalImaging.Models.LoginMst
+@{
+    ViewBag.Title = "DI : LOGIN";
+    Layout = null;
+}
+
+<link href="@Url.Content("~/Contents/Themes/Css/AdminLTE.min.css")" rel="stylesheet" type="text/css">
+<link href="@Url.Content("~/Contents/Themes/Css/font-awesome.min.css")" rel="stylesheet" type="text/css">
+<link href="@Url.Content("~/Contents/Themes/Css/bootstrap.min.css")" rel="stylesheet" type='text/css'>
+<link href="@Url.Content("~/Contents/Themes/Css/material.min.css")" rel="stylesheet" type='text/css'>
+<link href="@Url.Content("~/Contents/Themes/Css/demo.css")" rel="stylesheet" type="text/css" />
+<link href="@Url.Content("~/Contents/Themes/Css/style2.css")" rel="stylesheet" type="text/css" />
+<link href="@Url.Content("~/Contents/Themes/Css/style.css")" rel="stylesheet" type='text/css'>
+<link href="@Url.Content("~/Contents/Themes/Css/component.css")" rel="stylesheet" type="text/css" />
+<link href="@Url.Content("~/Contents/Themes/Css/main-color-1.css")" rel="stylesheet" type='text/css'>
+<link href="@Url.Content("~/Contents/Themes/Css/Login.css")" rel="stylesheet" type='text/css'>
+<script type="text/javascript">
+    document.write('<link href="@Url.Content("~/Contents/Themes/Plugins/Confirm/Css/jquery-confirm.css")?' + Math.random() + '" rel="stylesheet" type="text/css">');
+</script>
+
+<style>
+    #txtUserPassword {
+        -webkit-text-security: disc !important;
+        -mox-text-security: disc !important;
+    }
+
+    font-face {
+        font-family: 'password';
+        font-style: normal;
+        font-weight: 400;
+        src: url('~/Contents/Themes/Fonts/password.ttf');
+    }
+
+    #txtUserPassword {
+        font-family: 'password';
+    }
+</style>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="icon" href="~/Contents/Themes/Images/DI_LOGO.ico">
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+</head>
+<body>
+    <ul class="cb-slideshow">
+        <li>
+            <span>Image 01</span><div>
+                <h3>X-Ray</h3>
+            </div>
+        </li>
+        <li>
+            <span>Image 02</span><div>
+                <h3>MRI</h3>
+            </div>
+        </li>
+        <li>
+            <span>Image 03</span><div>
+                <h3>PET-CT</h3>
+            </div>
+        </li>
+        <li>
+            <span>Image 04</span><div>
+                <h3>Bone Scan</h3>
+            </div>
+        </li>
+        <li>
+            <span>Image 05</span><div>
+                <h3>CT Scan</h3>
+            </div>
+        </li>
+        <li>
+            <span>Image 06</span><div>
+                <h3>Medical Imaging</h3>
+            </div>
+        </li>
+    </ul>
+    <nav id="topNav2" class="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                @*<img src="@Url.Content("~/Contents/Themes/Images/logo.png")" alt="">*@
+                <img src="@Url.Content("~/Contents/Themes/Images/DI_LOGO_WHITE.png")" alt="">
+            </a>
+        </div>
+    </nav>
+
+    <div id="banner">
+        <div class="vc-parent">
+            <div class="vc-child">
+                <div class="banner-content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="slider-2-content text-center">
+                                    <section id="set-8">
+                                        <div class="hi-icon-wrap hi-icon-effect-8">
+                                            <a data-toggle="modal" data-target="#loginFormModal" class="hi-icon hi-icon-user" id="btnUser">User</a>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="text-center ftr">
+                <p id="copyRights">
+                    @*Copyright © 2017 <a href="http://www.sarjen.com" target="_blank">Sarjen Systems Pvt. Ltd.</a> All rights reserved.*@
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <div class="modal fade" id="loginFormModal" tabindex="-1" role="dialog" aria-labelledby="loginForm">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <div class="loginForm">
+                    <div class="mdl-card mdl-shadow--2dp">
+                        <div class="mdl-card__title mdl-card--expand">
+                            <div class="modal--logo">
+                                @*<img src="@Url.Content("~/Contents/Themes/Images/logo.png")" alt="">*@
+                                <img src="@Url.Content("~/Contents/Themes/Images/DI_LOGO_BLACK.png")" alt="">
+                            </div>
+                        </div>
+                        <div class="mdl-card__supporting-text">
+                            <form action="#" method="post" id="loginForm">
+                                <div class="mdl-textfield mdl-js-textfield">
+                                    <input class="mdl-textfield__input loginUsername" type="text" name="loginUsername" id="txtUserName" onblur="getUserProfile();" autocomplete="off" placeholder="UserName">
+                                </div>
+                                <div class="mdl-textfield mdl-js-textfield">
+                                    @*@Html.PasswordFor(model => model.vLoginPass, new { @class = "mdl-textfield__input loginPassword", placeholder = "Password", id = "txtUserPassword", oncopy = "return false", onpaste = "return false" })*@
+
+                                    <input type="text" id="txtUserPassword" name="password" placeholder="Password" autocomplete="off" class="mdl-textfield__input loginPassword" AutoCompleteType="Disabled" oncopy="return false" onpaste="return false" oncut="return false" />
+                                </div>
+                                <div class="mdl-textfield mdl-js-textfield">
+                                    <select class="mdl-textfield__input Profile" name="Profile" id="ddlUserProfile"></select>
+                                </div>
+                                <div class="login__row" style="display:none">
+                                    <Label ID="lblOtpmsg" style="color:red; font-size:12px; margin-top: -7px; display:none">OTP has been Sent on below Address.</Label><br />
+                                    <Label ID="lblOtpEmailMsg" style="color:red; font-size:12px; margin-top: -12px; display:none"></Label><br />
+                                    <Label ID="lblOtpSmsMsg" style="color:red; font-size:12px; margin-top: -11px; display:none"></Label>
+                                </div>
+
+                                <div class="login__row" style="display:none" id="dvotp">
+                                    <input autocomplete="off" type="text" class="mdl-textfield__input loginUsername" placeholder="Enter OTP" id="OtpInput" />
+                                    @*<p style="font-size: 15px; text-align:left; margin-top: 13px;">
+                                        <span id="txttimer">Time left = </span><span id="timer"></span>
+                                    </p>*@
+                                </div>
+
+                                <div class="login__row" style="display:none">
+                                    @*<asp:LinkButton ID="lnkresendOTP" class="login__resendOtp" ToolTip="Resend Otp" Enabled="true" Text="Resend Otp" TabIndex="5"
+                                        Style="text-decoration: none;display:none" >*@
+                                    <input type="button" class="mdl-button" name="btn" value="Resend OTP" ID="lnkresendOTP" Style="text-decoration: none; font-size: 13px; color: red; float: right;display:none" />
+
+                                    @*<p style="font-size: 15px; color: red; text-align:right;"> ReSend OTP</p>*@
+                                    @*</asp:LinkButton>*@
+                                </div>
+
+                                <button class="login-form-submit-btn mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent btneffect btn btn-primary" id="btnLogin" type="button" style="display:none">
+                                    <span class="num">
+                                        <i class="fa fa-lock" style="line-height:45px;"></i>
+                                    </span>
+                                    Login
+                                    <i class="faf fa fa-sign-in"></i>
+                                </button>
+
+                                <button class="login-form-submit-btn mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent btneffect btn btn-primary" id="btnOtpLogin" type="button">
+                                    <span class="num">
+                                        <i class="fa fa-lock" style="line-height:45px;"></i>
+                                    </span>
+                                    Login
+                                    <i class="faf fa fa-sign-in"></i>
+                                </button>
+
+                                <button class="login-form-submit-btn mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent btneffect btn btn-primary" id="btnReLogin" type="button" style="display:none">
+                                    <span class="num">
+                                        <i class="fa fa-lock" style="line-height:45px;"></i>
+                                    </span>
+                                    Login
+                                    <i class="faf fa fa-sign-in"></i>
+                                </button>
+                            </form>
+                        </div>
+                        <div class="mdl-card__actions mdl-card--border clearfix">
+                            <div class="row">
+                                <div class="col-md-8" onclick="CheckUsername();">
+                                    <a href="#" id="btnForgotPwd" class="pull-left mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" data-toggle="modal" data-target="#forgotFormModal" data-dismiss="modal" style="pointer-events:none;">
+                                        Forgot Password?
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="forgotFormModal" tabindex="-1" role="dialog" aria-labelledby="signupFormModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <div class="forgotForm">
+                    <div class="mdl-card mdl-shadow--2dp">
+                        <div class="mdl-card__title mdl-card--expand">
+                            <div class="modal--logo">
+                                @*<img src="@Url.Content("~/Contents/Themes/Images/logo.png")" alt="">*@
+                                <img src="@Url.Content("~/Contents/Themes/Images/DI_LOGO_BLACK.png")" alt="">
+                            </div>
+                        </div>
+                        <div class="mdl-card__supporting-text">
+                            <form action="#" method="post" id="forgotForm">
+                                <input type="hidden" id="hdnusername" />
+                                <input type="hidden" id="hdnuserprofile" />
+                                <input type="hidden" id="hdnuserid" />
+                                <div id="successMsgForSend" style="display:none; margin-bottom:6px;">
+                                    <span>You Will Get an OTP On </span>
+                                    <div id="lblMobileNumber">
+                                        Your Registered Mobile Number(&nbsp;<span id="spnMobNo"></span>)
+                                        <input type="hidden" name="txtMobileNumber" id="txtMobileNumber" value="" />
+                                    </div>
+                                    <div id="lblEmailId">
+                                        Your Registered mail Id(&nbsp;<span id="spnEmailId"></span>)
+                                        <input type="hidden" name="txtEmailId" id="txtEmailId" value="" />
+                                    </div>
+                                </div>
+                                <br />
+                                <div style="display:none" id="divotp">
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <input autocomplete="off" type="text" class="mdl-textfield__input loginUsername" placeholder="Enter OTP" id="OTPInput" maxlength="6" />
+                                        </div>
+                                    </div>
+                                    <br />
+                                </div>
+                                <button class="login-form-submit-btn mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent btneffect btn btn-primary" id="btnChangePwd" type="button" style="display:none">
+                                    <span class="num">
+                                        <i class="fa fa-lock" style="line-height:45px;"></i>
+                                    </span>
+                                    Login
+                                    <i class="faf fa fa-sign-in"></i>
+                                </button>
+                            </form>
+                        </div>
+                        <div class="mdl-card__actions mdl-card--border clearfix">
+                            <a href="#" class="pull-right mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect btnbacks" data-toggle="modal" data-target="#loginFormModal" data-dismiss="modal">
+                                <img src="@Url.Content("~/Contents/Themes/Images/back.png")" alt="" style="margin-top:8px;">Back
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*<script type="text/javascript" src="@Url.Content("~/Contents/Themes/Js/jquery-1.12.4.js")"></script>*@
+    <script type="text/javascript" src="@Url.Content("~/Contents/Themes/Js/jquery-3.6.1.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Contents/Themes/Js/jquery-ui.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Contents/Themes/Js/bootstrap.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Contents/Themes/Js/jquery.validate.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Contents/Themes/Js/main.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/General.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/MILogin.js")"></script>
+    <script type="text/javascript">
+        document.write('<scr' + 'ipt src="@Url.Content("~/Contents/Themes/Plugins/Confirm/Js/jquery-confirm.js")?' + Math.random() + '" type="text/javascript"></scr' + 'ipt>');
+    </script>
+    <script type="text/javascript" language="javascript">
+        var Ver_Env = "@System.Configuration.ConfigurationManager.AppSettings["Version_Env"].ToString()"
+        var ApiURL = "@System.Configuration.ConfigurationManager.AppSettings["Api_Url"].ToString()"
+        var WebURL = "@System.Configuration.ConfigurationManager.AppSettings["Web_Url"].ToString()"
+    </script>
+
+    <input type="hidden" id="hdnIpAddress" value="@ViewBag.hdnIpAddress" />
+    <input type="hidden" id="hdnUserAgent" value="@ViewBag.hdnUserAgent" />
+
+    <div class="modal fade" id="msgPopUp" role="dialog"></div>
+
+</body>
+@Html.Hidden("redirectTo", Url.Action("Home", "MIHome"));
+@Html.Hidden("redirectToChangePassword", Url.Action("ChangePassword", "MILogin"));
+@Html.Hidden("redirectToFPwd", Url.Action("ForgotPassword", "MILogin"));
+</html>

@@ -1,0 +1,15 @@
+Err.Date: 7/29/2016 4:35:00 PM
+System.Web.Services.Protocols.SoapException: Server was unable to process request. ---> System.Data.SqlClient.SqlException: Invalid object name 'MEDDRA240'.
+   at ClsDataLogic_New.ExecuteQuery_DataSet(String strQuery, String strTableName) in D:\BizNET\BizNETCTM\DiSOft_WS\App_Code\ClsDataLogic_New.vb:line 510
+   at WS_HelpDbTable.GetResultSet(String strQuery, String strTableNAme) in D:\BizNET\BizNETCTM\DiSOft_WS\App_Code\WS_HelpDbTable.vb:line 359
+   --- End of inner exception stack trace ---<BR> ....ddlMedDRA_SelectedIndexChanged
+UserNo :
+UserName :SuperUser
+User Division :
+URL:http://localhost/BizNETCTM_WEB/frmCTMMeddraBrowse.aspx?nRefMasterNo=23
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+

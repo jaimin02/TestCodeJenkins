@@ -1,0 +1,31 @@
+Err.Date: 2/2/2023 3:28:23 PM
+EmailSubject=DiSoftC-Image upload for Screening - DIC
+
+'table' argument cannot be null.
+Parameter name: table
+Error while sending Mail.
+UserNo :
+UserName :vishal
+User Division :
+URL:http://localhost/BiznetDiSoft_Web_2_0_0/frmImageTransmittal.aspx/SendEmail
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+
+Err.Date: 2/2/2023 5:53:50 PM
+EmailSubject=DiSoftC-Image upload for Screening - LTR123
+
+There is no row at position 0.
+Error while sending Mail.
+UserNo :
+UserName :
+User Division :
+URL:http://localhost/BiznetDiSoft_Web_2_0_0/frmImageTransmittal.aspx/SendEmail
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+

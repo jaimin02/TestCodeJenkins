@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sAuthenticationHeader" type="tns:sAuthenticationHeader" />
+      <s:complexType name="sAuthenticationHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Key" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="Save_MedExMst">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Choice" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Dt_MedExMst">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="eStr_Retu" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Save_MedExMstResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Save_MedExMstResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="eStr_Retu" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Save_SampleMedEXDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Choice" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Dt_SampleMedEXDetail">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="Company_Parameter" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="eStr_Retu" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Save_SampleMedEXDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Save_SampleMedEXDetailResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="eStr_Retu" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SoapAuthenticationRequired">
+        <s:complexType />
+      </s:element>
+      <s:element name="SoapAuthenticationRequiredResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SoapAuthenticationRequiredResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="boolean" type="s:boolean" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldsAuthenticationHeader">
+    <wsdl:part name="sAuthenticationHeader" element="tns:sAuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="Save_MedExMstSoapIn">
+    <wsdl:part name="parameters" element="tns:Save_MedExMst" />
+  </wsdl:message>
+  <wsdl:message name="Save_MedExMstSoapOut">
+    <wsdl:part name="parameters" element="tns:Save_MedExMstResponse" />
+  </wsdl:message>
+  <wsdl:message name="Save_MedExMstsAuthenticationHeader">
+    <wsdl:part name="sAuthenticationHeader" element="tns:sAuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="Save_SampleMedEXDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:Save_SampleMedEXDetail" />
+  </wsdl:message>
+  <wsdl:message name="Save_SampleMedEXDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:Save_SampleMedEXDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="Save_SampleMedEXDetailsAuthenticationHeader">
+    <wsdl:part name="sAuthenticationHeader" element="tns:sAuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="SoapAuthenticationRequiredSoapIn">
+    <wsdl:part name="parameters" element="tns:SoapAuthenticationRequired" />
+  </wsdl:message>
+  <wsdl:message name="SoapAuthenticationRequiredSoapOut">
+    <wsdl:part name="parameters" element="tns:SoapAuthenticationRequiredResponse" />
+  </wsdl:message>
+  <wsdl:message name="SoapAuthenticationRequiredsAuthenticationHeader">
+    <wsdl:part name="sAuthenticationHeader" element="tns:sAuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldHttpGetIn" />
+  <wsdl:message name="HelloWorldHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SoapAuthenticationRequiredHttpGetIn" />
+  <wsdl:message name="SoapAuthenticationRequiredHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldHttpPostIn" />
+  <wsdl:message name="HelloWorldHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SoapAuthenticationRequiredHttpPostIn" />
+  <wsdl:message name="SoapAuthenticationRequiredHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:portType name="LabIntegrationSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Save_MedExMst">
+      <wsdl:input message="tns:Save_MedExMstSoapIn" />
+      <wsdl:output message="tns:Save_MedExMstSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Save_SampleMedEXDetail">
+      <wsdl:input message="tns:Save_SampleMedEXDetailSoapIn" />
+      <wsdl:output message="tns:Save_SampleMedEXDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SoapAuthenticationRequired">
+      <wsdl:input message="tns:SoapAuthenticationRequiredSoapIn" />
+      <wsdl:output message="tns:SoapAuthenticationRequiredSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="LabIntegrationHttpGet">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldHttpGetIn" />
+      <wsdl:output message="tns:HelloWorldHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SoapAuthenticationRequired">
+      <wsdl:input message="tns:SoapAuthenticationRequiredHttpGetIn" />
+      <wsdl:output message="tns:SoapAuthenticationRequiredHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="LabIntegrationHttpPost">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldHttpPostIn" />
+      <wsdl:output message="tns:HelloWorldHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SoapAuthenticationRequired">
+      <wsdl:input message="tns:SoapAuthenticationRequiredHttpPostIn" />
+      <wsdl:output message="tns:SoapAuthenticationRequiredHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LabIntegrationSoap" type="tns:LabIntegrationSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:HelloWorldsAuthenticationHeader" part="sAuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save_MedExMst">
+      <soap:operation soapAction="http://tempuri.org/Save_MedExMst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:Save_MedExMstsAuthenticationHeader" part="sAuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save_SampleMedEXDetail">
+      <soap:operation soapAction="http://tempuri.org/Save_SampleMedEXDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:Save_SampleMedEXDetailsAuthenticationHeader" part="sAuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SoapAuthenticationRequired">
+      <soap:operation soapAction="http://tempuri.org/SoapAuthenticationRequired" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SoapAuthenticationRequiredsAuthenticationHeader" part="sAuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="LabIntegrationSoap12" type="tns:LabIntegrationSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:HelloWorldsAuthenticationHeader" part="sAuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save_MedExMst">
+      <soap12:operation soapAction="http://tempuri.org/Save_MedExMst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:Save_MedExMstsAuthenticationHeader" part="sAuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save_SampleMedEXDetail">
+      <soap12:operation soapAction="http://tempuri.org/Save_SampleMedEXDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:Save_SampleMedEXDetailsAuthenticationHeader" part="sAuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SoapAuthenticationRequired">
+      <soap12:operation soapAction="http://tempuri.org/SoapAuthenticationRequired" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SoapAuthenticationRequiredsAuthenticationHeader" part="sAuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="LabIntegrationHttpGet" type="tns:LabIntegrationHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="HelloWorld">
+      <http:operation location="/HelloWorld" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SoapAuthenticationRequired">
+      <http:operation location="/SoapAuthenticationRequired" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="LabIntegrationHttpPost" type="tns:LabIntegrationHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="HelloWorld">
+      <http:operation location="/HelloWorld" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SoapAuthenticationRequired">
+      <http:operation location="/SoapAuthenticationRequired" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LabIntegration">
+    <wsdl:port name="LabIntegrationSoap" binding="tns:LabIntegrationSoap">
+      <soap:address location="http://localhost/BiznetDISoft_WS_2_0_0/LabIntegration.asmx" />
+    </wsdl:port>
+    <wsdl:port name="LabIntegrationSoap12" binding="tns:LabIntegrationSoap12">
+      <soap12:address location="http://localhost/BiznetDISoft_WS_2_0_0/LabIntegration.asmx" />
+    </wsdl:port>
+    <wsdl:port name="LabIntegrationHttpGet" binding="tns:LabIntegrationHttpGet">
+      <http:address location="http://localhost/BiznetDISoft_WS_2_0_0/LabIntegration.asmx" />
+    </wsdl:port>
+    <wsdl:port name="LabIntegrationHttpPost" binding="tns:LabIntegrationHttpPost">
+      <http:address location="http://localhost/BiznetDISoft_WS_2_0_0/LabIntegration.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

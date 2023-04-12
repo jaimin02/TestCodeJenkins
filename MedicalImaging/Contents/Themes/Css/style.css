@@ -1,0 +1,529 @@
+.mdl-button,
+.mdl-typography--display-3,
+.mdl-typography--display-4,
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    font-weight: 300
+}
+#contactForm input,
+#forgotForm input,
+#loginForm input,
+#signupForm input,
+#subscribeForm input,
+a:focus,
+a:hover {
+    outline: 0
+}
+body,
+html {
+    height: 100%;
+    font-family: Roboto, Helvetica, Arial, sans-serif
+}
+body {
+    color: #737373
+}
+.form-control::-webkit-input-placeholder {
+    color: #fff
+}
+.form-control::-moz-placeholder {
+    color: #fff
+}
+.form-control::-ms-input-placeholder {
+    color: #fff
+}
+.form-control.error {
+    border-color: #ff5252
+}
+p {
+    font-size: 14px;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    line-height: 22px
+}
+a {
+    color: #ff5252
+}
+a:focus,
+a:hover {
+    color: #ff5252;
+    text-decoration: none
+}
+.mdl-button--primary.mdl-button--primary.mdl-button--fab,
+.mdl-button--primary.mdl-button--primary.mdl-button--raised {
+    color: #fff;
+    background-color: #ff5252
+}
+#close-switcher,
+#open-switcher {
+    position: fixed;
+    top: 200px;
+    left: 0;
+    z-index: 4;
+    padding: 15px;
+    color: #fff;
+    background: #ff5252;
+    cursor: pointer;
+    border: 1px solid #ff5252;
+    border-left: 0;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px
+}
+#close-switcher {
+    color: #fff;
+    background: #ff5252;
+    border: 1px solid #ff5252;
+    display: none;
+    left: 200px;
+    box-shadow: 10px 5px 46px 8px rgba(0, 0, 0, .14), 10px 0 26px -6px rgba(0, 0, 0, .2)
+}
+#demo-colors {
+    position: fixed;
+    top: 200px;
+    left: -202px;
+    width: 200px;
+    min-height: 0;
+    background: #FFF;
+    border-radius: 0;
+    z-index: 3
+}
+#demo-wrapper {
+    width: 180px;
+    margin: 0 auto;
+    padding-bottom: 30px
+}
+#demo-wrapper h2 {
+    margin-bottom: 0;
+    font-size: 15px;
+    font-weight: 700;
+    color: #000
+}
+#demo-wrapper ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden
+}
+#demo-wrapper ul li.color-1 {
+    background: #4CAF50;
+    border: 1px solid #fff
+}
+#demo-wrapper ul li.color-2 {
+    background: #2196F3;
+    border: 1px solid #fff
+}
+#demo-wrapper ul li.color-3 {
+    background: #FF9800;
+    border: 1px solid #fff
+}
+#demo-wrapper ul li.color-4 {
+    background: #ff5252;
+    border: 1px solid #fff
+}
+#demo-wrapper ul li.color-5 {
+    background: #673AB7;
+    border: 1px solid #fff
+}
+#demo-wrapper ul li.active {
+    border: 1px solid #fff;
+    box-shadow: 0 0 0 1px #ddd
+}
+#demo-wrapper ul li {
+    float: left;
+    width: 26px;
+    height: 26px;
+    margin-right: 10px;
+    cursor: pointer
+}
+.clear {
+    clear: both
+}
+#demo-wrapper p {
+    font-size: 12px;
+    padding-top: 10px;
+    text-align: center;
+    color: #999;
+    cursor: pointer
+}
+@media screen and (max-width: 960px) {
+    #close-switcher,
+    #demo-colors,
+    #open-switcher {
+        display: none
+    }
+}
+.vc-parent {
+    width: 100%;
+    height: 100%;
+    display: table
+}
+.vc-child {
+    display: table-cell;
+    vertical-align: middle
+}
+.modal-dialog {
+    width: auto
+}
+.modal-content {
+    background-color: transparent
+}
+.modal button.close {
+    position: absolute;
+    top: -10px;
+    right: -20px;
+    z-index: 39;
+    filter: alpha(opacity=100);
+    color: #fff;
+    font-size: 28px;
+    font-weight: 100;
+    opacity: 1;
+    outline: 0
+}
+#topNav2 {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 3;
+    border: none;
+    border-radius: 0;
+    -webkit-transition-property: top, box-shadow, background-color;
+    transition-property: top, box-shadow, background-color;
+    -webkit-transition-duration: .25s;
+    transition-duration: .25s
+}
+#topNav2.sticky {
+    padding-top: 0;
+    background-color: #303030;
+    box-shadow: 0 0 4px rgba(0, 0, 0, .14), 0 4px 8px rgba(0, 0, 0, .28)
+}
+#topNav2 .navbar-brand {
+    margin: 0px auto;
+    display: block;
+    width: auto;
+    height: auto;
+    min-height: 0;
+    padding: 0;
+    border-radius: 0;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase
+}
+#topNav2 .navbar-brand img,
+.contactForm .mdl-card__title .modal--logo,
+.forgotForm .mdl-card__title .modal--logo,
+.loginForm .mdl-card__title .modal--logo,
+.signupForm .mdl-card__title .modal--logo,
+.subscribeForm .mdl-card__title .modal--logo {
+    display: block;
+    border-radius: 2px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12)
+}
+.forgotForm .mdl-card__actions a,
+.loginForm .mdl-card__actions a,
+.signupForm .mdl-card__actions a {
+    font-size: 12px
+}
+#topNav2 .navbar-brand img {
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    padding: 5px;
+    /*background-color:#ff5252*/
+}
+#banner,
+#banner:before {
+    width: 100%;
+    height: 100%
+}
+#banner {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat
+}
+#banner:before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(34, 34, 34, .2)
+}
+.banner-content {
+    color: #fff
+}
+.banner-content h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: 700;
+    text-transform: uppercase
+}
+.banner-content h4 {
+    margin-top: 12px;
+    margin-bottom: 22px;
+    font-weight: 300;
+    text-transform: uppercase
+}
+#contactForm label,
+#forgotForm label,
+#loginForm label,
+#signupForm label,
+#subscribeForm label {
+    font-weight: 100;
+    color: #737373
+}
+.banner-content a.mdl-button {
+    padding: 5px 0;
+    height: auto;
+    min-width: 150px;
+    margin: 0 5px 15px
+}
+#loginFormModal {
+    padding: 0 20px
+}
+#loginFormModal .modal-dialog {
+    max-width: 360px;
+    margin: 30px auto
+}
+#loginFormModal .modal-content {
+    background-color: transparent
+}
+.loginForm .mdl-card {
+    width: auto
+}
+.loginForm .mdl-card__title {
+    padding-top: 0
+}
+.loginForm .mdl-card__title .modal--logo {
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    padding: 5px
+}
+#loginForm .mdl-textfield,
+.loginForm .mdl-card__supporting-text {
+    width: 100%
+}
+#loginForm label {
+    margin-bottom: 0
+}
+#loginForm input.error+label:after {
+    background-color: #ff5252;
+    left: 0;
+    width: 100%;
+    visibility: visible
+}
+.loginForm .mdl-card__actions {
+    margin-top: 5px
+}
+#signupFormModal {
+    padding: 0 20px
+}
+#signupFormModal .modal-dialog {
+    max-width: 360px;
+    margin: 30px auto
+}
+#signupFormModal .modal-content {
+    background-color: transparent
+}
+.signupForm .mdl-card {
+    width: auto
+}
+.signupForm .mdl-card__title {
+    padding-top: 0
+}
+.signupForm .mdl-card__title .modal--logo {
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    padding: 15px
+}
+#signupForm .mdl-textfield,
+.signupForm .mdl-card__supporting-text {
+    width: 100%
+}
+#signupForm label {
+    margin-bottom: 0
+}
+#signupForm input.error+label:after {
+    background-color: #ff5252;
+    left: 0;
+    width: 100%;
+    visibility: visible
+}
+.signupForm .mdl-card__actions {
+    margin-top: 5px;
+    padding-left: 15px
+}
+.signupForm .mdl-card__actions p {
+    margin-bottom: 0;
+    margin-top: 8px
+}
+#forgotFormModal {
+    padding: 0 20px
+}
+#forgotFormModal .modal-dialog {
+    max-width: 360px;
+    margin: 30px auto
+}
+#forgotFormModal .modal-content {
+    background-color: transparent
+}
+.forgotForm .mdl-card {
+    width: auto
+}
+.forgotForm .mdl-card__title {
+    padding-top: 0
+}
+.forgotForm .mdl-card__title .modal--logo {
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    padding: 5px
+}
+#forgotForm .mdl-textfield,
+.forgotForm .mdl-card__supporting-text {
+    width: 100%
+}
+#forgotForm label {
+    margin-bottom: 0
+}
+#forgotForm input.error+label:after {
+    background-color: #ff5252;
+    left: 0;
+    width: 100%;
+    visibility: visible
+}
+.forgotForm .mdl-card__actions {
+    margin-top: 5px;
+    padding-left: 15px
+}
+.forgotForm .mdl-card__actions p {
+    margin-bottom: 0;
+    margin-top: 8px
+}
+#subscribeFormModal {
+    padding: 0 20px
+}
+#subscribeFormModal .modal-dialog {
+    max-width: 360px;
+    margin: 30px auto
+}
+#subscribeFormModal .modal-content {
+    background-color: transparent
+}
+.subscribeForm .mdl-card {
+    width: auto
+}
+.subscribeForm .mdl-card__title {
+    padding-top: 0
+}
+.subscribeForm .mdl-card__title .modal--logo {
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    padding: 15px
+}
+#subscribeForm .mdl-textfield,
+.subscribeForm .mdl-card__supporting-text {
+    width: 100%
+}
+#subscribeForm label {
+    margin-bottom: 0
+}
+#subscribeForm input.error+label:after {
+    background-color: #ff5252;
+    left: 0;
+    width: 100%;
+    visibility: visible
+}
+#contactFormModal {
+    padding: 0 20px
+}
+#contactFormModal .modal-dialog {
+    max-width: 600px;
+    margin: 30px auto
+}
+#contactFormModal .modal-content {
+    background-color: transparent
+}
+.contactForm .mdl-card {
+    width: auto
+}
+.contactForm .mdl-card__title {
+    padding-top: 0
+}
+.contactForm .mdl-card__title .modal--logo {
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    padding: 15px
+}
+#contactForm .mdl-textfield,
+.contactForm .mdl-card__supporting-text {
+    width: 100%
+}
+#contactForm label {
+    margin-bottom: 0
+}
+#contactForm input.error+label:after,
+#contactForm textarea.error+label:after {
+    background-color: #ff5252;
+    left: 0;
+    width: 100%;
+    visibility: visible
+}
+#contactMessage {
+    min-height: 80px;
+    border-color: rgba(0, 0, 0, .12)
+}
+@media screen and (max-width: 992px) {
+    #topNavbar2 li a {
+        display: none
+    }
+    #topNav2 .navbar-header {
+        float: left;
+        margin-left: 0
+    }
+    #topNavbar2 {
+        float: right
+    }
+    #topNavbar2 .nav {
+        margin-top: 0;
+        margin-bottom: 0
+    }
+}
+@media screen and (max-width: 480px) {
+    .loginForm .mdl-card__actions a {
+        font-size: 11px;
+        padding: 0 10px
+    }
+    #banner {
+        position: relative;
+        height: auto;
+        min-height: 100%
+    }
+    .banner-content h2 {
+        font-size: 34px;
+        line-height: 38px;
+        padding-top: 120px
+    }
+}
+@media screen and (max-width: 320px) {
+    #topNav .login-form-button {
+        display: none
+    }
+}
+.no-gutter {
+    margin-left: 0;
+    margin-right: 0
+}
+.no-gutter>[class*=col-] {
+    padding-left: 0;
+    padding-right: 0
+}

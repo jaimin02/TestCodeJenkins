@@ -1,0 +1,732 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>E:\Publish\DISoft C\DISoftCI\DISoftCI_WEB</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>08/08/2012 18:02:20</publishTime>
+    </File>
+    <File Include="bin/App_global.asax.compiled">
+      <publishTime>02/04/2023 09:48:11</publishTime>
+    </File>
+    <File Include="bin/App_global.asax.dll">
+      <publishTime>02/04/2023 09:48:11</publishTime>
+    </File>
+    <File Include="bin/BusinessOperation.dll">
+      <publishTime>02/14/2023 17:22:29</publishTime>
+    </File>
+    <File Include="bin/DatabaseOperation.dll">
+      <publishTime>02/14/2023 17:22:29</publishTime>
+    </File>
+    <File Include="bin/Dicom.Core.dll">
+      <publishTime>11/01/2020 11:16:26</publishTime>
+    </File>
+    <File Include="bin/DTO.dll">
+      <publishTime>02/14/2023 17:22:29</publishTime>
+    </File>
+    <File Include="bin/Ionic.Zip.Reduced.dll">
+      <publishTime>11/06/2020 11:10:01</publishTime>
+    </File>
+    <File Include="bin/MedicalImaging.dll">
+      <publishTime>02/14/2023 17:22:43</publishTime>
+    </File>
+    <File Include="bin/MIApi.dll">
+      <publishTime>02/14/2023 17:22:30</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Graph.dll">
+      <publishTime>07/28/2020 19:39:46</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Identity.Client.dll">
+      <publishTime>05/18/2020 20:12:06</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>07/25/2012 11:48:56</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>02/01/2014 14:23:10</publishTime>
+    </File>
+    <File Include="bin/SS.Mail.dll">
+      <publishTime>09/23/2022 10:24:07</publishTime>
+    </File>
+    <File Include="bin/SS.Web.dll">
+      <publishTime>04/01/2022 14:43:35</publishTime>
+    </File>
+    <File Include="bin/System.Diagnostics.DiagnosticSource.dll">
+      <publishTime>09/13/2019 02:41:32</publishTime>
+    </File>
+    <File Include="bin/System.Memory.dll">
+      <publishTime>04/17/2019 16:24:34</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>08/08/2012 17:58:24</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>08/08/2012 17:58:20</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>08/08/2012 17:58:22</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>08/08/2012 17:58:22</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>08/08/2012 17:58:04</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>08/08/2012 17:58:28</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>08/08/2012 17:57:48</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>08/08/2012 17:58:20</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>08/08/2012 17:58:20</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>08/08/2012 17:58:20</publishTime>
+    </File>
+    <File Include="bin/Utility.dll">
+      <publishTime>02/14/2023 17:22:29</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>08/08/2012 18:02:20</publishTime>
+    </File>
+    <File Include="Contents/Themes/Css/AdminLTE.min.css">
+      <publishTime>02/02/2023 10:36:45</publishTime>
+    </File>
+    <File Include="Contents/Themes/Css/blue.css">
+      <publishTime>02/02/2023 10:36:45</publishTime>
+    </File>
+    <File Include="Contents/Themes/Css/bootstrap.min.css">
+      <publishTime>02/02/2023 10:36:45</publishTime>
+    </File>
+    <File Include="Contents/Themes/Css/bootstrap3-wysihtml5.min.css">
+      <publishTime>02/02/2023 10:36:45</publishTime>
+    </File>
+    <File Include="Contents/Themes/Css/component.css">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Css/Custom.css">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Css/datepicker3.css">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Css/daterangepicker.css">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Css/demo.css">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Css/Dicom.css">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Css/font-awesome.min.css">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Css/ionicons.min.css">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Css/jquery-jvectormap-1.2.2.css">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Css/Login.css">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Css/main-color-1.css">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Css/material.min.css">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Css/morris.css">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Css/skin-blue.min.css">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Css/style.css">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Css/style2.css">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Css/_all-skins.min.css">
+      <publishTime>02/02/2023 10:36:45</publishTime>
+    </File>
+    <File Include="Contents/Themes/Fonts/.DS_Store">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Fonts/codropsicons.eot">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Fonts/codropsicons.svg">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Fonts/codropsicons.ttf">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Fonts/codropsicons.woff">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Fonts/ecoicon.dev.svg">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Fonts/ecoicon.eot">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Fonts/ecoicon.svg">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Fonts/ecoicon.ttf">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Fonts/ecoicon.woff">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Fonts/fontawesome-webfont3295.eot">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Fonts/fontawesome-webfont3295.svg">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Fonts/fontawesome-webfont3295.ttf">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Fonts/fontawesome-webfont3295.woff">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Fonts/fontawesome-webfont3295.woff2">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Fonts/fontawesome-webfontd41d.eot">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Fonts/glyphicons-halflings-regular.eot">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Fonts/glyphicons-halflings-regular.svg">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Fonts/glyphicons-halflings-regular.woff">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Fonts/glyphicons-halflings-regular.woff2">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Fonts/glyphicons-halflings-regulard41d.eot">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Fonts/license.txt">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Fonts/password.ttf">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Images/1.jpg">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Images/2.jpg">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Images/3.jpg">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Images/4.jpg">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Images/5.jpg">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Images/6.jpg">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Images/back.png">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Images/boxed-bg.jpg">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Images/default-50x50.gif">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Images/DI_LOGO.ico">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Images/DI_LOGO_BLACK.png">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Images/DI_LOGO_WHITE.png">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Images/Information.png">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Images/loader.GIF">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Images/logo.png">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Images/MI_LOGO.ico">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Images/MI_LOGO.png">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Images/photo1.png">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Images/photo2.png">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Images/photo3.jpg">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Images/photo4.jpg">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Images/user1-128x128.jpg">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Images/user2-160x160.jpg">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Images/user3-128x128.jpg">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Images/user4-128x128.jpg">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Images/user5-128x128.jpg">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Images/user6-128x128.jpg">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Images/user7-128x128.jpg">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Images/user8-128x128.jpg">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Js/app.min.js">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Js/bootstrap-datepicker.js">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Js/bootstrap.min.js">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Js/bootstrap3-wysihtml5.all.min.js">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Js/color-switcher.js">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Js/dashboard.js">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Js/dashboard2.js">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Js/daterangepicker.js">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Js/demo.js">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Js/fastclick.js">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Js/jquery-1.12.4.js">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Js/jquery-2.2.2.min.js">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Js/jquery-2.2.3.min.js">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Js/jquery-3.6.1.js">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Js/jquery-3.6.1.min.js">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Js/jquery-jvectormap-1.2.2.min.js">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Js/jquery-jvectormap-world-mill-en.js">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Js/jquery-ui.js">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Js/jquery-ui.min.js">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Js/jquery.knob.js">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Js/jquery.slimscroll.min.js">
+      <publishTime>02/02/2023 10:36:46</publishTime>
+    </File>
+    <File Include="Contents/Themes/Js/jquery.sparkline.min.js">
+      <publishTime>02/02/2023 10:36:47</publishTime>
+    </File>
+    <File Include="Contents/Themes/Js/jquery.validate.min.js">
+      <publishTime>02/02/2023 10:36:47</publishTime>
+    </File>
+    <File Include="Contents/Themes/Js/main.js">
+      <publishTime>02/02/2023 10:36:47</publishTime>
+    </File>
+    <File Include="Contents/Themes/Js/material.min.js">
+      <publishTime>02/02/2023 10:36:47</publishTime>
+    </File>
+    <File Include="Contents/Themes/Js/modernizr.custom.86080.js">
+      <publishTime>02/02/2023 10:36:47</publishTime>
+    </File>
+    <File Include="Contents/Themes/Js/moment.min.js">
+      <publishTime>02/02/2023 10:36:47</publishTime>
+    </File>
+    <File Include="Contents/Themes/Js/morris.min.js">
+      <publishTime>02/02/2023 10:36:47</publishTime>
+    </File>
+    <File Include="Contents/Themes/Js/raphael-min.js">
+      <publishTime>02/02/2023 10:36:47</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/AutoComplete/select2.css">
+      <publishTime>02/02/2023 10:36:47</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/AutoComplete/select2.full.js">
+      <publishTime>02/02/2023 10:36:47</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/AutoComplete/typeahead.js">
+      <publishTime>02/02/2023 10:36:47</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/Confirm/Css/jquery-confirm.css">
+      <publishTime>02/02/2023 10:36:47</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/Confirm/Js/jquery-confirm.js">
+      <publishTime>02/02/2023 10:36:47</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/DataTable/Css/buttons.dataTables.min.css">
+      <publishTime>02/02/2023 10:36:47</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/DataTable/Css/dataTables.bootstrap.css">
+      <publishTime>02/02/2023 10:36:47</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/DataTable/Css/jquery.dataTables.css">
+      <publishTime>02/02/2023 10:36:47</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/DataTable/Css/jquery.dataTables.min.css">
+      <publishTime>02/02/2023 10:36:47</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/DataTable/Css/jquery.dataTables_themeroller.css">
+      <publishTime>02/02/2023 10:36:47</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/DataTable/Js/buttons.flash.min.js">
+      <publishTime>02/02/2023 10:36:47</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/DataTable/Js/buttons.html5.min.js">
+      <publishTime>02/02/2023 10:36:47</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/DataTable/Js/buttons.print.min.js">
+      <publishTime>02/02/2023 10:36:47</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/DataTable/Js/dataTables.bootstrap.js">
+      <publishTime>02/02/2023 10:36:47</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/DataTable/Js/dataTables.bootstrap.min.js">
+      <publishTime>02/02/2023 10:36:47</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/DataTable/Js/dataTables.buttons.min.js">
+      <publishTime>02/02/2023 10:36:47</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/DataTable/Js/jquery.dataTables.js">
+      <publishTime>02/02/2023 10:36:47</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/DataTable/Js/jquery.dataTables.min.js">
+      <publishTime>02/02/2023 10:36:47</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/DataTable/Js/jszip.min.js">
+      <publishTime>02/02/2023 10:36:47</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/DataTable/Js/pdfmake.min.js">
+      <publishTime>02/02/2023 10:36:47</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/DataTable/Js/vfs_fonts.js">
+      <publishTime>02/02/2023 10:36:47</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/Dicom/Css/bootstrap.min.css">
+      <publishTime>02/02/2023 10:36:47</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/Dicom/Css/cornerstone.css">
+      <publishTime>02/02/2023 10:36:47</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/Dicom/Css/cornerstone.min.css">
+      <publishTime>02/02/2023 10:36:47</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/Dicom/Css/cornerstoneDemo.css">
+      <publishTime>02/02/2023 10:36:47</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/Dicom/Css/dialogPolyfill.css">
+      <publishTime>02/02/2023 10:36:47</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/Dicom/Css/font-awesome.min.css">
+      <publishTime>02/02/2023 10:36:47</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/Dicom/fonts/fontawesome-webfont.eot">
+      <publishTime>02/02/2023 10:36:47</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/Dicom/fonts/fontawesome-webfont.svg">
+      <publishTime>02/02/2023 10:36:47</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/Dicom/fonts/fontawesome-webfont.ttf">
+      <publishTime>02/02/2023 10:36:47</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/Dicom/fonts/fontawesome-webfont.woff">
+      <publishTime>02/02/2023 10:36:47</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/Dicom/fonts/fontawesome-webfont.woff2">
+      <publishTime>02/02/2023 10:36:47</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/Dicom/fonts/FontAwesome.otf">
+      <publishTime>02/02/2023 10:36:47</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/Dicom/Js/about.js">
+      <publishTime>02/02/2023 10:36:47</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/Dicom/Js/bootstrap.min.js">
+      <publishTime>02/02/2023 10:36:47</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/Dicom/Js/cornerstone.js">
+      <publishTime>02/02/2023 10:36:47</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/Dicom/Js/cornerstone.min.js">
+      <publishTime>02/02/2023 10:36:47</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/Dicom/Js/cornerstoneMath.js">
+      <publishTime>02/02/2023 10:36:47</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/Dicom/Js/cornerstoneTools.js">
+      <publishTime>02/02/2023 10:36:47</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/Dicom/Js/cornerstoneWADOImageLoader.js">
+      <publishTime>02/02/2023 10:36:47</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/Dicom/Js/cornerstoneWADOImageLoader.min.js">
+      <publishTime>02/02/2023 10:36:47</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/Dicom/Js/cornerstoneWebImageLoader.js">
+      <publishTime>02/02/2023 10:36:47</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/Dicom/Js/cornerstoneWebImageLoader.min.js">
+      <publishTime>02/02/2023 10:36:47</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/Dicom/Js/dialogPolyfill.js">
+      <publishTime>02/02/2023 10:36:47</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/Dicom/Js/DicomMain.js">
+      <publishTime>02/02/2023 10:36:47</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/Dicom/Js/dicomParser.js">
+      <publishTime>02/02/2023 10:36:47</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/Dicom/Js/dicomParser.min.js">
+      <publishTime>02/02/2023 10:36:47</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/Dicom/Js/disableAllTools.js">
+      <publishTime>02/02/2023 10:36:47</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/Dicom/Js/displayThumbnail.js">
+      <publishTime>02/02/2023 10:36:47</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/Dicom/Js/exampleImageIdLoader.js">
+      <publishTime>02/02/2023 10:36:47</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/Dicom/Js/exampleImageLoader.js">
+      <publishTime>02/02/2023 10:36:47</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/Dicom/Js/exampleMetaDataProvider.js">
+      <publishTime>02/02/2023 10:36:48</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/Dicom/Js/forEachViewport.js">
+      <publishTime>02/02/2023 10:36:48</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/Dicom/Js/hammer.min.js">
+      <publishTime>02/02/2023 10:36:48</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/Dicom/Js/help.js">
+      <publishTime>02/02/2023 10:36:48</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/Dicom/Js/imageViewer.js">
+      <publishTime>02/02/2023 10:36:48</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/Dicom/Js/jquery-ui.min.js">
+      <publishTime>02/02/2023 10:36:48</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/Dicom/Js/jquery.min.js">
+      <publishTime>02/02/2023 10:36:48</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/Dicom/Js/libCharLS.js">
+      <publishTime>02/02/2023 10:36:48</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/Dicom/Js/libopenjpeg.js">
+      <publishTime>02/02/2023 10:36:48</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/Dicom/Js/loadStudy.js">
+      <publishTime>02/02/2023 10:36:48</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/Dicom/Js/loadTemplate.js">
+      <publishTime>02/02/2023 10:36:48</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/Dicom/Js/setupButtons.js">
+      <publishTime>02/02/2023 10:36:48</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/Dicom/Js/setupViewport.js">
+      <publishTime>02/02/2023 10:36:48</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/Dicom/Js/setupViewportOverlays.js">
+      <publishTime>02/02/2023 10:36:48</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/Dicom/Js/touch-emulator.js">
+      <publishTime>02/02/2023 10:36:48</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/Dicom/Js/uids.js">
+      <publishTime>02/02/2023 10:36:48</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/MultiSelect/bootstrap-multiselect.css">
+      <publishTime>02/02/2023 10:36:48</publishTime>
+    </File>
+    <File Include="Contents/Themes/Plugins/MultiSelect/bootstrap-multiselect.js">
+      <publishTime>02/02/2023 10:36:48</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>02/02/2023 10:36:48</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>02/02/2023 10:36:48</publishTime>
+    </File>
+    <File Include="PrecompiledApp.config">
+      <publishTime>02/04/2023 09:48:06</publishTime>
+    </File>
+    <File Include="Scripts/Dicom.js">
+      <publishTime>02/14/2023 11:12:58</publishTime>
+    </File>
+    <File Include="Scripts/General.js">
+      <publishTime>02/02/2023 10:36:48</publishTime>
+    </File>
+    <File Include="Scripts/Layout.js">
+      <publishTime>02/02/2023 10:36:48</publishTime>
+    </File>
+    <File Include="Scripts/MIAnatomy.js">
+      <publishTime>02/02/2023 10:36:48</publishTime>
+    </File>
+    <File Include="Scripts/MIBizNETAdjudicatorResponse.js">
+      <publishTime>02/02/2023 10:36:48</publishTime>
+    </File>
+    <File Include="Scripts/MIBizNETImageReview.js">
+      <publishTime>02/02/2023 10:36:48</publishTime>
+    </File>
+    <File Include="Scripts/MICheckListProject.js">
+      <publishTime>02/02/2023 10:36:48</publishTime>
+    </File>
+    <File Include="Scripts/MICheckListTemplate.js">
+      <publishTime>02/02/2023 10:36:48</publishTime>
+    </File>
+    <File Include="Scripts/MIDicom.js">
+      <publishTime>02/02/2023 10:36:48</publishTime>
+    </File>
+    <File Include="Scripts/MIDicomStudy.js">
+      <publishTime>02/02/2023 10:36:48</publishTime>
+    </File>
+    <File Include="Scripts/MIDicomStudyData.js">
+      <publishTime>02/02/2023 10:36:48</publishTime>
+    </File>
+    <File Include="Scripts/MIHome.js">
+      <publishTime>02/14/2023 11:12:58</publishTime>
+    </File>
+    <File Include="Scripts/MIImageReview.js">
+      <publishTime>02/02/2023 10:36:48</publishTime>
+    </File>
+    <File Include="Scripts/MILogin.js">
+      <publishTime>02/02/2023 10:36:48</publishTime>
+    </File>
+    <File Include="Scripts/MIModality.js">
+      <publishTime>02/02/2023 10:36:48</publishTime>
+    </File>
+    <File Include="Scripts/MIStatisticsReport.js">
+      <publishTime>02/02/2023 10:36:48</publishTime>
+    </File>
+    <File Include="Scripts/Validation.js">
+      <publishTime>02/02/2023 10:36:48</publishTime>
+    </File>
+    <File Include="Views/MIAnatomy/MIAnatomy.cshtml">
+      <publishTime>02/02/2023 10:36:48</publishTime>
+    </File>
+    <File Include="Views/MIBizNETAdjudicatorResponse/MIBizNETAdjudicatorResponse.cshtml">
+      <publishTime>02/02/2023 10:36:48</publishTime>
+    </File>
+    <File Include="Views/MIBizNETImageReview/MIBizNETImageReview.cshtml">
+      <publishTime>02/02/2023 10:36:48</publishTime>
+    </File>
+    <File Include="Views/MICheckListProject/MICheckListProject.cshtml">
+      <publishTime>02/02/2023 10:36:48</publishTime>
+    </File>
+    <File Include="Views/MICheckListTemplate/MICheckListTemplate.cshtml">
+      <publishTime>02/02/2023 10:36:48</publishTime>
+    </File>
+    <File Include="Views/MIDicomStudy/MIDicomStudy.cshtml">
+      <publishTime>02/02/2023 10:36:48</publishTime>
+    </File>
+    <File Include="Views/MIDicomStudyData/MIDicomStudyData.cshtml">
+      <publishTime>02/02/2023 10:36:48</publishTime>
+    </File>
+    <File Include="Views/MIDicomStudyViewer/MIDicomStudyViewer.cshtml">
+      <publishTime>02/02/2023 10:36:48</publishTime>
+    </File>
+    <File Include="Views/MIDicomViewer/MIDicomViewer.cshtml">
+      <publishTime>02/14/2023 11:12:58</publishTime>
+    </File>
+    <File Include="Views/MIHome/Home.cshtml">
+      <publishTime>02/14/2023 11:12:58</publishTime>
+    </File>
+    <File Include="Views/MIImageReview/MIImageReview.cshtml">
+      <publishTime>02/02/2023 10:36:48</publishTime>
+    </File>
+    <File Include="Views/MILogin/ChangePassword.cshtml">
+      <publishTime>02/02/2023 10:36:48</publishTime>
+    </File>
+    <File Include="Views/MILogin/Login.cshtml">
+      <publishTime>02/02/2023 10:36:48</publishTime>
+    </File>
+    <File Include="Views/MIModality/MIModality.cshtml">
+      <publishTime>02/02/2023 10:36:48</publishTime>
+    </File>
+    <File Include="Views/MIStatisticsReport/MIStatisticsReport.cshtml">
+      <publishTime>02/02/2023 10:36:48</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>02/02/2023 10:36:48</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>02/02/2023 10:36:49</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>02/14/2023 11:35:34</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

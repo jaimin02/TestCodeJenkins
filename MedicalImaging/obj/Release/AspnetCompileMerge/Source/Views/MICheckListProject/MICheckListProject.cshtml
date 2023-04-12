@@ -1,0 +1,78 @@
+﻿@{
+    ViewBag.Title = "DI : CHECKLIST PROJECT";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @section header{
+        <h1>CheckList Project<small>Master</small></h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i>Home</a></li>
+            <li class="active">CheckList Project Master</li>
+        </ol>
+    }
+    
+    <!-- Small boxes (Stat box) -->    
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header" style="text-align: left">
+                    <div class="row">
+                    </div>
+                </div>
+
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-xs-6 form-group">
+                            <div class="col-sm-12">
+                                <label for="ddlProject">Project</label>
+                                @*<input type="text" id="ddlProject" placeholder="Project No" data-provide="typeahead" class="form-control" />*@
+                                  <select class="form-control select2" id="ddlProject" >                                  
+                                  </select>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 form-group">
+                            <div class="col-sm-12">
+                                <label for="ddlTemplate">Template</label>
+                                @*  <input type="text" id="ddlTemplate" placeholder="Template" data-provide="typeahead" class="form-control" />*@
+                                <select class="form-control select2" id="ddlTemplate">
+                                </select>
+                            </div>
+                        </div>
+                        <!-- ./col -->
+                    </div>
+
+                    <div class="row" style="text-align: right">
+                         <div class="col-xs-12 form-group">
+                               <div class="col-sm-12">
+                                   <button type="button" id="btnAddCheckListProjectTemplate" class="btn btn-primary margin" title="Add CheckList Template">+ Add</button>
+                                   <button type="button" id="btnCancelCheckListProjectTemplate" class="btn btn-primary margin" title="Cancel CheckList Template">+ Cancel</button>
+                               </div>
+                         </div> 
+                    </div>
+
+                      <div class="row" >
+                         <div class="col-xs-12 form-group">
+                               <div class="col-sm-12">
+                                    <table id="tblCheckListTemplateQuestion" class="table table-bordered table-striped dataTable">
+                                    </table>
+                                   <button type="button" id="btnSaveCheckListProjectTemplate" class="btn btn-primary margin" title="Save CheckList Template">Save Changes</button>
+                               </div>
+                         </div> 
+                    </div>
+
+                </div>
+                <!-- /.box-body -->
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->
+    
+    @*<script type="text/javascript" src="@Url.Content("~/Contents/Themes/Js/jquery-2.2.3.min.js")"></script>*@
+    <script type="text/javascript" src="@Url.Content("~/Contents/Themes/Js/jquery-3.6.1.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/General.js")"></script>        
+    <script type="text/javascript" src="@Url.Content("~/Scripts/MICheckListProject.js")"></script>
+}
+

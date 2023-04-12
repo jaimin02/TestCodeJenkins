@@ -1,0 +1,82 @@
+E:\Application\DISoft_C\DISoft _C\MIApi\obj\Release\MIApi.csprojResolveAssemblyReference.cache
+E:\Application\DISoft_C\DISoft _C\MIApi\bin\MIApi.dll.config
+E:\Application\DISoft_C\DISoft _C\MIApi\bin\MIApi.dll
+E:\Application\DISoft_C\DISoft _C\MIApi\bin\MIApi.pdb
+E:\Application\DISoft_C\DISoft _C\MIApi\bin\Antlr3.Runtime.dll
+E:\Application\DISoft_C\DISoft _C\MIApi\bin\BusinessOperation.dll
+E:\Application\DISoft_C\DISoft _C\MIApi\bin\DTO.dll
+E:\Application\DISoft_C\DISoft _C\MIApi\bin\EntityFramework.dll
+E:\Application\DISoft_C\DISoft _C\MIApi\bin\Microsoft.Web.Infrastructure.dll
+E:\Application\DISoft_C\DISoft _C\MIApi\bin\Newtonsoft.Json.dll
+E:\Application\DISoft_C\DISoft _C\MIApi\bin\System.Net.Http.Formatting.dll
+E:\Application\DISoft_C\DISoft _C\MIApi\bin\System.Web.Helpers.dll
+E:\Application\DISoft_C\DISoft _C\MIApi\bin\System.Web.Http.dll
+E:\Application\DISoft_C\DISoft _C\MIApi\bin\System.Web.Http.WebHost.dll
+E:\Application\DISoft_C\DISoft _C\MIApi\bin\System.Web.Mvc.dll
+E:\Application\DISoft_C\DISoft _C\MIApi\bin\System.Web.Optimization.dll
+E:\Application\DISoft_C\DISoft _C\MIApi\bin\System.Web.Providers.dll
+E:\Application\DISoft_C\DISoft _C\MIApi\bin\System.Web.Razor.dll
+E:\Application\DISoft_C\DISoft _C\MIApi\bin\System.Web.WebPages.Deployment.dll
+E:\Application\DISoft_C\DISoft _C\MIApi\bin\System.Web.WebPages.dll
+E:\Application\DISoft_C\DISoft _C\MIApi\bin\System.Web.WebPages.Razor.dll
+E:\Application\DISoft_C\DISoft _C\MIApi\bin\WebGrease.dll
+E:\Application\DISoft_C\DISoft _C\MIApi\bin\DatabaseOperation.dll
+E:\Application\DISoft_C\DISoft _C\MIApi\bin\Utility.dll
+E:\Application\DISoft_C\DISoft _C\MIApi\bin\BusinessOperation.pdb
+E:\Application\DISoft_C\DISoft _C\MIApi\bin\DTO.pdb
+E:\Application\DISoft_C\DISoft _C\MIApi\bin\EntityFramework.xml
+E:\Application\DISoft_C\DISoft _C\MIApi\bin\System.Net.Http.Formatting.xml
+E:\Application\DISoft_C\DISoft _C\MIApi\bin\System.Web.Helpers.xml
+E:\Application\DISoft_C\DISoft _C\MIApi\bin\System.Web.Http.xml
+E:\Application\DISoft_C\DISoft _C\MIApi\bin\System.Web.Http.WebHost.xml
+E:\Application\DISoft_C\DISoft _C\MIApi\bin\System.Web.Mvc.xml
+E:\Application\DISoft_C\DISoft _C\MIApi\bin\System.Web.Razor.xml
+E:\Application\DISoft_C\DISoft _C\MIApi\bin\System.Web.WebPages.xml
+E:\Application\DISoft_C\DISoft _C\MIApi\bin\System.Web.WebPages.Deployment.xml
+E:\Application\DISoft_C\DISoft _C\MIApi\bin\System.Web.WebPages.Razor.xml
+E:\Application\DISoft_C\DISoft _C\MIApi\bin\DatabaseOperation.pdb
+E:\Application\DISoft_C\DISoft _C\MIApi\bin\Utility.pdb
+E:\Application\DISoft_C\DISoft _C\MIApi\obj\Release\MIApi.dll
+E:\Application\DISoft_C\DISoft _C\MIApi\obj\Release\MIApi.pdb
+E:\Application\DISoft_C\DISoft _C\MIApi\bin\Newtonsoft.Json.pdb
+G:\Jaimin Office\Code_Test\DISoft _C\MIApi\bin\MIApi.dll.config
+G:\Jaimin Office\Code_Test\DISoft _C\MIApi\bin\MIApi.dll
+G:\Jaimin Office\Code_Test\DISoft _C\MIApi\bin\MIApi.pdb
+G:\Jaimin Office\Code_Test\DISoft _C\MIApi\bin\Antlr3.Runtime.dll
+G:\Jaimin Office\Code_Test\DISoft _C\MIApi\bin\BusinessOperation.dll
+G:\Jaimin Office\Code_Test\DISoft _C\MIApi\bin\DTO.dll
+G:\Jaimin Office\Code_Test\DISoft _C\MIApi\bin\EntityFramework.dll
+G:\Jaimin Office\Code_Test\DISoft _C\MIApi\bin\Microsoft.Web.Infrastructure.dll
+G:\Jaimin Office\Code_Test\DISoft _C\MIApi\bin\System.Net.Http.Formatting.dll
+G:\Jaimin Office\Code_Test\DISoft _C\MIApi\bin\System.Web.Helpers.dll
+G:\Jaimin Office\Code_Test\DISoft _C\MIApi\bin\System.Web.Http.dll
+G:\Jaimin Office\Code_Test\DISoft _C\MIApi\bin\System.Web.Http.WebHost.dll
+G:\Jaimin Office\Code_Test\DISoft _C\MIApi\bin\System.Web.Mvc.dll
+G:\Jaimin Office\Code_Test\DISoft _C\MIApi\bin\System.Web.Optimization.dll
+G:\Jaimin Office\Code_Test\DISoft _C\MIApi\bin\System.Web.Providers.dll
+G:\Jaimin Office\Code_Test\DISoft _C\MIApi\bin\System.Web.Razor.dll
+G:\Jaimin Office\Code_Test\DISoft _C\MIApi\bin\System.Web.WebPages.Deployment.dll
+G:\Jaimin Office\Code_Test\DISoft _C\MIApi\bin\System.Web.WebPages.dll
+G:\Jaimin Office\Code_Test\DISoft _C\MIApi\bin\System.Web.WebPages.Razor.dll
+G:\Jaimin Office\Code_Test\DISoft _C\MIApi\bin\WebGrease.dll
+G:\Jaimin Office\Code_Test\DISoft _C\MIApi\bin\DatabaseOperation.dll
+G:\Jaimin Office\Code_Test\DISoft _C\MIApi\bin\Utility.dll
+G:\Jaimin Office\Code_Test\DISoft _C\MIApi\bin\BusinessOperation.pdb
+G:\Jaimin Office\Code_Test\DISoft _C\MIApi\bin\DTO.pdb
+G:\Jaimin Office\Code_Test\DISoft _C\MIApi\bin\EntityFramework.xml
+G:\Jaimin Office\Code_Test\DISoft _C\MIApi\bin\System.Net.Http.Formatting.xml
+G:\Jaimin Office\Code_Test\DISoft _C\MIApi\bin\System.Web.Helpers.xml
+G:\Jaimin Office\Code_Test\DISoft _C\MIApi\bin\System.Web.Http.xml
+G:\Jaimin Office\Code_Test\DISoft _C\MIApi\bin\System.Web.Http.WebHost.xml
+G:\Jaimin Office\Code_Test\DISoft _C\MIApi\bin\System.Web.Mvc.xml
+G:\Jaimin Office\Code_Test\DISoft _C\MIApi\bin\System.Web.Razor.xml
+G:\Jaimin Office\Code_Test\DISoft _C\MIApi\bin\System.Web.WebPages.xml
+G:\Jaimin Office\Code_Test\DISoft _C\MIApi\bin\System.Web.WebPages.Deployment.xml
+G:\Jaimin Office\Code_Test\DISoft _C\MIApi\bin\System.Web.WebPages.Razor.xml
+G:\Jaimin Office\Code_Test\DISoft _C\MIApi\bin\DatabaseOperation.pdb
+G:\Jaimin Office\Code_Test\DISoft _C\MIApi\bin\Utility.pdb
+G:\Jaimin Office\Code_Test\DISoft _C\MIApi\obj\Release\MIApi.csproj.AssemblyReference.cache
+G:\Jaimin Office\Code_Test\DISoft _C\MIApi\obj\Release\MIApi.csproj.CoreCompileInputs.cache
+G:\Jaimin Office\Code_Test\DISoft _C\MIApi\obj\Release\MIApi.csproj.CopyComplete
+G:\Jaimin Office\Code_Test\DISoft _C\MIApi\obj\Release\MIApi.dll
+G:\Jaimin Office\Code_Test\DISoft _C\MIApi\obj\Release\MIApi.pdb

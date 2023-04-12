@@ -1,0 +1,297 @@
+
+<%-- Viraj Patel / Hiral Shah 19-07-07 --%>
+<%-- Grid View and Data Grid Skins --%>
+
+<%-- USED IN ALL DATAGRID  --%>
+<asp:DataGrid runat="server"  width="700px" BorderColor="black" BorderStyle="Solid" BorderWidth="1px" 
+     skinId="grdtt" ShowFooter="true">
+    <ItemStyle BackColor="#ffdead" Font-Names="Verdana" Font-Size="Small" ForeColor="Navy" HorizontalAlign="Center"/>
+    <EditItemStyle BackColor="#ffdead" Font-Names="Verdana" Font-Size="Small" />
+    <HeaderStyle BackColor="#ffa24a" Font-Names="Verdana" Font-Size="Small" HorizontalAlign="Center" ForeColor="White" Font-Bold="True"/>
+    <FooterStyle BackColor="#ffa24a" Font-Names="Verdana" Font-Size="Small" HorizontalAlign="Center" ForeColor="White" Font-Bold="True"/>
+    <AlternatingItemStyle Font-Names="Verdana" HorizontalAlign="Center" BackColor="White" Font-Size="Small" ForeColor="Navy" />
+</asp:DataGrid>
+
+<%-- USED IN ALL GRIDVIEW
+<asp:GridView runat="server" width="800px" BorderStyle="Solid" BorderColor="#ff9000" BorderWidth="1" 
+     skinId="grdView" showFooter="True" >    
+    <RowStyle BackColor="#ffdead" Font-Names="Verdana" VerticalAlign="Top"  HorizontalAlign="left" Font-Size="X-Small" ForeColor="navy"/>
+    <EditRowStyle BackColor="#ffdead" Font-Names="Verdana" Font-Size="X-Small"/>
+    <HeaderStyle Font-Underline="False" BackColor="#ffa24a" Font-Names="Verdana" VerticalAlign="Top" Font-Size="X-Small" HorizontalAlign="Center" ForeColor="white" Font-Bold="True"/>
+    <FooterStyle BackColor="#ffa24a" Font-Names="Verdana" Font-Size="X-Small" HorizontalAlign="Center" ForeColor="Navy" Font-Bold="True"/>
+    <AlternatingRowStyle BackColor="white" Font-Names="Verdana" HorizontalAlign="left"  Font-Size="X-Small" ForeColor="navy" />
+</asp:GridView> --%>
+
+<asp:GridView runat="server" width="800px" BorderStyle="Solid" BorderColor="#1560a1" BorderWidth="1" 
+     skinId="grdView" showFooter="True" style="margin:auto" >    
+    <RowStyle BackColor="#cee3ed" Font-Names="Verdana" VerticalAlign="Top"  HorizontalAlign="left" Font-Size="X-Small" ForeColor="navy"/>
+    <EditRowStyle BackColor="#cee3ed" Font-Names="Verdana" Font-Size="X-Small"/>
+    <HeaderStyle Font-Underline="False" BackColor="#1560a1" Font-Names="Verdana" VerticalAlign="Top" Font-Size="X-Small" HorizontalAlign="Center" ForeColor="white" Font-Bold="True"/>
+    <FooterStyle BackColor="#1560a1" Font-Names="Verdana" Font-Size="X-Small" HorizontalAlign="Center" ForeColor="white" Font-Bold="True"/>
+    <AlternatingRowStyle BackColor="white" Font-Names="Verdana" HorizontalAlign="left"  Font-Size="X-Small" ForeColor="navy" />
+</asp:GridView>
+
+<%-- USED IN SMALL GRIDVIEW
+<asp:GridView runat="server" width="800px" BorderStyle="Solid"  BorderColor="#c0c0c0" BorderWidth="1" 
+     skinId="grdViewSml" showFooter="True" cellpadding="3" cellspacing="0" >    
+    <RowStyle BackColor="#f0f0f0" Font-Names="Verdana" VerticalAlign="Middle"  HorizontalAlign="left" Font-Size="9pt" ForeColor="navy"/>
+    <EditRowStyle BackColor="#f0f0f0" Font-Names="Verdana" Font-Size="9pt" VerticalAlign="Middle"/>
+    <HeaderStyle Font-Underline="False" BackColor="#F3A44A" Font-Names="Verdana" VerticalAlign="Top" Font-Size="10pt" HorizontalAlign="Center" ForeColor="white" Font-Bold="True"/>
+    <FooterStyle BackColor="#F3A44A" Font-Names="Verdana" Font-Size="X-Small" HorizontalAlign="Center" ForeColor="Navy" Font-Bold="True"/>
+    <AlternatingRowStyle BackColor="white" Font-Names="Verdana" HorizontalAlign="left"  Font-Size="9pt" ForeColor="navy" />
+    <PagerStyle ForeColor="#ffa24a" Font-Underline="False" BackColor="white" Font-Bold="True" Font-Names="Verdana" HorizontalAlign="Center" Font-Size="X-Small" />
+</asp:GridView> --%>
+
+<asp:GridView runat="server" width="800px" BorderStyle="Solid"  BorderColor="#1560a1" BorderWidth="1" 
+     skinId="grdViewSml" showFooter="True" cellpadding="3" cellspacing="0" style="margin:auto">    
+    <RowStyle BackColor="#cee3ed" Font-Names="Verdana" VerticalAlign="Middle"  HorizontalAlign="left" Font-Size="9pt" ForeColor="navy"/>
+    <EditRowStyle BackColor="#cee3ed" Font-Names="Verdana" Font-Size="9pt" VerticalAlign="Middle"/>
+    <HeaderStyle Font-Underline="False" BackColor="#1560a1" Font-Names="Verdana" VerticalAlign="Top" Font-Size="10pt" HorizontalAlign="Center" ForeColor="white" Font-Bold="True"/>
+    <FooterStyle BackColor="#1560a1" Font-Names="Verdana" Font-Size="X-Small" HorizontalAlign="Center" ForeColor="white" Font-Bold="True"/>
+    <AlternatingRowStyle BackColor="white" Font-Names="Verdana" HorizontalAlign="left"  Font-Size="9pt" ForeColor="navy" />
+    <PagerStyle ForeColor="#ffa24a" Font-Underline="False" BackColor="white" Font-Bold="True" Font-Names="Verdana" HorizontalAlign="Center" Font-Size="X-Small" />
+</asp:GridView>
+
+<asp:GridView runat="server" width="100%" BorderStyle="Solid"  BorderColor="#1560a1" BorderWidth="1" 
+     skinId="grdViewSml1" showFooter="True" cellpadding="3" cellspacing="0" style="margin:auto">    
+    <RowStyle BackColor="#cee3ed" Font-Names="Verdana" VerticalAlign="Middle"  HorizontalAlign="left" Font-Size="9pt" ForeColor="navy"/>
+    <EditRowStyle BackColor="#cee3ed" Font-Names="Verdana" Font-Size="9pt" VerticalAlign="Middle"/>
+    <HeaderStyle Font-Underline="False" BackColor="#1560a1" Font-Names="Verdana" VerticalAlign="Top" Font-Size="10pt" HorizontalAlign="Center" ForeColor="white" Font-Bold="True"/>
+    <FooterStyle BackColor="#1560a1" Font-Names="Verdana" Font-Size="X-Small" HorizontalAlign="Center" ForeColor="white" Font-Bold="True"/>
+    <AlternatingRowStyle BackColor="white" Font-Names="Verdana" HorizontalAlign="left"  Font-Size="9pt" ForeColor="navy" />
+    <PagerStyle ForeColor="#ffa24a" Font-Underline="False" BackColor="white" Font-Bold="True" Font-Names="Verdana" HorizontalAlign="Center" Font-Size="X-Small" />
+</asp:GridView>
+
+<%-- USED IN SMALLSize GRIDVIEW
+<asp:GridView runat="server" width="280px" BorderStyle="Solid"  BorderColor="#c0c0c0" BorderWidth="1" 
+     skinId="grdViewSmlSize" showFooter="True" cellpadding="3" cellspacing="0" >    
+    <RowStyle BackColor="#f0f0f0" Font-Names="Verdana" VerticalAlign="Top"  HorizontalAlign="left" Font-Size="9pt" ForeColor="navy"/>
+    <EditRowStyle BackColor="#f0f0f0" Font-Names="Verdana" Font-Size="X-Small"/>
+    <HeaderStyle Font-Underline="False" BackColor="#F3A44A" Font-Names="Verdana" VerticalAlign="Top" Font-Size="10pt" HorizontalAlign="Center" ForeColor="white" Font-Bold="True"/>
+    <FooterStyle BackColor="#F3A44A" Font-Names="Verdana" Font-Size="X-Small" HorizontalAlign="Center" ForeColor="Navy" Font-Bold="True"/>
+    <AlternatingRowStyle BackColor="white" Font-Names="Verdana" HorizontalAlign="left"  Font-Size="9pt" ForeColor="navy" />
+    <PagerStyle ForeColor="#ffa24a" Font-Underline="False" BackColor="white" Font-Bold="True" Font-Names="Verdana" HorizontalAlign="Center" Font-Size="X-Small" />
+</asp:GridView> --%>
+
+<asp:GridView runat="server" width="280px" BorderStyle="Solid"  BorderColor="#1560a1" BorderWidth="1" 
+     skinId="grdViewSmlSize" showFooter="True" cellpadding="3" cellspacing="0" style="margin:auto" >    
+    <RowStyle BackColor="#cee3ed" Font-Names="Verdana" VerticalAlign="Top"  HorizontalAlign="left" Font-Size="9pt" ForeColor="navy"/>
+    <EditRowStyle BackColor="#cee3ed" Font-Names="Verdana" Font-Size="X-Small"/>
+    <HeaderStyle Font-Underline="False" BackColor="#1560a1" Font-Names="Verdana" VerticalAlign="Top" Font-Size="10pt" HorizontalAlign="Center" ForeColor="white" Font-Bold="True"/>
+    <FooterStyle BackColor="#1560a1" Font-Names="Verdana" Font-Size="X-Small" HorizontalAlign="Center" ForeColor="white" Font-Bold="True"/>
+    <AlternatingRowStyle BackColor="white" Font-Names="Verdana" HorizontalAlign="left"  Font-Size="9pt" ForeColor="navy" />
+    <PagerStyle ForeColor="white" Font-Underline="False" BackColor="#ffa24a" Font-Bold="True" Font-Names="Verdana" HorizontalAlign="Center" Font-Size="X-Small" />
+</asp:GridView>
+
+<%-- USED IN SMALL GRIDVIEW
+<asp:GridView runat="server" width="800px" BorderStyle="Solid"  BorderColor="#c0c0c0" BorderWidth="1" 
+     skinId="grdVForProjectDetail" showFooter="True" cellpadding="3" cellspacing="0" >    
+    <RowStyle BackColor="White" Font-Names="Verdana" VerticalAlign="Top"  HorizontalAlign="left" Font-Size="9pt" ForeColor="navy"/>
+    <EditRowStyle BackColor="White" Font-Names="Verdana" Font-Size="X-Small"/>
+    <HeaderStyle Font-Underline="False" BackColor="#F3A44A" Font-Names="Verdana" VerticalAlign="Top" Font-Size="10pt" HorizontalAlign="Center" ForeColor="white" Font-Bold="True"/>
+    <FooterStyle BackColor="#F3A44A" Font-Names="Verdana" Font-Size="X-Small" HorizontalAlign="Center" ForeColor="Navy" Font-Bold="True"/>
+    <PagerStyle ForeColor="#ffa24a" Font-Underline="False" BackColor="white" Font-Bold="True" Font-Names="Verdana" HorizontalAlign="Center" Font-Size="X-Small" />
+</asp:GridView> --%>
+
+<asp:GridView runat="server" width="800px" BorderStyle="Solid"  BorderColor="#1560a1" BorderWidth="1" 
+     skinId="grdVForProjectDetail" showFooter="True" cellpadding="3" cellspacing="0" style="margin:auto" >    
+    <RowStyle BackColor="#cee3ed" Font-Names="Verdana" VerticalAlign="Top"  HorizontalAlign="left" Font-Size="9pt" ForeColor="navy"/>
+    <EditRowStyle BackColor="#cee3ed" Font-Names="Verdana" Font-Size="X-Small"/>
+    <HeaderStyle Font-Underline="False" BackColor="#1560a1" Font-Names="Verdana" VerticalAlign="Middle" Font-Size="10pt" HorizontalAlign="Center" ForeColor="white" Font-Bold="True"/>
+    <FooterStyle BackColor="#1560a1" Font-Names="Verdana" Font-Size="X-Small" HorizontalAlign="Center" ForeColor="white" Font-Bold="True"/>
+    <PagerStyle ForeColor="white" Font-Underline="False" BackColor="#ffa24a" Font-Bold="True" Font-Names="Verdana" HorizontalAlign="Center" Font-Size="X-Small" />
+</asp:GridView>
+
+<%--USED IN SCHEME MASTER 
+<asp:GridView runat="server" Width="600px" BorderColor="#3366AD" BorderStyle="Solid" BorderWidth="1px" 
+     skinId='grdViewSubDetail' >
+     <RowStyle BackColor="#ffdead" Font-Names="Verdana" Font-Size="XX-Small" ForeColor="navy" HorizontalAlign="Center"/>
+    <EditRowStyle BackColor="#ffdead" Font-Names="Verdana" Font-Size="XX-Small"/>
+    <HeaderStyle BackColor="#ffa24a" Font-Names="Verdana" Font-Size="Small" HorizontalAlign="Center" ForeColor="White" Font-Bold="True"/>
+    <FooterStyle BackColor="#ffa24a" Font-Names="Verdana" Font-Size="X-Small" HorizontalAlign="Center" ForeColor="Navy" Font-Bold="True"/>
+    <AlternatingRowStyle Font-Names="Verdana" HorizontalAlign="Center" BackColor="White" Font-Size="XX-Small" ForeColor="navy" />
+</asp:GridView> --%>
+ 
+ <asp:GridView runat="server" Width="600px" BorderColor="#1560a1" BorderStyle="Solid" BorderWidth="1px" 
+     skinId='grdViewSubDetail' >
+     <RowStyle BackColor="#cee3ed" Font-Names="Verdana" Font-Size="XX-Small" ForeColor="navy" HorizontalAlign="Center"/>
+    <EditRowStyle BackColor="#cee3ed" Font-Names="Verdana" Font-Size="XX-Small"/>
+    <HeaderStyle BackColor="#1560a1" Font-Names="Verdana" Font-Size="Small" HorizontalAlign="Center" ForeColor="white" Font-Bold="True"/>
+    <FooterStyle BackColor="#1560a1" Font-Names="Verdana" Font-Size="X-Small" HorizontalAlign="Center" ForeColor="white" Font-Bold="True"/>
+    <AlternatingRowStyle Font-Names="Verdana" HorizontalAlign="Center" BackColor="white" Font-Size="XX-Small" ForeColor="navy" />
+</asp:GridView>
+
+<%--USED IN SEARCH 
+   <asp:GridView runat="server" AutoGenerateColumns="False" Width="700px"  BorderColor="#3366AD" BorderStyle="Solid" BorderWidth="1px" 
+        SkinId = "GVPage" >
+ <RowStyle Font-Names="Verdana" Font-Size="X-Small" HorizontalAlign="left"  BackColor="#FFFFFF" BorderColor="#3366AD" BorderStyle="Solid" BorderWidth="1px"/>
+ <EditRowStyle Font-Names="Verdana" Font-Size="X-Small" BackColor="#2461BF" BorderColor="#3366AD" BorderStyle="Solid" BorderWidth="1px"/>
+ <HeaderStyle BackColor="#b0c0d4" Font-Names="Verdana" Font-Size="Small" HorizontalAlign="Center" ForeColor="Navy" Font-Bold="True"/>
+ <FooterStyle BackColor="#b0c0d4" Font-Names="Verdana" Font-Size="Small" HorizontalAlign="Center" ForeColor="Navy" Font-Bold="True"/>
+ <AlternatingRowStyle Font-Names="Verdana" HorizontalAlign="left" BackColor="#F4F2FD" Font-Size="X-Small" BorderColor="#3366AD" BorderStyle="Solid" BorderWidth="1px"/>
+ <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" BorderColor="#3366AD" BorderStyle="Solid" BorderWidth="1px"/>
+ <PagerStyle BackColor="#b0c0d4" ForeColor="White" HorizontalAlign="Center" />
+ </asp:GridView> --%>
+ 
+ <asp:GridView runat="server" AutoGenerateColumns="False" Width="700px"  BorderColor="#1560a1" BorderStyle="Solid" BorderWidth="1px" 
+        SkinId = "GVPage" >
+ <RowStyle Font-Names="Verdana" Font-Size="X-Small" HorizontalAlign="left"  BackColor="#cee3ed" BorderColor="#1560a1" BorderStyle="Solid" BorderWidth="1px"/>
+ <EditRowStyle Font-Names="Verdana" Font-Size="X-Small" BackColor="#cee3ed" BorderColor="#1560a1" BorderStyle="Solid" BorderWidth="1px"/>
+ <HeaderStyle BackColor="#1560a1" Font-Names="Verdana" Font-Size="Small" HorizontalAlign="Center" ForeColor="white" Font-Bold="True"/>
+ <FooterStyle BackColor="#1560a1" Font-Names="Verdana" Font-Size="Small" HorizontalAlign="Center" ForeColor="white" Font-Bold="True"/>
+ <AlternatingRowStyle Font-Names="Verdana" HorizontalAlign="left" BackColor="white" Font-Size="X-Small" BorderColor="#1560a1" BorderStyle="Solid" BorderWidth="1px"/>
+ <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" BorderColor="#1560a1" BorderStyle="Solid" BorderWidth="1px"/>
+ <PagerStyle BackColor="#ffa24a" ForeColor="White" HorizontalAlign="Center" />
+ </asp:GridView>
+ 
+ <%--USED IN CHECKLIST 
+  <asp:GridView runat="server" AutoGenerateColumns="False" BorderColor="#3366AD" GridLines="Horizontal" 
+ CellPadding="3"  BorderWidth="3px"  
+ SkinId = "GVPage1" BorderStyle="Double" >
+ <RowStyle Font-Names="Verdana" Font-Size="X-Small" HorizontalAlign="Center"  BackColor="#FFFFFF" BorderColor="#3366AD" BorderStyle="Solid" BorderWidth="1px"/>
+ <AlternatingRowStyle Font-Names="Verdana" HorizontalAlign="Center" BackColor="#F4F2FD" Font-Size="X-Small" BorderColor="#3366AD" BorderStyle="Solid" BorderWidth="1px"/>
+ <HeaderStyle BackColor="#b0c0d4" Font-Names="Verdana" Font-Size="Small" HorizontalAlign="Center" ForeColor="Navy" Font-Bold="True"/>
+ <FooterStyle BackColor="#b0c0d4" Font-Names="Verdana" Font-Size="Small" HorizontalAlign="Center" ForeColor="Navy" Font-Bold="True"/>
+ <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" BorderColor="#3366AD" BorderStyle="Solid" BorderWidth="1px"/>
+ <PagerStyle BackColor="#b0c0d4" ForeColor="White" HorizontalAlign="Center" />
+ </asp:GridView> --%>
+ 
+ <asp:GridView runat="server" AutoGenerateColumns="False" BorderColor="#1560a1" GridLines="Horizontal" 
+ CellPadding="3"  BorderWidth="3px"  
+ SkinId = "GVPage1" BorderStyle="Double" style="margin:auto"  >
+ <RowStyle Font-Names="Verdana" Font-Size="X-Small" HorizontalAlign="Center"  BackColor="#cee3ed" BorderColor="#1560a1" BorderStyle="Solid" BorderWidth="1px"/>
+ <AlternatingRowStyle Font-Names="Verdana" HorizontalAlign="Center" BackColor="white" Font-Size="X-Small" BorderColor="#1560a1" BorderStyle="Solid" BorderWidth="1px"/>
+ <HeaderStyle BackColor="#1560a1" Font-Names="Verdana" Font-Size="Small" HorizontalAlign="Center" ForeColor="white" Font-Bold="True"/>
+ <FooterStyle BackColor="#1560a1" Font-Names="Verdana" Font-Size="Small" HorizontalAlign="Center" ForeColor="white" Font-Bold="True"/>
+ <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" BorderColor="#1560a1" BorderStyle="Solid" BorderWidth="1px"/>
+ <PagerStyle BackColor="#ffa24a" ForeColor="White" HorizontalAlign="Center" />
+ </asp:GridView>
+ 
+ <asp:GridView runat="server" BorderStyle="Solid"  BorderColor="#6894bb" BorderWidth="1" 
+     skinId="grdViewSmlAutoSize" showFooter="True" cellpadding="3" cellspacing="0" >    
+    <RowStyle BackColor="#cee3ed" Font-Names="Verdana" VerticalAlign="Middle"  HorizontalAlign="left" Font-Size="9pt" ForeColor="navy"/>
+    <EditRowStyle BackColor="#cee3ed" Font-Names="Verdana" Font-Size="9pt" VerticalAlign="Middle"/>
+    <HeaderStyle Font-Underline="False" BackColor="#6894bb" Font-Names="Verdana" VerticalAlign="Top" Font-Size="10pt" HorizontalAlign="Center" ForeColor="white" Font-Bold="True"/>
+    <FooterStyle BackColor="#6894bb" Font-Names="Verdana" Font-Size="X-Small" HorizontalAlign="left" ForeColor="Navy" Font-Bold="True"/>
+    <AlternatingRowStyle BackColor="white" Font-Names="Verdana" HorizontalAlign="left"  Font-Size="9pt" ForeColor="navy" />
+    <PagerStyle ForeColor="#ffa24a" Font-Underline="False" BackColor="white" Font-Bold="True" Font-Names="Verdana" HorizontalAlign="Center" Font-Size="X-Small" />
+</asp:GridView>
+
+<asp:GridView runat="server" BorderStyle="Solid"  BorderColor="#1560a1" BorderWidth="1" 
+     skinId="grdViewAutoSizeMax" showFooter="True" cellpadding="5" cellspacing="0" >    
+    <RowStyle BackColor="#cee3ed" Font-Names="Verdana" VerticalAlign="Middle"  HorizontalAlign="left" Font-Size="9pt" ForeColor="navy"/>
+    <EditRowStyle BackColor="#cee3ed" Font-Names="Verdana" Font-Size="9pt" VerticalAlign="Middle"/>
+    <HeaderStyle Font-Underline="False" BackColor="#1560a1" Font-Names="Verdana" VerticalAlign="Top" Font-Size="10pt" HorizontalAlign="Center" ForeColor="white" Font-Bold="True"/>
+    <FooterStyle BackColor="#1560a1" Font-Names="Verdana" Font-Size="X-Small" HorizontalAlign="left" ForeColor="Navy" Font-Bold="True"/>
+    <AlternatingRowStyle BackColor="white" Font-Names="Verdana" HorizontalAlign="left"  Font-Size="9pt" ForeColor="navy" />
+    <PagerStyle ForeColor="#ffa24a" Font-Underline="False" BackColor="white" Font-Bold="True" Font-Names="Verdana" HorizontalAlign="Center" Font-Size="X-Small" />
+</asp:GridView>
+
+ <%--Added by Dharmesh Salla on 14-Sept-2010 for Dashboard--%>
+ 
+ <asp:GridView runat="server" width="700px" BorderStyle="Solid"  BorderColor="#1560a1" BorderWidth="1" 
+     skinId="grdViewForDashboard" showFooter="True" cellpadding="3" cellspacing="0" >    
+    <RowStyle BackColor="#cee3ed" Font-Names="Verdana" VerticalAlign="Middle" HorizontalAlign="left" Font-Size="10pt" ForeColor="navy"/>
+    <EditRowStyle BackColor="#cee3ed" Font-Names="Verdana" Font-Size="10pt" VerticalAlign="Middle"/>
+    <HeaderStyle Font-Underline="False" BackColor="#1560a1" Font-Names="Verdana" VerticalAlign="Top" Font-Size="12pt" HorizontalAlign="Center" ForeColor="white" Font-Bold="True"/>
+    <FooterStyle BackColor="#1560a1" Font-Names="Verdana" Font-Size="X-Small" HorizontalAlign="Center" ForeColor="white" Font-Bold="True"/>
+    <AlternatingRowStyle BackColor="white" Font-Names="Verdana" HorizontalAlign="left"  Font-Size="10pt" ForeColor="navy" />
+    <PagerStyle ForeColor="#ffa24a" Font-Underline="False" BackColor="white" Font-Bold="True" Font-Names="Verdana" HorizontalAlign="Center" Font-Size="X-Small" />
+</asp:GridView>
+
+
+<asp:GridView runat="server"  BorderStyle="Solid"  BorderColor="#1560a1" BorderWidth="1" 
+     skinId="grdViewForOldProjects" showFooter="True" cellpadding="2" cellspacing="0" >    
+    <RowStyle BackColor="#cee3ed" Font-Names="Verdana" VerticalAlign="Middle"  HorizontalAlign="left" Font-Size="7pt" ForeColor="navy" />
+    <EditRowStyle BackColor="#cee3ed" Font-Names="Verdana" Font-Size="7pt" VerticalAlign="Middle"/>
+    <HeaderStyle Font-Underline="False" BackColor="#1560a1" Font-Names="Verdana" VerticalAlign="Top" Font-Size="8pt" HorizontalAlign="Center" ForeColor="white" Font-Bold="True"/>
+    <FooterStyle BackColor="#1560a1" Font-Names="Verdana" Font-Size="X-Small" HorizontalAlign="Center" ForeColor="white" Font-Bold="True"/>
+    <AlternatingRowStyle BackColor="white" Font-Names="Verdana" HorizontalAlign="left"  Font-Size="7pt" ForeColor="navy" />
+    <PagerStyle ForeColor="#ffa24a" Font-Underline="False" BackColor="white" Font-Bold="True" Font-Names="Verdana" HorizontalAlign="left" Font-Size="X-Small" />
+</asp:GridView>
+ 
+<asp:GridView runat="server" BorderStyle="Solid"  BorderColor="#1560a1" BorderWidth="1" 
+     skinId="grdViewSmlAutoSizeNofooter" showFooter="False" cellpadding="3" cellspacing="0" >    
+    <RowStyle BackColor="#cee3ed" Font-Names="Verdana" VerticalAlign="Middle"  HorizontalAlign="left" Font-Size="9pt" ForeColor="navy"/>
+    <EditRowStyle BackColor="#cee3ed" Font-Names="Verdana" Font-Size="9pt" VerticalAlign="Middle"/>
+    <HeaderStyle Font-Underline="False" BackColor="#1560a1" Font-Names="Verdana" VerticalAlign="Top" Font-Size="10pt" HorizontalAlign="Center" ForeColor="white" Font-Bold="True"/>
+    <FooterStyle BackColor="#1560a1" Font-Names="Verdana" Font-Size="X-Small" HorizontalAlign="left" ForeColor="Navy" Font-Bold="True"/>
+    <AlternatingRowStyle BackColor="white" Font-Names="Verdana" HorizontalAlign="left"  Font-Size="9pt" ForeColor="navy" />
+    <PagerStyle ForeColor="#ffa24a" Font-Underline="False" BackColor="white" Font-Bold="True" Font-Names="Verdana" HorizontalAlign="Center" Font-Size="X-Small" />
+</asp:GridView>
+
+ <%-- Label Skins --%>
+ 
+<asp:Label runat="server" BackColor="Transparent" Font-Names="Verdana" Font-Size="X-Small" Width="700px" skinId="lblError" ForeColor="Red" ></asp:Label>
+
+<asp:Label runat="server" Font-Bold="True" Font-Names="Verdana" Font-Size="Small" skinId="lblHeading" ForeColor="Navy" ></asp:Label>
+
+<asp:Label runat="server" skinId="lblDisplay" cssclass="Label"></asp:Label>
+
+<%--Added by Chandresh Vanker on 30-Jan-2010 for display label in normal font--%>
+<asp:Label runat="server" skinId="LabelDisplay" cssclass="LabelDisplay"></asp:Label>
+
+<asp:Label runat="server" Font-Names="Verdana" Font-Size="X-Small" skinId="lblDispBold" Font-Bold="True" ForeColor="Navy"></asp:Label>
+
+<asp:Label runat="server" Font-Names="Verdana" Font-Size="Small" skinId="lblShow" Font-Bold="True" ForeColor="#ffffff" BackColor="#4682b4"></asp:Label>
+
+<asp:Label runat="server" Font-Names="Verdana" Font-Size="Small" skinId="lblNormalDisp" Font-Bold="True" ForeColor="#4682b4" ></asp:Label>
+
+<asp:CheckBox runat="server" skinId="chkDisplay" cssclass="Label"></asp:CheckBox>
+
+ <asp:Button runat="server" skinId="changeOnClickColor" cssclass="changeColoronClick"></asp:Button>
+
+<%-- **************************************** --%>
+
+<%-- Validator Skins --%>
+
+<asp:RequiredFieldValidator runat="server" skinid="ErrorMsg" ForeColor="#c00000" height = "1px" Font-Size="X-Small" BackColor="Transparent" Font-Names="Verdana" ></asp:RequiredFieldValidator>
+
+<asp:RegularExpressionValidator Skinid="RFVMsg" runat="server" ForeColor="#c00000" height = "1px" Font-Size="X-Small" BackColor="Transparent" Font-Names="Verdana"></asp:RegularExpressionValidator>
+
+<%--************************** --%>
+
+<%-- Site Map Skins --%>
+
+<asp:SiteMapPath Runat="server" SkinID="SiteMap" PathSeparator=" > " Font-Names="Verdana" Font-Size="x-small">
+	<PathSeparatorStyle Font-Bold="True" ForeColor="#00732E"></PathSeparatorStyle>
+	<CurrentNodeStyle ForeColor="#0F9143"></CurrentNodeStyle>
+	<NodeStyle Font-Bold="True" ForeColor="#00732E"></NodeStyle>
+	<RootNodeStyle Font-Bold="True" ForeColor="#000000"></RootNodeStyle>
+</asp:SiteMapPath>
+
+<%-- *************************** --%>
+
+<%-- ********Added on 06-Feb-2010 by Chandresh Vanker ******************* --%>
+ <asp:Imagebutton runat="server" SkinId="ImgBtnDataEntryPending" ImageUrl="~/images/new.png"></asp:Imagebutton>
+ <asp:Imagebutton runat="server" SkinId="ImgBtnDataEntryContinue" ImageUrl="~/images/continue.png"></asp:Imagebutton>
+ <asp:Imagebutton runat="server" SkinId="ImgBtnReviewing" ImageUrl="~/images/review.png"></asp:Imagebutton>
+ <asp:Imagebutton runat="server" SkinId="ImgBtnFirstReviewed" ImageUrl="~/images/complete_yellow.png"></asp:Imagebutton>
+ <asp:Imagebutton runat="server" SkinId="ImgBtnSecondReviewed" ImageUrl="~/images/complete.png"></asp:Imagebutton>
+ <asp:Imagebutton runat="server" SkinId="ImgBtnReviewed" ImageUrl="~/images/complete.png"></asp:Imagebutton>
+ <asp:Imagebutton runat="server" SkinId="ImgBtnForLock" ImageUrl="~/images/lock.png"></asp:Imagebutton>
+ 
+ <asp:Imagebutton runat="server" SkinId="ImgBtnEdit" ImageUrl="~/images/Edit_Small.png"></asp:Imagebutton>
+ <asp:Imagebutton runat="server" SkinId="ImgBtnSave" ImageUrl="~/Images/Update_Small.png"></asp:Imagebutton>
+ <asp:Imagebutton runat="server" SkinId="ImgBtnDCF" ImageUrl="~/images/Discrepancy_Small.png"></asp:Imagebutton>
+ <asp:Imagebutton runat="server" SkinId="ImgBtnAuditTrail" ImageUrl="~/Images/Audit_Small.png"></asp:Imagebutton>
+ <asp:Imagebutton runat="server" SkinId="ImgBtnDCFUpdated" ImageUrl="~/images/DiscrepancyUpdated_Small.png"></asp:Imagebutton>
+ <asp:Imagebutton runat="server" SkinId="ImgBtnAuditTrailUpdated" ImageUrl="~/Images/AuditMark_Small.png"></asp:Imagebutton>
+ <asp:Imagebutton runat="server" SkinId="ImgBtnDelete" ImageUrl="~/images/delete_small.png"></asp:Imagebutton>
+ <asp:Imagebutton runat="server" SkinId="ImgBtnEditCheckQuery" ImageUrl="~/images/EditCheckQuery_Small.png"></asp:Imagebutton>
+
+<%-- ********added by vishal for DMS *** --%>  
+<asp:GridView runat="server" BorderStyle="Solid"  BorderColor="#1560a1" BorderWidth="1" 
+     skinId="grdViewDocs" showFooter="True" cellpadding="3" cellspacing="0" >    
+    <RowStyle BackColor="#cee3ed" Font-Names="Verdana" VerticalAlign="Middle"  HorizontalAlign="left" Font-Size="9pt" ForeColor="navy"/>
+    <EditRowStyle BackColor="#cee3ed" Font-Names="Verdana" Font-Size="9pt" VerticalAlign="Middle"/>
+    <HeaderStyle Font-Underline="False" BackColor="#1560a1" Font-Names="Verdana" VerticalAlign="Top" Font-Size="10pt" HorizontalAlign="Center" ForeColor="white" Font-Bold="True"/>
+    <FooterStyle BackColor="#1560a1" Font-Names="Verdana" Font-Size="X-Small" HorizontalAlign="Center" ForeColor="white" Font-Bold="True"/>
+    <AlternatingRowStyle BackColor="white" Font-Names="Verdana" HorizontalAlign="left"  Font-Size="9pt" ForeColor="navy" />
+    <PagerStyle ForeColor="#ffa24a" Font-Underline="False" BackColor="white" Font-Bold="True" Font-Names="Verdana" HorizontalAlign="Center" Font-Size="X-Small" />
+</asp:GridView>
+
+<%-- ******** *** --%>  
+ 
+  
+    

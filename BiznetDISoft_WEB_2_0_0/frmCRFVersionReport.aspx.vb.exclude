@@ -1,0 +1,207 @@
+﻿
+Imports Winnovative.WnvHtmlConvert.PdfDocument
+Imports System.Drawing
+Imports System.Web.UI.Control
+
+Partial Class frmCRFVersionReport
+    Inherits System.Web.UI.Page
+    Private objCommon As New clsCommon
+    Private objhelpDb As WS_HelpDbTable.WS_HelpDbTable = objCommon.GetHelpDbTableRef()
+    Private objLambda As WS_Lambda.WS_Lambda = objCommon.GetHelpDbLambdaRef()
+
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
+        clsCommon.ClearCache(Me)
+
+        Try
+            If Not IsPostBack Then
+
+                Page.Title = " :: CRF Version Report ::  " + System.Configuration.ConfigurationManager.AppSettings("Client")
+                Me.AutoCompleteExtender1.ContextKey = "iUserId = " & Me.Session(S_UserID)
+                CType(Me.Master.FindControl("lblHeading"), Label).Text = "CRF Version Report"
+            End If
+            txtProject.Text = ""
+        Catch ex As Exception
+            Me.ShowErrorMessage(ex.Message, "...page load")
+        End Try
+        
+
+    End Sub
+
+    Protected Sub getPDF_Click(sender As Object, e As EventArgs) Handles getPDF.Click
+        Dim htmlcontent As String = String.Empty
+        Dim headercontent As String = String.Empty
+
+        Dim downloadbytes As Byte()
+        Dim d1 As Winnovative.WnvHtmlConvert.PdfDocument.Document
+        Dim data As String = String.Empty
+        'Dim watermarkTextFont As PdfFont
+        'Dim watermarkTextElement As Winnovative.WnvHtmlConvert.PdfDocument.TextElement
+        Dim stylesheetarraylist As New ArrayList
+        Dim strProfileStatus As String = String.Empty
+        Dim wStr As String = String.Empty
+        Dim eStr As String = String.Empty
+        Dim Path As String = String.Empty
+        Dim ds_Check As New DataSet
+        Dim userName = Page.Master.FindControl("lblUserName")
+        Dim FreezeStatus = HFreezeStatus.Value.ToString
+        Dim FreezeDate = HFreezedDate.Value.ToString
+        Dim textHeader = HHeaderText.Value.ToString
+        Dim pdfconverter As Winnovative.WnvHtmlConvert.PdfConverter = New Winnovative.WnvHtmlConvert.PdfConverter()
+        Dim response As System.Web.HttpResponse = System.Web.HttpContext.Current.Response
+        Try
+
+            If rblActivity.Text = "Attribute" Then
+                htmlcontent += "<center>" + "<B>" + "<style type=""text/css"">.ActivityName {color:black;font-family:Verdana; font-size:18px; font-style:normal;}</style>" + "Attribute-wise CRF Report" + "</B>" + "</center>"
+                htmlcontent += "<center>" + "<B>" + "Activity Name :" + "<style type=""text/css"">.ActivityName {color:black;font-family:Verdana; font-size:18px; font-style:normal;}</style>" + HFActivityName.Value.ToString + "</B>" + "</center>"
+                htmlcontent += "<hr width:80%,color=:black;height:3px;>"
+            End If
+            htmlcontent += HinnerHTML.Value.ToString
+            lblVersionNo.Text = HFVersionNumber.Value.ToString
+            pdfconverter.AvoidImageBreak = True
+            pdfconverter.AvoidTextBreak = True
+            pdfconverter.TruncateOutOfBoundsText = True
+            pdfconverter.PdfDocumentOptions.StretchToFit = True
+            pdfconverter.LicenseKey = "7MfezN3M3MzbwtzM393C3d7C1dXV1Q=="
+            pdfconverter.PdfDocumentOptions.TopMargin = 15
+            pdfconverter.PdfDocumentOptions.BottomMargin = 30
+            pdfconverter.PdfDocumentOptions.LeftMargin = 20
+            pdfconverter.PdfHeaderOptions.HeaderHeight = 120
+            pdfconverter.PdfHeaderOptions.HeaderTextFontName = "verdana"
+            pdfconverter.PdfHeaderOptions.HeaderTextFontStyle = FontStyle.Bold
+            pdfconverter.PdfHeaderOptions.HeaderTextFontSize = 50
+            pdfconverter.OptimizePdfPageBreaks = True
+            pdfconverter.PdfHeaderOptions.DrawHeaderLine = True
+            pdfconverter.PdfFooterOptions.DrawFooterLine = True
+            pdfconverter.PdfFooterOptions.FooterTextFontName = "verdana"
+            pdfconverter.PdfFooterOptions.PageNumberTextFontName = "verdana"
+            pdfconverter.PdfFooterOptions.PageNumberTextFontSize = 8
+            pdfconverter.PdfDocumentOptions.JpegCompressionEnabled = False
+            pdfconverter.PdfDocumentOptions.JpegCompressionLevel = 0
+            pdfconverter.PdfDocumentOptions.ShowHeader = True
+            pdfconverter.PdfDocumentOptions.ShowFooter = True
+            pdfconverter.PdfFooterOptions.ShowPageNumber = True
+            pdfconverter.PdfFooterOptions.PageNumberYLocation = 10
+            pdfconverter.PdfFooterOptions.PageNumberTextFontStyle = FontStyle.Regular
+
+            pdfconverter.PdfFooterOptions.PageNumberingStartIndex = 0
+            Path = Request.Url.AbsoluteUri.Substring(0, Request.Url.AbsoluteUri.ToString.LastIndexOf("/"))
+            ImgLogo.Src = Path + "/" + ImgLogo.Src
+            headercontent = Regex.Replace(Me.HheaderHTML.Value.ToString(), "<IMG[^>]+", "<IMG id=ctl00_CPHLAMBDA_ImgLogo alt=" + ImgLogo.Src.ToString + " align=right src=" + ImgLogo.Src.ToString + " /", RegexOptions.IgnoreCase)
+
+            Dim HtmlHeader As New Winnovative.WnvHtmlConvert.HtmlToPdfArea(18.0, 0.0, headercontent, Nothing) '21.0, 0.0,
+            pdfconverter.PdfHeaderOptions.AddHtmlToPdfArea(HtmlHeader)
+            pdfconverter.PdfFooterOptions.FooterTextFontName = "Tahoma"
+            pdfconverter.PdfFooterOptions.FooterText = "       *This is an Electronically authenticated report.                " + "Modify By : " + CType(Master.FindControl("lblUserName"), Label).Text + " - " + CType(Master.FindControl("ddlProfile"), DropDownList).SelectedItem.ToString()
+
+            d1 = pdfconverter.GetPdfDocumentObjectFromHtmlString("<style type=""text/css"">  .divParentActivity {color:navy;text-align: left;padding: 0 0 10px 0;font-size: 18px }.divHDR {height: 58px;top: 0px;text-align: center;vertical-align: middle;position: relative;font-family: Verdana;font-size: 14pximportant;font-weight: bolder;font-variant: small-caps;}.ULChangedActivity {color: green;font-weight: bolder;height: auto;margin: 1px;padding: 0;text-align: left;font-family: Verdana;font-size: 12pximportant;}.ULDeletedActivity {color: red;height: auto;margin: 1px;text-align: left;font-family: Verdana;font-size: 12pximportant;}.ULParentActivity {color:navy;height: 5px;padding: 0 0 0px;text-align: left;font-family: Verdana;font-size: 12pximportant;}.LIChildActivity {color:navy;padding: 0 60px 0 100px;font-family: Verdana;font-size: 12pximportant;}.LIDeletedActivity{text-align: left;margin-left: 50px;padding: 10px 0 0 10px;color:red;}.LIChangedActivity{text-align: left;  margin-left: 50px;padding: 10px 0 0 10px;color:Green;}</style>" + htmlcontent)
+
+            downloadbytes = d1.Save()
+            response.Clear()
+            response.ContentType = "application/pdf"
+            response.AddHeader("content-disposition", "attachment; filename=" & "Crf Version Report" & ".pdf; size=" & downloadbytes.Length.ToString())
+            response.Flush()
+            response.BinaryWrite(downloadbytes)
+            response.Flush()
+            response.End()
+
+        Catch ex As Exception
+            Me.ShowErrorMessage(ex.Message, "...Pdf Generation")
+        End Try
+    End Sub
+
+    Protected Sub GeneratePDF_Click(sender As Object, e As EventArgs) Handles GeneratePDF.Click
+        Dim htmlcontent As String = String.Empty
+        Dim headercontent As String = String.Empty
+        Dim downloadbytes As Byte()
+        Dim d1 As Winnovative.WnvHtmlConvert.PdfDocument.Document
+        Dim data As String = String.Empty
+        Dim input As String = String.Empty
+        Dim output As String = String.Empty
+        Dim Path As String = String.Empty
+
+        'Dim watermarkTextFont As PdfFont
+        'Dim watermarkTextElement As Winnovative.WnvHtmlConvert.PdfDocument.TextElement
+        Dim stylesheetarraylist As New ArrayList
+        Dim strProfileStatus As String = String.Empty
+        Dim wStr As String = String.Empty
+        Dim eStr As String = String.Empty
+        Dim ds_Check As New DataSet
+        Dim FreezeStatus = HFreezeStatus.Value.ToString
+        Dim FreezeDate = HFreezedDate.Value.ToString
+        Dim textHeader = HHeaderText.Value.ToString
+        Dim pdfconverter As Winnovative.WnvHtmlConvert.PdfConverter = New Winnovative.WnvHtmlConvert.PdfConverter()
+
+        Try
+            If rblActivity.Text = "Attribute" Then
+                htmlcontent += "Activity Name :" + HFActivityName.Value.ToString
+            End If
+
+            htmlcontent += HPDFCombine.Value.ToString.Replace("360px", "")
+            lblVersionNo.Text = HFVersionNumber.Value.ToString
+
+            pdfconverter.AvoidImageBreak = True
+            pdfconverter.AvoidTextBreak = True
+            pdfconverter.TruncateOutOfBoundsText = True
+            pdfconverter.PdfDocumentOptions.StretchToFit = True
+            pdfconverter.LicenseKey = "7MfezN3M3MzbwtzM393C3d7C1dXV1Q=="
+            pdfconverter.PdfDocumentOptions.TopMargin = 15
+            pdfconverter.PdfDocumentOptions.BottomMargin = 30
+            pdfconverter.PdfDocumentOptions.LeftMargin = 20
+            pdfconverter.PdfHeaderOptions.HeaderHeight = 120
+            pdfconverter.PdfHeaderOptions.HeaderTextFontName = "verdana"
+            pdfconverter.PdfHeaderOptions.HeaderTextFontStyle = FontStyle.Bold
+            pdfconverter.PdfHeaderOptions.HeaderTextFontSize = 50
+            pdfconverter.OptimizePdfPageBreaks = True
+            pdfconverter.PdfHeaderOptions.DrawHeaderLine = True
+            pdfconverter.PdfFooterOptions.DrawFooterLine = True
+            pdfconverter.PdfFooterOptions.FooterTextFontName = "verdana"
+            pdfconverter.PdfFooterOptions.PageNumberTextFontName = "verdana"
+            pdfconverter.PdfFooterOptions.PageNumberTextFontSize = 8
+            pdfconverter.PdfDocumentOptions.JpegCompressionEnabled = False
+            pdfconverter.PdfDocumentOptions.JpegCompressionLevel = 0
+            pdfconverter.PdfDocumentOptions.ShowHeader = True
+            pdfconverter.PdfDocumentOptions.ShowFooter = True
+            pdfconverter.PdfFooterOptions.ShowPageNumber = True
+            pdfconverter.PdfFooterOptions.PageNumberYLocation = 10
+            pdfconverter.PdfFooterOptions.PageNumberTextFontStyle = FontStyle.Regular
+            pdfconverter.PdfFooterOptions.PageNumberingStartIndex = 0
+            Path = Request.Url.AbsoluteUri.Substring(0, Request.Url.AbsoluteUri.ToString.LastIndexOf("/"))
+            ImgLogo.Src = Path + "/" + ImgLogo.Src
+
+            headercontent = Regex.Replace(Me.HFcombineHeader.Value.ToString(), "<IMG[^>]+", "<IMG id=ctl00_CPHLAMBDA_ImgLogo alt=" + ImgLogo.Src.ToString + " align=right src=" + ImgLogo.Src.ToString + " /", RegexOptions.IgnoreCase)
+
+            Dim htmlHeader As New Winnovative.WnvHtmlConvert.HtmlToPdfArea(18.0, 0.0, headercontent, Nothing) '21.0, 0.0,
+            pdfconverter.PdfHeaderOptions.AddHtmlToPdfArea(htmlHeader)
+            pdfconverter.PdfFooterOptions.FooterTextFontName = "Tahoma"
+            pdfconverter.PdfFooterOptions.FooterText = "       *This is an Electronically authenticated report.                " + "Modify By : " + CType(Master.FindControl("lblUserName"), Label).Text + " - " + CType(Master.FindControl("ddlProfile"), DropDownList).SelectedItem.ToString()
+
+            ' To remove img tag from string 
+
+            input = htmlcontent
+            Dim imgRegex As New Regex("<img[^>]*>", RegexOptions.IgnoreCase)
+            output = imgRegex.Replace(input, "")
+            ' To add <Hr> tag to string for Proper formatting
+            d1 = pdfconverter.GetPdfDocumentObjectFromHtmlString("<style type=""text/css"">.divHDR {height: 58px;top: 0px;text-align: center;vertical-align: middle;position: relative;font-family: Verdana;font-size: 14pximportant;font-weight: bolder;font-variant: small-caps;}.ULChangedActivity {color: green;height: auto;margin: 1px;padding: 0;text-align: left;font-family: Verdana;font-size: 12pximportant;}.ULDeletedActivity {color: red;height: auto;margin: 1px;text-align: left;font-family: Verdana;font-size: 12pximportant;}.ULParentActivity {color:navy;height: 5px;padding: 0 0 0px;text-align: left;font-family: Verdana;font-size: 12pximportant;}.LIChildActivity {color:navy;padding: 0 60px 0 100px;font-family: Verdana;font-size: 12pximportant;}.LIDeletedActivity{text-align: left;margin-left: 50px;padding: 10px 0 0 10px;color:red;}.LIChangedActivity{text-align: left;  margin-left: 50px;padding: 10px 0 0 10px;color:Green;}</style>" + output)
+            downloadbytes = d1.Save()
+            Dim response As System.Web.HttpResponse = System.Web.HttpContext.Current.Response
+            response.Clear()
+            response.ContentType = "application/pdf"
+            response.AddHeader("content-disposition", "attachment; filename=pdf1.pdf; size=" & downloadbytes.Length.ToString())
+            response.Flush()
+            response.BinaryWrite(downloadbytes)
+            response.Flush()
+            response.End()
+        Catch ex As Exception
+            Me.ShowErrorMessage(ex.Message, "...Pdf Generation")
+        End Try
+    End Sub
+
+
+    Private Sub ShowErrorMessage(ByVal exMessage As String, ByVal eStr As String)
+        CType(Me.Master.FindControl("lblerrormsg"), Label).Text = exMessage + "<BR> " + eStr
+        objCommon.WriteError(Server, Request, Session, exMessage + "<BR> " + eStr)
+    End Sub
+End Class
+
+
+

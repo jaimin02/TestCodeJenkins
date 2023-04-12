@@ -1,0 +1,262 @@
+<%@ Page Language="VB" AutoEventWireup="false" CodeFile="Default.aspx.vb" Inherits="_Default" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Lambda Therapeutic Research .</title>
+    <!--[if IE 7 ]> 
+   <style type="text/css">
+ * html #page
+        {
+            position: relative;
+            bottom:100px;
+        }
+        * html #content_container
+        {
+            position: absolute;
+            top: 50%;
+        }
+                * html #content
+        {
+            position: relative;
+            top: -50%;
+            text-align: left;
+        }
+        </style>         
+    <![endif]-->
+    <!--[if gt IE 7]>
+   <style type="text/css">
+    .td-ie8{ margin:2px;}
+         </style>         
+    <![endif]-->
+    <style type="text/css">
+        *
+        {
+            margin: 0;
+            padding: 0;
+        }
+        #page
+        {
+            display: table;
+            overflow: hidden;
+            margin: 0px auto;
+        }
+        *:first-child + html #page
+        {
+            position: relative;
+        }
+        /*ie6*/#content_container
+        {
+            display: table-cell;
+            vertical-align: middle;
+        }
+        *:first-child + html #content_container
+        {
+            position: absolute;
+            top: 50%;
+        }
+        /*ie6*/*:first-child + html #content
+        {
+            position: relative;
+            top: -50%;
+        }
+        /*ie6*/html, body
+        {
+            height: 100%;
+        }
+        #page
+        {
+            height: 100%;
+        }
+        .maintable
+        {
+            border-collapse: collapse;
+            width: 575px;
+            border: 1 solid #111111;
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+            -webkit-box-shadow: 0px 0px 10px #545454;
+            box-shadow: 0px 0px 10px #545454;
+        }
+    </style>
+    <style type="text/css">
+        .chromeframe
+        {
+            padding: 50px 25px 25px 25px;
+            font-size: 20px;
+            color: Red;
+        }
+    </style>
+</head>
+<body bgcolor="#FFFFFF">
+    <div id="page">
+        <div id="content_container">
+            <div style="width: 580px;">
+                <!--[if IE 7 ]>
+                            <p class=chromeframe>Your browser is <em>ancient!</em> Please upgrade your Browser Version for better  experience of this application.</p>
+                            <![endif]-->
+                <form runat="server" id="form1">
+                <asp:ScriptManager ID="ScriptManager1" runat="server" AsyncPostBackTimeout="1000"
+                    EnablePageMethods="True">
+                </asp:ScriptManager>
+                <table style="width: 100%; border: 0">
+                    <tr>
+                        <td style="width: 100%; text-align: center;">
+                            <table cellpadding="0" cellspacing="0" id="AutoNumber1" class="maintable">
+                                <tr>
+                                    <td style="width: 100%; background-image: url('images/BizNET-CTM_01.jpg'); height: 177px">
+                                        <div align="center">
+                                            <center>
+                                                <table cellpadding="2" cellspacing="5" style="width: 90%; border: 0;">
+                                                    <tr>
+                                                        <td width="13%" align="right" class="Label">
+                                                            <b><font color="#FFFFFF">username:</font></b>
+                                                        </td>
+                                                        <td align="left" width="87%">
+                                                            <input id="txtUserName" runat="server" type="text" name="uname" size="18" style="border-width: 0;
+                                                                font-family: Verdana; font-size: 8pt; color: #000080; height: 15px; background-color: #FFFFFF;
+                                                                vertical-align: middle" onblur="SetProfiles();" class="td-ie8" />
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="right" class="Label">
+                                                            <b><font color="#FFFFFF">password:</font></b>
+                                                        </td>
+                                                        <td align="left">
+                                                            <input id="txtPassword" runat="server" type="password" name="password" size="18"
+                                                                style="border-width: 0; font-family: Verdana; font-size: 8pt; color: #000080;
+                                                                height: 15px; background-color: #FFFFFF; vertical-align: middle" tabindex="0"
+                                                                class="td-ie8" />
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="right" class="Label">
+                                                            <b><font color="#FFFFFF">profile:</font></b>
+                                                        </td>
+                                                        <td align="left" class="Label">
+                                                            <asp:UpdatePanel ID="UPProfiles" runat="server" RenderMode="Inline" UpdateMode="Conditional">
+                                                                <ContentTemplate>
+                                                                    <asp:DropDownList runat="server" ID="ddlProfile" ForeColor="Navy" Font-Names="Verdana"
+                                                                        Font-Size="11px" CssClass="td-ie8">
+                                                                    </asp:DropDownList>
+                                                                </ContentTemplate>
+                                                                <Triggers>
+                                                                    <asp:AsyncPostBackTrigger ControlID="btnMediator" EventName="Click" />
+                                                                </Triggers>
+                                                            </asp:UpdatePanel>
+                                                            <asp:Button runat="server" ID="btnMediator" Style="display: none;" Text="Mediator" />
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                        </td>
+                                                        <td width="87%" align="left">
+                                                            <asp:ImageButton ID="ImgBtnLogin" class="td-ie8" OnClientClick="return ValidateLogin();"
+                                                                runat="server" ImageUrl="images/login.gif" />
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </center>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 100%; background-image: url('images/BizNET-CTM_02.jpg'); height: 172px;
+                                        vertical-align: bottom">
+                                        <div align="left">
+                                            <table cellpadding="0" cellspacing="0" style="width: 95%; border: 0;">
+                                                <tr>
+                                                    <td style="width: 100%">
+                                                        <p align="right" style="margin-bottom: 15px;">
+                                                            <span style="font-family: Verdana; font-weight: bold; font-size: small; color: #FFFFFF" />
+                                                            <asp:Label ID ="client" runat ="server" />
+                                                            </span>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 100%; height: 26px; background-image: url('images/BizNET-CTM_03.jpg');
+                                        vertical-align: bottom">
+                                        <div align="left">
+                                            <table cellpadding="0" cellspacing="0" style="width: 95%; border: 0">
+                                                <tr>
+                                                    <td style="width: 100%">
+                                                        <p align="right" style="padding: 5px 5px 15px 5px">
+                                                            <span style="font-family: Verdana; font-size: x-small; color: #e2e2e2">Published on
+                                                                02-Aug-2012<br />
+                                                                Version : 3.0</span>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <%--</center>
+                </div>
+            </td>
+        </tr>
+    </table>--%>
+                <div id="updateProgress" class="updateProgress" style="display: none; vertical-align: middle">
+                    <div align="center">
+                        <table>
+                            <tr>
+                                <td style="height: 130px">
+                                    <font class="updateText">Please Wait...</font>
+                                </td>
+                                <td style="height: 130px">
+                                    <div title="Wait" class="updateImage">
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <script language="javascript" type="text/javascript" src="Script/General.js"></script>
+
+                <script type="text/javascript">
+                    function SetProfiles() {
+                        if (document.getElementById('<%= txtUserName.ClientId%>').value.trim() != '') {
+                            var btn = document.getElementById('<%= btnMediator.ClientId%>');
+                            btn.click();
+                            var txtPassword = document.getElementById('<%= txtPassword.ClientId%>');
+                            txtPassword.focus()
+                        }
+                    }
+                    function ValidateLogin() {
+                        var txtUserName = document.getElementById('<%= txtUserName.ClientId%>');
+                        var txtPassword = document.getElementById('<%= txtPassword.ClientId%>');
+                        var profile = document.getElementById('<%= ddlProfile.ClientId%>');
+                        if (txtUserName.value.toString().trim().length <= 0) {
+                            alert('Please Enter Username !!!');
+                            txtUserName.focus();
+                            return false;
+                        }
+                        else if (txtPassword.value.toString().trim().length <= 0) {
+                            alert('Please Enter Password !!!');
+                            txtPassword.focus();
+                            return false;
+                        }
+                        else if (profile.value.toString().trim().length <= 0) {
+                            alert('Please Select Profile !!!');
+                            profile.focus();
+                            return false;
+                        }
+                        return true;
+                    }
+                </script>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

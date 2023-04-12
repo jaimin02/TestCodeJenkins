@@ -1,0 +1,1081 @@
+﻿<%@ master language="VB" inherits="ECTDMasterPage, App_Web_xbhimv2u" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <%--Works on IE only--%>
+    <meta http-equiv="Page-Enter" content="blendTrans(Duration=0.5)" />
+    <meta http-equiv="Page-Exit" content="blendTrans(Duration=0.5)" />  
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <link rel="shortcut icon" href="images/biznet.ico" type="image/x-icon" />
+
+    <link href="App_Themes/MegaMenu/normalize.min.css" rel="stylesheet" />
+    <link href="App_Themes/MegaMenu/foundation.css" rel="stylesheet" />
+    <link href="App_Themes/MegaMenu/style.css" rel="stylesheet" />
+    <link href="App_Themes/StyleCommon/CommonStyle.css" rel="Stylesheet" type="text/css" />
+    <link href="App_Themes/sweetalert.css" rel="Stylesheet" type="text/css" />
+    <link href="App_Themes/scrolling.css" rel="stylesheet" />
+    <link href="App_Themes/font-awesome.min.css" rel="stylesheet"  type="text/css"/>
+    
+    <script src="Script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="Script/Jquery.js" type="text/javascript"></script>
+    <script type="text/javascript" src="Script/MegaMenu/foundation.min.js"></script>
+    <script type="text/javascript" src="Script/MegaMenu/index.js"></script>
+    
+
+    <style type="text/css">
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .chromeFrameInstallDefaultStyle {
+            width: 100%; /* default is 800px */
+            border: 5px solid blue;
+        }
+
+        #divEctd ::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+            -moz-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+            border-radius: 10px;
+        }
+
+        #divEctd ::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+            -moz-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+        }
+
+            #divEctd ::-webkit-scrollbar-thumb:hover {
+                background: #1560A1;
+            }
+
+        .f-nav {
+            z-index: 9999;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+        }
+          .Manage {
+            
+            position:absolute;
+            right:10px;
+            display:block;
+            top:40px;
+
+
+        }
+
+        /* For Logout Dropdown Box */
+        
+
+        #tblUserDetails tbody tr:hover td {
+            background: white !important;
+        }
+
+        #tblUserDetails tbody tr {
+            text-align: left;
+        }
+        /*End Here */
+
+         .AspNet-Menu-Leaf {
+            padding: 0 0 0px 0px;
+        }
+        .AspNet-Menu li ul {
+            overflow-y: auto !important;
+            max-height: 500px !important;
+        }
+        .AspNet-Menu li ul li ul{
+            position: fixed;
+            z-index: 99999;
+        }
+        .AspNet-Menu-Horizontal ul.AspNet-Menu ul {
+            top:initial !important;
+            left:initial !important;
+        }
+        .footer_Master {
+            position: fixed;
+            display: block;
+            width: 100%;
+            bottom: 0px;
+        }
+        canvas {
+            height:65px !important;
+        }
+    </style>
+
+    <script type="text/javascript">
+        var head = document.getElementsByTagName('head')[0];
+        if (window.location.pathname.indexOf('/CDMS/') >= 0) {
+            //loadjs(head, '../Script/jquery-1.7.2.min.js');
+            //loadjs(head, '../Script/jquery-1.11.3.min.js');
+            loadjs(head, '../Script/sweetalert.js');
+            loadjs(head, '../Script/scrolltop.js');
+            //loadjs(head, '../Script/googleapis.js');
+            loadjs(head, '../Script/General.js');
+            //loadjs(head, '../Script/MegaMenu/foundation.min.js');
+            //loadjs(head, '../Script/MegaMenu/index.js');
+            
+            if (window.location.pathname.indexOf('/frmSubjectCDMSScheduling/', '/frmCDMSConcoMedication/', '/frmCDMSMedicalCondition/', '/frmCDMSProjectMedicalCondition/', '/frmCDMSStudyHistory/', '/frmCDMSStudyInformation/', '/frmCDMSStudyStatusLog/', '/frmCDMSSubjectChangeStatus/', '/frmScreeningScheduleReport/', '/frmSubjectCDMSAdvanceSearch/', '/frmSubjectCDMSScheduling/') >= 0) {
+            }
+            else {
+                v;
+            }
+        }
+        else {
+            //loadjs(head, 'Script/jquery-1.7.2.min.js');
+            loadjs(head, 'Script/sweetalert.js');
+            loadjs(head, 'Script/scrolltop.js');
+            //loadjs(head, 'Script/googleapis.js');
+            loadjs(head, 'Script/General.js');
+        }
+
+        function loadjs(TargetElement, file) {
+            var script = document.createElement('script');
+            script.setAttribute("type", "text/javascript");
+            script.setAttribute("src", file);
+            TargetElement.appendChild(script);
+        }
+        jQuery("document").ready(function ($) {
+
+            var MenuTD = $('#menuTd');
+
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 60) {
+                    MenuTD.addClass("f-nav");
+                } else {
+                    MenuTD.removeClass("f-nav");
+                }
+            });
+        });
+        function addcss(css) {
+            var head = document.getElementsByTagName('head')[0];
+            var s = document.createElement('style');
+            s.setAttribute('type', 'text/css');
+            if (s.styleSheet) {  
+                s.styleSheet.cssText = css;
+            } else {                
+                s.appendChild(document.createTextNode(css));
+            }
+            head.appendChild(s);
+        }
+        
+    </script>
+        
+</head>
+<body onunload="temp()">
+    <form id="form1" runat="server">
+        <asp:Button runat="server" ID="btnDefault" Style="display: none" />
+        
+        <div id="divUserDetails" class="themeSelection userdetails" style="display: none;">
+            <table id="tblUserDetails" style="width:100%">
+                <tr class="logoutboxtr">
+                    <td class="logoutbox">
+                        <i class="fa fa-user" aria-hidden="true" style="font-size:larger"></i>
+                        <span id="lblWelcome" class="Label logoutboxtdetail">Welcome: </span>
+                        <asp:Label ID="lblUserName" runat="server" CssClass="Label logoutboxdetail" />
+                    </td>
+                </tr>
+                <tr class="logoutboxtr">
+                    <td class="logoutbox">
+                        <i class="fa fa-sign-in" aria-hidden="true" style="font-size:larger"></i>
+                        <span id="lblLoginTime1" class="Label logoutboxtdetail">Login Time: </span>
+                        <asp:Label ID="lblTime" runat="server" CssClass="Label logoutboxdetail" />
+                    </td>
+                </tr>
+                <tr class="logoutboxtr">
+                    <td class="logoutbox">
+                        <i class="fa fa-share-square-o" aria-hidden="true" style="font-size:larger"></i>
+                        <span id="spnLastLoggedInTime" class="Label logoutboxtdetail">Last Logged In: </span>
+                        <asp:Label ID="lblLastLoggedInTime" runat="server" CssClass="Label logoutboxdetail" />
+                    </td>
+                </tr>
+                <tr class="logoutboxtr">
+                    <td class="logoutbox">
+                        <i class="fa fa-sign-out" aria-hidden="true" style="font-size:larger"></i>
+                        <span id="spnLogOut" class="Label logoutboxtdetail" >
+                        <a href="LogoutPage.aspx" title="Logout" class="logoutboxdetail" id="logoutlink">Logout</a></span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <input style="display: none" type="text" name="fakeusernameremembered" />
+        <input style="display: none" type="password" name="fakepasswordremembered" />
+        <div id="divEctd" align="center" class="wrapper" style="width: 100%">
+            <center>
+                <asp:ScriptManager ID="ScriptManager1" runat="server" AsyncPostBackTimeout="1000"
+                    EnablePageMethods="True">
+                    <Services>
+                        <asp:ServiceReference Path="AutoComplete.asmx" />
+                    </Services>
+                </asp:ScriptManager>
+                <table style="width: 100%;border-spacing: 0px;" id="AutoNumber1" cellpadding="0">
+                    <tr style='height: 65px'>
+                        <td style="vertical-align: bottom; width: 100%; height: 65px; text-align: left;">
+                            <div style="background-image: url(images/left1.jpg); background-repeat: repeat-x; width: 100%; height: 65px;">                                
+                                 <div style="padding:5px; position: absolute; z-index: 999;">
+                                    <img src="Images/biznet-logo.png" alt="biznet logo left" width="60" id="LogoImg"/>
+                                </div>
+                                <div style="float:right; width:100%;">
+								    <div id="qodef-particles" class="fixed" style="height: 65px; background-color: #e4e4e4;" data-particles-density="high" 
+                                            data-particles-color="#f68e1f" data-particles-opacity="0.8" data-particles-size="3" data-speed="3" data-show-lines="yes" 
+                                            data-line-length="100" data-hover="yes" data-click="yes">
+                                        <div id="qodef-p-particles-container" style="height:65px;">
+                                            <canvas class="particles-js-canvas-el" width="1349" height="65" style="width: 100%; height: 10%;"></canvas>
+                                        </div>
+                                    </div>
+                                    <!-- <img src="./Page_files/topheader.jpg" alt="biznet logo right" style="width: 100%; height: 64px; background-size: cover;"> -->
+                                </div>
+                            </div>
+
+                            <div style="clear: both; position: relative; margin-top: -65px; float: right; width: 60%;">
+                                <table style="width: 100%; border: 0 solid #111111; text-align: right; float: right;">
+                                    <tr style="height: 35px">
+                                        <td style="white-space: nowrap; vertical-align: top; height: 35px;">
+                                            <asp:Label ID="lblProfile" runat="server" CssClass="Label" Text="Change Profile : "
+                                                ForeColor="#000" />
+                                            <asp:DropDownList runat="server" ID="ddlProfile" AutoPostBack="True" CssClass="Label"
+                                                ForeColor="navy" />
+                                            <i class="fa fa-clock-o SessionImageClock" aria-hidden="true"></i>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="white-space: nowrap;float:left">
+                                            <div id="DivSessionTimingWatch" class="SessionTiming">
+                                                <asp:Label runat="server" ID="lblSessionTimeCap" CssClass="Label" Style="color: Black; font-size:15px; width:14px;font-weight:bold;"
+                                                    Text="Session Expires In: "></asp:Label>
+                                                <b><span class="Label headerusername" id="timerText"></span></b>                                            
+                                                <asp:HiddenField ID="HDSessionValue" runat="server" Value='<%=Session("UserId")%>' />
+                                            </div>
+                                        </td>
+
+                                        <td class="GetOperationtdMasterPage">
+                                            <div class="GetOperationDivMasterPage">
+                                                <asp:TextBox ID="txtOperationName" runat="server" CssClass="textBox" 
+                                                        MaxLength="50" PlaceHolder="Search Operation" Width="105%"></asp:TextBox>
+                                                <asp:HiddenField ID="HOperationURL" runat="server"></asp:HiddenField>
+                                                <cc1:AutoCompleteExtender ID="AutoCompleteExtenderForMenu" runat="server" BehaviorID="AutoCompleteExtenderForMenu"
+                                                    CompletionListCssClass="autocomplete_list" CompletionListHighlightedItemCssClass="autocomplete_highlighted_listitem"
+                                                    CompletionListItemCssClass="autocomplete_listitem" MinimumPrefixLength="1" OnClientItemSelected="OnSelectedforMenu"
+                                                    OnClientShowing="ClientPopulatedForMenu" ServiceMethod="GetOperationName"
+                                                    ServicePath="AutoComplete.asmx" TargetControlID="txtOperationName" UseContextKey="True"
+                                                    CompletionListElementID="pnlOperationList">
+                                                </cc1:AutoCompleteExtender>
+                                                <asp:Panel ID="pnlOperationList" runat="server" Style="max-height: 300px; overflow: auto; overflow-x: hidden" />
+
+                                                <i class="fa fa-search" aria-hidden="true" style="font-size:large; cursor:pointer;" id="btnSearch" 
+                                                        onclick="RedirectToResult()" title="Click to Search"></i>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    
+                                </table>
+                                    <div class="Manage">
+                                        <span id="lblWelcome1" class="Label" style="color: #000;font-size:15px;">Welcome :</span>
+                                        <asp:Label ID="lblUserName1" runat="server" CssClass="Label headerusername" />
+                                    </div> 
+                            </div>
+                            <div style="float: none;">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:Literal runat="server" id="userMenuLitral"></asp:Literal>
+                            <input type="image" id="imgTheme" src="images/LogoutIcon.png" class="LogoutImageIcon"/>
+                        </td>
+                    </tr>
+
+                    <tr id="trMenu" runat="server">
+                        
+                        <td id="menuTd" class="MenuTD">
+                            <asp:Menu ID="menu1" runat="server" DataSourceID="xmlDataSource1" DynamicHorizontalOffset="1"
+                                Font-Bold="True" Font-Names="verdana" Font-Size="11px" ForeColor="#404040" Orientation="Horizontal"
+                                StaticBottomSeparatorImageUrl="~/images/bullet3.gif" StaticEnableDefaultPopOutImage="False"
+                                StaticSubMenuIndent="" Style="height: 21px;">
+                                <StaticMenuItemStyle HorizontalPadding="1px" VerticalPadding="1px" />
+                                <DynamicHoverStyle BackColor="Silver" BorderStyle="None" Font-Bold="True" Font-Names="Verdana"
+                                    ForeColor="White" />
+                                <DynamicMenuStyle BackColor="#E0E0E0" BorderStyle="None" />
+                                <StaticSelectedStyle BackColor="#29166F" />
+                                <DynamicSelectedStyle BackColor="White" BorderStyle="None" Font-Bold="True" Font-Names="Verdana"
+                                    ForeColor="White" />
+                                <DynamicMenuItemStyle BackColor="#F0F0F0" BorderStyle="None" Font-Bold="True" Font-Names="Verdana"
+                                    ForeColor="#404040" HorizontalPadding="2px" ItemSpacing="2px" VerticalPadding="2px" />
+                                <DataBindings>
+                                    <asp:MenuItemBinding DataMember="MenuItem" NavigateUrlField="NavigateUrl" TextField="Text"
+                                        ToolTipField="ToolTip" />
+                                </DataBindings>
+                                <StaticHoverStyle ForeColor="Brown" />
+                                <DynamicMenuStyle CssClass="IE8Fix" />
+                            </asp:Menu>
+                            <asp:XmlDataSource ID="xmlDataSource1" runat="server" EnableCaching="False" TransformFile="~/TransformXSLT.xsl"
+                                XPath="MenuItems/MenuItem"></asp:XmlDataSource>
+                            <%--<input type="image" id="imgTheme" src="images/LogoutIcon.png" style="height: 20px; width: 73px; float: right; margin-right: 1px;" />--%>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="height: 8px"></td>
+                    </tr>
+                    <tr>
+                        <td align="left" style="width: 100%">
+                            <div align="center">
+                                <table style="margin-bottom:18px; border: 1px solid #1560a1; width: 100%" cellspacing="1" cellpadding="0">
+                                    <tr>
+                                        <td align="center" style="width: 100%">
+                                            <asp:Panel ID="Pan_Hdr" runat="server" Width="100%" CssClass="InnerTable" BackColor="#F9FFFC">
+                                                <asp:Panel Style="min-height: 440px; height: auto !important; height: 440px" ID="Pan_Child"
+                                                    runat="server" Width="100%" BackColor="Window">
+                                                    <div id="Header Label" style="text-align: center;" align="center" class="Div">
+                                                        <table style="width: 100%">
+                                                            <tr>
+                                                                <td align="left">
+                                                                    <asp:Label ID="lblMode" runat="server" Text="Mode:" Visible="False" SkinID="lblDisplay"
+                                                                        Width="42px"></asp:Label>
+                                                                    <asp:Label ID="lblShowMode" runat="server" SkinID="lblDisplay" Width="162px"></asp:Label>
+                                                                </td>
+                                                                <td align="right" style="font-weight: bold; font-size: x-small; width: 187px; color: Navy; font-family: Verdana, Sans-Serif; font-variant: normal">
+                                                                    <asp:Label ID="lblMandatory" runat="server" Text="Fields with * are Mandatory "></asp:Label>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                        <table align="center" style="width: 100%">
+                                                            <tr>
+                                                                <td align="center" width="100%">
+                                                                    <asp:Label ID="lblHeading" runat="server" SkinID="lblHeading"></asp:Label>
+                                                                    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                                                                        <ContentTemplate>
+                                                                            <asp:Label ID="lblerrormsg" runat="server" Width="545px" SkinID="lblError"></asp:Label>
+                                                                        </ContentTemplate>
+                                                                    </asp:UpdatePanel>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                    <div id="updateProgress" class="updateProgress" style="display: none; vertical-align: middle">
+                                                        <div align="center">
+                                                            <table>
+                                                                <tr>
+                                                                    <td>
+                                                                        <font class="updateText" style="margin-right: 22px">Please Wait ...</font>
+                                                                    </td>
+                                                                    <td style="height: 100px">
+                                                                        <div title="Wait" class="updateImage">
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <asp:ContentPlaceHolder ID="CPHLAMBDA" runat="server">
+                                                    </asp:ContentPlaceHolder>
+                                                </asp:Panel>
+                                            </asp:Panel>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="8"></td>
+                    </tr>
+                </table>
+            </center>
+            <iframe id="frmSelectBlocker" scrolling="no" frameborder="0" class="frmStyle" width="0"
+                height="0"></iframe>
+            <div class="push">
+            </div>
+        </div>
+        <div class="footer_Master" style="text-align: center">
+            <p style="text-align: center">
+            <script type="text/javascript">
+                var copyright;
+                var update;
+                copyright = new Date();
+                update = copyright.getFullYear();
+                document.write("<font face=\"verdana\" size=\"1\" color=\"black\">© Copyright " + update + ", Sarjen Systems Pvt LTD. </font>");
+            </script>
+            </p>
+        </div>
+        <asp:HiddenField ID="hfSession" runat="server" />
+        <asp:HiddenField ID="hfgateway" runat="server" />
+        <asp:Button ID="btnmdl" runat="server" Style="display: none;" />
+        <cc1:ModalPopupExtender ID="mdlSessionTimeoutWarning" runat="server" PopupControlID="divSessionTimeoutWarning"
+            BackgroundCssClass="modalBackground" BehaviorID="mdlSessionTimeoutWarning" TargetControlID="btnmdl">
+        </cc1:ModalPopupExtender>
+        <div id="divSessionTimeoutWarning" runat="server" class="centerModalPopup" style="display: none; overflow: auto; width: 35%; height: auto; max-height: 25%; min-height: auto;">
+            <asp:UpdatePanel ID="HM_Home_upnlSession" runat="server" UpdateMode="Conditional"
+                RenderMode="Inline">
+                <ContentTemplate>
+                    <table width="350px" align="center">
+                        <tr>
+                            <td>
+                                <img id="Img1" src="~/Images/showQuery.png" runat="server" alt="Confirmation" />
+                            </td>
+                            <td class="Label" style="text-align: left;">Your session will expire within 5 mins.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <hr />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" colspan="2">
+                                <asp:Button ID="btnContinueWorking" runat="server" Text="Extend" CssClass="button"
+                                    Style="display: none;" />
+                                <asp:Button ID="BtnSessionDivClose" runat="server" Text="Close" CssClass="button"
+                                    OnClientClick="closeSessionDiv();" />
+                                <asp:Button ID="btnLogout" runat="server" Text="" CssClass="btn btngo" Style="display: none;" />
+                                <asp:HiddenField ID="hdnSessionUSerID" runat="server" Value="" />
+                            </td>
+                        </tr>
+                    </table>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </div>
+        <script type="text/javascript">
+
+            var prm = Sys.WebForms.PageRequestManager.getInstance();
+            prm.add_initializeRequest(onUpdating);
+            prm.add_endRequest(onUpdated);
+
+            var showProgress = true;
+            var ACTUAL_SESSIONTIME = document.getElementById('ctl00_hfSession').value //Added  by Ananad Patel
+            var timerId, sessionFlag = true;
+            SessionTimeSet();
+
+            function onUpdating(sender, args) {
+                if (showProgress) {
+                    var updateProgressDiv = $get('updateProgress');
+                    createDiv();
+                    updateProgressDiv.style.display = '';
+                    $('#aspnetForm').attr("onkeypress", "javascript:return WebForm_FireDefaultButton(event, 'ctl00_btnDefault')");
+                    setLayerPosition();
+                }
+            }
+
+            function createDiv() {
+                var divTag = document.createElement('div');
+
+                divTag.id = 'shadow';
+                divTag.setAttribute('align', 'center');
+                divTag.style.position = 'absolute';
+                divTag.style.top = '0px';
+                divTag.style.left = '0px';
+                divTag.style.opacity = '0.6';
+                divTag.style.filter = 'alpha(opacity=30)';
+                divTag.style.backgroundColor = '#000000';
+                document.body.appendChild(divTag);
+            }
+
+            function onUpdated(sender, args) {
+                // get the update progress div
+                var updateProgressDiv = $get('updateProgress');
+                // make it invisible
+                updateProgressDiv.style.display = 'none';
+
+                if (document.getElementById('shadow') != null) {
+                    document.body.removeChild(document.getElementById('shadow'));
+                }
+                $('#aspnetForm').removeAttr('onkeypress');
+                //clearTimeout(tld);
+            }
+
+            function setLayerPosition() {
+
+                var winScroll = BodyScrollHeight();
+                var updateProgressDivBounds = Sys.UI.DomElement.getBounds($get('updateProgress'));
+                var shadow = document.getElementById('shadow');
+                var bws = GetWindowBounds();
+
+                if (!shadow) {
+                    return;
+                }
+
+                //shadow.style.width = bws.Width + "px";
+                //shadow.style.height = bws.Height + "px";
+                shadow.style.width = $(document).width().toString() + "px";
+                shadow.style.height = $(document).height().toString() + "px";
+                shadow.style.top = winScroll.yScr;
+                shadow.style.left = winScroll.xScr;
+
+                x = Math.round(($(document).width() - updateProgressDivBounds.width) / 2);
+                y = Math.round(($(document).height() - updateProgressDivBounds.height) / 2);
+
+                x += winScroll.xScr;
+                y += winScroll.yScr;
+
+                Sys.UI.DomElement.setLocation($get('updateProgress'), parseInt(x), parseInt(y));
+            }
+            window.onresize = setLayerPosition;
+            window.onscroll = setLayerPosition;
+
+
+            //jQuery('.AspNet-Menu-Link').click(function() { onUpdating(); });
+            jQuery(function ($) {
+
+                $('.AspNet-Menu-Link').mousedown(function (event) {
+                    var UserId = document.getElementById('ctl00_hdnSessionUSerID').value;
+                    var str = this.href.indexOf("?UserId=") > 0 ? this.href.substring(this.href.indexOf("?UserId="), this.href.length) : ''
+                    switch (event.which) {
+                        case 1:
+                            if (this.href.indexOf("frmcrfprint_New") > 0) {
+                                var strurl = this.href;
+                                strurl = strurl.substring(strurl.indexOf("frmcrfprint_New"), strurl.length)
+                                this.href = this.href.replace(this.href, document.getElementById('ctl00_hfgateway').value + strurl);
+                                this.href = this.href.replace(this.href.substring(this.href.indexOf("?UserId="), this.href.length), '?UserId=' + UserId);
+                                var arg = 'resizable=no, toolbar=no,location=no,directories=no,addressbar=no,scrollbars=no,status=no,menubar=no';
+                                var openDOc = window.open("", "_blank", arg);
+                                var str = this.href;
+                                openDOc.document.write('<title>Dossier Compilation</title><iframe width="100%" height="100%" src="' + str + '"></iframe>');
+                                this.href = "";
+                                //$(this).attr('target', '_blank');
+                            }
+                            else {
+                                this.href = str != '' ? this.href.replace(str, '?UserId=' + UserId) : this.href;
+                            }
+                            //   onUpdating();
+                            //  $(this).attr('target','_self');
+                            break;
+                        case 2:
+                            if (this.href.indexOf("frmcrfprint_New") > 0) {
+                                var strurl = this.href;
+                                strurl = strurl.substring(strurl.indexOf("frmcrfprint_New"), strurl.length)
+                                this.href = this.href.replace(this.href, document.getElementById('ctl00_hfgateway').value + strurl);
+                                this.href = this.href.replace(this.href.substring(this.href.indexOf("?UserId="), this.href.length), '?UserId=' + UserId);
+                                var arg = 'resizable=no, toolbar=no,location=no,directories=no,addressbar=no,scrollbars=no,status=no,menubar=no';
+                                var openDOc = window.open("", "_blank", arg);
+                                var str = this.href;
+                                openDOc.document.write('<title>Dossier Compilation</title><iframe width="100%" height="100%" src="' + str + '"></iframe>');
+                                this.href = "";
+
+                            }
+                            else {
+                                this.href = str != '' ? this.href.replace(str, '?UserId=' + UserId) : this.href;
+                                $(this).attr('target', '_blank');
+                            }
+
+                            break;
+                        case 3:
+                            if (this.href.indexOf("frmcrfprint_New") > 0) {
+                                var strurl = this.href;
+                                strurl = strurl.substring(strurl.indexOf("frmcrfprint_New"), strurl.length)
+                                this.href = this.href.replace(this.href, document.getElementById('ctl00_hfgateway').value + strurl);
+                                this.href = this.href.replace(this.href.substring(this.href.indexOf("?UserId="), this.href.length), '?UserId=' + UserId);
+                                var arg = 'resizable=no, toolbar=no,location=no,directories=no,addressbar=no,scrollbars=no,status=no,menubar=no';
+                                var openDOc = window.open("", "_blank", arg);
+                                var str = this.href;
+                                openDOc.document.write('<title>Dossier Compilation</title><iframe width="100%" height="100%" src="' + str + '"></iframe>');
+                                this.href = "";
+                            }
+                            else {
+                                if (this.href.indexOf("frmcrfprint_New") > 0) {
+                                    var strurl = this.href;
+                                    strurl = strurl.substring(strurl.indexOf("frmcrfprint_New"), strurl.length)
+                                    this.href = this.href.replace(this.href, document.getElementById('ctl00_hfgateway').value + strurl);
+                                    this.href = this.href.replace(this.href.substring(this.href.indexOf("?UserId="), this.href.length), '?UserId=' + UserId);
+                                    var arg = 'resizable=no, toolbar=no,location=no,directories=no,addressbar=no,scrollbars=no,status=no,menubar=no';
+                                    var openDOc = window.open("", "_blank", arg);
+                                    var str = this.href;
+                                    openDOc.document.write('<title>Dossier Compilation</title><iframe width="100%" height="100%" src="' + str + '"></iframe>');
+                                    this.href = "";
+                                }
+                                else {
+                                    //alert('Right mouse button pressed');
+                                    this.href = str != '' ? this.href.replace(str, '?UserId=' + UserId) : this.href;
+                                    $(this).attr('target', '_blank');
+                                }
+                            }
+                            //onUpdating();
+
+                            break;
+                        default:
+                            //alert('You have a strange mouse');
+                            if (this.href.indexOf("frmcrfprint_New") > 0) {
+                                var strurl = this.href;
+                                strurl = strurl.substring(strurl.indexOf("frmcrfprint_New"), strurl.length)
+                                this.href = this.href.replace(this.href, document.getElementById('ctl00_hfgateway').value + strurl);
+                                this.href = this.href.replace(this.href.substring(this.href.indexOf("?UserId="), this.href.length), '?UserId=' + UserId);
+                                var arg = 'resizable=no, toolbar=no,location=no,directories=no,addressbar=no,scrollbars=no,status=no,menubar=no';
+                                var openDOc = window.open("", "_blank", arg);
+                                var str = this.href;
+                                openDOc.document.write('<title>Dossier Compilation</title><iframe width="100%" height="100%" src="' + str + '"></iframe>');
+                                this.href = "";
+                            }
+                            else {
+                                this.href = str != '' ? this.href.replace(str, '?UserId=' + UserId) : this.href;
+                            }
+                            //onUpdating();
+                            //   $(this).attr('target', '_self');
+                    }
+                });
+                //added by shivani pandya for apply css
+                //$('select').removeAttr("class");
+                //$('select').attr("class", "dropDownList");
+
+                //for file upload
+                //$('[type=file]').removeAttr("class");
+                //$('[type=file]').attr("class", "textboxFileUpload");
+
+                //for textbox
+                //$('[type=text]').removeAttr("class");
+                //$('[type=text]').attr("class", "textBox");
+
+                //button
+                //$('[type=submit]').removeAttr("class");
+                //$('[type=submit]').attr("class", "button");
+
+                //$('[type=reset]').removeAttr("class");
+                //$('[type=reset]').attr("class", "button");
+
+                //multiline textbox
+                //$("textarea").removeAttr("class");
+                //$("textarea").attr("class", "textBox");
+
+                //End
+                selectTheme();
+            });
+
+            //Created By : Bharat Patel
+            //Created Date : 20-Oct-2011
+            //Reason : Display tooltip on all the DropDownList
+            $(document).ready(function () {
+                if ($('select option') != null) {
+                    $('select option').each(function () {
+                        this.title = this.innerHTML;
+                    });
+                }
+                //var pageURL = $(location).attr("href");
+                //var pageURL = window.location.href;
+                //var n = pageURL.indexOf("CDMS/");
+
+                var n = window.location.pathname.indexOf("/CDMS")
+
+                if (n != -1) {
+                    $("#logoutlink").attr("href", "../LogoutPage.aspx")
+                }
+                else {
+                    $("#logoutlink").attr("href", "LogoutPage.aspx")
+                }
+
+            });
+            // add by shivani pandya For theme selection          
+            $(window).focus(function () {
+                selectTheme();
+                return false;
+            });
+
+            //jQuery("#imgTheme").click(function () {
+            //    if ($('#divUserDetails').css('display') == "none") {
+            //        jQuery("#divUserDetails").removeAttr("style");
+            //        jQuery("#divUserDetails").attr("style", "display:block");
+            //    }
+            //    else if ($('#divUserDetails').css('display') == "block") {
+            //        jQuery("#divUserDetails").removeAttr("style");
+            //        jQuery("#divUserDetails").attr("style", "display:none");
+            //    }
+            //    return false;
+            //});
+            $("#imgTheme").mouseenter(function () {
+                if ($('#divUserDetails').css('display') == "none") {
+                    jQuery("#divUserDetails").removeAttr("style");
+                    jQuery("#divUserDetails").attr("style", "display:block");
+                }
+                return false;
+            });
+            $("#divUserDetails").mouseleave(function () {
+                if ($('#divUserDetails').css('display') == "block") {
+                    jQuery("#divUserDetails").removeAttr("style");
+                    jQuery("#divUserDetails").attr("style", "display:none");
+                }
+                return false;
+            });
+
+            function hideDiv() {
+                jQuery("#divUserDetails").hide();
+                jQuery("#divUserDetails").attr("style", "display:none");
+            }
+
+            jQuery(document).click(function () {
+                jQuery("#divUserDetails").hide();
+                jQuery("#divUserDetails").attr("style", "display:none");
+            })
+
+            //// add by shivani pandya For theme selection
+            //$("#imgTheme").click(function () {
+            //    $("#divThemeSelection").removeAttr("style");
+            //    $("#divThemeSelection").show();
+            //    return false;
+            //});
+
+            //// add by shivani pandya For theme selection
+            //function hideDiv() {
+            //    $("#divThemeSelection").hide();
+            //    $("#divThemeSelection").attr("style", "display:none");
+            //}
+
+            //$(document).click(function () {
+            //    $("#divThemeSelection").hide();
+            //    $("#divThemeSelection").attr("style", "display:none");
+            //})
+
+            //$("#lblornage").click(function () {
+            //    document.cookie = "Theme=Orange";
+            //    selectTheme();
+            //    return false;
+            //});
+            //$("#lblGreen").click(function () {
+            //    document.cookie = "Theme=Green";
+            //    selectTheme();
+            //    return false;
+            //});
+            //$("#lblDemo").click(function () {
+            //    document.cookie = "Theme=Demo";
+            //    selectTheme();
+            //    return false;
+            //});
+            //$("#lblBlue").click(function () {
+            //    document.cookie = "Theme=Blue";
+            //    selectTheme();
+            //    return false;
+            //});
+            // add by shivani pandya For theme selection
+            function selectTheme() {
+                var theme;
+                $.each(document.cookie.split(";"), function (i, para) {
+                    if (para == " Theme=Orange" || para == "Theme=Orange") {
+                        theme = para;
+                    }
+                    if (para == " Theme=Green" || para == "Theme=Green") {
+                        theme = para;
+                    }
+                    if (para == " Theme=Demo" || para == "Theme=Demo") {
+                        theme = para;
+                    }
+                    if (para == " Theme=Blue" || para == "Theme=Blue") {
+                        theme = para;
+                    }
+                });
+                if (theme != "") {
+                    $.each($("link"), function () {
+                        if ($(this).attr("href") == "App_Themes/StyleBlue/StyleBlue.css" || $(this).attr("href") == "App_Themes/StyleGreen/GreenStyle.css" || $(this).attr("href") == "App_Themes/StyleDemo/DemoStyle.css" || $(this).attr("href") == "App_Themes/StyleOrange/orange.css") {
+                            if (theme == " Theme=Orange" || theme == "Theme=Orange") {
+                                $(this).attr("href", "App_Themes/StyleOrange/orange.css");
+                            }
+
+                            if (theme == " Theme=Green" || theme == "Theme=Green") {
+                                $(this).attr("href", "App_Themes/StyleGreen/GreenStyle.css");
+                            }
+                            if (theme == " Theme=Demo" || theme == "Theme=Demo") {
+                                $(this).attr("href", "App_Themes/StyleDemo/DemoStyle.css");
+                            }
+                            if (theme == " Theme=Blue" || theme == "Theme=Blue") {
+                                $(this).attr("href", "App_Themes/StyleBlue/StyleBlue.css");
+                            }
+                        }
+                        if (jQuery(this).attr("href") == "../App_Themes/StyleBlue/StyleBlue.css" || jQuery(this).attr("href") == "../App_Themes/StyleGreen/GreenStyle.css" || jQuery(this).attr("href") == "../App_Themes/StyleDemo/DemoStyle.css" || jQuery(this).attr("href") == "../App_Themes/StyleOrange/orange.css") {
+                            if (theme == " Theme=Orange" || theme == "Theme=Orange") {
+                                $(this).attr("href", "../App_Themes/StyleOrange/orange.css");
+                            }
+
+                            if (theme == " Theme=Green" || theme == "Theme=Green") {
+                                $(this).attr("href", "../App_Themes/StyleGreen/GreenStyle.css");
+                            }
+                            if (theme == " Theme=Demo" || theme == "Theme=Demo") {
+                                $(this).attr("href", "../App_Themes/StyleDemo/DemoStyle.css");
+                            }
+                            if (theme == " Theme=Blue" || theme == "Theme=Blue") {
+                                $(this).attr("href", "../App_Themes/StyleBlue/StyleBlue.css");
+                            }
+                        }
+                    });
+                }
+                assignCSS();
+                return true;
+            }
+
+            // add by shivani pandya For theme selection
+            function assignCSS() {
+                var theme;
+                var footer = "";
+                $.each(document.cookie.split(";"), function (i, para) {
+                    if (para == " Theme=Orange" || para == "Theme=Orange") {
+                        theme = para;
+                    }
+                    if (para == " Theme=Green" || para == "Theme=Green") {
+                        theme = para;
+                    }
+                    if (para == " Theme=Demo" || para == "Theme=Demo") {
+                        theme = para;
+                    }
+                    if (para == " Theme=Blue" || para == "Theme=Blue") {
+                        theme = para;
+                    }
+                });
+                if (theme == " Theme=Orange" || theme == "Theme=Orange") {
+                    $("#ctl00_lblMandatory").css({ 'border-color': '#CF8E4C' });
+
+                    $("table[rules] tr[valign=top]").removeAttr("style");
+                    $("table[rules] tr[valign=top]").removeAttr("class");
+                    $("table[rules] tr[valign=top]").attr("class", "trHeader");
+
+                    //footer = $("table[rules] tr[align=center]")[1];
+                    //$(footer).removeAttr("style");
+                    //$(footer).removeAttr("class");
+                    //$(footer).attr("class", "trFooter");
+
+                    $("#ctl00_lblHeading").removeAttr("style");
+
+                    $("#ctl00_lblHeading").attr("class", "Labelheading");
+
+                    $("#ctl00_CPHLAMBDA_divExpandable").css({ 'background-color': '#CF8E4C' });
+
+                    $("#ctl00_CPHLAMBDA_pnlMedExGrid table tr").last().css({ "background-color": "#CF8E4C" });
+
+                    $.each($("#ctl00_CPHLAMBDA_pnltable div table tr td"), function () {
+                        $(this).css({ 'color': '#CF8E4C' });
+                    });
+
+                    $("#ctl00_CPHLAMBDA_div1").css({ "background-color": "#CF8E4C" });
+                    $("#ctl00_CPHLAMBDA_divGrid").css({ "background-color": "#CF8E4C" });
+                    $("#ctl00_CPHLAMBDA_Gv_GeneralScr tr").last().css({ "background-color": "#CF8E4C" });
+                    $("#ctl00_CPHLAMBDA_grdGeneralConmp_wrapper table th").css({ "background-color": "#CF8E4C" });
+
+                    if ($("#ctl00_CPHLAMBDA_GVHabits") != null) {
+                        $("#ctl00_CPHLAMBDA_GVHabits tr").last().css({ "background-color": "#CF8E4C" });
+                    }
+                    if ($("#ctl00_CPHLAMBDA_GVSubjectProof") != null) {
+                        $("#ctl00_CPHLAMBDA_GVSubjectProof tr").last().css({ "background-color": "#CF8E4C" });
+                    }
+                    $("#tblAudit th").css({ "background-color": "#CF8E4C" });
+
+                }
+                if (theme == " Theme=Green" || theme == "Theme=Green") {
+                    $("#ctl00_lblHeading").removeAttr("style");
+                    $("#ctl00_lblHeading").attr("class", "Labelheading");
+
+                    $("#ctl00_CPHLAMBDA_divExpandable").css({ 'background-color': '#33a047' });
+                    $("#ctl00_lblMandatory").css({ 'border-color': '#33a047' });
+
+                    $("table[rules] tr[valign=top]").removeAttr("style");
+                    $("table[rules] tr[valign=top]").removeAttr("class");
+                    $("table[rules] tr[valign=top]").attr("class", "trHeader");
+
+                    //footer = $("table[rules] tr[align=center]")[1];
+                    //$(footer).removeAttr("style");
+                    //$(footer).removeAttr("class");
+                    //$(footer).attr("class", "trFooter");
+
+                    $("#ctl00_CPHLAMBDA_pnlMedExGrid table tr").last().css({ "background-color": "#33a047" });
+
+                    $.each($("#ctl00_CPHLAMBDA_pnltable div table tr td"), function () {
+                        $(this).css({ 'color': '#33a047' });
+                    });
+                    $("#ctl00_CPHLAMBDA_div1").css({ "background-color": "#33a047" });
+                    $("#ctl00_CPHLAMBDA_divGrid").css({ "background-color": "#33a047" });
+                    $("#ctl00_CPHLAMBDA_Gv_GeneralScr tr").last().css({ "background-color": "#33a047" });
+                    $("#ctl00_CPHLAMBDA_grdGeneralConmp_wrapper table th").css({ "background-color": "#33a047" });
+                    $("#ctl00_CPHLAMBDA_grdGeneralConmp_wrapper table th").css({ "background-color": "#33a047" });
+
+                    if ($("#ctl00_CPHLAMBDA_GVHabits") != null) {
+                        $("#ctl00_CPHLAMBDA_GVHabits tr").last().css({ "background-color": "#33a047" });
+                    }
+                    if ($("#ctl00_CPHLAMBDA_GVSubjectProof") != null) {
+                        $("#ctl00_CPHLAMBDA_GVSubjectProof tr").last().css({ "background-color": "#33a047" });
+                    }
+                    $("#tblAudit th").css({ "background-color": "#33a047" });
+                }
+                if (theme == " Theme=Demo" || theme == "Theme=Demo") {
+                    $("#ctl00_lblHeading").removeAttr("style");
+                    $("#ctl00_lblHeading").attr("class", "Labelheading");
+
+                    $("#ctl00_CPHLAMBDA_divExpandable").css('background-color', '#999966');
+                    $("#ctl00_lblMandatory").css({ 'border-color': '#CF8E4C' });
+
+                    $("table[rules] tr[valign=top]").removeAttr("style");
+                    $("table[rules] tr[valign=top]").removeAttr("class");
+                    $("table[rules] tr[valign=top]").attr("class", "trHeader");
+
+                    //footer = $("table[rules] tr[align=center]")[1];
+                    //$(footer).removeAttr("style");
+                    //$(footer).removeAttr("class");
+                    //$(footer).attr("class", "trFooter");                    
+
+                    $("#ctl00_CPHLAMBDA_pnlMedExGrid table tr").last().css({ "background-color": "#999966" });
+                    $("#ctl00_CPHLAMBDA_grdMedicalCondition tr").first().css({ "background-color": "#999966", 'color': 'white' });
+
+                    $.each($("#ctl00_CPHLAMBDA_pnltable div table tr td"), function () {
+                        $(this).css({ 'color': '#999966' });
+                    });
+                    $("#ctl00_CPHLAMBDA_div1").css({ "background-color": "#999966" });
+                    $("#ctl00_CPHLAMBDA_divGrid").css({ "background-color": "#999966" });
+                    $("#ctl00_CPHLAMBDA_Gv_GeneralScr tr").last().css({ "background-color": "#999966" });
+                    $("#ctl00_CPHLAMBDA_grdGeneralConmp_wrapper table th").css({ "background-color": "#999966" });
+
+                    if ($("#ctl00_CPHLAMBDA_GVHabits") != null) {
+                        $("#ctl00_CPHLAMBDA_GVHabits tr").last().css({ "background-color": "#999966" });
+                    }
+                    if ($("#ctl00_CPHLAMBDA_GVSubjectProof") != null) {
+                        $("#ctl00_CPHLAMBDA_GVSubjectProof tr").last().css({ "background-color": "#999966" });
+                    }
+                    $("#tblAudit th").css({ "background-color": "#999966" });
+                }
+                if (theme == " Theme=Blue" || theme == "Theme=Blue") {
+                    $("#ctl00_lblHeading").removeAttr("style");
+                    $("#ctl00_lblHeading").attr({ "class": "Labelheading" });
+
+                    $("#ctl00_CPHLAMBDA_divExpandable").css({ 'background-color': 'Navy' });
+                    $("#ctl00_lblMandatory").css({ 'border-color': '#1560a1' });
+
+                    $("table[rules] tr[valign=top]").removeAttr("style");
+                    $("table[rules] tr[valign=top]").removeAttr("class");
+                    $("table[rules] tr[valign=top]").attr("class", "trHeader");
+
+                    //footer = $("table[rules] tr[align=center]")[1];
+                    //$(footer).removeAttr("style");
+                    //$(footer).removeAttr("class");
+                    //$(footer).attr("class", "trFooter");
+
+
+                    $("#ctl00_CPHLAMBDA_pnlMedExGrid table tr").last().css({ "background-color": "Navy" });
+
+                    $.each($("#ctl00_CPHLAMBDA_pnltable div table tr td"), function () {
+                        $(this).css({ 'color': 'Navy' });
+                    });
+                    $("#ctl00_CPHLAMBDA_div1").css({ "background-color": "Navy" });
+                    $("#ctl00_CPHLAMBDA_divGrid").css({ "background-color": "Navy" });
+                    $("#ctl00_CPHLAMBDA_Gv_GeneralScr tr").last().css({ "background-color": "Navy" });
+                    $("#ctl00_CPHLAMBDA_grdGeneralConmp_wrapper table th").css({ "background-color": "Navy" });
+                    $("#ctl00_CPHLAMBDA_grdMedicalCondition tr").first().css({ "background-color": "Navy", 'color': 'white' });
+
+                    if ($("#ctl00_CPHLAMBDA_pnlMedExGrid") != null) {
+                        $("#ctl00_CPHLAMBDA_pnlMedExGrid table tr").last().css({ "background-color": "Navy" });
+                    }
+                    if ($("#ctl00_CPHLAMBDA_GVSubjectProof") != null) {
+                        $("#ctl00_CPHLAMBDA_GVSubjectProof tr").last().css({ "background-color": "Navy" });
+                    }
+                    $("#tblAudit th").css({ "background-color": "Navy" });
+
+
+                }
+                return false;
+            }
+
+
+            setInterval(function () {
+                var cookiCurrentPro;
+                Profile = document.getElementById("ctl00_ddlProfile");
+                if (IsExisitingCookie("currentProfile") > 1)
+                    setCookie("currentProfile", "", -1);
+
+                if (!IsExisitingCookie("currentProfile")) {
+                    setCookie("currentProfile", Profile.selectedIndex, 30);
+                }
+                cookiCurrentPro = getCookie("currentProfile");
+
+                if (cookiCurrentPro != undefined && cookiCurrentPro != Profile.selectedIndex) {
+                    //Profile.selectedIndex = cookiCurrentPro;
+                    if (document.location.pathname.indexOf("Interface") > 0) {
+                        //if (document.getElementById("ctl00_Refresh").value == "false") {
+                        window.location.reload();
+                        //document.location.href = "../Default.aspx"
+                        //}
+                    }
+                    else {
+                        //if (document.getElementById("ctl00_Refresh").value == "false") {
+                        window.location.reload();
+                        //document.location.href = "Default.aspx";
+                        //}
+                    }
+                }
+            }, 7000)
+
+
+            //setInterval(function () {
+            //    var cookiCurrentPro;
+            //    Profile = document.getElementById("ctl00_ddlProfile");
+            //    if (IsExisitingCookie("currentProfile") > 1)
+            //        setCookie("currentProfile", "", -1);
+
+            //    if (!IsExisitingCookie("currentProfile")) {
+            //        setCookie("currentProfile", Profile.selectedIndex, 30);
+            //    }
+            //    cookiCurrentPro = getCookie("currentProfile");
+
+            //    if (cookiCurrentPro != undefined && cookiCurrentPro != Profile.selectedIndex) {
+            //        Profile.selectedIndex = cookiCurrentPro;
+            //        if (document.location.pathname.indexOf("Interface") > 0) {
+            //            document.location.href = "../Default.aspx"
+            //        }
+            //        else {
+            //            document.location.href = "Default.aspx";
+            //        }
+            //    }
+            //}, 1000)
+
+            function IsExisitingCookie(cname) {
+                var allcookies = document.cookie;
+                var count = 0;
+                cookiearray = allcookies.split(';');
+                for (var i = 0; i < cookiearray.length; i++) {
+                    name = cookiearray[i].split('=')[0];
+                    value = cookiearray[i].split('=')[1];
+                    if (name.trimLeft().toUpperCase() == cname.trim().toUpperCase()) {
+                        count = count + 1;
+                    }
+                }
+                return count;
+            }
+
+            function setCookie(cname, cvalue, exdays) {
+                var d = new Date();
+                d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+                var expires = "expires=" + d.toGMTString();
+                document.cookie = cname + "=" + cvalue + "; " + expires;
+            }
+
+            function getCookie(cname) {
+                var name = cname + "=";
+                var ca = document.cookie.split(';');
+                for (var i = 0; i < ca.length; i++) {
+                    var c = ca[i];
+                    while (c.charAt(0) == ' ') c = c.substring(1);
+                    if (c.indexOf(name) == 0) {
+                        return c.substring(name.length, c.length);
+                    }
+                }
+                return "";
+            }
+
+            function RedirectToResult() {
+                if ($("#ctl00_txtOperationName").val() == "") {
+                    msgalert('Search operation can not be blank.');
+                    return false;
+                }
+
+                var url = document.getElementById('ctl00_HOperationURL').value;
+                window.location.href = url;
+            }
+
+            function ClientPopulatedForMenu(sender, e) {
+                OperationClientShowing('AutoCompleteExtenderForMenu', $get('<%= txtOperationName.ClientId %>'));
+            }
+
+            function OnSelectedforMenu(sender, e) {
+                GetOperationSelected(e.get_value(), $get('<%= txtOperationName.clientid %>'), $get('<%= HOperationURL.clientid %>'), '');
+            }
+
+        </script>
+        <a href="#0" title="Click to return on the top page" class="cd-top">Top</a>
+    </form>
+
+    <script src="Script/Login/third-party.min.js" type="text/javascript"></script>
+    <script src="Script/Login/modules.min.js" type="text/javascript"></script>
+
+</body>
+</html>

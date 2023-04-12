@@ -1,0 +1,188 @@
+﻿@{
+    ViewBag.Title = "DI : STATISTICS REPORT";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @section Header
+        {
+        <h1>Statistics<small>Report</small></h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i>Report</a></li>
+            <li class="active">Statistics Report</li>
+        </ol>
+    } 
+    
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header" style="text-align: right">
+                    <div class="row">
+                    </div>
+                </div>
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-xs-12 form-group">
+                            <div class="col-sm-6">
+                                <label for="ddlStudy">Study</label>
+                                <select class="form-control select2" id="ddlstudy" tabindex="1">
+                                </select>
+                            </div>
+                                <div class="col-sm-6">
+                                <label for="ddlProject">Project</label>
+                                <select class="form-control select2" id="ddlProject" tabindex="1">
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 form-group">
+                           @* <label class="">
+
+                                <div class="iradio_minimal-blue checked" style="position: relative;" aria-checked="true" aria-disabled="false">
+                                    <input name="statisticsReport" class="minimal" type="radio" tabindex="2" style="position: absolute; opacity: 0;">
+                                    <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; border: 0px none; opacity: 0;"></ins>
+                                </div>
+
+                            </label>
+                            <label>
+                                All
+
+                            </label>
+
+                            <label class="">
+                                <div class="iradio_minimal-blue" style="position: relative;" aria-checked="false" aria-disabled="false">
+                                    <input name="statisticsReport" class="minimal" style="position: absolute; opacity: 0;" type="radio">
+                                    <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; border: 0px none; opacity: 0;"></ins>
+                                </div>
+                            </label>
+                            <label>
+                                Adjudicator
+
+                            </label>*@
+
+
+                            <div class="col-sm-12">
+                                <input type="radio" value="All" id="rbt_All" tabindex="2" name="statisticsReport" checked="checked"/>All
+                                <input type="radio" value="Adjudicator" id="rbt_Adjudicator"  name="statisticsReport" tabindex="3"/>Adjudicator
+                                <input type="radio" value="AdjudicatorOverAllResponse" id="rbt_AdjudicatorOverAll" name="statisticsReport" tabindex="4" />Adjudicated Final Results 
+                                <input type="radio" value="AdjudicatorResult" id="rbt_AdjudicatorResult" name="statisticsReport" tabindex="5" />Adjudicator Agreement Report
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-12 form-group" style="text-align: right;">
+                            <div class="col-sm-12">
+                                <span style="text-align: right;">
+                                    <button type="button" id="btnGo" class="btn btn-primary btnchange btneffect" title="Go" tabindex="6">
+                                        <span class="num">
+                                            <i class="fa fa-sign-in" style="line-height: 35px;"></i>
+                                        </span>
+                                        GO
+                                    <i class="faf fa fa-sign-in"></i>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 form-group">
+                            <div class="col-sm-12" id="divStatisticsDetail">
+                                <table id="tblStatisticsDetail" class="table table-bordered table-striped dataTable">
+                                    @*      <thead>
+                                        <tr>
+                                           <th>SITE</th>
+                                           <th>SCREENID</th>
+                                           <th>DOB</th>
+                                           <th>SUBJINIT</th>
+                                           <th>VISITNO</th>
+                                           <th>SUBVISITNO</th>
+                                           <th>PROTOCOL</th>
+                                           <th>EXAMDT</th>
+                                           <th>INVESTYP</th>
+                                           <th>IMAGEQTY</th>
+                                           <th>IMAGEQTYREMARK</th>
+                                           <th>REVIEWNM</th>
+                                           <th>REVIEWDT</th>
+                                           <th>LESONNM</th>
+                                           <th>ORGAN</th>
+                                           <th>TULOC</th>
+                                           <th>TUDESC</th>
+                                           <th>TUSIZE</th>
+                                           <th>SOD</th>
+                                           <th>BASELINE</th>
+                                           <th>NADIR</th>
+                                           <th>TLRES</th>
+                                           <th>NTLRES</th>
+                                           <th>NEWLESON</th>
+                                           <th>OVRLRES</th>
+                                           <th>GLOBREV</th>
+                                           <th>GLOBREVCOMMENT</th>
+                                           <th>COMMENT</th>
+                                       </tr>  
+                                  
+                                         <tr>
+                                           <th>Site Identification</th>
+                                           <th>Screening No</th>
+                                           <th>Date of Birth</th>
+                                           <th>Subject Initial</th>
+                                           <th>Visit Number</th>
+                                           <th>Sub Visit Number</th>
+                                           <th>Study Identification</th>
+                                           <th>Date of Examination</th>
+                                           <th>Modality</th>
+                                           <th>Image Quality</th>
+                                           <th>Image Quality Remark</th>
+                                           <th>Reviewer Name</th>
+                                           <th>Review Date</th>
+                                           <th>Lesion Name</th>
+                                           <th>Organ</th>
+                                           <th>Location</th>
+                                           <th>Description</th>
+                                           <th>Size</th>
+                                           <th>Sum of Diameter</th>
+                                           <th>% Change from Baseline</th>
+                                           <th>% Change from NADIR</th>
+                                           <th>Target Response</th>
+                                           <th>Non Target Response</th>
+                                           <th>New Lesion</th>
+                                           <th>Overall Response</th>
+                                           <th>Global Review</th>
+                                           <th>Global Review Comments</th>
+                                           <th>Comments</th>
+                                       </tr>                                                                          
+                                   </thead>*@
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    @*<link href="~/Contents/Themes/Css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Contents/Themes/Css/AdminLTE.min.css" rel="stylesheet" />
+    <link href="~/Contents/Themes/Plugins/iCheck/all.css" rel="stylesheet" />*@
+    
+    @*<script type="text/javascript" src="@Url.Content("~/Contents/Themes/Js/jquery-2.2.3.min.js")"></script>*@
+    <script type="text/javascript" src="@Url.Content("~/Contents/Themes/Js/jquery-3.6.1.min.js")"></script>
+    @*<script src="~/Contents/Themes/Js/bootstrap.min.js"></script>*@
+    
+    @*
+    <script type="text/javascript" src="@Url.Content("~/Contents/Themes/Plugins/DataTable/Js/jquery.dataTables.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Contents/Themes/Plugins/DataTable/Js/dataTables.bootstrap.min.js")"></script> 
+    <script type="text/javascript" src="@Url.Content("~/Contents/Themes/Plugins/DataTable/Js/pdfmake.min.js")"></script>  
+    <script type="text/javascript" src="@Url.Content("~/Contents/Themes/Plugins/DataTable/Js/vfs_fonts.js")"></script>    
+    <script type="text/javascript" src="@Url.Content("~/Contents/Themes/Plugins/DataTable/Js/buttons.html5.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Contents/Themes/Plugins/DataTable/Js/buttons.print.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Contents/Themes/Plugins/DataTable/Js/dataTables.buttons.min.js")"></script>    
+    <script type="text/javascript" src="@Url.Content("~/Contents/Themes/Plugins/DataTable/Js/buttons.flash.min.js")"></script>    
+    <script type="text/javascript" src="@Url.Content("~/Contents/Themes/Plugins/DataTable/Js/jszip.min.js")"></script> 
+    *@<script type="text/javascript" src="@Url.Content("~/Scripts/General.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/MIStatisticsReport.js")"></script>
+    @*<script src="~/Contents/Themes/Plugins/iCheck/icheck.min.js"></script>*@
+    
+}

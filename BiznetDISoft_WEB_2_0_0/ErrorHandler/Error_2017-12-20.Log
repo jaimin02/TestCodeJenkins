@@ -1,0 +1,460 @@
+Err.Date: 12/20/2017 4:51:33 PM
+Database Not Connected. <BR> 'table' argument cannot be null.
+Parameter name: table
+UserNo :
+UserName :
+User Division :
+URL:http://localhost/BizNETCTM_WEB/default.aspx
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+
+Err.Date: 12/20/2017 4:52:33 PM
+Database Not Connected. <BR> 'table' argument cannot be null.
+Parameter name: table
+UserNo :
+UserName :
+User Division :
+URL:http://localhost/BizNETCTM_WEB/default.aspx
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+
+Err.Date: 12/20/2017 6:13:34 PM
+Thread was being aborted.<BR> ...........DownloadZip
+UserNo :
+UserName :shailendrasinhc
+User Division :
+Error Originated From:  AbortInternal
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.End()
+   at frmCRFPrint_New.DownloadZip(String strFolderpath) in D:\BizNET\BizNETCTM\BizNETCTM_WEB\frmCRFPrint_New.aspx.vb:line 4102
+Line Number:  line 4102
+MemberType:  Method
+Error Page:  \BizNET\BizNETCTM\BizNETCTM_WEB\frmCRFPrint_New.aspx.vb
+Exception Type:  ThreadAbortException
+URL:http://localhost/BizNETCTM_Web/frmcrfprint_New.aspx?UserId=3366
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+
+Err.Date: 12/20/2017 6:13:34 PM
+Thread was being aborted.<BR> ............BtnGeneratePdf_Click
+UserNo :
+UserName :shailendrasinhc
+User Division :
+Error Originated From:  DownloadZip
+   at frmCRFPrint_New.DownloadZip(String strFolderpath) in D:\BizNET\BizNETCTM\BizNETCTM_WEB\frmCRFPrint_New.aspx.vb:line 4106
+   at frmCRFPrint_New.BtnGeneratePdf_Click(Object sender, EventArgs e) in D:\BizNET\BizNETCTM\BizNETCTM_WEB\frmCRFPrint_New.aspx.vb:line 1929
+Line Number:  line 4106
+   at frmCRFPrint_New.BtnGeneratePdf_Click(Object sender, EventArgs e) in D
+MemberType:  Method
+Error Page:  \BizNET\BizNETCTM\BizNETCTM_WEB\frmCRFPrint_New.aspx.vb
+Exception Type:  ThreadAbortException
+URL:http://localhost/BizNETCTM_Web/frmcrfprint_New.aspx?UserId=3366
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+
+Err.Date: 12/20/2017 6:13:34 PM
+Thread was being aborted.<BR> Error While btnGo_Click. 
+UserNo :
+UserName :shailendrasinhc
+User Division :
+Error Originated From:  BtnGeneratePdf_Click
+   at frmCRFPrint_New.BtnGeneratePdf_Click(Object sender, EventArgs e) in D:\BizNET\BizNETCTM\BizNETCTM_WEB\frmCRFPrint_New.aspx.vb:line 2137
+   at frmCRFPrint_New.btnGo_Click(Object sender, EventArgs e) in D:\BizNET\BizNETCTM\BizNETCTM_WEB\frmCRFPrint_New.aspx.vb:line 2260
+Line Number:  line 2137
+   at frmCRFPrint_New.btnGo_Click(Object sender, EventArgs e) in D
+MemberType:  Method
+Error Page:  \BizNET\BizNETCTM\BizNETCTM_WEB\frmCRFPrint_New.aspx.vb
+Exception Type:  ThreadAbortException
+URL:http://localhost/BizNETCTM_Web/frmcrfprint_New.aspx?UserId=3366
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+
+Err.Date: 12/20/2017 6:18:36 PM
+Thread was being aborted.<BR> ...........DownloadZip
+UserNo :
+UserName :shailendrasinhc
+User Division :
+Error Originated From:  AbortInternal
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.End()
+   at frmCRFPrint_New.DownloadZip(String strFolderpath) in D:\BizNET\BizNETCTM\BizNETCTM_WEB\frmCRFPrint_New.aspx.vb:line 4102
+Line Number:  line 4102
+MemberType:  Method
+Error Page:  \BizNET\BizNETCTM\BizNETCTM_WEB\frmCRFPrint_New.aspx.vb
+Exception Type:  ThreadAbortException
+URL:http://localhost/BizNETCTM_Web/frmcrfprint_New.aspx?UserId=3366
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+
+Err.Date: 12/20/2017 6:18:36 PM
+Thread was being aborted.<BR> ............BtnGeneratePdf_Click
+UserNo :
+UserName :shailendrasinhc
+User Division :
+Error Originated From:  DownloadZip
+   at frmCRFPrint_New.DownloadZip(String strFolderpath) in D:\BizNET\BizNETCTM\BizNETCTM_WEB\frmCRFPrint_New.aspx.vb:line 4106
+   at frmCRFPrint_New.BtnGeneratePdf_Click(Object sender, EventArgs e) in D:\BizNET\BizNETCTM\BizNETCTM_WEB\frmCRFPrint_New.aspx.vb:line 1929
+Line Number:  line 4106
+   at frmCRFPrint_New.BtnGeneratePdf_Click(Object sender, EventArgs e) in D
+MemberType:  Method
+Error Page:  \BizNET\BizNETCTM\BizNETCTM_WEB\frmCRFPrint_New.aspx.vb
+Exception Type:  ThreadAbortException
+URL:http://localhost/BizNETCTM_Web/frmcrfprint_New.aspx?UserId=3366
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+
+Err.Date: 12/20/2017 6:18:36 PM
+Thread was being aborted.<BR> Error While btnGo_Click. 
+UserNo :
+UserName :shailendrasinhc
+User Division :
+Error Originated From:  BtnGeneratePdf_Click
+   at frmCRFPrint_New.BtnGeneratePdf_Click(Object sender, EventArgs e) in D:\BizNET\BizNETCTM\BizNETCTM_WEB\frmCRFPrint_New.aspx.vb:line 2137
+   at frmCRFPrint_New.btnGo_Click(Object sender, EventArgs e) in D:\BizNET\BizNETCTM\BizNETCTM_WEB\frmCRFPrint_New.aspx.vb:line 2260
+Line Number:  line 2137
+   at frmCRFPrint_New.btnGo_Click(Object sender, EventArgs e) in D
+MemberType:  Method
+Error Page:  \BizNET\BizNETCTM\BizNETCTM_WEB\frmCRFPrint_New.aspx.vb
+Exception Type:  ThreadAbortException
+URL:http://localhost/BizNETCTM_Web/frmcrfprint_New.aspx?UserId=3366
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+
+Err.Date: 12/20/2017 6:30:20 PM
+Thread was being aborted.<BR> ...........DownloadZip
+UserNo :
+UserName :shailendrasinhc
+User Division :
+Error Originated From:  AbortInternal
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.End()
+   at frmCRFPrint_New.DownloadZip(String strFolderpath) in D:\BizNET\BizNETCTM\BizNETCTM_WEB\frmCRFPrint_New.aspx.vb:line 4102
+Line Number:  line 4102
+MemberType:  Method
+Error Page:  \BizNET\BizNETCTM\BizNETCTM_WEB\frmCRFPrint_New.aspx.vb
+Exception Type:  ThreadAbortException
+URL:http://localhost/BizNETCTM_Web/frmcrfprint_New.aspx?UserId=3366
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+
+Err.Date: 12/20/2017 6:30:20 PM
+Thread was being aborted.<BR> ............BtnGeneratePdf_Click
+UserNo :
+UserName :shailendrasinhc
+User Division :
+Error Originated From:  DownloadZip
+   at frmCRFPrint_New.DownloadZip(String strFolderpath) in D:\BizNET\BizNETCTM\BizNETCTM_WEB\frmCRFPrint_New.aspx.vb:line 4106
+   at frmCRFPrint_New.BtnGeneratePdf_Click(Object sender, EventArgs e) in D:\BizNET\BizNETCTM\BizNETCTM_WEB\frmCRFPrint_New.aspx.vb:line 1929
+Line Number:  line 4106
+   at frmCRFPrint_New.BtnGeneratePdf_Click(Object sender, EventArgs e) in D
+MemberType:  Method
+Error Page:  \BizNET\BizNETCTM\BizNETCTM_WEB\frmCRFPrint_New.aspx.vb
+Exception Type:  ThreadAbortException
+URL:http://localhost/BizNETCTM_Web/frmcrfprint_New.aspx?UserId=3366
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+
+Err.Date: 12/20/2017 6:30:20 PM
+Thread was being aborted.<BR> Error While btnGo_Click. 
+UserNo :
+UserName :shailendrasinhc
+User Division :
+Error Originated From:  BtnGeneratePdf_Click
+   at frmCRFPrint_New.BtnGeneratePdf_Click(Object sender, EventArgs e) in D:\BizNET\BizNETCTM\BizNETCTM_WEB\frmCRFPrint_New.aspx.vb:line 2137
+   at frmCRFPrint_New.btnGo_Click(Object sender, EventArgs e) in D:\BizNET\BizNETCTM\BizNETCTM_WEB\frmCRFPrint_New.aspx.vb:line 2260
+Line Number:  line 2137
+   at frmCRFPrint_New.btnGo_Click(Object sender, EventArgs e) in D
+MemberType:  Method
+Error Page:  \BizNET\BizNETCTM\BizNETCTM_WEB\frmCRFPrint_New.aspx.vb
+Exception Type:  ThreadAbortException
+URL:http://localhost/BizNETCTM_Web/frmcrfprint_New.aspx?UserId=3366
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+
+Err.Date: 12/20/2017 6:38:08 PM
+Thread was being aborted.<BR> ...........DownloadZip
+UserNo :
+UserName :shailendrasinhc
+User Division :
+Error Originated From:  AbortInternal
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.End()
+   at frmCRFPrint_New.DownloadZip(String strFolderpath) in D:\BizNET\BizNETCTM\BizNETCTM_WEB\frmCRFPrint_New.aspx.vb:line 4102
+Line Number:  line 4102
+MemberType:  Method
+Error Page:  \BizNET\BizNETCTM\BizNETCTM_WEB\frmCRFPrint_New.aspx.vb
+Exception Type:  ThreadAbortException
+URL:http://localhost/BizNETCTM_Web/frmcrfprint_New.aspx?UserId=3366
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+
+Err.Date: 12/20/2017 6:38:08 PM
+Thread was being aborted.<BR> ............BtnGeneratePdf_Click
+UserNo :
+UserName :shailendrasinhc
+User Division :
+Error Originated From:  DownloadZip
+   at frmCRFPrint_New.DownloadZip(String strFolderpath) in D:\BizNET\BizNETCTM\BizNETCTM_WEB\frmCRFPrint_New.aspx.vb:line 4106
+   at frmCRFPrint_New.BtnGeneratePdf_Click(Object sender, EventArgs e) in D:\BizNET\BizNETCTM\BizNETCTM_WEB\frmCRFPrint_New.aspx.vb:line 1929
+Line Number:  line 4106
+   at frmCRFPrint_New.BtnGeneratePdf_Click(Object sender, EventArgs e) in D
+MemberType:  Method
+Error Page:  \BizNET\BizNETCTM\BizNETCTM_WEB\frmCRFPrint_New.aspx.vb
+Exception Type:  ThreadAbortException
+URL:http://localhost/BizNETCTM_Web/frmcrfprint_New.aspx?UserId=3366
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+
+Err.Date: 12/20/2017 6:38:08 PM
+Thread was being aborted.<BR> Error While btnGo_Click. 
+UserNo :
+UserName :shailendrasinhc
+User Division :
+Error Originated From:  BtnGeneratePdf_Click
+   at frmCRFPrint_New.BtnGeneratePdf_Click(Object sender, EventArgs e) in D:\BizNET\BizNETCTM\BizNETCTM_WEB\frmCRFPrint_New.aspx.vb:line 2137
+   at frmCRFPrint_New.btnGo_Click(Object sender, EventArgs e) in D:\BizNET\BizNETCTM\BizNETCTM_WEB\frmCRFPrint_New.aspx.vb:line 2260
+Line Number:  line 2137
+   at frmCRFPrint_New.btnGo_Click(Object sender, EventArgs e) in D
+MemberType:  Method
+Error Page:  \BizNET\BizNETCTM\BizNETCTM_WEB\frmCRFPrint_New.aspx.vb
+Exception Type:  ThreadAbortException
+URL:http://localhost/BizNETCTM_Web/frmcrfprint_New.aspx?UserId=3366
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+
+Err.Date: 12/20/2017 6:41:53 PM
+Thread was being aborted.<BR> ...........DownloadZip
+UserNo :
+UserName :shailendrasinhc
+User Division :
+Error Originated From:  AbortInternal
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.End()
+   at frmCRFPrint_New.DownloadZip(String strFolderpath) in D:\BizNET\BizNETCTM\BizNETCTM_WEB\frmCRFPrint_New.aspx.vb:line 4102
+Line Number:  line 4102
+MemberType:  Method
+Error Page:  \BizNET\BizNETCTM\BizNETCTM_WEB\frmCRFPrint_New.aspx.vb
+Exception Type:  ThreadAbortException
+URL:http://localhost/BizNETCTM_Web/frmcrfprint_New.aspx?UserId=3366
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+
+Err.Date: 12/20/2017 6:41:53 PM
+Thread was being aborted.<BR> ............BtnGeneratePdf_Click
+UserNo :
+UserName :shailendrasinhc
+User Division :
+Error Originated From:  DownloadZip
+   at frmCRFPrint_New.DownloadZip(String strFolderpath) in D:\BizNET\BizNETCTM\BizNETCTM_WEB\frmCRFPrint_New.aspx.vb:line 4106
+   at frmCRFPrint_New.BtnGeneratePdf_Click(Object sender, EventArgs e) in D:\BizNET\BizNETCTM\BizNETCTM_WEB\frmCRFPrint_New.aspx.vb:line 1929
+Line Number:  line 4106
+   at frmCRFPrint_New.BtnGeneratePdf_Click(Object sender, EventArgs e) in D
+MemberType:  Method
+Error Page:  \BizNET\BizNETCTM\BizNETCTM_WEB\frmCRFPrint_New.aspx.vb
+Exception Type:  ThreadAbortException
+URL:http://localhost/BizNETCTM_Web/frmcrfprint_New.aspx?UserId=3366
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+
+Err.Date: 12/20/2017 6:41:53 PM
+Thread was being aborted.<BR> Error While btnGo_Click. 
+UserNo :
+UserName :shailendrasinhc
+User Division :
+Error Originated From:  BtnGeneratePdf_Click
+   at frmCRFPrint_New.BtnGeneratePdf_Click(Object sender, EventArgs e) in D:\BizNET\BizNETCTM\BizNETCTM_WEB\frmCRFPrint_New.aspx.vb:line 2137
+   at frmCRFPrint_New.btnGo_Click(Object sender, EventArgs e) in D:\BizNET\BizNETCTM\BizNETCTM_WEB\frmCRFPrint_New.aspx.vb:line 2260
+Line Number:  line 2137
+   at frmCRFPrint_New.btnGo_Click(Object sender, EventArgs e) in D
+MemberType:  Method
+Error Page:  \BizNET\BizNETCTM\BizNETCTM_WEB\frmCRFPrint_New.aspx.vb
+Exception Type:  ThreadAbortException
+URL:http://localhost/BizNETCTM_Web/frmcrfprint_New.aspx?UserId=3366
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+
+Err.Date: 12/20/2017 7:06:53 PM
+Thread was being aborted.<BR> ...........DownloadZip
+UserNo :
+UserName :shailendrasinhc
+User Division :
+Error Originated From:  AbortInternal
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.End()
+   at frmCRFPrint_New.DownloadZip(String strFolderpath) in D:\BizNET\BizNETCTM\BizNETCTM_WEB\frmCRFPrint_New.aspx.vb:line 4102
+Line Number:  line 4102
+MemberType:  Method
+Error Page:  \BizNET\BizNETCTM\BizNETCTM_WEB\frmCRFPrint_New.aspx.vb
+Exception Type:  ThreadAbortException
+URL:http://localhost/BizNETCTM_Web/frmcrfprint_New.aspx?UserId=3366
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+
+Err.Date: 12/20/2017 7:06:53 PM
+Thread was being aborted.<BR> ............BtnGeneratePdf_Click
+UserNo :
+UserName :shailendrasinhc
+User Division :
+Error Originated From:  DownloadZip
+   at frmCRFPrint_New.DownloadZip(String strFolderpath) in D:\BizNET\BizNETCTM\BizNETCTM_WEB\frmCRFPrint_New.aspx.vb:line 4106
+   at frmCRFPrint_New.BtnGeneratePdf_Click(Object sender, EventArgs e) in D:\BizNET\BizNETCTM\BizNETCTM_WEB\frmCRFPrint_New.aspx.vb:line 1929
+Line Number:  line 4106
+   at frmCRFPrint_New.BtnGeneratePdf_Click(Object sender, EventArgs e) in D
+MemberType:  Method
+Error Page:  \BizNET\BizNETCTM\BizNETCTM_WEB\frmCRFPrint_New.aspx.vb
+Exception Type:  ThreadAbortException
+URL:http://localhost/BizNETCTM_Web/frmcrfprint_New.aspx?UserId=3366
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+
+Err.Date: 12/20/2017 7:06:53 PM
+Thread was being aborted.<BR> Error While btnGo_Click. 
+UserNo :
+UserName :shailendrasinhc
+User Division :
+Error Originated From:  BtnGeneratePdf_Click
+   at frmCRFPrint_New.BtnGeneratePdf_Click(Object sender, EventArgs e) in D:\BizNET\BizNETCTM\BizNETCTM_WEB\frmCRFPrint_New.aspx.vb:line 2137
+   at frmCRFPrint_New.btnGo_Click(Object sender, EventArgs e) in D:\BizNET\BizNETCTM\BizNETCTM_WEB\frmCRFPrint_New.aspx.vb:line 2260
+Line Number:  line 2137
+   at frmCRFPrint_New.btnGo_Click(Object sender, EventArgs e) in D
+MemberType:  Method
+Error Page:  \BizNET\BizNETCTM\BizNETCTM_WEB\frmCRFPrint_New.aspx.vb
+Exception Type:  ThreadAbortException
+URL:http://localhost/BizNETCTM_Web/frmcrfprint_New.aspx?UserId=3366
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+
+Err.Date: 12/20/2017 7:08:48 PM
+Thread was being aborted.<BR> ...........DownloadZip
+UserNo :
+UserName :shailendrasinhc
+User Division :
+Error Originated From:  AbortInternal
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.End()
+   at frmCRFPrint_New.DownloadZip(String strFolderpath) in D:\BizNET\BizNETCTM\BizNETCTM_WEB\frmCRFPrint_New.aspx.vb:line 4102
+Line Number:  line 4102
+MemberType:  Method
+Error Page:  \BizNET\BizNETCTM\BizNETCTM_WEB\frmCRFPrint_New.aspx.vb
+Exception Type:  ThreadAbortException
+URL:http://localhost/BizNETCTM_Web/frmcrfprint_New.aspx?UserId=3366
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+
+Err.Date: 12/20/2017 7:08:48 PM
+Thread was being aborted.<BR> ............BtnGeneratePdf_Click
+UserNo :
+UserName :shailendrasinhc
+User Division :
+Error Originated From:  DownloadZip
+   at frmCRFPrint_New.DownloadZip(String strFolderpath) in D:\BizNET\BizNETCTM\BizNETCTM_WEB\frmCRFPrint_New.aspx.vb:line 4106
+   at frmCRFPrint_New.BtnGeneratePdf_Click(Object sender, EventArgs e) in D:\BizNET\BizNETCTM\BizNETCTM_WEB\frmCRFPrint_New.aspx.vb:line 1929
+Line Number:  line 4106
+   at frmCRFPrint_New.BtnGeneratePdf_Click(Object sender, EventArgs e) in D
+MemberType:  Method
+Error Page:  \BizNET\BizNETCTM\BizNETCTM_WEB\frmCRFPrint_New.aspx.vb
+Exception Type:  ThreadAbortException
+URL:http://localhost/BizNETCTM_Web/frmcrfprint_New.aspx?UserId=3366
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+
+Err.Date: 12/20/2017 7:08:48 PM
+Thread was being aborted.<BR> Error While btnGo_Click. 
+UserNo :
+UserName :shailendrasinhc
+User Division :
+Error Originated From:  BtnGeneratePdf_Click
+   at frmCRFPrint_New.BtnGeneratePdf_Click(Object sender, EventArgs e) in D:\BizNET\BizNETCTM\BizNETCTM_WEB\frmCRFPrint_New.aspx.vb:line 2137
+   at frmCRFPrint_New.btnGo_Click(Object sender, EventArgs e) in D:\BizNET\BizNETCTM\BizNETCTM_WEB\frmCRFPrint_New.aspx.vb:line 2260
+Line Number:  line 2137
+   at frmCRFPrint_New.btnGo_Click(Object sender, EventArgs e) in D
+MemberType:  Method
+Error Page:  \BizNET\BizNETCTM\BizNETCTM_WEB\frmCRFPrint_New.aspx.vb
+Exception Type:  ThreadAbortException
+URL:http://localhost/BizNETCTM_Web/frmcrfprint_New.aspx?UserId=3366
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+

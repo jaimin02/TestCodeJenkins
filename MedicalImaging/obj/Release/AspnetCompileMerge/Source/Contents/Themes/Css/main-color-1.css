@@ -1,0 +1,38 @@
+#topNav2 a.navbar-brand span,
+.forgotForm .mdl-card__actions a,
+.loginForm .mdl-card__actions a,
+.signupForm .mdl-card__actions a {
+    color: #2196F3
+}
+#close-switcher,
+#contactForm input+label:after,
+#contactForm input.valid+label:after,
+#contactForm textarea+label:after,
+#contactForm textarea.valid+label:after,
+#forgotForm input+label:after,
+#forgotForm input.valid+label:after,
+#loginForm input+label:after,
+#loginForm input.valid+label:after,
+#open-switcher,
+#signupForm input+label:after,
+#signupForm input.valid+label:after,
+#subscribeForm input+label:after,
+#subscribeForm input.valid+label:after,
+#topNav2 .navbar-brand img,
+.banner-content a.mdl-button.mdl-button--accent,
+.contact-form-submit-btn.mdl-button.mdl-button--accent,
+.contactForm .mdl-card__title .modal--logo,
+.forgot-form-submit-btn.mdl-button.mdl-button--accent,
+.forgotForm .mdl-card__title .modal--logo,
+.login-form-submit-btn.mdl-button.mdl-button--accent,
+.loginForm .mdl-card__title .modal--logo,
+.signupForm .mdl-card__title .modal--logo,
+.singup-form-submit-btn.mdl-button.mdl-button--accent,
+.subscribe-form-submit-btn.mdl-button.mdl-button--accent,
+.subscribeForm .mdl-card__title .modal--logo {
+    /*background-color: #2196F3*/
+}
+#close-switcher,
+#open-switcher {
+    border-color: #2196F3
+}

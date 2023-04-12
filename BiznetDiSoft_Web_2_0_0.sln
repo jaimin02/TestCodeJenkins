@@ -1,0 +1,133 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "BiznetDiSoft_Web_2_0_0", "http://localhost/BiznetDiSoft_Web_2_0_0", "{7004F2FB-B8E7-43ED-8272-B0483AEB2CA5}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = "Svn"
+		SccAuxPath = "Svn"
+		SccLocalPath = "Svn"
+		SccProvider = "S3CSubversionScc"
+		UseIISExpress = "false"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8"
+		Debug.AspNetCompiler.VirtualPath = "/BiznetDiSoft_Web_2_0_0"
+		Debug.AspNetCompiler.PhysicalPath = "G:\Jaimin Office\Code_Test\DISoft _C\BiznetDISoft_WEB_2_0_0\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\BiznetDiSoft_Web_2_0_0\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/BiznetDiSoft_Web_2_0_0"
+		Release.AspNetCompiler.PhysicalPath = "G:\Jaimin Office\Code_Test\DISoft _C\BiznetDISoft_WEB_2_0_0\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\BiznetDiSoft_Web_2_0_0\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "G:\Jaimin Office\Code_Test\DISoft _C\BiznetDISoft_WEB_2_0_0\"
+	EndProjectSection
+	ProjectSection(SvnOrigin) = preProject
+		@Keys = Enlist,Svn.Uri
+		Enlist = Required
+		Svn.Uri = http://s3biznet/BiznetDisoft_Web_2_0_0
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "BiznetDISoft_WS_2_0_0", "http://localhost/BiznetDISoft_WS_2_0_0", "{F2060B3A-1EC9-4834-95FB-AB96DA8621B3}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "false"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8"
+		Debug.AspNetCompiler.VirtualPath = "/BiznetDISoft_WS_2_0_0"
+		Debug.AspNetCompiler.PhysicalPath = "G:\Jaimin Office\Code_Test\DISoft _C\BiznetDISoft_WS_2_0_0\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\BiznetDISoft_WS_2_0_0\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/BiznetDISoft_WS_2_0_0"
+		Release.AspNetCompiler.PhysicalPath = "G:\Jaimin Office\Code_Test\DISoft _C\BiznetDISoft_WS_2_0_0\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\BiznetDISoft_WS_2_0_0\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "G:\Jaimin Office\Code_Test\DISoft _C\BiznetDISoft_WS_2_0_0\"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedicalImaging", "G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging\MedicalImaging.csproj", "{340D9BCC-0076-4835-A88F-D2EF5C0AC471}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MIApi", "G:\Jaimin Office\Code_Test\DISoft _C\MIApi\MIApi.csproj", "{1420579E-C56F-4F14-9965-754E0C53AD00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTO", "G:\Jaimin Office\Code_Test\DISoft _C\DTO\DTO.csproj", "{99F627AF-7959-4273-A4E5-3235E0A5A731}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessOperation", "G:\Jaimin Office\Code_Test\DISoft _C\BusinessOperation\BusinessOperation.csproj", "{CF549FE9-3059-4F89-A777-BA7F647C196E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseOperation", "G:\Jaimin Office\Code_Test\DISoft _C\DatabaseOperation\DatabaseOperation.csproj", "{82BF46EC-5CCF-47C0-97FC-29B8CF9100C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utility", "G:\Jaimin Office\Code_Test\DISoft _C\Utility\Utility.csproj", "{CD07FEF1-B920-47D9-8001-48B1A131E68B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DICOM", "G:\Jaimin Office\Code_Test\DISoft _C\DICOM\DICOM.csproj", "{7C6F27A0-E3B6-46CE-B904-3D2E863289FC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7004F2FB-B8E7-43ED-8272-B0483AEB2CA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7004F2FB-B8E7-43ED-8272-B0483AEB2CA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7004F2FB-B8E7-43ED-8272-B0483AEB2CA5}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{7004F2FB-B8E7-43ED-8272-B0483AEB2CA5}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{F2060B3A-1EC9-4834-95FB-AB96DA8621B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2060B3A-1EC9-4834-95FB-AB96DA8621B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2060B3A-1EC9-4834-95FB-AB96DA8621B3}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2060B3A-1EC9-4834-95FB-AB96DA8621B3}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{340D9BCC-0076-4835-A88F-D2EF5C0AC471}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{340D9BCC-0076-4835-A88F-D2EF5C0AC471}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{340D9BCC-0076-4835-A88F-D2EF5C0AC471}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{340D9BCC-0076-4835-A88F-D2EF5C0AC471}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1420579E-C56F-4F14-9965-754E0C53AD00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1420579E-C56F-4F14-9965-754E0C53AD00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1420579E-C56F-4F14-9965-754E0C53AD00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1420579E-C56F-4F14-9965-754E0C53AD00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99F627AF-7959-4273-A4E5-3235E0A5A731}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99F627AF-7959-4273-A4E5-3235E0A5A731}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99F627AF-7959-4273-A4E5-3235E0A5A731}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99F627AF-7959-4273-A4E5-3235E0A5A731}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF549FE9-3059-4F89-A777-BA7F647C196E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF549FE9-3059-4F89-A777-BA7F647C196E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF549FE9-3059-4F89-A777-BA7F647C196E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF549FE9-3059-4F89-A777-BA7F647C196E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82BF46EC-5CCF-47C0-97FC-29B8CF9100C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82BF46EC-5CCF-47C0-97FC-29B8CF9100C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82BF46EC-5CCF-47C0-97FC-29B8CF9100C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82BF46EC-5CCF-47C0-97FC-29B8CF9100C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD07FEF1-B920-47D9-8001-48B1A131E68B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD07FEF1-B920-47D9-8001-48B1A131E68B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD07FEF1-B920-47D9-8001-48B1A131E68B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD07FEF1-B920-47D9-8001-48B1A131E68B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C6F27A0-E3B6-46CE-B904-3D2E863289FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C6F27A0-E3B6-46CE-B904-3D2E863289FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C6F27A0-E3B6-46CE-B904-3D2E863289FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C6F27A0-E3B6-46CE-B904-3D2E863289FC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(S3CSubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = S3CSVN - Sarjen Source Control Support for Visual Studio
+		UserName = vishalmameriya
+		DBName = S3Biznet
+		S3CNumberOfProjects = 9
+		S3CProject1 = 7004f2fb-b8e7-43ed-8272-b0483aeb2ca5, http://localhost/BiznetDiSoft_Web_2_0_0/, \BiznetDisoft_Web_2_0_0, G:\Jaimin Office\Code_Test\DISoft _C\BiznetDISoft_WEB_2_0_0
+		S3CProject2 = f2060b3a-1ec9-4834-95fb-ab96da8621b3, http://localhost/BiznetDISoft_WS_2_0_0/, \BiznetDisoft_WS_2_0_0, G:\Jaimin Office\Code_Test\DISoft _C\BiznetDISoft_WS_2_0_0
+		S3CProject3 = 340d9bcc-0076-4835-a88f-d2ef5c0ac471, MedicalImaging, \MedicalImaging\V2_1_0\MedicalImaging_2_1_0, G:\Jaimin Office\Code_Test\DISoft _C\MedicalImaging
+		S3CProject4 = 1420579e-c56f-4f14-9965-754e0c53ad00, MIApi, \MedicalImaging\V2_1_0\MIApi, G:\Jaimin Office\Code_Test\DISoft _C\MIApi
+		S3CProject5 = 99f627af-7959-4273-a4e5-3235e0a5a731, DTO, \MedicalImaging\V2_1_0\DTO, G:\Jaimin Office\Code_Test\DISoft _C\DTO
+		S3CProject6 = cf549fe9-3059-4f89-a777-ba7f647c196e, BusinessOperation, \MedicalImaging\V2_1_0\BusinessOperation, G:\Jaimin Office\Code_Test\DISoft _C\BusinessOperation
+		S3CProject7 = 82bf46ec-5ccf-47c0-97fc-29b8cf9100c4, DatabaseOperation, \MedicalImaging\V2_1_0\DatabaseOperation, G:\Jaimin Office\Code_Test\DISoft _C\DatabaseOperation
+		S3CProject8 = cd07fef1-b920-47d9-8001-48b1a131e68b, Utility, \MedicalImaging\V2_1_0\Utility, G:\Jaimin Office\Code_Test\DISoft _C\Utility
+		S3CProject9 = 7c6f27a0-e3b6-46ce-b904-3d2e863289fc, DICOM, \MedicalImaging\V2_1_0\DICOM, G:\Jaimin Office\Code_Test\DISoft _C\DICOM
+	EndGlobalSection
+EndGlobal

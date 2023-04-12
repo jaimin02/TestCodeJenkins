@@ -1,0 +1,11 @@
+E:\Application\DISoft_C\DISoft _C\Utility\bin\Release\Utility.dll
+E:\Application\DISoft_C\DISoft _C\Utility\bin\Release\Utility.pdb
+E:\Application\DISoft_C\DISoft _C\Utility\obj\Release\Utility.csprojResolveAssemblyReference.cache
+E:\Application\DISoft_C\DISoft _C\Utility\obj\Release\Utility.dll
+E:\Application\DISoft_C\DISoft _C\Utility\obj\Release\Utility.pdb
+G:\Jaimin Office\Code_Test\DISoft _C\Utility\bin\Release\Utility.dll
+G:\Jaimin Office\Code_Test\DISoft _C\Utility\bin\Release\Utility.pdb
+G:\Jaimin Office\Code_Test\DISoft _C\Utility\obj\Release\Utility.csproj.CoreCompileInputs.cache
+G:\Jaimin Office\Code_Test\DISoft _C\Utility\obj\Release\Utility.dll
+G:\Jaimin Office\Code_Test\DISoft _C\Utility\obj\Release\Utility.pdb
+G:\Jaimin Office\Code_Test\DISoft _C\Utility\obj\Release\Utility.csproj.AssemblyReference.cache

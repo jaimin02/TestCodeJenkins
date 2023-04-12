@@ -1,0 +1,1736 @@
+﻿Imports System.Diagnostics
+Imports System.Threading
+Imports System.IO
+Imports System.Management
+Partial Class frmBulkPrint
+    Inherits System.Web.UI.Page
+
+#Region "VARIABLE DECLARATION"
+    Private ObjCommon As New clsCommon
+    Private objHelp As WS_HelpDbTable.WS_HelpDbTable = ObjCommon.GetHelpDbTableRef()
+    Private objLambda As WS_Lambda.WS_Lambda = ObjCommon.GetHelpDbLambdaRef()
+
+
+    Private Const VS_Result As String = "VS_Result"
+    'Added By Pratik Soni(For Export To Excel)
+    Private Const VS_gvReleaseDetail As String = "VS_gvReleaseDetail"
+    Private Const VS_gvPrinted As String = "VS_gvPrinted"
+
+    ' gvReleaseDetail
+    Private Const GVC_SrNo As Integer = 0
+    Private Const GVC_nAutoId As Integer = 1
+    Private Const GVC_Print As Integer = 2
+    Private Const GVC_vWorkspaceId As Integer = 3
+    Private Const GVC_vWorkSpaceDesc As Integer = 4
+    Private Const GVC_vNodeDisplayName As Integer = 5
+    Private Const GVC_vFileName As Integer = 6
+    Private Const GVC_iParentNodeId As Integer = 7
+    Private Const GVC_iStartId As Integer = 8
+    Private Const GVC_vStartId As Integer = 9
+    Private Const GVC_vEndId As Integer = 10
+    Private Const GVC_iEndId As Integer = 11
+    Private Const GVC_iReleasedBy As Integer = 12
+    Private Const GVC_vUserName As Integer = 13
+    Private Const GVC_iWorkspaceNodeHistoryTranNo As Integer = 14
+
+
+    ' gvPrinted
+    Private Const GVC_P_SrNo As Integer = 0
+    Private Const GVC_P_nAutoId As Integer = 1
+    Private Const GVC_P_Print As Integer = 2
+    Private Const GVC_P_vWorkspaceId As Integer = 3
+    Private Const GVC_P_vWorkSpaceDesc As Integer = 4
+    Private Const GVC_P_vNodeDisplayName As Integer = 5
+    Private Const GVC_P_vFileName As Integer = 6
+    Private Const GVC_P_vProjectNo As Integer = 7
+    Private Const GVC_P_iParentNodeId As Integer = 8
+    Private Const GVC_P_iStartId As Integer = 9
+    Private Const GVC_P_vStartId As Integer = 10
+    Private Const GVC_P_vEndId As Integer = 11
+    Private Const GVC_P_iEndId As Integer = 12
+    Private Const GVC_P_iReleasedBy As Integer = 13
+    Private Const GVC_P_vUserName As Integer = 14
+    Private Const GVC_P_vPrintComments As Integer = 15
+    Private Const GVC_P_iWorkspaceNodeHistoryTranNo As Integer = 16
+
+    Private Merge_FileName As String = "Merge" + DateTime.Now.Millisecond.ToString + ".pdf"
+
+#End Region
+
+#Region "Load Event"
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        Dim Choice As WS_Lambda.DataObjOpenSaveModeEnum
+        Dim estr As String = Nothing
+        Dim ds As New DataSet
+        Try
+
+            If Not IsPostBack Then
+                CType(Me.Master.FindControl("lblHeading"), Label).Text = "Department Publish & Submission"
+
+                If Not GenCall_ShowUI() Then
+                    Exit Sub
+                End If
+
+                Choice = Me.Request.QueryString("Mode")
+
+                If Not Choice = WS_Lambda.DataObjOpenSaveModeEnum.DataObjOpenMode_Add Then
+                    GenCall()
+                Else
+                    FillddlProject()
+                End If
+                FillddlPrinters()
+
+            End If
+
+        Catch ex As Exception
+            Me.ShowErrorMessage(ex.Message, "")
+        End Try
+    End Sub
+#End Region
+
+#Region "GenCall"
+    Private Function GenCall() As Boolean
+        Dim ds As New DataSet
+        Dim Choice As WS_Lambda.DataObjOpenSaveModeEnum
+        Try
+            CType(Me.Master.FindControl("lblerrormsg"), Label).Text = ""
+
+
+        Catch ex As Exception
+            Me.ShowErrorMessage(ex.Message, "")
+        Finally
+
+        End Try
+
+    End Function
+#End Region
+
+#Region "GenCall_Data "
+
+    Private Function GenCall_Data() As Boolean
+        Dim ds_Projects As New DataSet
+        Dim wStr As String = ""
+        Dim eStr As String = ""
+        Dim Val As String = ""
+        Dim Choice As WS_Lambda.DataObjOpenSaveModeEnum = WS_Lambda.DataObjOpenSaveModeEnum.DataObjOpenMode_None
+        Dim ds_ClientMst As DataSet = Nothing
+        'Dim objHelp As New WS_HelpDbTable.WS_HelpDbTable
+        Try
+            CType(Me.Master.FindControl("lblerrormsg"), Label).Text = ""
+
+
+            GenCall_Data = True
+
+        Catch ex As Exception
+            Me.ShowErrorMessage(ex.Message, "")
+            Return False
+        Finally
+
+        End Try
+    End Function
+
+#End Region
+
+#Region "GenCall_showUI "
+
+    Private Function GenCall_ShowUI() As Boolean
+        Dim sender As New Object
+        Dim e As New EventArgs
+        Try
+            Page.Title = " :: Bulk Print ::  " + System.Configuration.ConfigurationManager.AppSettings("Client")
+            CType(Me.Master.FindControl("lblMandatory"), Label).Visible = False
+            CType(Me.Master.FindControl("lblHeading"), Label).Text = "Bulk Print"
+
+            FillddlProject()
+            FillddlReleasedBy()
+
+            GenCall_ShowUI = True
+
+        Catch ex As Exception
+            Me.ShowErrorMessage(ex.Message, "")
+            Return False
+        End Try
+    End Function
+
+#End Region
+
+#Region "Grid Events"
+
+    'Protected Sub gvReleaseDetail_PageIndexChanging(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewPageEventArgs) Handles gvReleaseDetail.PageIndexChanging
+    '    Try
+    '        gvReleaseDetail.PageIndex = e.NewPageIndex
+    '        FillgvReleaseDetail()
+    '    Catch ex As Exception
+    '        Me.ShowErrorMessage(ex.Message, "")
+    '    End Try
+    'End Sub
+
+    'Protected Sub gvReleaseDetail_RowCommand(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewCommandEventArgs) Handles gvReleaseDetail.RowCommand
+    '    Dim index As Integer = e.CommandArgument
+    '    Dim ds_Result As DataSet = Nothing
+    '    Dim ds_Workspace As DataSet = Nothing
+    '    Dim ds_DocTrack As DataSet = Nothing
+    '    Dim wstr As String = String.Empty
+    '    Dim estr As String = String.Empty
+    '    Dim wsId As String = String.Empty
+    '    Dim parentNodeid As String = String.Empty
+    '    Dim StartId As String = String.Empty
+    '    Dim EndId As String = String.Empty
+    '    Dim WorkspaceTranNo As String = String.Empty
+    '    Dim BaseFolder As String = String.Empty
+    '    Dim filePath As String = String.Empty
+    '    Dim dir As DirectoryInfo
+    '    Dim vFilePaths As String = String.Empty
+    '    Dim width As Integer
+    '    Dim doc As Winnovative.WnvHtmlConvert.PdfDocument.Document = Nothing
+    '    Dim pdfConverter As Winnovative.WnvHtmlConvert.PdfConverter = Nothing
+    '    Dim docFinal As Winnovative.WnvHtmlConvert.PdfDocument.Document = Nothing
+    '    'Dim startinfo As New ProcessStartInfo
+    '    'Dim printprocess As New Process
+    '    Dim printinfo As New System.Diagnostics.ProcessStartInfo
+    '    Dim printprocess As New System.Diagnostics.Process
+    '    'Dim prnfile As File
+    '    Dim filepath1 As String = String.Empty
+    '    'Dim printbytes As Byte()
+    '    Dim viewer As Aspose.Pdf.Facades.PdfViewer = New Aspose.Pdf.Facades.PdfViewer()
+    '    Dim printerSetttings As System.Drawing.Printing.PrinterSettings = New System.Drawing.Printing.PrinterSettings()
+    '    Dim prtdoc As New System.Drawing.Printing.PrintDocument()
+    '    Dim strPrinterName As String = String.Empty
+    '    Dim str As String = String.Empty
+
+    '    Try
+
+    '        If e.CommandName.ToUpper = "MYPRINT" Then
+    '            strPrinterName = printerSetttings.PrinterName
+    '            wsId = Me.gvReleaseDetail.Rows(index).Cells(GVC_vWorkspaceId).Text().Trim
+    '            parentNodeid = Me.gvReleaseDetail.Rows(index).Cells(GVC_iParentNodeId).Text().Trim
+    '            StartId = Me.gvReleaseDetail.Rows(index).Cells(GVC_iStartId).Text().Trim
+    '            EndId = Me.gvReleaseDetail.Rows(index).Cells(GVC_iEndId).Text().Trim
+    '            WorkspaceTranNo = Me.gvReleaseDetail.Rows(index).Cells(GVC_iWorkspaceNodeHistoryTranNo).Text().Trim
+
+    '            wstr = "vWorkspaceId = '" + wsId + "' and cstatusIndi <> 'D'"
+    '            If Not objHelp.getworkspacemst(wstr, WS_HelpDbTable.DataRetrievalModeEnum.DataTable_WithWhereCondition, ds_Workspace, estr) Then
+    '                Throw New Exception(estr)
+    '            End If
+
+    '            If ds_Workspace.Tables(0).Rows.Count > 0 Then
+    '                BaseFolder = ds_Workspace.Tables(0).Rows(0)("vBaseWorkFolder").ToString.Trim
+    '            End If
+
+    '            wstr = "vWorkspaceId = '" + wsId + "' and iParentNodeId = " + parentNodeid + " and iWorkspaceNodeHistoryTranNo = " + WorkspaceTranNo + " And iDocNoId between " + StartId + " and " + EndId
+    '            If Not objHelp.View_MyReleasedDocuments(wstr, WS_HelpDbTable.DataRetrievalModeEnum.DataTable_WithWhereCondition, ds_Result, estr) Then
+    '                Throw New Exception(estr)
+    '            End If
+
+    '            pdfConverter = New Winnovative.WnvHtmlConvert.PdfConverter
+    '            pdfConverter.LicenseKey = "7MfezN3M3MzbwtzM393C3d7C1dXV1Q=="
+    '            docFinal = pdfConverter.GetPdfDocumentObjectFromHtmlString(String.Empty)
+    '            dir = New DirectoryInfo(Server.MapPath(BaseFolder))
+
+    '            For Each File As FileInfo In dir.GetFiles
+    '                If File.Name.Contains("Merge") Then
+    '                    File.Delete()
+    '                End If
+    '            Next
+
+
+    '            If ds_Result.Tables(0).Rows.Count > 0 Then
+
+    '                For Each dr As DataRow In ds_Result.Tables(0).Rows
+    '                    str = dr("vFilePath").ToString.Trim()
+    '                    str = str.Replace("/", "\")
+    '                    doc = New Winnovative.WnvHtmlConvert.PdfDocument.Document(str)
+    '                    'doc = New Winnovative.WnvHtmlConvert.PdfDocument.Document(dr("vFilePath").ToString.Trim())
+    '                    'doc = New Winnovative.WnvHtmlConvert.PdfDocument.Document(Server.MapPath(BaseFolder) + "\hhh.pdf")
+    '                    docFinal.AppendDocument(doc)
+
+    '                Next
+
+    '                docFinal.RemovePage(0)
+    '                filePath = Server.MapPath(BaseFolder) + "\" + Merge_FileName 'nishant 4-dec-2013
+
+    '                'doc = New Winnovative.WnvHtmlConvert.PdfDocument.Document(filePath)
+    '                Dim font As Winnovative.WnvHtmlConvert.PdfDocument.PdfFont
+    '                font = docFinal.Fonts.Add(New Drawing.Font(New Drawing.FontFamily("Arial"), 10, Drawing.FontStyle.Regular, Drawing.GraphicsUnit.Point))
+
+    '                width = Convert.ToInt32(docFinal.Pages(0).ClientRectangle.Size.Width)
+
+    '                Dim ele As Winnovative.WnvHtmlConvert.PdfDocument.TextElement
+    '                ele = New Winnovative.WnvHtmlConvert.PdfDocument.TextElement(width - 140, 50, "", font)
+
+    '                ele.Text = "Printed On : " + System.DateTime.Now.ToString("dd-MMM-yyyy")
+    '                For Each Page As Winnovative.WnvHtmlConvert.PdfDocument.PdfPage In docFinal.Pages
+    '                    Page.AddElement(ele)
+    '                Next
+
+    '                docFinal.Save(filePath)
+
+    '                'objmanage.InvokeMethod("SetDefaultPrinter", New Object() {Me.ddlPrinters.SelectedValue})
+    '                'objmanage.InvokeMethod("SetDefaultPrinter", New Object())
+    '                'nishant 18-dec-2013
+    '                'viewer.BindPdf(filePath)
+    '                'printerSetttings.Copies = 1
+    '                'printerSetttings.PrinterName = Me.ddlPrinters.SelectedValue
+    '                ''printerSetttings.PrinterName = "\\SSPL57\HP LaserJet P1008" 'prtdoc.PrinterSettings.PrinterName 
+    '                'printerSetttings.PrintFileName = "Result.ps" '"E:\Biznet\WEB\DocMgmtLambda\0000005202\Merge324.pdf"
+    '                'printerSetttings.PrintToFile = True
+    '                'viewer.PrintPageDialog = False
+    '                'viewer.PrintDocumentWithSettings(printerSetttings)
+    '                'viewer.Close()
+    '                'filePath = filePath.Substring(0, filePath.LastIndexOf("\")) + "\Validation.pdf"
+
+    '                viewer.OpenPdfFile(filePath)
+    '                viewer.PrintPageDialog = False
+    '                'printerSetttings.PrinterName = System.Configuration.ConfigurationManager.AppSettings("PrinterName") 'Me.ddlPrinters.SelectedValue
+    '                printerSetttings.PrinterName = Me.ddlPrinters.SelectedValue
+    '                viewer.PrintDocumentWithSettings(printerSetttings)
+    '                viewer.ClosePdfFile()
+    '                'end nishant 18-dec-2013
+
+
+    '                'filepath1 = filePath
+    '                'filepath1 = filepath1.Replace(".pdf", ".prn")
+    '                'File.Copy(filePath, filepath1)
+    '                ''File.Delete(filePath)
+    '                'filePath = filepath1
+
+
+
+    '            End If
+
+    '            wstr = "nAutoId = " + Me.gvReleaseDetail.Rows(index).Cells(GVC_nAutoId).Text()
+    '            If Not objHelp.DocReleaseTrack(wstr, WS_HelpDbTable.DataRetrievalModeEnum.DataTable_WithWhereCondition, ds_DocTrack, estr) Then
+    '                Throw New Exception(estr)
+    '            End If
+
+    '            If ds_DocTrack.Tables(0).Rows.Count > 0 Then
+    '                ds_DocTrack.Tables(0).Rows(0)("cIsPrinted") = "Y"
+    '                'ds_DocTrack.Tables(0).Rows(0)("") = Me.Session(use
+    '                ds_DocTrack.AcceptChanges()
+    '            End If
+
+    '            If Not objLambda.Insert_DocReleaseTrack(WS_Lambda.DataObjOpenSaveModeEnum.DataObjOpenMode_Edit, ds_DocTrack, Me.Session(S_UserID).ToString, estr) Then
+    '                Throw New Exception(estr)
+    '            End If
+
+    '            'filePath = filePath.Replace("\", "/") 'nishant 4-dec-2013
+    '            FillgvReleaseDetail()
+    '            'ScriptManager.RegisterStartupScript(Me.Page, Me.GetType(), "message", "printDocument('" + filePath.Trim + "');", True)
+
+    '            'printprocess.StartInfo.CreateNoWindow = True
+    '            'printprocess.StartInfo.WindowStyle = ProcessWindowStyle.Hidden
+    '            'printprocess.StartInfo.FileName = filePath
+    '            'printprocess.StartInfo.FileName = Server.MapPath("bin") + "\printpdf.bat"
+    '            'printprocess.StartInfo.Arguments = String.Format("{0} {1} {2}", filePath, "", "")
+    '            'printprocess.StartInfo.UseShellExecute = True
+    '            'printprocess.StartInfo.RedirectStandardOutput = True
+    '            'printprocess.Start()
+    '            'printprocess.WaitForExit()
+
+    '            'printprocess.StartInfo.FileName = "C:\Program Files\Adobe\Reader 10.0\Reader\AcroRd32.exe"
+    '            'printprocess.StartInfo.Arguments = "/p /h " + filePath  'C:\Documents and Settings\brendal\Desktop\Test.pdf"
+    '            'printprocess.StartInfo.UseShellExecute = False
+    '            'printprocess.StartInfo.CreateNoWindow = True
+
+    '            'For i As Integer = 0 To 4
+    '            '    If Not printprocess.HasExited Then
+    '            '        printprocess.Refresh()
+    '            '        Thread.Sleep(5000)
+    '            '    Else
+    '            '        Exit For
+    '            '    End If
+    '            'Next
+    '            'If Not printprocess.HasExited Then
+    '            '    printprocess.CloseMainWindow()
+    '            'End If
+    '            'startinfo.FileName = filePath
+    '            'startinfo.Verb = "PrintTo"
+    '            'startinfo.Arguments = ""
+    '            'printprocess.StartInfo.FileName = filePath
+    '            'printprocess.StartInfo.Arguments = "\\SSPL57\HP LaserJet P1008"
+    '            'printprocess.StartInfo.CreateNoWindow = True
+    '            'printprocess.StartInfo.WindowStyle = ProcessWindowStyle.Hidden
+    '            'printprocess.Start()
+    '            'Dim str As String
+    '            'For Each printer As String In System.Drawing.Printing.PrinterSettings.InstalledPrinters
+    '            '    str = printer
+    '            'Next
+    '        End If
+
+    '    Catch ex As Exception
+    '        Me.ShowErrorMessage(ex.Message, "")
+    '    End Try
+    'End Sub
+
+    'Protected Sub gvReleaseDetail_RowDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles gvReleaseDetail.RowDataBound
+    '    Try
+    '        If e.Row.RowType = DataControlRowType.DataRow Or e.Row.RowType = DataControlRowType.Footer Or e.Row.RowType = DataControlRowType.Header Then
+    '            e.Row.Cells(GVC_vWorkspaceId).Visible = False
+    '            e.Row.Cells(GVC_nAutoId).Visible = False
+    '            e.Row.Cells(GVC_iParentNodeId).Visible = False
+    '            e.Row.Cells(GVC_iReleasedBy).Visible = False
+    '            e.Row.Cells(GVC_iStartId).Visible = False
+    '            e.Row.Cells(GVC_iEndId).Visible = False
+    '            e.Row.Cells(GVC_iWorkspaceNodeHistoryTranNo).Visible = False
+
+    '        End If
+
+    '        If e.Row.RowType = DataControlRowType.DataRow Then
+    '            CType(e.Row.FindControl("ImgPrint"), ImageButton).CommandArgument = e.Row.RowIndex
+    '            CType(e.Row.FindControl("ImgPrint"), ImageButton).CommandName = "MYPRINT"
+
+    '            e.Row.Cells(GVC_SrNo).Text = e.Row.RowIndex + (gvReleaseDetail.PageSize * gvReleaseDetail.PageIndex) + 1
+    '        End If
+
+    '    Catch ex As Exception
+    '        Me.ShowErrorMessage(ex.Message, "")
+    '    End Try
+    'End Sub
+
+    Protected Sub gvPrinted_PageIndexChanging(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewPageEventArgs) Handles gvPrinted.PageIndexChanging
+        Try
+            gvPrinted.PageIndex = e.NewPageIndex
+            FillPrintedDocs()
+        Catch ex As Exception
+            Me.ShowErrorMessage(ex.Message, "")
+        End Try
+    End Sub
+
+    Protected Sub gvPrinted_RowCommand(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewCommandEventArgs) Handles gvPrinted.RowCommand
+
+        '-----------Pratik Soni on 17-02-2014
+        Dim index As Integer = e.CommandArgument
+        Dim ds_Result As DataSet = Nothing
+        Dim ds_Workspace As DataSet = Nothing
+        Dim ds_DocTrack As DataSet = Nothing
+        Dim wstr As String = String.Empty
+        Dim estr As String = String.Empty
+        Dim wsId As String = String.Empty
+        Dim parentNodeid As String = String.Empty
+        Dim StartId As String = String.Empty
+        Dim EndId As String = String.Empty
+        Dim WorkspaceTranNo As String = String.Empty
+        Dim BaseFolder As String = String.Empty
+        Dim filePath As String = String.Empty
+        Dim dir As DirectoryInfo
+        Dim vFilePaths As String = String.Empty
+        Dim width As Integer
+        Dim doc As Winnovative.WnvHtmlConvert.PdfDocument.Document = Nothing
+        Dim pdfConverter As Winnovative.WnvHtmlConvert.PdfConverter = Nothing
+        Dim docFinal As Winnovative.WnvHtmlConvert.PdfDocument.Document = Nothing
+        'Dim startinfo As New ProcessStartInfo
+        'Dim printprocess As New Process
+        Dim printinfo As New System.Diagnostics.ProcessStartInfo
+        Dim printprocess As New System.Diagnostics.Process
+        'Dim prnfile As File
+        Dim filepath1 As String = String.Empty
+        'Dim printbytes As Byte()
+        Dim viewer As Aspose.Pdf.Facades.PdfViewer = New Aspose.Pdf.Facades.PdfViewer()
+        Dim printerSetttings As System.Drawing.Printing.PrinterSettings = New System.Drawing.Printing.PrinterSettings()
+        Dim prtdoc As New System.Drawing.Printing.PrintDocument()
+        Dim strPrinterName As String = String.Empty
+        Dim str As String = String.Empty
+        Dim PrintComment As String = String.Empty
+
+        Try
+
+            If e.CommandName.ToUpper = "MYPRINT" Then
+
+                PrintComment = CType(Me.gvPrinted.Rows(index).Cells(GVC_P_vWorkspaceId).FindControl("txtPrintComments"), TextBox).Text.Trim
+                If PrintComment = "" Then
+                    CType(Me.gvPrinted.Rows(index).Cells(GVC_P_vWorkspaceId).FindControl("txtPrintComments"), TextBox).Focus()
+                    ObjCommon.ShowAlert("Please Enter Print Comments.", Me.Page)
+                    Exit Sub
+                End If
+
+
+                strPrinterName = printerSetttings.PrinterName
+                wsId = Me.gvPrinted.Rows(index).Cells(GVC_P_vWorkspaceId).Text().Trim
+                parentNodeid = Me.gvPrinted.Rows(index).Cells(GVC_P_iParentNodeId).Text().Trim
+                StartId = Me.gvPrinted.Rows(index).Cells(GVC_P_iStartId).Text().Trim
+                EndId = Me.gvPrinted.Rows(index).Cells(GVC_P_iEndId).Text().Trim
+                WorkspaceTranNo = Me.gvPrinted.Rows(index).Cells(GVC_P_iWorkspaceNodeHistoryTranNo).Text().Trim
+
+
+                wstr = "vWorkspaceId = '" + wsId + "' and cstatusIndi <> 'D'"
+                If Not objHelp.getworkspacemst(wstr, WS_HelpDbTable.DataRetrievalModeEnum.DataTable_WithWhereCondition, ds_Workspace, estr) Then
+                    Throw New Exception(estr)
+                End If
+
+                If ds_Workspace.Tables(0).Rows.Count > 0 Then
+                    BaseFolder = ds_Workspace.Tables(0).Rows(0)("vBaseWorkFolder").ToString.Trim
+                End If
+
+                wstr = "vWorkspaceId = '" + wsId + "' and iParentNodeId = " + parentNodeid + " and iWorkspaceNodeHistoryTranNo = " + WorkspaceTranNo + " And iDocNoId between " + StartId + " and " + EndId
+                If Not objHelp.View_MyReleasedDocuments(wstr, WS_HelpDbTable.DataRetrievalModeEnum.DataTable_WithWhereCondition, ds_Result, estr) Then
+                    Throw New Exception(estr)
+                End If
+
+                pdfConverter = New Winnovative.WnvHtmlConvert.PdfConverter
+                pdfConverter.LicenseKey = "7MfezN3M3MzbwtzM393C3d7C1dXV1Q=="
+                docFinal = pdfConverter.GetPdfDocumentObjectFromHtmlString(String.Empty)
+                dir = New DirectoryInfo(Server.MapPath(BaseFolder))
+
+                For Each File As FileInfo In dir.GetFiles
+                    If File.Name.Contains("Merge") Then
+                        File.Delete()
+                    End If
+                Next
+
+                If ds_Result.Tables(0).Rows.Count > 0 Then
+
+                    For Each dr As DataRow In ds_Result.Tables(0).Rows
+                        str = dr("vFilePath").ToString.Trim()
+                        str = str.Replace("/", "\")
+                        doc = New Winnovative.WnvHtmlConvert.PdfDocument.Document(str)
+                        'doc = New Winnovative.WnvHtmlConvert.PdfDocument.Document(dr("vFilePath").ToString.Trim())
+                        'doc = New Winnovative.WnvHtmlConvert.PdfDocument.Document(Server.MapPath(BaseFolder) + "\hhh.pdf")
+                        docFinal.AppendDocument(doc)
+
+                    Next
+
+                    docFinal.RemovePage(0)
+                    filePath = Server.MapPath(BaseFolder) + "\" + Merge_FileName 'nishant 4-dec-2013
+
+                    'doc = New Winnovative.WnvHtmlConvert.PdfDocument.Document(filePath)
+                    Dim font As Winnovative.WnvHtmlConvert.PdfDocument.PdfFont
+                    font = docFinal.Fonts.Add(New Drawing.Font(New Drawing.FontFamily("Arial"), 10, Drawing.FontStyle.Regular, Drawing.GraphicsUnit.Point))
+
+                    width = Convert.ToInt32(docFinal.Pages(0).ClientRectangle.Size.Width)
+
+                    Dim ele As Winnovative.WnvHtmlConvert.PdfDocument.TextElement
+                    ele = New Winnovative.WnvHtmlConvert.PdfDocument.TextElement(width - 140, 50, "", font)
+
+                    ele.Text = "Printed On : " + System.DateTime.Now.ToString("dd-MMM-yyyy")
+                    For Each Page As Winnovative.WnvHtmlConvert.PdfDocument.PdfPage In docFinal.Pages
+                        Page.AddElement(ele)
+                    Next
+
+                    docFinal.Save(filePath)
+
+                    'objmanage.InvokeMethod("SetDefaultPrinter", New Object() {Me.ddlPrinters.SelectedValue})
+                    'objmanage.InvokeMethod("SetDefaultPrinter", New Object())
+                    'nishant 18-dec-2013
+                    'viewer.BindPdf(filePath)
+                    'printerSetttings.Copies = 1
+                    'printerSetttings.PrinterName = Me.ddlPrinters.SelectedValue
+                    ''printerSetttings.PrinterName = "\\SSPL57\HP LaserJet P1008" 'prtdoc.PrinterSettings.PrinterName 
+                    'printerSetttings.PrintFileName = "Result.ps" '"E:\Biznet\WEB\DocMgmtLambda\0000005202\Merge324.pdf"
+                    'printerSetttings.PrintToFile = True
+                    'viewer.PrintPageDialog = False
+                    'viewer.PrintDocumentWithSettings(printerSetttings)
+                    'viewer.Close()
+                    'filePath = filePath.Substring(0, filePath.LastIndexOf("\")) + "\Validation.pdf"
+
+                    'viewer.OpenPdfFile(filePath)   'Pratik Soni
+                    viewer.BindPdf(filePath)
+                    viewer.PrintPageDialog = False
+                    'printerSetttings.PrinterName = System.Configuration.ConfigurationManager.AppSettings("PrinterName") 'Me.ddlPrinters.SelectedValue
+                    printerSetttings.PrinterName = Me.ddlPrinters.SelectedValue
+                    viewer.PrintDocumentWithSettings(printerSetttings)
+                    'viewer.ClosePdfFile()      'Pratik Soni 
+                    viewer.Close()
+                    'end nishant 18-dec-2013
+
+
+                    'filepath1 = filePath
+                    'filepath1 = filepath1.Replace(".pdf", ".prn")
+                    'File.Copy(filePath, filepath1)
+                    ''File.Delete(filePath)
+                    'filePath = filepath1
+
+
+
+                End If
+
+                wstr = "nAutoId = " + Me.gvPrinted.Rows(index).Cells(GVC_nAutoId).Text()
+                If Not objHelp.DocReleaseTrack(wstr, WS_HelpDbTable.DataRetrievalModeEnum.DataTable_WithWhereCondition, ds_DocTrack, estr) Then
+                    Throw New Exception(estr)
+                End If
+
+                If ds_DocTrack.Tables(0).Rows.Count > 0 Then
+                    ds_DocTrack.Tables(0).Rows(0)("vPrintComments") = PrintComment.Trim
+                    ds_DocTrack.AcceptChanges()
+                End If
+
+                If Not objLambda.Insert_DocReleaseTrack(WS_Lambda.DataObjOpenSaveModeEnum.DataObjOpenMode_Edit, ds_DocTrack, Me.Session(S_UserID).ToString, estr) Then
+                    Throw New Exception(estr)
+                End If
+
+                'filePath = filePath.Replace("\", "/") 'nishant 4-dec-2013
+
+                FillPrintedDocs()
+                ScriptManager.RegisterStartupScript(Me.Page, Me.GetType(), "message", "alert('Document Printed Successfully.');", True)
+
+                'ScriptManager.RegisterStartupScript(Me.Page, Me.GetType(), "message", "printDocument('" + filePath.Trim + "');", True)
+
+                'printprocess.StartInfo.CreateNoWindow = True
+                'printprocess.StartInfo.WindowStyle = ProcessWindowStyle.Hidden
+                'printprocess.StartInfo.FileName = filePath
+                'printprocess.StartInfo.FileName = Server.MapPath("bin") + "\printpdf.bat"
+                'printprocess.StartInfo.Arguments = String.Format("{0} {1} {2}", filePath, "", "")
+                'printprocess.StartInfo.UseShellExecute = True
+                'printprocess.StartInfo.RedirectStandardOutput = True
+                'printprocess.Start()
+                'printprocess.WaitForExit()
+
+                'printprocess.StartInfo.FileName = "C:\Program Files\Adobe\Reader 10.0\Reader\AcroRd32.exe"
+                'printprocess.StartInfo.Arguments = "/p /h " + filePath  'C:\Documents and Settings\brendal\Desktop\Test.pdf"
+                'printprocess.StartInfo.UseShellExecute = False
+                'printprocess.StartInfo.CreateNoWindow = True
+
+                'For i As Integer = 0 To 4
+                '    If Not printprocess.HasExited Then
+                '        printprocess.Refresh()
+                '        Thread.Sleep(5000)
+                '    Else
+                '        Exit For
+                '    End If
+                'Next
+                'If Not printprocess.HasExited Then
+                '    printprocess.CloseMainWindow()
+                'End If
+                'startinfo.FileName = filePath
+                'startinfo.Verb = "PrintTo"
+                'startinfo.Arguments = ""
+                'printprocess.StartInfo.FileName = filePath
+                'printprocess.StartInfo.Arguments = "\\SSPL57\HP LaserJet P1008"
+                'printprocess.StartInfo.CreateNoWindow = True
+                'printprocess.StartInfo.WindowStyle = ProcessWindowStyle.Hidden
+                'printprocess.Start()
+                'Dim str As String
+                'For Each printer As String In System.Drawing.Printing.PrinterSettings.InstalledPrinters
+                '    str = printer
+                'Next
+            End If
+
+        Catch ex As Exception
+            Me.ShowErrorMessage(ex.Message, "")
+        End Try
+        '--------------------------End
+
+
+        'Dim index As Integer = e.CommandArgument
+        'Dim ds_Result As DataSet = Nothing
+        'Dim ds_Workspace As DataSet = Nothing
+        'Dim ds_DocTrack As DataSet = Nothing
+        'Dim wstr As String = String.Empty
+        'Dim estr As String = String.Empty
+        'Dim wsId As String = String.Empty
+        'Dim parentNodeid As String = String.Empty
+        'Dim StartId As String = String.Empty
+        'Dim EndId As String = String.Empty
+        'Dim BaseFolder As String = String.Empty
+        'Dim filePath As String = String.Empty
+        'Dim PrintComment As String = String.Empty
+        'Dim dir As DirectoryInfo
+        'Dim vFilePaths As String = String.Empty
+        'Dim WorkspaceTranNo As String = String.Empty
+        'Dim width As Integer
+        'Dim doc As Winnovative.WnvHtmlConvert.PdfDocument.Document = Nothing
+        'Dim pdfConverter As Winnovative.WnvHtmlConvert.PdfConverter = Nothing
+        'Dim docFinal As Winnovative.WnvHtmlConvert.PdfDocument.Document = Nothing
+        'Try
+        '    If e.CommandName.ToUpper = "MYPRINT" Then
+
+        '        PrintComment = CType(Me.gvPrinted.Rows(index).Cells(GVC_P_vWorkspaceId).FindControl("txtPrintComments"), TextBox).Text.Trim
+        '        If PrintComment = "" Then
+        '            CType(Me.gvPrinted.Rows(index).Cells(GVC_P_vWorkspaceId).FindControl("txtPrintComments"), TextBox).Focus()
+        '            ObjCommon.ShowAlert("Please Enter Print Comments.", Me.Page)
+        '            Exit Sub
+        '        End If
+
+        '        wsId = Me.gvPrinted.Rows(index).Cells(GVC_P_vWorkspaceId).Text().Trim
+        '        parentNodeid = Me.gvPrinted.Rows(index).Cells(GVC_P_iParentNodeId).Text().Trim
+        '        StartId = Me.gvPrinted.Rows(index).Cells(GVC_P_iStartId).Text().Trim
+        '        EndId = Me.gvPrinted.Rows(index).Cells(GVC_P_iEndId).Text().Trim
+        '        WorkspaceTranNo = Me.gvPrinted.Rows(index).Cells(GVC_P_iWorkspaceNodeHistoryTranNo).Text().Trim
+
+        '        wstr = "vWorkspaceId = '" + wsId + "' and cstatusIndi <> 'D'"
+        '        If Not objHelp.getworkspacemst(wstr, WS_HelpDbTable.DataRetrievalModeEnum.DataTable_WithWhereCondition, ds_Workspace, estr) Then
+        '            Throw New Exception(estr)
+        '        End If
+
+        '        If ds_Workspace.Tables(0).Rows.Count Then
+        '            BaseFolder = ds_Workspace.Tables(0).Rows(0)("vBaseWorkFolder").ToString.Trim
+        '        End If
+
+        '        wstr = "vWorkspaceId = '" + wsId + "' and iParentNodeId = " + parentNodeid + " and iWorkspaceNodeHistoryTranNo = " + WorkspaceTranNo + " ANd iDocNoId between " + StartId + " and " + EndId
+        '        If Not objHelp.View_MyReleasedDocuments(wstr, WS_HelpDbTable.DataRetrievalModeEnum.DataTable_WithWhereCondition, ds_Result, estr) Then
+        '            Throw New Exception(estr)
+        '        End If
+
+        '        pdfConverter = New Winnovative.WnvHtmlConvert.PdfConverter
+        '        pdfConverter.LicenseKey = "7MfezN3M3MzbwtzM393C3d7C1dXV1Q=="
+        '        docFinal = pdfConverter.GetPdfDocumentObjectFromHtmlString(String.Empty)
+
+        '        dir = New DirectoryInfo(Server.MapPath(BaseFolder))
+        '        For Each File As FileInfo In dir.GetFiles
+        '            If File.Name.Contains("Merge") Then
+        '                File.Delete()
+        '            End If
+        '        Next
+
+        '        If ds_Result.Tables(0).Rows.Count > 0 Then
+        '            For Each dr As DataRow In ds_Result.Tables(0).Rows
+        '                doc = New Winnovative.WnvHtmlConvert.PdfDocument.Document(dr("vFilePath").ToString.Trim)
+        '                docFinal.AppendDocument(doc)
+        '            Next
+        '            docFinal.RemovePage(0)
+        '            filePath = Server.MapPath(BaseFolder) + "\" + Merge_FileName 'nishant 5-dec-2013
+
+        '            'doc = New Winnovative.WnvHtmlConvert.PdfDocument.Document(filePath)
+        '            Dim font As Winnovative.WnvHtmlConvert.PdfDocument.PdfFont
+        '            font = docFinal.Fonts.Add(New Drawing.Font(New Drawing.FontFamily("Arial"), 10, Drawing.FontStyle.Regular, Drawing.GraphicsUnit.Point))
+
+        '            width = Convert.ToInt32(docFinal.Pages(0).ClientRectangle.Size.Width)
+
+        '            Dim ele As Winnovative.WnvHtmlConvert.PdfDocument.TextElement
+        '            ele = New Winnovative.WnvHtmlConvert.PdfDocument.TextElement(width - 140, 50, "", font)
+
+        '            ele.Text = "Printed On : " + System.DateTime.Now.ToString("dd-MMM-yyyy")
+        '            For Each Page As Winnovative.WnvHtmlConvert.PdfDocument.PdfPage In docFinal.Pages
+        '                Page.AddElement(ele)
+        '            Next
+        '            docFinal.Save(filePath)
+
+        '        End If
+
+        '        wstr = "nAutoId = " + Me.gvPrinted.Rows(index).Cells(GVC_P_nAutoId).Text()
+        '        If Not objHelp.DocReleaseTrack(wstr, WS_HelpDbTable.DataRetrievalModeEnum.DataTable_WithWhereCondition, ds_DocTrack, estr) Then
+        '            Throw New Exception(estr)
+        '        End If
+
+        '        If ds_DocTrack.Tables(0).Rows.Count > 0 Then
+        '            ds_DocTrack.Tables(0).Rows(0)("vPrintComments") = PrintComment.Trim
+        '            ds_DocTrack.AcceptChanges()
+        '        End If
+
+        '        If Not objLambda.Insert_DocReleaseTrack(WS_Lambda.DataObjOpenSaveModeEnum.DataObjOpenMode_Edit, ds_DocTrack, Me.Session(S_UserID).ToString, estr) Then
+        '            Throw New Exception(estr)
+        '        End If
+        '        filePath = filePath.Replace("\", "/") 'nishant 5-dec-2013
+        '        FillPrintedDocs()
+        '        ScriptManager.RegisterStartupScript(Me.Page, Me.GetType(), "message", "printDocument('" & filePath.Trim & "');", True)
+
+        '    End If
+
+        'Catch ex As Exception
+        '    Me.ShowErrorMessage(ex.Message, "")
+        'End Try
+
+        '---------------------------------------------------------------------------------------
+
+    End Sub
+
+    Protected Sub gvPrinted_RowDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles gvPrinted.RowDataBound
+        Try
+            If e.Row.RowType = DataControlRowType.DataRow Or e.Row.RowType = DataControlRowType.Footer Or e.Row.RowType = DataControlRowType.Header Then
+                e.Row.Cells(GVC_P_vWorkspaceId).Visible = False
+                e.Row.Cells(GVC_P_nAutoId).Visible = False
+                e.Row.Cells(GVC_P_iParentNodeId).Visible = False
+                e.Row.Cells(GVC_P_iReleasedBy).Visible = False
+                e.Row.Cells(GVC_P_iStartId).Visible = False
+                e.Row.Cells(GVC_P_iEndId).Visible = False
+                e.Row.Cells(GVC_P_iWorkspaceNodeHistoryTranNo).Visible = False
+            End If
+
+            If e.Row.RowType = DataControlRowType.DataRow Then
+                CType(e.Row.FindControl("ImgPrint"), ImageButton).CommandArgument = e.Row.RowIndex
+                CType(e.Row.FindControl("ImgPrint"), ImageButton).CommandName = "MYPRINT"
+
+                If CType(e.Row.FindControl("txtPrintComments"), TextBox).Text.Trim <> "" Then
+                    CType(e.Row.FindControl("ImgPrint"), ImageButton).Visible = False
+                    CType(e.Row.FindControl("txtPrintComments"), TextBox).Enabled = False
+                End If
+
+                e.Row.Cells(GVC_P_SrNo).Text = e.Row.RowIndex + (gvPrinted.PageSize * gvPrinted.PageIndex) + 1
+            End If
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    'Protected Sub gvReleaseDetail_RowDeleting(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewDeleteEventArgs) Handles gvReleaseDetail.RowDeleting
+
+    'End Sub
+
+    'Protected Sub gvReleaseDetail_RowEditing(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewEditEventArgs) Handles gvReleaseDetail.RowEditing
+
+    'End Sub
+
+    'Protected Sub gvReleaseDetail_RowUpdating(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewUpdateEventArgs) Handles gvReleaseDetail.RowUpdating
+
+    'End Sub
+
+#End Region
+
+#Region "Fill DropDowns"
+
+    Public Function FillddlProject() As Boolean
+        Dim ds_Project As DataSet = Nothing
+        Dim dv_Project As DataView = Nothing
+        Dim estr As String = String.Empty
+        Dim wstr As String = String.Empty
+        Try
+            'wstr = "iUserId = " + Me.Session(S_UserID) + " AND vProjectTypeCode='0010'"
+            wstr = "iUserId = " + Me.Session(S_UserID) + " AND vProjectTypeCode='0010' AND vLocationCode ='" + Me.Session(S_LocationCode).ToString + "'"
+            If Not objHelp.View_MyProjects(wstr, WS_HelpDbTable.DataRetrievalModeEnum.DataTable_WithWhereCondition, ds_Project, estr) Then
+                Throw New Exception(estr)
+            End If
+
+            If ds_Project.Tables(0).Rows.Count > 0 Then
+                ds_Project.Tables(0).Columns.Add("vProjectName", GetType(String))
+                ds_Project.AcceptChanges()
+
+                For Each dr As DataRow In ds_Project.Tables(0).Rows
+                    dr("vProjectName") = dr("vWorkSpaceDesc") '+ " - " + "(" + dr("vProjectNo") + ")"
+                Next
+                ds_Project.AcceptChanges()
+
+                dv_Project = ds_Project.Tables(0).DefaultView
+                dv_Project.Sort = "vProjectName"
+
+                Me.ddlProject.DataSource = dv_Project
+                Me.ddlProject.DataValueField = "vWorkspaceId"
+                Me.ddlProject.DataTextField = "vProjectName"
+                Me.ddlProject.DataBind()
+                Me.ddlProject.Items.Insert(0, New ListItem("Select Department", ""))
+
+                'Added Tooltip
+                For iddlProjectName As Integer = 0 To ddlProject.Items.Count - 1
+                    ddlProject.Items(iddlProjectName).Attributes.Add("title", ddlProject.Items(iddlProjectName).Text)
+                Next
+            Else
+                Me.ddlProject.DataSource = Nothing
+                Me.ddlProject.DataBind()
+            End If
+
+        Catch ex As Exception
+            Me.ShowErrorMessage(ex.Message, "")
+            Return False
+        End Try
+    End Function
+
+    Public Function FillddlPrinters() As Boolean
+        Dim printersettings As New System.Drawing.Printing.PrinterSettings
+        Dim Cnt As Integer = 0
+
+        Try
+
+            ddlPrinters.Items.Clear()
+
+            For i = 0 To Drawing.Printing.PrinterSettings.InstalledPrinters.Count - 1
+
+                If Drawing.Printing.PrinterSettings.InstalledPrinters(i).ToString.ToUpper.Trim.Contains("XPS") Or _
+                   Drawing.Printing.PrinterSettings.InstalledPrinters(i).ToString.ToUpper.Trim.Contains("FAX") Or _
+                   Drawing.Printing.PrinterSettings.InstalledPrinters(i).ToString.ToUpper.Trim.Contains("PDF") Then
+                    Continue For
+                End If
+
+                Me.ddlPrinters.Items.Insert(Cnt, Drawing.Printing.PrinterSettings.InstalledPrinters(i))
+                Cnt += 1
+            Next
+        Catch ex As Exception
+            Return ex.Message.ToString
+        End Try
+    End Function
+
+    ''' =======================================================================================
+    ''' ADDED BY :: JUGAL KUNDAL
+    ''' ADDED ON :: 15-MAY-2012
+    ''' REASON   :: FOR FILLING SOP NUMBER DROPDOWN.
+    ''' =======================================================================================
+    ''' 
+
+    Public Function FillddlSopNo() As Boolean
+        Dim dr() As DataRow = Nothing
+        Dim ds_Result As DataSet = Nothing
+        Dim count As Integer = 0
+        Dim wstr As String = String.Empty
+        Dim estr As String = String.Empty
+        Dim wsId As String = String.Empty
+        Try
+
+            wsId = ddlProject.SelectedValue.Trim
+
+            wstr = "vWorkspaceId = '" + wsId + "' AND vMedExCode = '00085' and iParentNodeId = 1 AND WorkFlowStatusIndi <> 'D' AND WorkFlowUserId='" + HttpContext.Current.Session(S_UserID).ToString + "'"
+            If Not objHelp.View_CRFSubDtlForCategory(wstr, WS_HelpDbTable.DataRetrievalModeEnum.DataTable_WithWhereCondition, ds_Result, estr) Then
+                Throw New Exception(estr)
+            End If
+
+            ',A-201,A-202,A-203,A-204,A-205
+            If Not ds_Result Is Nothing And ds_Result.Tables(0).Rows.Count > 0 Then
+                ddlSOPNo.DataSource = ds_Result.Tables(0).DefaultView.ToTable(True, "vmedexResult")
+                ddlSOPNo.DataTextField = "vmedexResult"
+                ddlSOPNo.DataValueField = "vmedexResult"
+                ddlSOPNo.DataBind()
+                ddlSOPNo.Items.Insert(0, New ListItem("Select SOP No.", "0"))
+                ddlSOPNo.Items.Insert(1, New ListItem("Forms with no SOP No attached", ""))
+                'ddl.Items.RemoveAt(2)
+
+                For Each li As ListItem In ddlSOPNo.Items
+                    If li.Text = "" Then
+                        ddlSOPNo.Items.Remove(li)
+                        Exit For
+                    End If
+                Next
+
+                ''''' Filling Category Dropdown '''''
+                'dr = ds_Result.Tables(0).Select("vMedExResult = ''")
+                'If dr.Length > 0 Then
+                '    For Each dr1 As DataRow In dr
+                '        ddlCategory.Items.Add(New ListItem(dr1("vNodeDisplayName").ToString, dr1("iNodeId").ToString))
+                '    Next
+                '    ddlCategory.Items.Insert(0, New ListItem("Select Form", ""))
+                '    ddlSOPNo.SelectedIndex = 1
+                'End If
+                '======================================================
+
+                ds_Result.Tables(0).Columns.Add("iNodeIdTranNo", GetType(String))
+                ds_Result.AcceptChanges()
+
+                For Each dr_Forms As DataRow In ds_Result.Tables(0).Rows
+                    dr_Forms("iNodeIdTranNo") = dr_Forms("iNodeId").ToString + "@@@" + dr_Forms("iTranNo").ToString
+                Next
+
+                ds_Result.Tables(0).AcceptChanges()
+
+                ds_Result.Tables(0).DefaultView.RowFilter = "vMedExResult = '' AND WorkFlowStatusIndi <> 'D' AND WorkFlowUserId='" + HttpContext.Current.Session(S_UserID).ToString + "'"
+
+                If ds_Result.Tables(0).DefaultView.ToTable.Rows.Count > 0 Then
+                    'For Each dr1 As DataRow In ds_Result.Tables(0).DefaultView.ToTable.Rows
+                    '    ddl1.Items.Add(New ListItem(dr1("vNodeDisplayName").ToString, dr1("iNodeIdTranNo").ToString))
+                    'Next
+                    ddlCategory.DataSource = ds_Result.Tables(0).DefaultView
+                    ddlCategory.DataValueField = "iNodeIdTranNo"
+                    ddlCategory.DataTextField = "vNodeDisplayName"
+                    ddlCategory.DataBind()
+                    ddlCategory.Items.Insert(0, New ListItem("Select Form", ""))
+
+                    ddlSOPNo.SelectedIndex = 1
+                End If
+                '=============================================================
+
+            Else
+                ObjCommon.ShowAlert("No SOP found for this Department.", Me.Page)
+            End If
+        Catch ex As Exception
+            Return ex.Message.ToString
+        End Try
+    End Function
+
+    ''' =======================================================================================
+    ''' ADDED BY :: JUGAL KUNDAL
+    ''' ADDED ON :: 15-MAY-2012
+    ''' REASON   :: FILLING CATEGORY BASED ON THE SOP SELECTED FROM THE DROPDOWN.
+    ''' =======================================================================================
+    ''' 
+
+    Public Function FillCategory() As Boolean
+        'Dim ddl As New DropDownList
+        Dim ds_Result As DataSet = Nothing
+        Dim wstr As String = String.Empty
+        Dim estr As String = String.Empty
+        Dim wsId As String = String.Empty
+        Dim SopNo As String = String.Empty
+        Try
+            wsId = ddlProject.SelectedValue.Trim
+            SopNo = ddlSOPNo.SelectedValue.Trim
+
+            wstr = "vWorkspaceId = '" + wsId + "' AND vMedExResult = '" + SopNo + "' AND vMedExCode = '00085' AND iParentNodeId = 1 AND WorkFlowStatusIndi <> 'D' AND WorkFlowUserId='" + HttpContext.Current.Session(S_UserID).ToString + "' AND WorkFlowStatusIndi <> 'D' AND WorkFlowUserId='" + HttpContext.Current.Session(S_UserID).ToString + "'"
+            If Not objHelp.View_CRFSubDtlForCategory(wstr, WS_HelpDbTable.DataRetrievalModeEnum.DataTable_WithWhereCondition, ds_Result, estr) Then
+                Throw New Exception(estr)
+            End If
+
+            ds_Result.Tables(0).Columns.Add("iNodeIdTranNo", GetType(String))
+            ds_Result.AcceptChanges()
+
+            For Each dr As DataRow In ds_Result.Tables(0).Rows
+                dr("iNodeIdTranNo") = dr("iNodeId").ToString + "@@@" + dr("iTranNo").ToString
+            Next
+
+            If Not ds_Result Is Nothing And ds_Result.Tables(0).Rows.Count > 0 Then
+                ddlCategory.DataSource = ds_Result.Tables(0).DefaultView
+                ddlCategory.DataValueField = "iNodeIdTranNo"
+                ddlCategory.DataTextField = "vNodeDisplayName"
+                ddlCategory.DataBind()
+                ddlCategory.Items.Insert(0, New ListItem("Select Form", ""))
+
+            Else
+                ObjCommon.ShowAlert("No Form found for this SOP.", Me.Page)
+            End If
+        Catch ex As Exception
+            Me.ShowErrorMessage(ex.Message, "")
+        End Try
+    End Function
+
+    'Public Function FillddlCategory() As Boolean
+    '    Dim ds_Category As DataSet = Nothing
+    '    Dim dv_Category As DataView = Nothing
+    '    Dim estr As String = String.Empty
+    '    Dim wstr As String = String.Empty
+    '    Try
+    '        wstr = "vWorkspaceId = '" + ddlProject.SelectedItem.Value.Trim + "' AND cStatusIndi <> 'D' AND iParentNodeId = 1"
+    '        wstr += " AND iUserId = " + Me.Session(S_UserID) + " AND iStageId = '20' order by dModifyOn desc"
+
+    '        If Not objHelp.GetViewWorkspaceWorkflowUserDtl(wstr, ds_Category, estr) Then
+    '            Throw New Exception(estr)
+    '        End If
+
+    '        If ds_Category.Tables(0).Rows.Count > 0 Then
+    '            dv_Category = ds_Category.Tables(0).DefaultView
+
+    '            Me.ddlCategory.DataSource = dv_Category
+    '            Me.ddlCategory.DataValueField = "iNodeId"
+    '            Me.ddlCategory.DataTextField = "vNodeDisplayName"
+    '            Me.ddlCategory.DataBind()
+    '            Me.ddlCategory.Items.Insert(0, New ListItem("Select Category", ""))
+
+    '            FillddlReleasedBy()
+    '            
+    '            'Added Tooltip
+    '            For iddlCategory As Integer = 0 To ddlCategory.Items.Count - 1
+    '                ddlCategory.Items(iddlCategory).Attributes.Add("title", ddlCategory.Items(iddlCategory).Text)
+    '            Next
+    '        Else
+    '            Me.ddlCategory.Items.Clear()
+    '            Me.ddlReleasedBy.Items.Clear()
+    '            Me.ddlCategory.DataSource = Nothing
+    '            Me.ddlCategory.DataBind()
+    '            
+    '            ObjCommon.ShowAlert("You do not have rights on Categories for this Project.", Me.Page)
+    '        End If
+
+
+    '    Catch ex As Exception
+    '        Me.ShowErrorMessage(ex.Message, "")
+    '        Return False
+    '    End Try
+    'End Function
+
+    Public Function FillddlReleasedBy() As Boolean
+        Dim ds_Result As DataSet = Nothing
+        Dim dv_Result As DataView = Nothing
+        Dim estr As String = String.Empty
+        Dim wstr As String = String.Empty
+        Dim param(1) As String
+        Try
+            'wstr = "vWorkspaceId = '" + ddlProject.SelectedItem.Value.Trim + "'" + _
+            '         " AND iNodeId = " + ddlCategory.SelectedItem.Value.Trim + _
+            '         " AND cStatusIndi <> 'D' AND iStageId = '20'"
+
+            'If Not objHelp.GetViewWorkspaceWorkflowUserDtl(wstr, ds_Result, estr) Then
+            '    Throw New Exception(estr)
+            'End If
+
+            'wstr = "vWorkspaceId = '" + ddlProject.SelectedItem.Value.Trim + "'" + " AND iParentNodeId = " + ddlCategory.SelectedItem.Value.Trim
+            If Not objHelp.View_DocReleaseTrack("", WS_HelpDbTable.DataRetrievalModeEnum.DataTable_AllRecords, ds_Result, estr) Then
+                Throw New Exception(estr)
+            End If
+
+            If ds_Result.Tables(0).Rows.Count > 0 Then
+                param(0) = "iReleasedBy"
+                param(1) = "vUserName"
+                dv_Result = ds_Result.Tables(0).DefaultView
+
+                Me.ddlReleasedBy.DataSource = dv_Result.ToTable(True, param).DefaultView
+                Me.ddlReleasedBy.DataValueField = "iReleasedBy"
+                Me.ddlReleasedBy.DataTextField = "vUserName"
+                Me.ddlReleasedBy.DataBind()
+                Me.ddlReleasedBy.Items.Insert(0, New ListItem("All Users", "0"))
+
+                'Added Tooltip
+                For iddlReleasedBy As Integer = 0 To ddlReleasedBy.Items.Count - 1
+                    ddlReleasedBy.Items(iddlReleasedBy).Attributes.Add("title", ddlReleasedBy.Items(iddlReleasedBy).Text)
+                Next
+            End If
+
+        Catch ex As Exception
+            Me.ShowErrorMessage(ex.Message, "")
+            Return False
+        End Try
+    End Function
+
+    Public Function FillDocument() As Boolean
+        Dim ds_Result As DataSet = Nothing
+        Dim dv_Result As DataView = Nothing
+        Dim estr As String = String.Empty
+        Dim wstr As String = String.Empty
+        Dim param(1) As String
+        Try
+            wstr = "vWorkspaceId = '" + ddlProject.SelectedItem.Value.Trim + "'" + " AND iParentNodeId = " + ddlCategory.SelectedItem.Value.ToString.Split("@@@")(0) + " AND iNodeIdTranNo = '" + ddlCategory.SelectedItem.Value.ToString.Split("@@@")(3) + "'"
+
+            If Not objHelp.View_DocReleaseTrack(wstr, WS_HelpDbTable.DataRetrievalModeEnum.DataTable_WithWhereCondition, ds_Result, estr) Then
+                Throw New Exception(estr)
+            End If
+
+            If ds_Result.Tables(0).Rows.Count > 0 Then
+                param(0) = "iWorkspaceNodeHistoryTranNo"
+                param(1) = "vFileName"
+                dv_Result = ds_Result.Tables(0).DefaultView.ToTable(True, param).DefaultView
+
+                Me.ddlDocument.DataSource = dv_Result
+                Me.ddlDocument.DataValueField = "iWorkspaceNodeHistoryTranNo"
+                Me.ddlDocument.DataTextField = "vFileName"
+                Me.ddlDocument.DataBind()
+                Me.ddlDocument.Items.Insert(0, New ListItem("Recent Document", "0"))
+
+                'Added Tooltip
+                For iddlDocument As Integer = 0 To ddlDocument.Items.Count - 1
+                    ddlDocument.Items(iddlDocument).Attributes.Add("title", ddlDocument.Items(iddlDocument).Text)
+                Next
+            End If
+
+        Catch ex As Exception
+            Me.ShowErrorMessage(ex.Message, "")
+            Return False
+        End Try
+    End Function
+
+#End Region
+
+#Region "Fill Grid"
+
+    Public Function setProject(ByRef wstr As String) As Boolean
+        Try
+            setProject = True
+            If ddlProject.Items.Count > 0 Then
+                wstr += "vWorkspaceId IN ("
+                For Each Item As ListItem In ddlProject.Items
+                    If Item.Value <> "" Then
+                        wstr += "'" + Item.Value.Trim + "',"
+                    End If
+                Next
+                wstr = wstr.Remove(wstr.Length - 1)
+                wstr += ") AND iParentNodeId <> 1"
+            Else
+                setProject = False
+            End If
+        Catch ex As Exception
+            Me.ShowErrorMessage(ex.Message, "")
+        End Try
+    End Function
+
+    Public Function setCategory(ByRef wstr As String) As Boolean
+        Try
+            setCategory = True
+            If ddlCategory.Items.Count > 0 Then
+                wstr += " AND iParentNodeId IN ("
+                For Each Item As ListItem In ddlCategory.Items
+                    If Item.Value <> "" Then
+                        wstr += "'" + Item.Value.Trim.Split("@@@")(0) + "',"
+                    End If
+                Next
+                wstr = wstr.Remove(wstr.Length - 1)
+                wstr += ") "
+                wstr += " AND iNodeIdTranNo IN ("
+                For Each Item As ListItem In ddlCategory.Items
+                    If Item.Value <> "" Then
+                        wstr += "'" + Item.Value.Trim.Split("@@@")(3) + "',"
+                    End If
+                Next
+                wstr = wstr.Remove(wstr.Length - 1)
+                wstr += ") "
+            Else
+                setCategory = False
+            End If
+        Catch ex As Exception
+            Me.ShowErrorMessage(ex.Message, "")
+        End Try
+    End Function
+
+    'Public Function FillgvReleaseDetail() As Boolean
+    '    Dim ds_Result As DataSet = Nothing
+    '    Dim estr As String = String.Empty
+    '    Dim wstr As String = String.Empty
+    '    Dim Prefix As String = String.Empty
+    '    Dim dc_dModifyOn_IST As DataColumn
+    '    Try
+
+    '        If chkAllProjects.Checked = True Or chkAllSOP.Checked = True Or chkAllCategories.Checked = True Then
+    '            If chkAllProjects.Checked = True Then
+    '                If Not setProject(wstr) Then
+    '                    ObjCommon.ShowAlert("Department not found.", Me.Page)
+    '                    FillgvReleaseDetail = False
+    '                    Exit Function
+    '                End If
+    '            ElseIf chkAllSOP.Checked = True Then
+    '                wstr = "vWorkspaceId = '" + ddlProject.SelectedValue.Trim + "' AND iParentNodeId <> 1"
+    '            ElseIf chkAllCategories.Checked = True Then
+    '                wstr = "vWorkspaceId = " + ddlProject.SelectedValue.Trim
+    '                If Not setCategory(wstr) Then
+    '                    ObjCommon.ShowAlert("Forms not found.", Me.Page)
+    '                    FillgvReleaseDetail = False
+    '                    Exit Function
+    '                End If
+    '            End If
+    '        Else
+    '            wstr = "vworkspaceid ='" + ddlProject.SelectedValue.Trim() + "' and iParentNodeId = " + ddlCategory.SelectedValue.Trim()
+    '            If ddlDocument.Items.Count > 0 AndAlso ddlDocument.SelectedIndex = 0 Then
+    '                wstr += " AND iWorkspaceNodeHistoryTranNo = " + "(select max(iWorkspaceNodeHistoryTranNo) from View_DocReleaseTrack where vWorkspaceId = '" + ddlProject.SelectedValue.Trim() + "' AND iParentNodeId = " + ddlCategory.SelectedValue.Trim() + ")"
+    '            Else
+    '                If ddlDocument.Items.Count > 0 Then
+    '                    wstr += " AND iWorkspaceNodeHistoryTranNo = " + ddlDocument.SelectedValue.Trim
+    '                End If
+    '            End If
+    '        End If
+
+    '        If ddlReleasedBy.SelectedIndex > 0 Then
+    '            wstr += " AND iReleasedBy = " + ddlReleasedBy.SelectedValue.Trim
+    '        End If
+
+    '        If rdoDate.SelectedIndex = "1" Then
+    '            wstr += " AND cast(convert(varchar(11),dReleaseDate,113) as smalldatetime) >= cast(convert(varchar(11),'" + txtStartDate.Text.Trim + "',113) as smalldatetime)" + _
+    '                    " AND cast(convert(varchar(11),dReleaseDate,113) as smalldatetime) <= cast(convert(varchar(11),'" + txtEndDate.Text.Trim + "',113) as smalldatetime)"
+    '        End If
+    '        wstr += " AND cIsPrinted <> 'Y' order by vWorkSpaceId desc, iParentNodeId desc, iStartId"
+
+    '        If Not objHelp.View_DocReleaseTrack(wstr, WS_HelpDbTable.DataRetrievalModeEnum.DataTable_WithWhereCondition, ds_Result, estr) Then
+    '            Throw New Exception(estr)
+    '        End If
+
+    '        If ds_Result.Tables(0).Rows.Count > 0 Then
+    '            '************************************************************
+    '            dc_dModifyOn_IST = New DataColumn("dReleaseDate_IST", System.Type.GetType("System.String"))
+    '            ds_Result.Tables(0).Columns.Add("dReleaseDate_IST")
+    '            ds_Result.AcceptChanges()
+    '            For Each dr_dModifyOn In ds_Result.Tables(0).Rows
+    '                'dr_dModifyOn("dReleaseDate_IST") = Convert.ToString(dr_dModifyOn("dReleaseDate") + strServerOffset)
+    '                dr_dModifyOn("dReleaseDate_IST") = Convert.ToString(CDate(dr_dModifyOn("dReleaseDate")).ToString("dd-MMM-yyyy HH:mm") + strServerOffset)
+    '            Next
+    '            ds_Result.AcceptChanges()
+    '            '*************************************************************
+    '            Me.ViewState(VS_gvReleaseDetail) = ds_Result.Tables(0)
+    '            Me.gvReleaseDetail.DataSource = ds_Result
+    '            Me.gvReleaseDetail.DataBind()
+    '            fldReleaseDetail.Style.Add("Display", "")
+    '            fldReleaseMsg.Style.Add("Display", "none")
+    '            fldPrinted.Style.Add("Display", "none")
+    '        Else
+    '            Me.ViewState(VS_gvReleaseDetail) = Nothing
+    '            Me.gvReleaseDetail.DataSource = Nothing
+    '            Me.gvReleaseDetail.DataBind()
+    '            fldReleaseMsg.Style.Add("Display", "")
+    '            fldPrinted.Style.Add("Display", "none")
+    '            fldReleaseDetail.Style.Add("Display", "none")
+    '        End If
+    '        FillgvReleaseDetail = True
+    '    Catch ex As Exception
+    '        Me.ShowErrorMessage(ex.Message, "")
+    '        FillgvReleaseDetail = False
+    '    End Try
+    'End Function
+
+    Public Function FillPrintedDocs() As Boolean
+        Dim ds_Result As DataSet = Nothing
+        Dim estr As String = String.Empty
+        Dim wstr As String = String.Empty
+        Dim Prefix As String = String.Empty
+        Dim dc_ReleasedOn_IST As DataColumn
+        Try
+            FillPrintedDocs = False
+            If chkAllProjects.Checked = True Or chkAllSOP.Checked = True Or chkAllCategories.Checked = True Then
+                If chkAllProjects.Checked = True Then
+                    If Not setProject(wstr) Then
+                        ObjCommon.ShowAlert("Department not found.", Me.Page)
+                        FillPrintedDocs = False
+                        Exit Function
+                    End If
+                ElseIf chkAllSOP.Checked = True Then
+                    wstr = "vWorkspaceId = '" + ddlProject.SelectedValue.Trim + "' AND iParentNodeId <> 1"
+                ElseIf chkAllCategories.Checked = True Then
+                    wstr = "vWorkspaceId = " + ddlProject.SelectedValue.Trim
+                    If Not setCategory(wstr) Then
+                        ObjCommon.ShowAlert("Forms not found.", Me.Page)
+                        FillPrintedDocs = False
+                        Exit Function
+                    End If
+                End If
+            Else
+                wstr = "vworkspaceid ='" + ddlProject.SelectedValue.Trim() + "' and iParentNodeId = " + ddlCategory.SelectedValue.ToString.Split("@@@")(0) + " AND iNodeIdTranNo = '" + ddlCategory.SelectedValue.ToString.Split("@@@")(3) + "'"
+                If ddlDocument.Items.Count > 0 AndAlso ddlDocument.SelectedIndex = 0 Then
+                    wstr += " AND iWorkspaceNodeHistoryTranNo = " + "(select max(iWorkspaceNodeHistoryTranNo) from View_DocReleaseTrack where vWorkspaceId = '" + ddlProject.SelectedValue.Trim() + "' AND iParentNodeId = " + ddlCategory.SelectedValue.ToString.Split("@@@")(0) + ")"
+                Else
+                    If ddlDocument.Items.Count > 0 Then
+                        wstr += " AND iWorkspaceNodeHistoryTranNo = " + ddlDocument.SelectedValue.Trim
+                    End If
+                End If
+            End If
+
+            If ddlReleasedBy.SelectedIndex > 0 Then
+                wstr += " AND iReleasedBy = " + ddlReleasedBy.SelectedValue.Trim
+            End If
+
+            If rdoDate.SelectedIndex = "1" Then
+                wstr += " AND cast(convert(varchar(11),dReleaseDate,113) as smalldatetime) >= cast(convert(varchar(11),'" + txtStartDate.Text.Trim + "',113) as smalldatetime)" + _
+                        " AND cast(convert(varchar(11),dReleaseDate,113) as smalldatetime) <= cast(convert(varchar(11),'" + txtEndDate.Text.Trim + "',113) as smalldatetime)"
+            End If
+            wstr += " AND cIsPrinted = 'Y' AND vFileName IS NOT NULL order by vWorkSpaceId desc, iParentNodeId desc, iStartId"
+
+            If Not objHelp.View_DocReleaseTrack(wstr, WS_HelpDbTable.DataRetrievalModeEnum.DataTable_WithWhereCondition, ds_Result, estr) Then
+                Throw New Exception(estr)
+            End If
+
+            If ds_Result.Tables(0).Rows.Count > 0 Then
+
+                dc_ReleasedOn_IST = New DataColumn("dReleaseDate_IST", System.Type.GetType("System.String"))
+                ds_Result.Tables(0).Columns.Add("dReleaseDate_IST")
+                ds_Result.AcceptChanges()
+                For Each dr_dReleasedOn In ds_Result.Tables(0).Rows
+                    'dr_dModifyOn("dReleaseDate") = Convert.ToString(dr_dModifyOn("dReleaseDate") + strServerOffset)
+                    dr_dReleasedOn("dReleaseDate_IST") = Convert.ToString(CDate(dr_dReleasedOn("dReleaseDate")).ToString("dd-MMM-yyyy HH:mm") + strServerOffset)
+                Next
+                ds_Result.AcceptChanges()
+                Me.ViewState(VS_gvPrinted) = ds_Result.Tables(0)
+                Me.gvPrinted.DataSource = ds_Result
+                Me.gvPrinted.DataBind()
+                'fldReleaseDetail.Style.Add("Display", "none")
+                fldReleaseMsg.Style.Add("Display", "none")
+                fldPrinted.Style.Add("Display", "")
+            Else
+                Me.ViewState(VS_gvPrinted) = Nothing
+                Me.gvPrinted.DataSource = Nothing
+                Me.gvPrinted.DataBind()
+                fldReleaseMsg.Style.Add("Display", "")
+                fldPrinted.Style.Add("Display", "none")
+                'fldReleaseDetail.Style.Add("Display", "none")
+            End If
+
+            FillPrintedDocs = True
+        Catch ex As Exception
+            Me.ShowErrorMessage(ex.Message, "")
+            FillPrintedDocs = False
+        End Try
+    End Function
+
+#End Region
+
+#Region "Button Events"
+
+    Protected Sub ddlProject_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles ddlProject.SelectedIndexChanged
+        Try
+            'fldReleaseDetail.Style.Add("Display", "none")
+            fldReleaseMsg.Style.Add("Display", "none")
+            ddlReleasedBy.Items.Clear()
+            ddlSOPNo.Items.Clear()
+            ddlCategory.Items.Clear()
+            ddlDocument.Items.Clear()
+            rdoDate.SelectedIndex = 0
+            txtStartDate.Text = ""
+            txtEndDate.Text = ""
+
+            ddlProject.Enabled = True
+            ddlSOPNo.Enabled = True
+            ddlCategory.Enabled = True
+            chkAllProjects.Enabled = True
+            chkAllSOP.Enabled = True
+            chkAllCategories.Enabled = True
+
+            If chkAllProjects.Checked Then
+                ddlProject.Enabled = False
+                ddlSOPNo.Enabled = False
+                ddlCategory.Enabled = False
+                chkAllProjects.Enabled = True
+                chkAllSOP.Enabled = False
+                chkAllCategories.Enabled = False
+            End If
+
+            If chkAllSOP.Checked Then
+                ddlProject.Enabled = True
+                ddlSOPNo.Enabled = False
+                ddlCategory.Enabled = False
+                chkAllProjects.Enabled = False
+                chkAllSOP.Enabled = True
+                chkAllCategories.Enabled = False
+            End If
+
+            If chkAllCategories.Checked Then
+                ddlProject.Enabled = True
+                ddlSOPNo.Enabled = True
+                ddlCategory.Enabled = False
+                chkAllProjects.Enabled = True
+                chkAllSOP.Enabled = True
+                chkAllCategories.Enabled = True
+            End If
+
+            FillddlReleasedBy()
+            If ddlProject.SelectedIndex <> 0 Then
+                'FillddlCategory()
+                FillddlSopNo()
+            Else
+                ddlCategory.Items.Clear()
+            End If
+
+        Catch ex As Exception
+            Me.ShowErrorMessage(ex.Message, "")
+        End Try
+    End Sub
+
+    Protected Sub ddlSOPNo_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles ddlSOPNo.SelectedIndexChanged
+        Try
+            'fldReleaseDetail.Style.Add("Display", "none")
+            fldReleaseMsg.Style.Add("Display", "none")
+            fldPrinted.Style.Add("Display", "none")
+            ddlReleasedBy.Items.Clear()
+            ddlCategory.Items.Clear()
+            ddlDocument.Items.Clear()
+            rdoDate.SelectedIndex = 0
+            txtStartDate.Text = ""
+            txtEndDate.Text = ""
+
+            'chkAllProjects.Checked = False
+            'ddlSOPNo.Enabled = True
+            ddlProject.Enabled = True
+            ddlSOPNo.Enabled = True
+            ddlCategory.Enabled = True
+            chkAllProjects.Enabled = True
+            chkAllSOP.Enabled = True
+            chkAllCategories.Enabled = True
+
+            If chkAllProjects.Checked Then
+                ddlProject.Enabled = False
+                ddlSOPNo.Enabled = False
+                ddlCategory.Enabled = False
+                chkAllProjects.Enabled = True
+                chkAllSOP.Enabled = False
+                chkAllCategories.Enabled = False
+            End If
+
+            If chkAllSOP.Checked Then
+                ddlProject.Enabled = True
+                ddlSOPNo.Enabled = False
+                ddlCategory.Enabled = False
+                chkAllProjects.Enabled = False
+                chkAllSOP.Enabled = True
+                chkAllCategories.Enabled = False
+            End If
+
+            If chkAllCategories.Checked Then
+                ddlProject.Enabled = True
+                ddlSOPNo.Enabled = True
+                ddlCategory.Enabled = False
+                chkAllProjects.Enabled = True
+                chkAllSOP.Enabled = True
+                chkAllCategories.Enabled = True
+            End If
+
+            If ddlSOPNo.SelectedIndex <> 0 Then
+                FillCategory()
+                FillddlReleasedBy()
+            End If
+
+        Catch ex As Exception
+            Me.ShowErrorMessage(ex.Message, "")
+        End Try
+    End Sub
+
+    Protected Sub ddlCategory_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles ddlCategory.SelectedIndexChanged
+        Try
+            'ddlReleasedBy.Items.Clear()
+            ddlDocument.Items.Clear()
+            rdoDate.SelectedIndex = 0
+            txtStartDate.Text = ""
+            txtEndDate.Text = ""
+
+            If ddlCategory.SelectedIndex <> 0 Then
+                'FillddlReleasedBy()
+                FillDocument()
+                'fldReleaseDetail.Style.Add("Display", "none")
+                fldReleaseMsg.Style.Add("Display", "none")
+                fldPrinted.Style.Add("Display", "none")
+            Else
+                'fldReleaseDetail.Style.Add("Display", "none")
+                fldReleaseMsg.Style.Add("Display", "none")
+                fldPrinted.Style.Add("Display", "none")
+            End If
+
+        Catch ex As Exception
+            Me.ShowErrorMessage(ex.Message, "")
+        End Try
+    End Sub
+
+    Protected Sub btnSearch_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnSearch.Click
+        Try
+            trDateText.Style.Add("Display", "none")
+            If rdoDate.SelectedIndex = "1" Then
+                trDateText.Style.Add("Display", "")
+                txtStartDate.Text = hdnStartDate.Value
+                txtEndDate.Text = hdnEndDate.Value
+            End If
+
+            ddlProject.Enabled = True
+            ddlSOPNo.Enabled = True
+            ddlCategory.Enabled = True
+            chkAllProjects.Enabled = True
+            chkAllSOP.Enabled = True
+            chkAllCategories.Enabled = True
+
+            If chkAllProjects.Checked Then
+                ddlProject.Enabled = False
+                ddlSOPNo.Enabled = False
+                ddlCategory.Enabled = False
+                chkAllProjects.Enabled = True
+                chkAllSOP.Enabled = False
+                chkAllCategories.Enabled = False
+            End If
+
+            If chkAllSOP.Checked Then
+                ddlProject.Enabled = True
+                ddlSOPNo.Enabled = False
+                ddlCategory.Enabled = False
+                chkAllProjects.Enabled = False
+                chkAllSOP.Enabled = True
+                chkAllCategories.Enabled = False
+            End If
+
+            If chkAllCategories.Checked Then
+                ddlProject.Enabled = True
+                ddlSOPNo.Enabled = True
+                ddlCategory.Enabled = False
+                chkAllProjects.Enabled = True
+                chkAllSOP.Enabled = True
+                chkAllCategories.Enabled = True
+            End If
+            FillPrintedDocs()
+            'FillgvReleaseDetail()
+        Catch ex As Exception
+            Me.ShowErrorMessage(ex.Message, "")
+        End Try
+    End Sub
+
+    'Protected Sub btnPrinted_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnPrinted.Click
+    '    Try
+    '        trDateText.Style.Add("Display", "none")
+    '        If rdoDate.SelectedIndex = "1" Then
+    '            trDateText.Style.Add("Display", "")
+    '            txtStartDate.Text = hdnStartDate.Value
+    '            txtEndDate.Text = hdnEndDate.Value
+    '        End If
+
+    '        ddlProject.Enabled = True
+    '        ddlSOPNo.Enabled = True
+    '        ddlCategory.Enabled = True
+    '        chkAllProjects.Enabled = True
+    '        chkAllSOP.Enabled = True
+    '        chkAllCategories.Enabled = True
+
+    '        If chkAllProjects.Checked Then
+    '            ddlProject.Enabled = False
+    '            ddlSOPNo.Enabled = False
+    '            ddlCategory.Enabled = False
+    '            chkAllProjects.Enabled = True
+    '            chkAllSOP.Enabled = False
+    '            chkAllCategories.Enabled = False
+    '        End If
+
+    '        If chkAllSOP.Checked Then
+    '            ddlProject.Enabled = True
+    '            ddlSOPNo.Enabled = False
+    '            ddlCategory.Enabled = False
+    '            chkAllProjects.Enabled = False
+    '            chkAllSOP.Enabled = True
+    '            chkAllCategories.Enabled = False
+    '        End If
+
+    '        If chkAllCategories.Checked Then
+    '            ddlProject.Enabled = True
+    '            ddlSOPNo.Enabled = True
+    '            ddlCategory.Enabled = False
+    '            chkAllProjects.Enabled = True
+    '            chkAllSOP.Enabled = True
+    '            chkAllCategories.Enabled = True
+    '        End If
+
+    '        FillPrintedDocs()
+    '    Catch ex As Exception
+    '        Me.ShowErrorMessage(ex.Message, "")
+    '    End Try
+    'End Sub
+
+    Protected Sub btnExportgvPrinted_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnExportgvPrinted.Click
+        Try
+            If Me.gvPrinted.Rows.Count < 1 Then
+                Me.ObjCommon.ShowAlert("No Data To Export", Me.Page)
+                Exit Sub
+            End If
+            If Not ExportToExcel("Printed Documents - DMS", CType(Me.ViewState(VS_gvPrinted), DataTable)) Then
+                Me.ObjCommon.ShowAlert("Error Occured While Exporting To Excel!", Me.Page)
+                Exit Sub
+            End If
+        Catch ex As Exception
+            Me.ObjCommon.ShowAlert(ex.ToString, Me.Page)
+            Exit Sub
+        End Try
+    End Sub
+
+    'Protected Sub btnExportgvReleaseDetail_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnExportgvReleaseDetail.Click
+    '    Try
+    '        If Me.gvReleaseDetail.Rows.Count < 1 Then
+    '            Me.ObjCommon.ShowAlert("No Data To Export", Me.Page)
+    '            Exit Sub
+    '        End If
+    '        If Not ExportToExcel("Released Documents", CType(Me.ViewState(VS_gvReleaseDetail), DataTable)) Then
+    '            Me.ObjCommon.ShowAlert("Error Occured While Exporting To Excel!", Me.Page)
+    '            Exit Sub
+    '        End If
+    '    Catch ex As Exception
+    '        Me.ObjCommon.ShowAlert(ex.ToString, Me.Page)
+    '        Exit Sub
+    '    End Try
+    'End Sub
+
+    'Protected Sub btnSaveAction_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnSaveAction.Click
+    '    Try
+    '        AssignValuesDocAction()
+
+    '        If rdoAction.SelectedItem.Value.ToUpper.Trim = "P" Then
+    '            ScriptManager.RegisterStartupScript(Me.Page, Me.GetType(), "message", "printDocument('" & hdnFilePath.Value.Trim & "');", True)
+    '        End If
+    '    Catch ex As Exception
+    '        Me.ShowErrorMessage(ex.Message, "")
+    '    End Try
+    'End Sub
+
+#End Region
+
+#Region "Error Handler"
+
+    Private Sub ShowErrorMessage(ByVal exMessage As String, ByVal eStr As String)
+        CType(Me.Master.FindControl("lblerrormsg"), Label).Text = exMessage + "<BR> " + eStr
+        ObjCommon.WriteError(Server, Request, Session, exMessage + "<BR> " + eStr)
+    End Sub
+
+    Private Sub ShowErrorMessage(ByVal exMessage As String, ByVal eStr As String, ByVal ex As Exception)
+        CType(Me.Master.FindControl("lblerrormsg"), Label).Text = exMessage + "<BR> " + eStr
+        ObjCommon.WriteError(Server, Request, Session, ex, exMessage + "<BR> " + eStr)
+    End Sub
+
+#End Region
+
+#Region "Export To Excel"
+
+    Private Function ExportToExcel(ByVal fileName As String, ByVal dt As DataTable) As Boolean
+
+        Dim ds As New DataSet
+        Try
+
+            Context.Response.Buffer = True
+            Context.Response.ClearContent()
+            Context.Response.ClearHeaders()
+
+            fileName = fileName & ".xls"
+            Context.Response.AddHeader("Content-type", "application/vnd.ms-excel") '"application/TEXT") 
+            Context.Response.AddHeader("Content-Disposition", "attachment; filename=" + fileName)
+
+            ds.Tables.Add(dt.Copy()) 'is datatable neccessary
+            ds.AcceptChanges()
+
+            Context.Response.Write(ConvertDsuserTO(ds, fileName))
+
+            Context.Response.Flush()
+            Context.Response.End()
+
+            System.IO.File.Delete(fileName)
+            Return True
+        Catch ex As Exception
+            'Me.ShowErrorMessage(ex.Message, "")
+        End Try
+    End Function
+
+    Private Function ConvertDsuserTO(ByVal ds As DataSet, ByVal fileName As String) As String
+        Dim strMessage As New StringBuilder
+        Dim i As Integer
+        Dim iCol As Integer
+        Dim j As Integer
+        Dim dsConvert As New DataSet
+        Dim Status As String = String.Empty
+        'Dim wStr As String = String.Empty
+        Dim eStr As String = String.Empty
+        Dim ds_child As New DataSet
+        Dim columnList As String = String.Empty
+        Dim totalColumns As Integer
+        Try
+            'Status = "Subjects in Project: " + Me.txtsearch.Text.ToString().Trim()
+            If fileName = "Printed Documents - DMS.xls" Then
+                Status = "Printed Documents"
+                columnList = "vWorkSpaceDesc,vNodeDisplayName,vFileName,ProjectNumber,vStartId,vEndId,vUserName,dReleaseDate_IST,vRemark"
+                'Else
+                '    Status = "Released Documents"
+                '    columnList = "vWorkSpaceDesc,vNodeName,vFileName,vStartId,vEndId,vUserName,dReleaseDate_IST"
+            End If
+
+            totalColumns = columnList.Split(",").Length
+
+            strMessage.Append("<table width=""100%"" border=""1"" cellpadding=""0"" cellspacing=""0"">")
+
+            strMessage.Append("<tr>")
+            strMessage.Append("<td colspan=" + totalColumns.ToString + "><center><strong><font color=""#0a22de"" size=""3"" face=""Verdana, Arial, Helvetica, sans-serif"">")
+            strMessage.Append(System.Configuration.ConfigurationManager.AppSettings("Client"))
+            strMessage.Append("</font></strong><center></td>")
+            strMessage.Append("</tr>")
+            strMessage.Append("<tr>")
+            strMessage.Append("<td colspan=" + totalColumns.ToString + "><center><strong><font color=""#0a22de"" size=""2"" face=""Verdana, Arial, Helvetica, sans-serif"">")
+            strMessage.Append(Status)
+            strMessage.Append("</font></strong><center></td>")
+            strMessage.Append("</tr>")
+
+            strMessage.Append("<tr><td align=""center"" colspan=" + totalColumns.ToString + ">")
+            strMessage.Append("</td></tr>")
+
+            strMessage.Append("<tr >")
+
+            dsConvert.Tables.Add(ds.Tables(0).DefaultView.ToTable(True, columnList.Split(",")).DefaultView.ToTable())
+            dsConvert.AcceptChanges()
+
+            dsConvert.Tables(0).Columns(0).ColumnName = "Project"
+            dsConvert.Tables(0).Columns(1).ColumnName = "Form"
+            dsConvert.Tables(0).Columns(2).ColumnName = "File Name"
+            dsConvert.Tables(0).Columns(3).ColumnName = "Project No."
+            dsConvert.Tables(0).Columns(4).ColumnName = "From"
+            dsConvert.Tables(0).Columns(5).ColumnName = "To"
+            dsConvert.Tables(0).Columns(6).ColumnName = "Released By"
+            dsConvert.Tables(0).Columns(7).ColumnName = "Released On"
+
+            'If fileName = "Released Doc History.xls" Then
+            dsConvert.Tables(0).Columns(7).ColumnName = "Print Comments"
+            'End If
+            dsConvert.AcceptChanges()
+
+            For iCol = 0 To dsConvert.Tables(0).Columns.Count - 1
+
+                strMessage.Append("<td align=""center"" ><strong><font color=""#0a22de"" size=""3"" face=""Verdana, Arial, Helvetica, sans-serif"">")
+                strMessage.Append(Convert.ToString(dsConvert.Tables(0).Columns(iCol)).ToString().Trim())
+                strMessage.Append("</font></strong></td>")
+
+            Next
+            strMessage.Append("</tr>")
+
+            For j = 0 To dsConvert.Tables(0).Rows.Count - 1
+
+                strMessage.Append("<tr>")
+
+                For i = 0 To dsConvert.Tables(0).Columns.Count - 1
+                    strMessage.Append("<td align=""Left"" ><strong><font color=""#000099"" size=""2"" face=""Verdana, Arial, Helvetica, sans-serif"">")
+                    strMessage.Append(Convert.ToString(dsConvert.Tables(0).Rows(j).Item(i)).ToString().Trim())
+                    strMessage.Append("</font></strong></td>")
+                Next
+
+                'cStatus = dsConvert.Tables(0).Rows(j).Item(0).ToString()
+
+                strMessage.Append("</tr>")
+
+            Next
+            strMessage.Append("</table>")
+
+            Return strMessage.ToString
+
+        Catch ex As Exception
+            ShowErrorMessage(ex.Message, ".....ConvertDsuserTO")
+            Return ""
+        End Try
+    End Function
+
+#End Region
+
+End Class

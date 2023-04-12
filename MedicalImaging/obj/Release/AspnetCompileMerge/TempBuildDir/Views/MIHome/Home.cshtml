@@ -1,0 +1,111 @@
+﻿@{
+    ViewBag.Title = "DI : HOME";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@using (Html.BeginForm())
+{
+    @section Header
+    {
+        <h1>HOME</h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i>Home</a></li>
+            <li class="active">Home</li>
+        </ol>
+    }
+
+    <!-- Small boxes (Stat box) -->
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header" style="text-align: right">
+                    <div class="row">
+                    </div>
+                </div>
+
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-xs-12 form-group">
+                            <div class="col-sm-1">
+                                <label for="ddlProject">Project</label>
+                            </div>
+                            <div class="col-sm-8">
+                                <select class="form-control select2" id="ddlProject" tabindex="1"></select>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 form-group">
+                            <div class="col-sm-1">
+                                <label for="ddlStatus">Status</label>
+                            </div>
+                            <div class="col-sm-8">
+                                <select class="form-control select2" id="ddlStatus" tabindex="1">
+                                    <option value="Pending">Pending</option>
+                                    @*<option value="Radiologist">Radiologist</option>*@
+                                    @*<option value="Radiologist2">Radiologist2</option>*@
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="text-align: right;">
+                        <div class="col-xs-12 form-group">
+                            <div class="col-sm-12">
+                                <span>
+                                    @*<button type="button" id="btnGo" class="btn btn-primary " title="Go" tabindex="4">Go</button>*@
+                                    <button type="button" id="btnGo" class="btn btn-primary btnchange btneffect" title="Go" tabindex="4">
+                                        <span class="num">
+                                            <i class="fa fa-sign-in" style="line-height: 35px;"></i>
+                                        </span>
+                                        GO
+                                        <i class="faf fa fa-sign-in"></i>
+
+                                    </button>
+                                </span>
+                                <span>
+                                    @*<button type="button" id="btnClear" class="btn btn-danger " title="CLEAR" tabindex="5">CLEAR</button>*@
+                                    <button type="button" id="btnClear" class="btn btn-primary btnchange btndangereffect" title="CLEAR" tabindex="5">
+                                        <span class="num">
+                                            <i class="fa fa-close" style="line-height: 35px;"></i>
+                                        </span>
+                                        CLEAR
+                                        <i class="faf fa fa-sign-in"></i>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-12 form-group">
+                            <div class="col-sm-12">
+                                <div id="divTblSubjectReviewList">
+                                    <table id="tblSubjectReviewList" class="table table-bordered table-striped dataTable"></table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->
+    <div id="loader" class="modal"></div>
+
+}
+
+@*<script type="text/javascript" src="@Url.Content("~/Contents/Themes/Js/jquery-2.2.3.min.js")"></script>*@
+<script type="text/javascript" src="@Url.Content("~/Contents/Themes/Js/jquery-3.6.1.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/General.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/MIHome.js")"></script>
+
+
+@*<script type="text/javascript">
+        document.write('<scr' + 'ipt src="@Url.Content("~/Scripts/MIHome.js")?' + Math.random() + '" type="text/javascript"></scr' + 'ipt>');
+    </script>*@
+
+
+@Html.Hidden("RedirectToImageReview", Url.Action("MIImageReview", "MIImageReview"))
+@Html.Hidden("DicomViewer", Url.Action("MIDicomViewer", "MIDicomViewer"))
+

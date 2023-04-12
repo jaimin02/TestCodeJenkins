@@ -1,0 +1,9 @@
+G:\Jaimin Office\Code_Test\DISoft _C\DICOM\bin\DICOM.dll.config
+G:\Jaimin Office\Code_Test\DISoft _C\DICOM\bin\DICOM.dll
+G:\Jaimin Office\Code_Test\DISoft _C\DICOM\bin\DICOM.pdb
+G:\Jaimin Office\Code_Test\DISoft _C\DICOM\bin\Newtonsoft.Json.dll
+G:\Jaimin Office\Code_Test\DISoft _C\DICOM\obj\Release\DICOM.csproj.AssemblyReference.cache
+G:\Jaimin Office\Code_Test\DISoft _C\DICOM\obj\Release\DICOM.csproj.CoreCompileInputs.cache
+G:\Jaimin Office\Code_Test\DISoft _C\DICOM\obj\Release\DICOM.csproj.CopyComplete
+G:\Jaimin Office\Code_Test\DISoft _C\DICOM\obj\Release\DICOM.dll
+G:\Jaimin Office\Code_Test\DISoft _C\DICOM\obj\Release\DICOM.pdb

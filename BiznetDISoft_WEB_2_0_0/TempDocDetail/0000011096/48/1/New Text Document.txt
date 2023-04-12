@@ -1,0 +1,876 @@
+Msg 2714, Level 16, State 3, Procedure GetDublicateBarcode, Line 8
+There is already an object named 'GetDublicateBarcode' in the database.
+Msg 2714, Level 16, State 3, Procedure Insert_BA_DocumentAttachmst, Line 32
+There is already an object named 'Insert_BA_DocumentAttachmst' in the database.
+Msg 207, Level 16, State 1, Procedure Insert_BagBatchDtl, Line 33
+Invalid column name 'iTypeOfSample'.
+Msg 207, Level 16, State 1, Procedure Insert_BagBatchDtl, Line 41
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Insert_BagBatchDtl, Line 42
+Invalid column name 'iTypeOfSample'.
+Msg 207, Level 16, State 1, Procedure Insert_BagBatchDtl, Line 43
+Invalid column name 'vDeptCode'.
+Msg 207, Level 16, State 1, Procedure Insert_BagBatchDtl, Line 83
+Invalid column name 'iTypeOfSample'.
+Msg 207, Level 16, State 1, Procedure Insert_BagBatchDtl, Line 93
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Insert_BagBatchDtl, Line 94
+Invalid column name 'iTypeOfSample'.
+Msg 207, Level 16, State 1, Procedure Insert_BagBatchDtl, Line 95
+Invalid column name 'vDeptCode'.
+Msg 207, Level 16, State 1, Procedure Insert_BagBatchDtl, Line 153
+Invalid column name 'iTypeOfSample'.
+Msg 207, Level 16, State 1, Procedure Insert_BagBatchDtl, Line 154
+Invalid column name 'iTypeOfSample'.
+Msg 207, Level 16, State 1, Procedure Insert_BagBatchDtl, Line 158
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Insert_bagbatchmst, Line 194
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Insert_bagbatchmst, Line 169
+Invalid column name 'iTypeofSampleNo'.
+Msg 8101, Level 16, State 1, Procedure Insert_bagbatchmst, Line 153
+An explicit value for the identity column in table 'BagBatchMst_History' can only be specified when a column list is used and IDENTITY_INSERT is ON.
+Msg 2714, Level 16, State 3, Procedure Insert_CentrifugateParametermst, Line 30
+There is already an object named 'Insert_CentrifugateParametermst' in the database.
+Msg 207, Level 16, State 1, Procedure Insert_centrifugationmachinemst, Line 29
+Invalid column name 'vDeptCode'.
+Msg 207, Level 16, State 1, Procedure Insert_centrifugationmachinemst, Line 48
+Invalid column name 'vDeptCode'.
+Msg 207, Level 16, State 1, Procedure Insert_centrifugationmachinemst, Line 76
+Invalid column name 'vDeptCode'.
+Msg 207, Level 16, State 1, Procedure Insert_freezermst, Line 42
+Invalid column name 'vDeptCode'.
+Msg 207, Level 16, State 1, Procedure Insert_freezermst, Line 62
+Invalid column name 'vDeptCode'.
+Msg 207, Level 16, State 1, Procedure Insert_freezermst, Line 87
+Invalid column name 'vDeptCode'.
+Msg 207, Level 16, State 1, Procedure Insert_GeneralRemarksMst, Line 21
+Invalid column name 'vRemarks'.
+Msg 207, Level 16, State 1, Procedure Insert_GeneralRemarksMst, Line 64
+Invalid column name 'vRemarks'.
+Msg 2714, Level 16, State 3, Procedure Insert_individualsampleoperationdtl, Line 198
+There is already an object named 'Insert_individualsampleoperationdtl' in the database.
+Msg 2714, Level 16, State 3, Procedure Insert_IndividualSampleOperationDtlForRemarks, Line 53
+There is already an object named 'Insert_IndividualSampleOperationDtlForRemarks' in the database.
+Msg 207, Level 16, State 1, Procedure Insert_PKSampleDetail, Line 76
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Insert_PKSampleDetail, Line 161
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Insert_SampleCentrifugationDtl, Line 36
+Invalid column name 'nSampleId'.
+Msg 207, Level 16, State 1, Procedure Insert_SampleCentrifugationDtl, Line 37
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Insert_SampleCentrifugationDtl, Line 39
+Invalid column name 'nBagBatchNo'.
+Msg 207, Level 16, State 1, Procedure Insert_SampleCentrifugationDtl, Line 40
+Invalid column name 'iTypeOfSampleNo'.
+Msg 207, Level 16, State 1, Procedure Insert_SampleCentrifugationDtl, Line 41
+Invalid column name 'cBagorSample'.
+Msg 207, Level 16, State 1, Procedure Insert_SampleCentrifugationDtl, Line 51
+Invalid column name 'vRemarks'.
+Msg 207, Level 16, State 1, Procedure Insert_SampleCentrifugationDtl, Line 147
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Insert_SampleDetail, Line 210
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Insert_SampleGroupMst, Line 26
+Invalid column name 'iSampleGroupTypeNo'.
+Msg 207, Level 16, State 1, Procedure Insert_SampleGroupMst, Line 38
+Invalid column name 'nSampleGroupNo'.
+Msg 207, Level 16, State 1, Procedure Insert_SampleGroupMst, Line 72
+Invalid column name 'nSampleGroupNo'.
+Msg 207, Level 16, State 1, Procedure Insert_SampleOperationMst, Line 22
+Invalid column name 'vDeptCode'.
+Msg 207, Level 16, State 1, Procedure Insert_SampleOperationMst, Line 69
+Invalid column name 'vDeptCode'.
+Msg 2714, Level 16, State 3, Procedure Insert_SampleOperationReasonMst, Line 119
+There is already an object named 'Insert_SampleOperationReasonMst' in the database.
+Msg 207, Level 16, State 1, Procedure Insert_SamplesendReceiveDtl, Line 48
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Insert_SamplesendReceiveDtl, Line 52
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Insert_SamplesendReceiveDtl, Line 52
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Insert_SamplesendReceiveDtl, Line 59
+Invalid column name 'nBagBatchDtlNo'.
+Msg 207, Level 16, State 1, Procedure Insert_SamplesendReceiveDtl, Line 60
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Insert_SamplesendReceiveDtl, Line 61
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Insert_SamplesendReceiveDtl, Line 69
+Invalid column name 'vSentDeptCode'.
+Msg 207, Level 16, State 1, Procedure Insert_SamplesendReceiveDtl, Line 140
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Insert_sampleseparationdtl, Line 85
+Invalid column name 'iTypeOfSample'.
+Msg 207, Level 16, State 1, Procedure Insert_SampleStandardMst, Line 25
+Invalid column name 'vSampleStandardDesc'.
+Msg 207, Level 16, State 1, Procedure Insert_SampleStandardMst, Line 26
+Invalid column name 'nSampleGroupNo'.
+Msg 207, Level 16, State 1, Procedure Insert_SampleStandardMst, Line 38
+Invalid column name 'nSampleStandardNo'.
+Msg 207, Level 16, State 1, Procedure Insert_SampleStandardMst, Line 72
+Invalid column name 'nSampleStandardNo'.
+Msg 207, Level 16, State 1, Procedure Proc_DefaultSampleDtl, Line 119
+Invalid column name 'iTypeOfSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_DefaultSampleDtl, Line 119
+Invalid column name 'iTypeOfSample'.
+Msg 207, Level 16, State 1, Procedure Proc_DefaultSampleDtl, Line 146
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_DefaultSampleDtl, Line 150
+Invalid column name 'iTypeOfSample'.
+Msg 207, Level 16, State 1, Procedure Proc_DefaultSampleDtl, Line 45
+Invalid column name 'iTypeOfSample'.
+Msg 207, Level 16, State 1, Procedure Proc_DefaultSampleDtl, Line 240
+Invalid column name 'iTypeOfSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_DefaultSampleDtl, Line 240
+Invalid column name 'iTypeOfSample'.
+Msg 207, Level 16, State 1, Procedure Proc_DefaultSampleDtl, Line 267
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_DefaultSampleDtl, Line 271
+Invalid column name 'iTypeOfSample'.
+Msg 207, Level 16, State 1, Procedure Proc_DefaultSampleDtl, Line 166
+Invalid column name 'iTypeOfSample'.
+Msg 207, Level 16, State 1, Procedure Proc_DefaultSampleDtl, Line 308
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_DefaultSampleDtl, Line 330
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_DefaultSampleDtl, Line 335
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_DefaultSampleDtl, Line 343
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_DefaultSampleDtl, Line 352
+Invalid column name 'vReceiveDeptCode'.
+Msg 207, Level 16, State 1, Procedure Proc_DefaultSampleDtl, Line 374
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_DefaultSampleDtl, Line 374
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_DefaultSampleDtl, Line 383
+Invalid column name 'iTypeofSample'.
+Msg 207, Level 16, State 1, Procedure Proc_DefaultSampleDtl, Line 383
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_DefaultSampleDtl, Line 389
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_DefaultSampleDtl, Line 395
+Invalid column name 'iTypeOfSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_DefaultSampleDtl, Line 467
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_DefaultSampleDtl, Line 474
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_DefaultSampleDtl, Line 477
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_DefaultSampleDtl, Line 485
+Invalid column name 'vReceiveDeptCode'.
+Msg 207, Level 16, State 1, Procedure Proc_DefaultSampleDtl, Line 522
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_DefaultSampleDtl, Line 544
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_DefaultSampleDtl, Line 549
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_DefaultSampleDtl, Line 556
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_DefaultSampleDtl, Line 565
+Invalid column name 'vReceiveDeptCode'.
+Msg 207, Level 16, State 1, Procedure Proc_DefaultSampleDtl, Line 587
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_DefaultSampleDtl, Line 587
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_DefaultSampleDtl, Line 596
+Invalid column name 'iTypeofSample'.
+Msg 207, Level 16, State 1, Procedure Proc_DefaultSampleDtl, Line 596
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_DefaultSampleDtl, Line 602
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_DefaultSampleDtl, Line 608
+Invalid column name 'iTypeOfSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_DefaultSampleDtl, Line 667
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_DefaultSampleDtl, Line 688
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_DefaultSampleDtl, Line 692
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_DefaultSampleDtl, Line 700
+Invalid column name 'vReceiveDeptCode'.
+Msg 207, Level 16, State 1, Procedure Proc_GeneratedDefaultSampleDtl, Line 97
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_GeneratedDefaultSampleDtl, Line 105
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_GeneratedDefaultSampleDtl, Line 110
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_GeneratedDefaultSampleDtl, Line 117
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_GeneratedDefaultSampleDtl, Line 126
+Invalid column name 'vReceiveDeptCode'.
+Msg 207, Level 16, State 1, Procedure Proc_GeneratedDefaultSampleDtl, Line 148
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_GeneratedDefaultSampleDtl, Line 148
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_GeneratedDefaultSampleDtl, Line 157
+Invalid column name 'iTypeofSample'.
+Msg 207, Level 16, State 1, Procedure Proc_GeneratedDefaultSampleDtl, Line 157
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_GeneratedDefaultSampleDtl, Line 166
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_GeneratedDefaultSampleDtl, Line 171
+Invalid column name 'iTypeOfSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_GeneratedDefaultSampleDtl, Line 173
+Invalid column name 'vSentDeptCode'.
+Msg 207, Level 16, State 1, Procedure Proc_GeneratedDefaultSampleDtl, Line 176
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_GeneratedDefaultSampleDtl, Line 78
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_GeneratedDefaultSampleDtl, Line 234
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_GeneratedDefaultSampleDtl, Line 242
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_GeneratedDefaultSampleDtl, Line 247
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_GeneratedDefaultSampleDtl, Line 254
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_GeneratedDefaultSampleDtl, Line 263
+Invalid column name 'vReceiveDeptCode'.
+Msg 207, Level 16, State 1, Procedure Proc_GeneratedDefaultSampleDtl, Line 285
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_GeneratedDefaultSampleDtl, Line 285
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_GeneratedDefaultSampleDtl, Line 294
+Invalid column name 'iTypeofSample'.
+Msg 207, Level 16, State 1, Procedure Proc_GeneratedDefaultSampleDtl, Line 294
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_GeneratedDefaultSampleDtl, Line 303
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_GeneratedDefaultSampleDtl, Line 308
+Invalid column name 'iTypeOfSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_GeneratedDefaultSampleDtl, Line 215
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_GetAuditDetailsForSendSample, Line 76
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_GetAuditDetailsForSendSampleForPK, Line 77
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_GetBagForSend, Line 121
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_GetBagForSend, Line 129
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_GetBagForSend, Line 138
+Invalid column name 'vReceiveDeptCode'.
+Msg 207, Level 16, State 1, Procedure Proc_GetGeneratedSampleDtl, Line 69
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_GetGeneratedSampleDtl, Line 73
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_GetGeneratedSampleDtl, Line 91
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_GetGeneratedSampleDtl, Line 115
+Invalid column name 'vReceiveDeptCode'.
+Msg 207, Level 16, State 1, Procedure Proc_GetGeneratedSampleDtl, Line 37
+Invalid column name 'nSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_GetGeneratedSampleDtl, Line 38
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_GetGeneratedSampleDtl, Line 39
+Invalid column name 'nBagBatchNo'.
+Msg 207, Level 16, State 1, Procedure Proc_GetGeneratedSampleDtl, Line 40
+Invalid column name 'iTypeOfSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_GetGeneratedSampleDtl, Line 41
+Invalid column name 'cBagorSample'.
+Msg 207, Level 16, State 1, Procedure Proc_GetGeneratedSampleDtl, Line 53
+Invalid column name 'vRemarks'.
+Msg 207, Level 16, State 1, Procedure Proc_GetGeneratedSampleDtl, Line 162
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_GetGeneratedSampleDtl, Line 170
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_GetGeneratedSampleDtl, Line 171
+Invalid column name 'iTypeOfSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_GetGeneratedSampleDtl, Line 171
+Invalid column name 'iTypeOfSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_GetGeneratedSampleDtl, Line 184
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_GetGeneratedSampleDtl, Line 214
+Invalid column name 'vReceiveDeptCode'.
+Msg 207, Level 16, State 1, Procedure Proc_GetGeneratedSampleDtl, Line 130
+Invalid column name 'nSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_GetGeneratedSampleDtl, Line 131
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_GetGeneratedSampleDtl, Line 132
+Invalid column name 'nBagBatchNo'.
+Msg 207, Level 16, State 1, Procedure Proc_GetGeneratedSampleDtl, Line 133
+Invalid column name 'iTypeOfSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_GetGeneratedSampleDtl, Line 134
+Invalid column name 'cBagorSample'.
+Msg 207, Level 16, State 1, Procedure Proc_GetGeneratedSampleDtl, Line 146
+Invalid column name 'vRemarks'.
+Msg 207, Level 16, State 1, Procedure Proc_getlotinformation, Line 43
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_getlotinformation, Line 51
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_getlotinformation, Line 51
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_getlotinformation, Line 51
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_getlotinformation, Line 53
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_getlotinformation, Line 53
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_getlotinformation, Line 55
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_getlotinformation, Line 55
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_getlotinformation, Line 55
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_getlotinformation, Line 58
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_getlotinformation, Line 58
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_getlotinformation, Line 22
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_getlotinformation, Line 22
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_getlotinformation, Line 22
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_getlotinformation, Line 22
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_getlotinformation, Line 22
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_getlotinformation, Line 22
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_GetSampleSeparateDetails, Line 35
+Invalid column name 'iTypeOfSample'.
+Msg 207, Level 16, State 1, Procedure Proc_GetSampleSeparateDetails, Line 52
+Invalid column name 'iTypeOfSample'.
+Msg 207, Level 16, State 1, Procedure Proc_GetSampleSeparateDetails, Line 52
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_GetSampleSeparateDetails, Line 59
+Invalid column name 'iTypeOfSample'.
+Msg 207, Level 16, State 1, Procedure Proc_GetSampleSeparateDetails, Line 78
+Invalid column name 'iTypeOfSample'.
+Msg 207, Level 16, State 1, Procedure Proc_GetSampleSeparateDetails, Line 78
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_GetSampleSeparateDetails, Line 86
+Invalid column name 'iTypeOfSample'.
+Msg 207, Level 16, State 1, Procedure Proc_GetSampleSeparateDetails, Line 116
+Invalid column name 'iTypeOfSample'.
+Msg 207, Level 16, State 1, Procedure Proc_GetSampleSeparateDetails, Line 116
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_GetSampleSeparateDetails, Line 123
+Invalid column name 'iTypeOfSample'.
+Msg 207, Level 16, State 1, Procedure Proc_GetSampleSeparateDetails, Line 139
+Invalid column name 'iTypeOfSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_GetSampleSeparateDetails, Line 174
+Invalid column name 'iTypeOfSample'.
+Msg 207, Level 16, State 1, Procedure Proc_GetSampleSeparateDetails, Line 174
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_GetSampleSeparateDetails, Line 181
+Invalid column name 'iTypeOfSample'.
+Msg 207, Level 16, State 1, Procedure Proc_GetSampleSeparateDetails, Line 200
+Invalid column name 'iTypeOfSample'.
+Msg 207, Level 16, State 1, Procedure Proc_GetSampleSeparateDetails, Line 200
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_GetSampleSeparateDetails, Line 208
+Invalid column name 'iTypeOfSample'.
+Msg 207, Level 16, State 1, Procedure Proc_GetSampleSeparateDetails, Line 238
+Invalid column name 'iTypeOfSample'.
+Msg 207, Level 16, State 1, Procedure Proc_GetSampleSeparateDetails, Line 238
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_GetSampleSeparateDetails, Line 245
+Invalid column name 'iTypeOfSample'.
+Msg 207, Level 16, State 1, Procedure Proc_GetSampleSeparateDetails, Line 261
+Invalid column name 'iTypeOfSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_GetSampleWiseNode, Line 33
+Invalid column name 'iTypeOfSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_GetSampleWiseNode, Line 25
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_GetSampleWiseNode, Line 51
+Invalid column name 'iTypeOfSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_GetSampleWiseNode, Line 43
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_GetUnSeparatedSampleForTree, Line 30
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_GetUnSeparatedSampleForTree, Line 30
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_GetUnSeparatedSampleForTree, Line 34
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_GetUnSeparatedSampleForTree, Line 41
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_GetUnSeparatedSampleForTree, Line 47
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_GetUnSeparatedSampleForTree, Line 57
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_GetUnSeparatedSampleForTree, Line 65
+Invalid column name 'iTypeOfSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_GetUnSeparatedSampleForTree, Line 65
+Invalid column name 'iTypeOfSample'.
+Msg 207, Level 16, State 1, Procedure Proc_IndividualSampleMovementDtl, Line 160
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_IndividualSampleMovementDtl, Line 160
+Invalid column name 'iTypeOfSample'.
+Msg 207, Level 16, State 1, Procedure Proc_IndividualSampleMovementDtl, Line 164
+Invalid column name 'iTypeOfSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_IndividualSampleMovementDtl, Line 172
+Invalid column name 'vSentDeptCode'.
+Msg 207, Level 16, State 1, Procedure Proc_IndividualSampleMovementDtl, Line 173
+Invalid column name 'vReceiveDeptCode'.
+Msg 207, Level 16, State 1, Procedure Proc_IndividualSampleMovementDtl, Line 186
+Invalid column name 'vReceiveDeptCode'.
+Msg 207, Level 16, State 1, Procedure Proc_IndividualSampleMovementDtl, Line 188
+Invalid column name 'vReceiveDeptCode'.
+Msg 207, Level 16, State 1, Procedure Proc_IndividualSampleMovementDtl, Line 48
+Invalid column name 'vSentDeptCode'.
+Msg 207, Level 16, State 1, Procedure Proc_IndividualSampleMovementDtl, Line 49
+Invalid column name 'vReceiveDeptCode'.
+Msg 207, Level 16, State 1, Procedure Proc_IndividualSampleMovementDtl, Line 351
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_IndividualSampleMovementDtl, Line 351
+Invalid column name 'iTypeOfSample'.
+Msg 207, Level 16, State 1, Procedure Proc_IndividualSampleMovementDtl, Line 355
+Invalid column name 'iTypeOfSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_IndividualSampleMovementDtl, Line 363
+Invalid column name 'vSentDeptCode'.
+Msg 207, Level 16, State 1, Procedure Proc_IndividualSampleMovementDtl, Line 364
+Invalid column name 'vReceiveDeptCode'.
+Msg 207, Level 16, State 1, Procedure Proc_IndividualSampleMovementDtl, Line 236
+Invalid column name 'vSentDeptCode'.
+Msg 207, Level 16, State 1, Procedure Proc_IndividualSampleMovementDtl, Line 237
+Invalid column name 'vReceiveDeptCode'.
+Msg 207, Level 16, State 1, Procedure Proc_IndividualSampleMovementDtl, Line 529
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_IndividualSampleMovementDtl, Line 529
+Invalid column name 'iTypeOfSample'.
+Msg 207, Level 16, State 1, Procedure Proc_IndividualSampleMovementDtl, Line 533
+Invalid column name 'iTypeOfSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_IndividualSampleMovementDtl, Line 541
+Invalid column name 'vSentDeptCode'.
+Msg 207, Level 16, State 1, Procedure Proc_IndividualSampleMovementDtl, Line 542
+Invalid column name 'vReceiveDeptCode'.
+Msg 207, Level 16, State 1, Procedure Proc_IndividualSampleMovementDtl, Line 555
+Invalid column name 'vReceiveDeptCode'.
+Msg 207, Level 16, State 1, Procedure Proc_IndividualSampleMovementDtl, Line 557
+Invalid column name 'vReceiveDeptCode'.
+Msg 207, Level 16, State 1, Procedure Proc_IndividualSampleMovementDtl, Line 417
+Invalid column name 'vSentDeptCode'.
+Msg 207, Level 16, State 1, Procedure Proc_IndividualSampleMovementDtl, Line 418
+Invalid column name 'vReceiveDeptCode'.
+Msg 207, Level 16, State 1, Procedure Proc_IndividualSampleMovementDtl, Line 720
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_IndividualSampleMovementDtl, Line 720
+Invalid column name 'iTypeOfSample'.
+Msg 207, Level 16, State 1, Procedure Proc_IndividualSampleMovementDtl, Line 724
+Invalid column name 'iTypeOfSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_IndividualSampleMovementDtl, Line 732
+Invalid column name 'vSentDeptCode'.
+Msg 207, Level 16, State 1, Procedure Proc_IndividualSampleMovementDtl, Line 733
+Invalid column name 'vReceiveDeptCode'.
+Msg 207, Level 16, State 1, Procedure Proc_IndividualSampleMovementDtl, Line 605
+Invalid column name 'vSentDeptCode'.
+Msg 207, Level 16, State 1, Procedure Proc_IndividualSampleMovementDtl, Line 606
+Invalid column name 'vReceiveDeptCode'.
+Msg 2714, Level 16, State 3, Procedure Proc_IndividualSampleOperationDtl, Line 260
+There is already an object named 'Proc_IndividualSampleOperationDtl' in the database.
+Msg 207, Level 16, State 1, Procedure Proc_Login, Line 29
+Invalid column name 'cBlockedFlag'.
+Msg 207, Level 16, State 1, Procedure Proc_Login, Line 30
+Invalid column name 'UserLoginFailure_dModifyOn'.
+Msg 2714, Level 16, State 3, Procedure Proc_LoginFailureCheck, Line 68
+There is already an object named 'Proc_LoginFailureCheck' in the database.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 98
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 106
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 111
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 119
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 126
+Invalid column name 'vReceiveDeptCode'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 130
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 138
+Invalid column name 'iTypeOfSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 138
+Invalid column name 'iTypeOfSample'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 148
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 148
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 157
+Invalid column name 'iTypeofSample'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 157
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 166
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 171
+Invalid column name 'iTypeOfSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 173
+Invalid column name 'vSentDeptCode'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 175
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 87
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 181
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 187
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 241
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 254
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 284
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 284
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 293
+Invalid column name 'iTypeofSample'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 293
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 301
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 305
+Invalid column name 'vReceiveDeptCode'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 307
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 205
+Invalid column name 'nSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 206
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 207
+Invalid column name 'nBagBatchNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 208
+Invalid column name 'iTypeOfSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 209
+Invalid column name 'cBagorSample'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 219
+Invalid column name 'vRemarks'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 314
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 416
+Invalid column name 'iTypeOfSample'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 416
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 435
+Invalid column name 'iTypeOfSample'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 467
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 470
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 473
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 482
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 482
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 491
+Invalid column name 'iTypeofSample'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 491
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 499
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 378
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 537
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 546
+Invalid column name 'iTypeofSample'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 546
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 552
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 557
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 565
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 573
+Invalid column name 'vReceiveDeptCode'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 585
+Invalid column name 'iTypeOfSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 585
+Invalid column name 'iTypeOfSample'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 595
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 595
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 604
+Invalid column name 'iTypeofSample'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 604
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 612
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 617
+Invalid column name 'iTypeOfSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 618
+Invalid column name 'vSentDeptCode'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 679
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 688
+Invalid column name 'iTypeofSample'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 688
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 694
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 698
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 706
+Invalid column name 'vReceiveDeptCode'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 777
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 785
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 790
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 798
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 805
+Invalid column name 'vReceiveDeptCode'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 817
+Invalid column name 'iTypeOfSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 817
+Invalid column name 'iTypeOfSample'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 827
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 827
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 836
+Invalid column name 'iTypeofSample'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 836
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 845
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 850
+Invalid column name 'iTypeOfSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 767
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 858
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 918
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 927
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 957
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 957
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 966
+Invalid column name 'iTypeofSample'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 966
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 974
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 978
+Invalid column name 'vReceiveDeptCode'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 980
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 882
+Invalid column name 'nSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 883
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 884
+Invalid column name 'nBagBatchNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 885
+Invalid column name 'iTypeOfSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 886
+Invalid column name 'cBagorSample'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 898
+Invalid column name 'vRemarks'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 987
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 1088
+Invalid column name 'iTypeOfSample'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 1088
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 1107
+Invalid column name 'iTypeOfSample'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 1130
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 1133
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 1136
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 1145
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 1145
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 1154
+Invalid column name 'iTypeofSample'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 1154
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 1162
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 1049
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 1208
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 1217
+Invalid column name 'iTypeofSample'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 1217
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 1223
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 1228
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 1236
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 1243
+Invalid column name 'vReceiveDeptCode'.
+Msg 209, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 1247
+Ambiguous column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 1255
+Invalid column name 'iTypeOfSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 1255
+Invalid column name 'iTypeOfSample'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 1265
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 1265
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 1274
+Invalid column name 'iTypeofSample'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 1274
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 1282
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 1287
+Invalid column name 'iTypeOfSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 1288
+Invalid column name 'vSentDeptCode'.
+Msg 209, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 1290
+Ambiguous column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 1328
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 1356
+Invalid column name 'iTypeofSample'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 1356
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 1362
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 1366
+Invalid column name 'vSampleId'.
+Msg 207, Level 16, State 1, Procedure Proc_PKSampleMovementDtl, Line 1373
+Invalid column name 'vReceiveDeptCode'.
+Msg 2714, Level 16, State 3, Procedure Proc_samplediscard, Line 27
+There is already an object named 'Proc_samplediscard' in the database.
+Msg 207, Level 16, State 1, Procedure Proc_UnoperatedBagForSend, Line 169
+Invalid column name 'nBagBatchDtlNo'.
+Msg 207, Level 16, State 1, Procedure Proc_UnoperatedBagForSend, Line 197
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_UnoperatedBagForSend, Line 204
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure Proc_UnoperatedBagForSend, Line 235
+Invalid column name 'vReceiveDeptCode'.
+Msg 2714, Level 16, State 3, Procedure Proc_UserLoginDetails, Line 109
+There is already an object named 'Proc_UserLoginDetails' in the database.
+Msg 2714, Level 16, State 3, Procedure Proc_UserLoginFailureDetails, Line 13
+There is already an object named 'Proc_UserLoginFailureDetails' in the database.
+Msg 2714, Level 16, State 3, Procedure sp_generate_inserts, Line 445
+There is already an object named 'sp_generate_inserts' in the database.
+Msg 2714, Level 16, State 3, Procedure GetDublicateBarcode, Line 16
+There is already an object named 'GetDublicateBarcode' in the database.
+Msg 207, Level 16, State 1, Procedure Insert_SampleDetail, Line 269
+Invalid column name 'iTypeofSampleNo'.
+Msg 2714, Level 16, State 3, Procedure Proc_UserLoginDetails, Line 109
+There is already an object named 'Proc_UserLoginDetails' in the database.
+Msg 2714, Level 16, State 3, Procedure ChangeDatetimeFormat, Line 29
+There is already an object named 'ChangeDatetimeFormat' in the database.
+Msg 2714, Level 16, State 3, Procedure ChangeDatetimeFormat, Line 30
+There is already an object named 'ChangeDatetimeFormat' in the database.
+Msg 2714, Level 16, State 3, Procedure SplitString, Line 34
+There is already an object named 'SplitString' in the database.
+Msg 2714, Level 16, State 3, Procedure GetLocationWiseTime, Line 32
+There is already an object named 'GetLocationWiseTime' in the database.
+Msg 2714, Level 16, State 3, Procedure GetLocationWiseDateTimeForTime, Line 44
+There is already an object named 'GetLocationWiseDateTimeForTime' in the database.
+Msg 2714, Level 16, State 3, Procedure GetLocationWiseDateTime, Line 43
+There is already an object named 'GetLocationWiseDateTime' in the database.
+Msg 2714, Level 16, State 6, Line 1
+There is already an object named 'GeneralRemarksMst' in the database.
+Msg 2714, Level 16, State 6, Line 1
+There is already an object named 'FreezerMstHistory' in the database.
+Msg 2714, Level 16, State 6, Line 1
+There is already an object named 'FreezerMst' in the database.
+Msg 2714, Level 16, State 6, Line 1
+There is already an object named 'ErrorLog_CRFHdr' in the database.
+Msg 2714, Level 16, State 6, Line 1
+There is already an object named 'CentrifugationMachineMstHistory' in the database.
+Msg 2714, Level 16, State 6, Line 1
+There is already an object named 'CentrifugationMachineMst' in the database.
+Msg 2714, Level 16, State 6, Line 1
+There is already an object named 'BagBatchMst_History' in the database.
+Msg 2714, Level 16, State 6, Line 1
+There is already an object named 'BagBatchMst' in the database.
+Msg 2714, Level 16, State 6, Line 1
+There is already an object named 'BagBatchDtl' in the database.
+Msg 2714, Level 16, State 6, Line 1
+There is already an object named 'BA_DocumentAttachMst' in the database.
+Msg 2714, Level 16, State 6, Line 1
+There is already an object named 'SampleStandardMst' in the database.
+Msg 2714, Level 16, State 6, Line 1
+There is already an object named 'SampleSeparationDtl' in the database.
+Msg 2714, Level 16, State 6, Line 1
+There is already an object named 'SampleSendReceiveDtl' in the database.
+Msg 2714, Level 16, State 6, Line 1
+There is already an object named 'SampleOperationReasonMst' in the database.
+Msg 2714, Level 16, State 6, Line 1
+There is already an object named 'SampleOperationMst' in the database.
+Msg 2714, Level 16, State 6, Line 1
+There is already an object named 'SampleGroupMst' in the database.
+Msg 2714, Level 16, State 6, Line 1
+There is already an object named 'SampleCentrifugationDtl' in the database.
+Msg 2714, Level 16, State 6, Line 1
+There is already an object named 'PasswordPolicyMst' in the database.
+Msg 2714, Level 16, State 6, Line 1
+There is already an object named 'UserLoginFailureDetails' in the database.
+Msg 2714, Level 16, State 6, Line 1
+There is already an object named 'TypeofSampleMstHistory' in the database.
+Msg 2714, Level 16, State 6, Line 1
+There is already an object named 'TypeofSampleMst' in the database.
+Msg 207, Level 16, State 1, Procedure View_BagBatchDtl, Line 60
+Invalid column name 'iTypeOfSampleNo'.
+Msg 207, Level 16, State 1, Procedure View_BagBatchDtlForPD, Line 60
+Invalid column name 'iTypeOfSampleNo'.
+Msg 207, Level 16, State 1, Procedure View_GetGeneratedSampleDtl, Line 26
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure View_PKSampleSeparationDtl, Line 91
+Invalid column name 'iTypeOfSampleNo'.
+Msg 207, Level 16, State 1, Procedure View_PKSampleSeparationDtl, Line 129
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure View_PKSampleSeparationDtl, Line 138
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure View_SampleCreationDtl, Line 94
+Invalid column name 'iTypeOfSampleNo'.
+Msg 207, Level 16, State 1, Procedure View_SampleCreationDtlForPD, Line 93
+Invalid column name 'iTypeOfSampleNo'.
+Msg 207, Level 16, State 1, Procedure View_SampleSeparationDtl, Line 95
+Invalid column name 'iTypeOfSampleNo'.
+Msg 207, Level 16, State 1, Procedure View_SampleSeparationDtl, Line 139
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure View_SampleSeparationDtl, Line 148
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure View_SampleSeparationDtlForPD, Line 95
+Invalid column name 'iTypeOfSampleNo'.
+Msg 207, Level 16, State 1, Procedure View_SampleSeparationDtlForPD, Line 142
+Invalid column name 'iTypeofSampleNo'.
+Msg 207, Level 16, State 1, Procedure View_SampleSeparationDtlForPD, Line 151
+Invalid column name 'iTypeofSampleNo'.
+Msg 2714, Level 16, State 3, Procedure View_UserMst, Line 3
+There is already an object named 'View_UserMst' in the database.
+Msg 1913, Level 16, State 1, Line 2
+The operation failed because an index or statistics with name 'IX_FreezerMst' already exists on table 'dbo.FreezerMst'.
+Msg 1913, Level 16, State 1, Line 2
+The operation failed because an index or statistics with name 'IX_FreezerMst_1' already exists on table 'dbo.FreezerMst'.
+Msg 1913, Level 16, State 1, Line 2
+The operation failed because an index or statistics with name 'IX_CentrifugationMachineMst' already exists on table 'dbo.CentrifugationMachineMst'.
+Msg 1913, Level 16, State 1, Line 2
+The operation failed because an index or statistics with name 'IX_BagBatchMst_History_04082015' already exists on table 'dbo.BagBatchMst_History'.
+Msg 1913, Level 16, State 1, Line 2
+The operation failed because an index or statistics with name 'IX_BA_DocumentAttachMst_01' already exists on table 'dbo.BA_DocumentAttachMst'.
+Msg 1913, Level 16, State 1, Line 2
+The operation failed because an index or statistics with name 'IX_SampleStandardMst' already exists on table 'dbo.SampleStandardMst'.
+Msg 1913, Level 16, State 1, Line 2
+The operation failed because an index or statistics with name 'IX_SampleStandardMst_01' already exists on table 'dbo.SampleStandardMst'.
+Msg 1913, Level 16, State 1, Line 2
+The operation failed because an index or statistics with name 'IX_SampleOperationReasonMst' already exists on table 'dbo.SampleOperationReasonMst'.
+Msg 1913, Level 16, State 1, Line 2
+The operation failed because an index or statistics with name 'IX_SampleOperationReasonMst_02' already exists on table 'dbo.SampleOperationReasonMst'.
+Msg 1913, Level 16, State 1, Line 2
+The operation failed because an index or statistics with name 'IX_SampleOperationMst' already exists on table 'dbo.SampleOperationMst'.
+Msg 1913, Level 16, State 1, Line 2
+The operation failed because an index or statistics with name 'IX_SampleOperationMst_01' already exists on table 'dbo.SampleOperationMst'.
+Msg 1913, Level 16, State 1, Line 2
+The operation failed because an index or statistics with name 'IX_SampleGroupMst' already exists on table 'dbo.SampleGroupMst'.
+Msg 1913, Level 16, State 1, Line 2
+The operation failed because an index or statistics with name 'IX_SampleCentrifugationDtl01' already exists on table 'dbo.SampleCentrifugationDtl'.
+Msg 1913, Level 16, State 1, Line 2
+The operation failed because an index or statistics with name 'IX_SampleCentrifugationDtl02' already exists on table 'dbo.SampleCentrifugationDtl'.

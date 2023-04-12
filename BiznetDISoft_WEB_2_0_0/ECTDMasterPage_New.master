@@ -1,0 +1,1013 @@
+﻿<%@ Master Language="VB" CodeFile="ECTDMasterPage_New.master.vb" Inherits="ECTDMasterPage_New" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <%--Works on IE only--%>
+    <meta http-equiv="Page-Enter" content="blendTrans(Duration=0.5)" />
+    <meta http-equiv="Page-Exit" content="blendTrans(Duration=0.5)" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <link rel="shortcut icon" href="images/biznet.ico" type="image/x-icon" />
+
+    <script type="text/javascript" src="Script/googleapis.js"></script>
+
+    <link href="App_Themes/MegaMenu/normalize.min.css" rel="stylesheet" type="text/css"/>
+    <link href="App_Themes/MegaMenu/foundation.css" rel="stylesheet" type="text/css"/>
+    <link href="App_Themes/MegaMenu/style.css" rel="stylesheet" type="text/css"/>
+    <link href="App_Themes/StyleCommon/CommonStyle.css" rel="Stylesheet" type="text/css" />
+    <link href="App_Themes/sweetalert.css" rel="Stylesheet" type="text/css" />
+    <link href="App_Themes/scrolling.css" rel="stylesheet" type="text/css"/>
+    <link href="App_Themes/font-awesome.min.css" rel="stylesheet"  type="text/css"/>
+
+    <script src="Script/scrolltop.js" type="text/javascript"></script>
+    <script src="Script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="Script/sweetalert.js"></script>
+    <script type="text/javascript" src="Script/MegaMenu/foundation.min.js"></script>
+    <script type="text/javascript" src="Script/MegaMenu/index.js"></script>
+
+
+    <style type="text/css">
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .chromeFrameInstallDefaultStyle {
+            width: 100%; /* default is 800px */
+            border: 5px solid blue;
+        }
+
+        /*div, span, table, tr, td, th, label, li, ul, a, textarea, select, option {
+            font-family: Delicious, sans-serif !important;
+        }*/
+
+        #divEctd ::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+            -moz-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+            border-radius: 10px;
+        }
+
+        #divEctd ::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+            -moz-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+        }
+
+            #divEctd ::-webkit-scrollbar-thumb:hover {
+                background: #1560A1;
+            }
+        /* Select */ select {
+            -webkit-appearance: button;
+            -moz-appearance: button;
+            appearance: button;
+            -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            color: #555;
+            font-size: inherit;
+            margin: 0;
+            overflow: hidden; /*PADDING-TOP: 2px;     PADDING-BOTTOM: 2px;*/
+            line-height: 165%;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        select {
+            -webkit-border-radius: 2px;
+            -webkit-padding-end: 20px;
+            -webkit-padding-start: 2px;
+            background-image: url( "images/select.png" ), -webkit-linear-gradient(#fafafa, #f4f4f4 40%, #e5e5e5);
+            -moz-border-radius: 2px;
+            -moz-padding-start: 2px;
+            background-image: url( "images/select.png" ), -moz-linear-gradient(#fafafa, #f4f4f4 40%, #e5e5e5);
+            background-position: center right;
+            background-repeat: no-repeat;
+            border: 1px solid #aaa;
+        }
+
+        .mozilla select {
+            -moz-border-radius: 2px;
+            -moz-padding-start: 2px;
+            background-image: url( "images/select.png" ), -moz-linear-gradient(#fafafa, #f4f4f4 40%, #e5e5e5);
+            background-position: center right;
+            background-repeat: no-repeat;
+            border: 1px solid #aaa;
+        }
+
+        select:disabled, option:disabled {
+            color: Black !important;
+        }
+
+        select:enabled:hover {
+            -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+            -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+            color: #333;
+        }
+
+        select:enabled:hover {
+            background-image: url( "images/select.png" ), -webkit-linear-gradient(#fefefe, #f8f8f8 40%, #e9e9e9);
+            background-image: url( "images/select.png" ), -moz-linear-gradient(#fefefe, #f8f8f8 40%, #e9e9e9);
+        }
+
+        select:enabled:active {
+            -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+            -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+            color: #444;
+        }
+
+        select:enabled:active, select:enabled:active {
+            background-image: url( "images/select.png" ), -webkit-linear-gradient(#f4f4f4, #efefef 40%, #dcdcdc);
+            background-image: url( "images/select.png" ), -moz-linear-gradient(#f4f4f4, #efefef 40%, #dcdcdc);
+        }
+        /* TEXT */ textarea, input[type='password'], input[type='text'], input[type='url'], input:not([type]) {
+            font-size: inherit;
+            -webkit-transition: -webkit-box-shadow 100ms, background 100ms, border 500ms;
+            -moz-transition: -moz-box-shadow 100ms, background 100ms, border 500ms;
+            transition: box-shadow 100ms, background 100ms, border 500ms;
+            border-radius: 3px;
+            border: 1px solid #a0a0a0;
+            font-size: 13px;
+            font-weight: 400;
+            margin: 0;
+            padding: 3px;
+        }
+
+            textarea:hover, input[type='password']:hover, input[type='text']:hover, input[type='url']:hover, input:not([type]):hover {
+                -webkit-box-shadow: inset 0 2px 2px rgba(0, 0, 0, .1), 0 1px 0 white, 0 0 1px transparent, 0 0 1px transparent, 0 0 1px transparent;
+                -moz-box-shadow: inset 0 2px 2px rgba(0, 0, 0, .1), 0 1px 0 white, 0 0 1px transparent, 0 0 1px transparent, 0 0 1px transparent;
+                box-shadow: inset 0 2px 2px rgba(0, 0, 0, .1), 0 1px 0 white, 0 0 1px transparent, 0 0 1px transparent, 0 0 1px transparent;
+            }
+
+            textarea:focus, input[type='password']:focus, input[type='text']:focus, input[type='url']:focus, input:not([type]):focus {
+                -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, .15), 0 1px 0 transparent, 0 0 1px #c0c0c0, 0 0 1px #c0c0c0, 0 0 1px #c0c0c0;
+                -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, .15), 0 1px 0 transparent, 0 0 1px #c0c0c0, 0 0 1px #c0c0c0, 0 0 1px #c0c0c0;
+                box-shadow: 0 2px 2px rgba(0, 0, 0, .15), 0 1px 0 transparent, 0 0 1px #c0c0c0, 0 0 1px #c0c0c0, 0 0 1px #c0c0c0; /*BACKGROUND: #f8f8f8;*/
+                border-color: #4080fa;
+                outline: none;
+            }
+
+            textarea:disabled, input[type='password']:disabled, input[type='text']:disabled, input[type='url']:disabled, input:not([type]):disabled {
+                background: #f8f8f8;
+                border-color: #c0c0c0;
+            }
+        /* CHECKBOX, RADIO */ input[type=checkbox], input[type=radio] {
+            margin-left: 0;
+            margin-right: 0;
+            position: relative;
+            top: 1px;
+        }
+
+        input[type='checkbox'] {
+            -webkit-box-shadow: inset 0 1px 2px white, 0 1px 2px rgba(0, 0, 0, .2);
+            -webkit-appearance: none;
+            -webkit-margin-start: 0;
+            -webkit-margin-end: 5px;
+            background: -webkit-linear-gradient(#fafafa, #dcdcdc);
+            border-radius: 3px;
+            border: 1px solid #a0a0a0;
+            display: inline-block;
+            height: 16px;
+            margin-bottom: 0;
+            margin-top: 0;
+            position: relative;
+            top: 3px;
+            vertical-align: baseline;
+            width: 16px;
+        }
+
+            input[type='checkbox']:disabled {
+                opacity: .75;
+                filter: alpha(opacity=75);
+            }
+
+            input[type='checkbox']:not(:disabled):not(.disabled):hover {
+                background: -webkit-linear-gradient(#fff, #e6e6e6);
+                text-shadow: 0 1px 0 rgba(255, 255, 255, 1);
+            }
+
+            input[type='checkbox']:active {
+                -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, .2);
+                background: -webkit-linear-gradient(#f0f0f0, #bebebe);
+                border: 1px solid #808080;
+                padding-bottom: 4px;
+                padding-top: 6px;
+                text-shadow: 0 1px 0 rgba(255, 255, 255, .25);
+            }
+
+            input[type='checkbox']:checked::before {
+                color: #808080;
+                content: url( "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAKCAYAAABi8KSDAAAAmElEQVR42nXQMQ6EIBAFUI5OQ6TwHibacAIaIx4AbbiAtQGk429wg8lEKX4xzJswwAA0s64rpmlCrZvQGAPO+Z1xHPFgay1Ks8JlWQp6IqWEcw5s33cIIe7DeZ5LXvA4DqSUwPq+J80veF3Xf41t29B1XRPGGOkDtdafMIRwQ4LLNcMwEOi9J5B8Xc4ZSqkmrJgMnOdZ4Ss/HaFLUf+pI9MAAAAASUVORK5CYII=" );
+                height: 13px;
+                left: 2px;
+                position: absolute;
+                top: 3px;
+            }
+        /* Chrome Styles */ /* Button */
+
+        button, input[type='button'], input[type='submit'] {
+            -webkit-border-radius: 2px;
+            -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+            -moz-border-radius: 2px;
+            -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+            border-radius: 2px;
+            box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+            /*background: -webkit-linear-gradient(#fafafa, #f4f4f4 40%, #e5e5e5);
+            background: -moz-linear-gradient(#fafafa, #f4f4f4 40%, #e5e5e5);
+            background: -o-linear-gradient(#fafafa, #f4f4f4 40%, #e5e5e5);
+            background: -ms-linear-gradient(#fafafa, #f4f4f4 40%, #e5e5e5);
+            background: linear-gradient(#fafafa, #f4f4f4 40%, #e5e5e5);*/
+            border: 1px solid #aaa;
+            /*color: #444;*/
+            font-size: inherit;
+            margin-bottom: 0px;
+            min-width: 4em;
+            padding: 3px 12px 3px 12px;
+        }
+
+            button:hover, input[type='button']:hover, input[type='submit']:hover {
+                -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+                -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+                box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+                /*background: #ebebeb -webkit-linear-gradient(#fefefe, #f8f8f8 40%, #e9e9e9);
+                background: #ebebeb -moz-linear-gradient(#fefefe, #f8f8f8 40%, #e9e9e9);
+                background: #ebebeb -o-linear-gradient(#fefefe, #f8f8f8 40%, #e9e9e9);
+                background: #ebebeb linear-gradient(#fefefe, #f8f8f8 40%, #e9e9e9);*/
+                border-color: #999;
+                /*color: #222;*/
+            }
+
+            button:active, input[type='button']:active, input[type='submit']:active {
+                -webkit-box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.2);
+                -moz-box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.2);
+                box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.2);
+                /*background: #ebebeb -webkit-linear-gradient(#f4f4f4, #efefef 40%, #dcdcdc);
+                background: #ebebeb -moz-linear-gradient(#f4f4f4, #efefef 40%, #dcdcdc);
+                background: #ebebeb -o-linear-gradient(#f4f4f4, #efefef 40%, #dcdcdc);
+                background: #ebebeb linear-gradient(#f4f4f4, #efefef 40%, #dcdcdc);*/
+                /*color: #333;*/
+            }
+
+            button[disabled], input[type='button'][disabled], input[type='submit'][disabled], button[disabled]:hover, input[type='button'][disabled]:hover, input[type='submit'][disabled]:hover {
+                -webkit-box-shadow: none;
+                -moz-box-shadow: none;
+                box-shadow: none;
+                background: -webkit-linear-gradient(#fafafa, #f4f4f4 40%, #e5e5e5);
+                background: -moz-linear-gradient(#fafafa, #f4f4f4 40%, #e5e5e5);
+                background: -o-linear-gradient(#fafafa, #f4f4f4 40%, #e5e5e5);
+                background: linear-gradient(#fafafa, #f4f4f4 40%, #e5e5e5);
+                border-color: #aaa;
+                /*color: #888;*/
+            }
+
+        #updateProgress {
+            background-attachment: fixed;
+        }
+
+        .f-nav {
+            z-index: 9999;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+        }
+
+        .AspNet-Menu-Leaf {
+            padding: 0 0 0px 0px;
+        }
+
+        .AspNet-Menu li ul {
+            overflow-y: auto !important;
+            max-height: 500px !important;
+        }
+
+            .AspNet-Menu li ul li ul {
+                position: fixed;
+                z-index: 99999;
+            }
+
+        .AspNet-Menu-Horizontal ul.AspNet-Menu ul {
+            top: initial !important;
+            left: initial !important;
+        }
+
+                canvas {
+            height:65px !important;
+        }
+    </style>
+
+
+
+    <script type="text/javascript">
+
+        var head = document.getElementsByTagName('head')[0];
+        if (window.location.pathname.indexOf('/CDMS/') >= 0) {
+            loadjs(head, '../Script/General.js');
+            //loadjs(head, '../Script/jquery-1.7.min.js');
+            //loadjs(head, '../Script/jquery-1.9.1.js');
+            if (window.location.pathname.indexOf('/frmSubjectCDMSScheduling/') >= 0) {
+            }
+            else {
+                v;
+            }
+        }
+        else {
+            loadjs(head, 'Script/General.js');
+            //loadjs(head, 'Script/jquery-1.7.min.js');
+        }
+
+        function loadjs(TargetElement, file) {
+            var script = document.createElement('script');
+            script.setAttribute("type", "text/javascript");
+            script.setAttribute("src", file);
+            TargetElement.appendChild(script);
+        }
+        jQuery("document").ready(function ($) {
+
+            var MenuTD = $('#menuTd');
+
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 60) {
+                    MenuTD.addClass("f-nav");
+                } else {
+                    MenuTD.removeClass("f-nav");
+                }
+            });
+
+        });
+
+    </script>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <%--<div id="divThemeSelection"  onChange="hideDiv()" class="themeSelection" style="display:none;" >
+                          <table>
+                              <tr>
+                                  <td>
+                                      <h4 style="text-align:center">Select Theme</h4>
+                                       <hr style="width:133%;float:none;"/>
+                                  </td>
+                              </tr>
+                              <tr>
+                                  <td>
+                            <table style="margin-left:82px;">                            
+                             <tr>
+                                 <td style="width:20%;text-align:right;">
+                                     <label id="lblornage" class="ThemeLable" style="background-color:#CF8E4C;" ></label>
+                                 </td>
+                                 <td style="text-align:left;">
+                                     <label id="lblBlue" class="ThemeLable" style="background-color:#1560a1;" ></label>
+                                 </td>
+                             </tr>
+                             <tr>
+                                 <td style="width:20%;text-align:right;">
+                                     <label id="lblGreen" class="ThemeLable" style="background-color:#33a047;"></label>
+                                 </td>
+                                 <td style="text-align:left;">
+                                     <label id="lblDemo" class="ThemeLable" style="background-color:#999966;"></label>
+                                 </td>
+                             </tr>
+                         </table>
+                                  </td>
+                              </tr>
+                          </table>                      
+                      </div>--%>
+        <div id="divUserDetails" class="themeSelection userdetails" style="display: none;">
+            <table id="tblUserDetails">
+                <tr>
+                    <td height="35">
+                        <i class="fa fa-user" aria-hidden="true" style="font-size: larger"></i>
+                        <span id="lblWelcome" class="Label" style="color: #000; font-size: 13px;">Welcome: </span>
+                        <asp:Label ID="lblUserName" runat="server" CssClass="Label" Style="color: blue; font-size: 12px;" />
+                    </td>
+                </tr>
+                <tr>
+                    <td height="35">
+                        <i class="fa fa-sign-in" aria-hidden="true" style="font-size: larger"></i>
+                        <span id="lblLoginTime1" class="Label" style="color: #000; font-size: 13px;">Login Time: </span>
+                        <asp:Label ID="lblTime" runat="server" CssClass="Label" Style="color: blue; opacity: 2.22; font-size: 12px;" />
+                    </td>
+                </tr>
+                <tr>
+                    <td height="35">
+                        <i class="fa fa-share-square-o" aria-hidden="true" style="font-size: larger"></i>
+                        <span id="spnLastLoggedInTime" class="Label" style="color: #000; font-size: 11.5px;">Last Logged In: </span>
+                        <asp:Label ID="lblLastLoggedInTime" runat="server" CssClass="Label" Style="color: blue; opacity: 2.22; font-size: 10.5px;" />
+                    </td>
+                </tr>
+                <tr>
+                    <td height="35">
+                        <i class="fa fa-sign-out" aria-hidden="true" style="font-size: larger"></i>
+                        <span id="spnLogOut" class="Label" style="color: #000; font-size: 13px;">
+                            <a href="LogoutPage.aspx" title="Logout" style="text-decoration: none !important; color: black">LogOut</a></span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <input style="display: none" type="text" name="fakeusernameremembered" />
+        <input style="display: none" type="password" name="fakepasswordremembered" />
+        <div id="divEctd" align="center" class="wrapper" style="width: 100%">
+            <center>
+                <asp:ScriptManager ID="ScriptManager1" runat="server" AsyncPostBackTimeout="1000"
+                    EnablePageMethods="True">
+                    <Services>
+                        <asp:ServiceReference Path="AutoComplete.asmx" />
+                    </Services>
+                </asp:ScriptManager>
+                <table style="width: 100%" id="AutoNumber1" cellpadding="0">
+                    <tr style='height: 65px'>
+                        <td style="vertical-align: bottom; width: 100%; height: 65px; text-align: left;">
+                            <div style="background-image: url(images/left1.jpg); background-repeat: repeat-x; width: 100%; height: 65px;">                             
+                                <div style="padding:5px; position: absolute; z-index: 999;">
+                                    <img src="Images/biznet-logo.png" alt="biznet logo left" width="60" id="LogoImg"/>
+                                </div>
+                                <div style="float:right; width:100%;">
+								    <div id="qodef-particles" class="fixed" style="height: 65px; background-color: #e4e4e4;" data-particles-density="high" 
+                                            data-particles-color="#f68e1f" data-particles-opacity="0.8" data-particles-size="3" data-speed="3" data-show-lines="yes" 
+                                            data-line-length="100" data-hover="yes" data-click="yes">
+                                        <div id="qodef-p-particles-container" style="height:65px;">
+                                            <canvas class="particles-js-canvas-el" width="1349" height="65" style="width: 100%; height: 10%;"></canvas>
+                                        </div>
+                                    </div>
+                                    <!-- <img src="./Page_files/topheader.jpg" alt="biznet logo right" style="width: 100%; height: 64px; background-size: cover;"> -->
+                                </div>
+                            </div>
+
+                            <div style="clear: both; position: relative; margin-top: -65px; float: right; width: 60%;">
+                                <table style="width: 100%; border: 0 solid #111111; text-align: right; float: right;">
+                                    <tr style="height: 35px">
+                                        <td style="white-space: nowrap; vertical-align: top; height: 35px;">
+                                            <asp:Label ID="lblProfile" runat="server" CssClass="Label" Text="Change Profile : "
+                                                ForeColor="#000"  Visible="false"/>
+                                            <asp:DropDownList runat="server" ID="ddlProfile" AutoPostBack="True" CssClass="Label"
+                                                ForeColor="navy" Visible="false"/>
+                                            <i class="fa fa-clock-o SessionImageClock" aria-hidden="true"></i>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="white-space: nowrap;float:left">
+                                          
+                                            <div id="DivSessionTimingWatch" class="SessionTiming">
+                                            <asp:Label runat="server" ID="lblSessionTimeCap" CssClass="Label" Style="color: Black; font-size:15px; width:14px;font-weight:bold;"
+                                                Text="Session Expires In: "></asp:Label>
+                                            <b><span class="Label headerusername" id="timerText"></span></b>                                            
+                                            <asp:HiddenField ID="HDSessionValue" runat="server" Value='<%=Session("UserId")%>' />
+                                                
+                                             
+                                            </div>
+                                           
+                                             
+                                        </td>
+                                    </tr>
+                                    <div class="Manage">
+                                                <span id="lblWelcome1" class="Label" style="color: #000;font-size:15px;">Welcome :</span>
+                                            <asp:Label ID="lblUserName1" runat="server" CssClass="Label headerusername" />
+                                                </div> 
+                                </table>
+                            </div>
+                            <div style="float: none;">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="image" id="imgTheme" src="images/LogoutIcon.png" style="height: 20px; width: 73px; float: right; margin-right: 1px;" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="height: 8px"></td>
+                    </tr>
+                    <tr>
+                        <td align="left" style="width: 100%">
+                            <div align="center">
+                                <table style="margin-bottom: 18px; border: 1px solid #1560a1; width: 100%" cellspacing="1" cellpadding="0">
+                                    <tr>
+                                        <td align="center" style="width: 100%">
+                                            <asp:Panel ID="Pan_Hdr" runat="server" Width="100%" CssClass="InnerTable" BackColor="#F9FFFC">
+                                                <asp:Panel Style="min-height: 440px; height: auto !important; height: 440px" ID="Pan_Child"
+                                                    runat="server" Width="100%" BackColor="Window">
+                                                    <div id="Header Label" style="text-align: center;" align="center" class="Div">
+                                                        <table style="width: 100%">
+                                                            <tr>
+                                                                <td align="left">
+                                                                    <asp:Label ID="lblMode" runat="server" Text="Mode:" Visible="False" SkinID="lblDisplay"
+                                                                        Width="42px"></asp:Label>
+                                                                    <asp:Label ID="lblShowMode" runat="server" SkinID="lblDisplay" Width="162px"></asp:Label>
+                                                                </td>
+                                                                <td align="right" style="font-weight: bold; font-size: x-small; width: 187px; color: Navy; font-family: Verdana, Sans-Serif; font-variant: normal">
+                                                                    <asp:Label ID="lblMandatory" runat="server" Text="Fields with * are Mandatory "></asp:Label>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                        <table align="center" style="width: 100%">
+                                                            <tr>
+                                                                <td align="center" width="100%">
+                                                                    <asp:Label ID="lblHeading" runat="server" SkinID="lblHeading"></asp:Label>
+                                                                    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                                                                        <ContentTemplate>
+                                                                            <asp:Label ID="lblerrormsg" runat="server" Width="545px" SkinID="lblError"></asp:Label>
+                                                                        </ContentTemplate>
+                                                                    </asp:UpdatePanel>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                    <div id="updateProgress" class="updateProgress" style="display: none; vertical-align: middle">
+                                                        <div align="center">
+                                                            <table>
+                                                                <tr>
+                                                                    <td>
+                                                                        <font class="updateText" style="margin-right: 22px">Please Wait ...</font>
+                                                                    </td>
+                                                                    <td style="height: 100px">
+                                                                        <div title="Wait" class="updateImage">
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                    <asp:ContentPlaceHolder ID="CPHLAMBDA" runat="server">
+                                                    </asp:ContentPlaceHolder>
+                                                </asp:Panel>
+                                            </asp:Panel>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="8"></td>
+                    </tr>
+                </table>
+            </center>
+            <iframe id="frmSelectBlocker" scrolling="no" frameborder="0" class="frmStyle" width="0"
+                height="0"></iframe>
+            <div class="push">
+            </div>
+        </div>
+        <div class="footer_Master">
+            <p style="text-align: center">
+                <script type="text/javascript">
+                    var copyright;
+                    var update;
+                    copyright = new Date();
+                    update = copyright.getFullYear();
+                    document.write("<font face=\"verdana\" size=\"1\" color=\"black\">© Copyright " + update + ", Sarjen Systems Pvt LTD. </font>");
+                </script>
+            </p>
+        </div>
+        <asp:HiddenField ID="hfSession" runat="server" />
+        <asp:Button ID="btnmdl" runat="server" Style="display: none;" />
+        <cc1:ModalPopupExtender ID="mdlSessionTimeoutWarning" runat="server" PopupControlID="divSessionTimeoutWarning"
+            BackgroundCssClass="modalBackground" BehaviorID="mdlSessionTimeoutWarning" TargetControlID="btnmdl">
+        </cc1:ModalPopupExtender>
+        <div id="divSessionTimeoutWarning" runat="server" class="centerModalPopup" style="display: none; overflow: auto; width: 35%; height: auto; max-height: 25%; min-height: auto;">
+            <asp:UpdatePanel ID="HM_Home_upnlSession" runat="server" UpdateMode="Conditional"
+                RenderMode="Inline">
+                <ContentTemplate>
+                    <table width="350px" align="center">
+                        <tr>
+                            <td>
+                                <img id="Img1" src="~/Images/showQuery.png" runat="server" alt="Confirmation" />
+                            </td>
+                            <td class="Label" style="text-align: left;">Your session will expire within 5 mins.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <hr />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" colspan="2">
+                                <asp:Button ID="btnContinueWorking" runat="server" Text="Extend" CssClass="button"
+                                    Style="display: none;" />
+                                <asp:Button ID="BtnSessionDivClose" runat="server" Text="Close" CssClass="button"
+                                    OnClientClick="closeSessionDiv();" />
+                                <asp:Button ID="btnLogout" runat="server" Text="" CssClass="btn btngo" Style="display: none;" />
+                                <asp:HiddenField ID="hdnSessionUSerID" runat="server" Value="" />
+                            </td>
+                        </tr>
+                    </table>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </div>
+
+        <script type="text/javascript">
+
+            var prm = Sys.WebForms.PageRequestManager.getInstance();
+            prm.add_initializeRequest(onUpdating);
+            prm.add_endRequest(onUpdated);
+
+            var showProgress = true;
+            var ACTUAL_SESSIONTIME = $('input[id$="hfSession"]').val();
+            var timerId, sessionFlag = true;
+            SessionTimeSet();
+
+            // add by shivani pandya For theme selection
+            jQuery(document).ready(function () {
+                assignCSS();
+                selectTheme();
+            });
+
+            // add by shivani pandya For theme selection
+            function assignCSS() {
+                var theme;
+                jQuery.each(document.cookie.split(";"), function (i, para) {
+                    if (para == " Theme=Orange" || para == "Theme=Orange") {
+                        theme = para;
+                    }
+                });
+                var colorName;
+                if (theme == " Theme=Orange" || theme == "Theme=Orange") {
+                    colorName = "#e07d28";
+                }
+                if (theme != "") {
+                    jQuery("div").css('border-color', '#e07d28');
+                    jQuery("#ctl00_lblHeading").css('color', '#e07d28');
+                    jQuery("#ctl00_CPHLAMBDA_divExpandable").css('background-color', '#e07d28');
+                    jQuery("#lblHeader").attr("style", "font-family:Verdana;font-size:Small;font-weight:bold;color:#e07d28");
+                    //$(".LabelText").css("color", "#e07d28");
+                }
+            }
+
+            // add by shivani pandya For theme selection
+            function selectTheme() {
+                var theme;
+                jQuery.each(document.cookie.split(";"), function (i, para) {
+                    if (para == " Theme=Orange" || para == "Theme=Orange") {
+                        theme = para;
+                    }
+                });
+                if (theme == "" || theme == undefined || theme == " Theme=Blue" || theme == "Theme=Blue") {
+                    var cssLink = jQuery('<link href="App_Themes/StyleBlue/StyleBlue.css" type="text/css" rel="Stylesheet" />');
+                    jQuery("body").append(cssLink);
+                }
+                else if (theme != "") {
+                    if (theme == " Theme=Orange" || theme == "Theme=Orange") {
+                        var cssLink = jQuery('<link href="App_Themes/StyleOrange/orange.css" type="text/css" rel="Stylesheet" />');
+                    }
+                    jQuery("body").append(cssLink);
+                }
+
+            }
+
+            function onUpdating(sender, args) {
+                if (showProgress) {
+                    var updateProgressDiv = $get('updateProgress');
+                    createDiv();
+                    updateProgressDiv.style.display = '';
+                    setLayerPosition();
+                }
+            }
+
+            function createDiv() {
+                var divTag = document.createElement('div');
+
+                divTag.id = 'shadow';
+                divTag.setAttribute('align', 'center');
+                divTag.style.position = 'absolute';
+                divTag.style.top = '0px';
+                divTag.style.left = '0px';
+                divTag.style.opacity = '0.6';
+                divTag.style.filter = 'alpha(opacity=30)';
+                divTag.style.backgroundColor = '#000000';
+                document.body.appendChild(divTag);
+            }
+
+            function onUpdated(sender, args) {
+                // get the update progress div
+                var updateProgressDiv = $get('updateProgress');
+                // make it invisible
+                updateProgressDiv.style.display = 'none';
+
+                if (document.getElementById('shadow') != null) {
+                    document.body.removeChild(document.getElementById('shadow'));
+                }
+                //clearTimeout(tld);
+            }
+
+            function setLayerPosition() {
+
+                var winScroll = BodyScrollHeight();
+                var updateProgressDivBounds = Sys.UI.DomElement.getBounds($get('updateProgress'));
+                var shadow = document.getElementById('shadow');
+                var bws = GetWindowBounds();
+
+                if (!shadow) {
+                    return;
+                }
+
+                //shadow.style.width = bws.Width + "px";
+                //shadow.style.height = bws.Height + "px";
+                shadow.style.width = $(document).width().toString() + "px";
+                shadow.style.height = $(document).height().toString() + "px";
+                shadow.style.top = winScroll.yScr;
+                shadow.style.left = winScroll.xScr;
+
+                x = Math.round(($(document).width() - updateProgressDivBounds.width) / 2);
+                y = Math.round(($(document).height() - updateProgressDivBounds.height) / 2);
+
+                x += winScroll.xScr;
+                y += winScroll.yScr;
+
+                Sys.UI.DomElement.setLocation($get('updateProgress'), parseInt(x), parseInt(y));
+            }
+            window.onresize = setLayerPosition;
+            window.onscroll = setLayerPosition;
+
+
+            //jQuery('.AspNet-Menu-Link').click(function() { onUpdating(); });
+            jQuery(function ($) {
+                $('.AspNet-Menu-Link').mousedown(function (event) {
+                    var UserId = document.getElementById('ctl00_hdnSessionUSerID').value;
+                    var str = this.href.indexOf("?UserId=") > 0 ? this.href.substring(this.href.indexOf("?UserId="), this.href.length) : ''
+                    switch (event.which) {
+                        case 1:
+                            this.href = str != '' ? this.href.replace(str, '?UserId=' + UserId) : this.href;
+                            //   onUpdating();
+                            //  $(this).attr('target','_self');
+                            break;
+                        case 2:
+                            this.href = str != '' ? this.href.replace(str, '?UserId=' + UserId) : this.href;
+                            $(this).attr('target', '_blank');
+                            break;
+                        case 3:
+                            //alert('Right mouse button pressed');
+                            this.href = str != '' ? this.href.replace(str, '?UserId=' + UserId) : this.href;
+                            //onUpdating();
+                            $(this).attr('target', '_blank');
+                            break;
+                        default:
+                            //alert('You have a strange mouse');
+                            this.href = str != '' ? this.href.replace(str, '?UserId=' + UserId) : this.href;
+                            //onUpdating();
+                            //   $(this).attr('target', '_self');
+                    }
+                });
+                //added by shivani pandya for apply css
+
+                //for dropdown
+                $('select').removeAttr("class");
+                $('select').attr("class", "dropDownList");
+
+                //for file upload
+                $('[type=file]').removeAttr("class");
+                $('[type=file]').attr("class", "textboxFileUpload");
+
+                //for textbox
+                $('[type=text]').removeAttr("class");
+                $('[type=text]').attr("class", "textBox");
+
+                //button
+                //$('[type=submit]').removeAttr("class");
+                //$('[type=submit]').attr("class", "button");
+
+                //$('[type=reset]').removeAttr("class");
+                //$('[type=reset]').attr("class", "button");
+
+                //multiline textbox
+                $("textarea").removeAttr("class");
+                $("textarea").attr("class", "textBox");
+
+                //end
+                selectTheme();
+            });
+
+            //Created By : Bharat Patel
+            //Created Date : 20-Oct-2011
+            //Reason : Display tooltip on all the DropDownList
+            $(document).ready(function () {
+                if ($('select option') != null) {
+                    $('select option').each(function () {
+                        this.title = this.innerHTML;
+                    });
+                }
+            });
+
+            function UserLoginAlert() {
+                alert('User is not Login in BizNET, please login in biznet.');
+            }
+
+            // add by shivani pandya For theme selection          
+            jQuery(window).focus(function () {
+                selectTheme();
+                return false;
+            });
+
+            // add by shivani pandya For theme selection
+            jQuery("#imgTheme").click(function () {
+                jQuery("#divThemeSelection").removeAttr("style");
+                jQuery("#divThemeSelection").show();
+                return false;
+            });
+
+            // add by shivani pandya For theme selection
+            function hideDiv() {
+                jQuery("#divThemeSelection").hide();
+                jQuery("#divThemeSelection").attr("style", "display:none");
+            }
+
+            jQuery(document).click(function () {
+                jQuery("#divThemeSelection").hide();
+                jQuery("#divThemeSelection").attr("style", "display:none");
+            })
+
+            jQuery("#lblornage").click(function () {
+                document.cookie = "Theme=Orange";
+                selectTheme();
+                return false;
+            });
+            jQuery("#lblGreen").click(function () {
+                document.cookie = "Theme=Green";
+                selectTheme();
+                return false;
+            });
+            jQuery("#lblDemo").click(function () {
+                document.cookie = "Theme=Demo";
+                selectTheme();
+                return false;
+            });
+            jQuery("#lblBlue").click(function () {
+                document.cookie = "Theme=Blue";
+                selectTheme();
+                return false;
+            });
+            // add by shivani pandya For theme selection
+            function selectTheme() {
+                var theme;
+                jQuery.each(document.cookie.split(";"), function (i, para) {
+                    if (para == " Theme=Orange" || para == "Theme=Orange") {
+                        theme = para;
+                    }
+                    if (para == " Theme=Green" || para == "Theme=Green") {
+                        theme = para;
+                    }
+                    if (para == " Theme=Demo" || para == "Theme=Demo") {
+                        theme = para;
+                    }
+                    if (para == " Theme=Blue" || para == "Theme=Blue") {
+                        theme = para;
+                    }
+                });
+                if (theme != "") {
+                    jQuery.each(jQuery("link"), function () {
+                        if (jQuery(this).attr("href") == "App_Themes/StyleBlue/StyleBlue.css" || jQuery(this).attr("href") == "App_Themes/StyleGreen/GreenStyle.css" || jQuery(this).attr("href") == "App_Themes/StyleDemo/DemoStyle.css" || jQuery(this).attr("href") == "App_Themes/StyleOrange/orange.css") {
+                            if (theme == " Theme=Orange" || theme == "Theme=Orange") {
+                                jQuery(this).attr("href", "App_Themes/StyleOrange/orange.css");
+                            }
+                            if (theme == " Theme=Green" || theme == "Theme=Green") {
+                                jQuery(this).attr("href", "App_Themes/StyleGreen/GreenStyle.css");
+                            }
+                            if (theme == " Theme=Demo" || theme == "Theme=Demo") {
+                                jQuery(this).attr("href", "App_Themes/StyleDemo/DemoStyle.css");
+                            }
+                            if (theme == " Theme=Blue" || theme == "Theme=Blue") {
+                                jQuery(this).attr("href", "App_Themes/StyleBlue/StyleBlue.css");
+                            }
+                        }
+                    });
+                }
+                assignCSS();
+                return true;
+            }
+
+            // add by shivani pandya For theme selection
+            function assignCSS() {
+                var theme;
+                var footer = "";
+                jQuery.each(document.cookie.split(";"), function (i, para) {
+                    if (para == " Theme=Orange" || para == "Theme=Orange") {
+                        theme = para;
+                    }
+                    if (para == " Theme=Green" || para == "Theme=Green") {
+                        theme = para;
+                    }
+                    if (para == " Theme=Demo" || para == "Theme=Demo") {
+                        theme = para;
+                    }
+                    if (para == " Theme=Blue" || para == "Theme=Blue") {
+                        theme = para;
+                    }
+                });
+                if (theme == " Theme=Orange" || theme == "Theme=Orange") {
+                    jQuery("#ctl00_lblMandatory").css({ 'border-color': '#CF8E4C' });
+
+                    jQuery("table[rules] tr[valign=top]").removeAttr("style");
+                    jQuery("table[rules] tr[valign=top]").removeAttr("class");
+                    jQuery("table[rules] tr[valign=top]").attr("class", "trHeader");
+
+                    footer = jQuery("table[rules] tr[align=center]")[1];
+                    jQuery(footer).removeAttr("style");
+                    jQuery(footer).removeAttr("class");
+                    jQuery(footer).attr("class", "trFooter");
+
+                    jQuery("#ctl00_lblHeading").removeAttr("style");
+
+                    jQuery("#ctl00_lblHeading").attr("class", "Labelheading");
+
+                    jQuery("#ctl00_CPHLAMBDA_divExpandable").css({ 'background-color': '#CF8E4C' });
+
+                    jQuery("#ctl00_CPHLAMBDA_divExpandable").css({ 'background-color': '#CF8E4C' });
+                    jQuery("#ctl00_CPHLAMBDA_LblProjectPreClinical").css({ 'color': 'darkred' });
+                    jQuery("#ctl00_CPHLAMBDA_LblProjectsClinincalPhase").css({ 'color': 'darkred' });
+                    jQuery("#ctl00_CPHLAMBDA_LblAnalyticalPhase").css({ 'color': 'darkred' });
+                    jQuery("#ctl00_CPHLAMBDA_LblDocumentPhase").css({ 'color': 'darkred' });
+
+                    $.each($("#ctl00_CPHLAMBDA_pnltable div table tr td"), function () {
+                        $(this).css({ 'color': '#CF8E4C' });
+                    });
+                }
+                if (theme == " Theme=Green" || theme == "Theme=Green") {
+                    jQuery("#ctl00_lblHeading").removeAttr("style");
+                    jQuery("#ctl00_lblHeading").attr("class", "Labelheading");
+
+                    jQuery("#ctl00_CPHLAMBDA_divExpandable").css({ 'background-color': '#33a047' });
+                    jQuery("#ctl00_lblMandatory").css({ 'border-color': '#33a047' });
+
+                    jQuery("table[rules] tr[valign=top]").removeAttr("style");
+                    jQuery("table[rules] tr[valign=top]").removeAttr("class");
+                    jQuery("table[rules] tr[valign=top]").attr("class", "trHeader");
+
+                    footer = jQuery("table[rules] tr[align=center]")[1];
+                    jQuery(footer).removeAttr("style");
+                    jQuery(footer).removeAttr("class");
+                    jQuery(footer).attr("class", "trFooter");
+
+                    jQuery("#ctl00_CPHLAMBDA_divExpandable").css({ 'background-color': ' #FF8000' });
+                    jQuery("#ctl00_CPHLAMBDA_LblProjectPreClinical").css({ 'color': ' #FF8000' });
+                    jQuery("#ctl00_CPHLAMBDA_LblProjectsClinincalPhase").css({ 'color': ' #FF8000' });
+                    jQuery("#ctl00_CPHLAMBDA_LblAnalyticalPhase").css({ 'color': '#FF8000' });
+                    jQuery("#ctl00_CPHLAMBDA_LblDocumentPhase").css({ 'color': '#FF8000' });
+
+                    $.each($("#ctl00_CPHLAMBDA_pnltable div table tr td"), function () {
+                        $(this).css({ 'color': '#33a047' });
+                    });
+
+                }
+                if (theme == " Theme=Demo" || theme == "Theme=Demo") {
+                    jQuery("#ctl00_lblHeading").removeAttr("style");
+                    jQuery("#ctl00_lblHeading").attr("class", "Labelheading");
+
+                    jQuery("#ctl00_CPHLAMBDA_divExpandable").css('background-color', '#999966');
+                    jQuery("#ctl00_lblMandatory").css({ 'border-color': '#CF8E4C' });
+
+                    jQuery("table[rules] tr[valign=top]").removeAttr("style");
+                    jQuery("table[rules] tr[valign=top]").removeAttr("class");
+                    jQuery("table[rules] tr[valign=top]").attr("class", "trHeader");
+
+                    footer = jQuery("table[rules] tr[align=center]")[1];
+                    jQuery(footer).removeAttr("style");
+                    jQuery(footer).removeAttr("class");
+                    jQuery(footer).attr("class", "trFooter");
+
+                    jQuery("#ctl00_CPHLAMBDA_divExpandable").css({ 'background-color': '#FF8000' });
+                    jQuery("#ctl00_CPHLAMBDA_LblProjectPreClinical").css({ 'color': '#FF8000' });
+                    jQuery("#ctl00_CPHLAMBDA_LblProjectsClinincalPhase").css({ 'color': '#FF8000' });
+                    jQuery("#ctl00_CPHLAMBDA_LblAnalyticalPhase").css({ 'color': '#FF8000' });
+                    jQuery("#ctl00_CPHLAMBDA_LblDocumentPhase").css({ 'color': '#FF8000' });
+
+                    $.each($("#ctl00_CPHLAMBDA_pnltable div table tr td"), function () {
+                        $(this).css({ 'color': '#999966' });
+                    });
+                }
+                if (theme == " Theme=Blue" || theme == "Theme=Blue") {
+                    jQuery("#ctl00_lblHeading").removeAttr("style");
+                    jQuery("#ctl00_lblHeading").attr({ "class": "Labelheading" });
+
+                    jQuery("#ctl00_CPHLAMBDA_divExpandable").css({ 'background-color': 'Navy' });
+                    jQuery("#ctl00_lblMandatory").css({ 'border-color': '#1560a1' });
+
+                    jQuery("table[rules] tr[valign=top]").removeAttr("style");
+                    jQuery("table[rules] tr[valign=top]").removeAttr("class");
+                    jQuery("table[rules] tr[valign=top]").attr("class", "trHeader");
+
+                    footer = jQuery("table[rules] tr[align=center]")[1];
+                    jQuery(footer).removeAttr("style");
+                    jQuery(footer).removeAttr("class");
+                    jQuery(footer).attr("class", "trFooter");
+
+                    jQuery("#ctl00_CPHLAMBDA_divExpandable").css({ 'background-color': '#FF8000' });
+                    jQuery("#ctl00_CPHLAMBDA_LblProjectPreClinical").css({ 'color': '#FF8000' });
+                    jQuery("#ctl00_CPHLAMBDA_LblProjectsClinincalPhase").css({ 'color': '#FF8000' });
+                    jQuery("#ctl00_CPHLAMBDA_LblAnalyticalPhase").css({ 'color': '#FF8000' });
+                    jQuery("#ctl00_CPHLAMBDA_LblDocumentPhase").css({ 'color': '#FF8000' });
+
+                    $.each($("#ctl00_CPHLAMBDA_pnltable div table tr td"), function () {
+                        $(this).css({ 'color': 'Navy' });
+                    });
+                }
+                return false;
+            }
+        </script>
+        <a href="#0" title="Click to return on the top page" class="cd-top">Top</a>
+    </form>
+
+    <script src="Script/Login/third-party.min.js" type="text/javascript"></script>
+    <script src="Script/Login/modules.min.js" type="text/javascript"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+E:\Application\DISoft_C\DISoft _C\BusinessOperation\obj\Release\BusinessOperation.csprojResolveAssemblyReference.cache
+E:\Application\DISoft_C\DISoft _C\BusinessOperation\bin\Release\BusinessOperation.dll
+E:\Application\DISoft_C\DISoft _C\BusinessOperation\bin\Release\BusinessOperation.pdb
+E:\Application\DISoft_C\DISoft _C\BusinessOperation\bin\Release\DatabaseOperation.dll
+E:\Application\DISoft_C\DISoft _C\BusinessOperation\bin\Release\DTO.dll
+E:\Application\DISoft_C\DISoft _C\BusinessOperation\bin\Release\System.Web.Http.dll
+E:\Application\DISoft_C\DISoft _C\BusinessOperation\bin\Release\Utility.dll
+E:\Application\DISoft_C\DISoft _C\BusinessOperation\bin\Release\SS.Web.dll
+E:\Application\DISoft_C\DISoft _C\BusinessOperation\bin\Release\System.Net.Http.Formatting.dll
+E:\Application\DISoft_C\DISoft _C\BusinessOperation\bin\Release\DatabaseOperation.pdb
+E:\Application\DISoft_C\DISoft _C\BusinessOperation\bin\Release\DTO.pdb
+E:\Application\DISoft_C\DISoft _C\BusinessOperation\bin\Release\Utility.pdb
+E:\Application\DISoft_C\DISoft _C\BusinessOperation\bin\Release\System.Web.Http.xml
+E:\Application\DISoft_C\DISoft _C\BusinessOperation\bin\Release\System.Net.Http.Formatting.xml
+E:\Application\DISoft_C\DISoft _C\BusinessOperation\obj\Release\BusinessOperation.dll
+E:\Application\DISoft_C\DISoft _C\BusinessOperation\obj\Release\BusinessOperation.pdb
+G:\Jaimin Office\Code_Test\DISoft _C\BusinessOperation\bin\Release\BusinessOperation.dll
+G:\Jaimin Office\Code_Test\DISoft _C\BusinessOperation\bin\Release\BusinessOperation.pdb
+G:\Jaimin Office\Code_Test\DISoft _C\BusinessOperation\bin\Release\DatabaseOperation.dll
+G:\Jaimin Office\Code_Test\DISoft _C\BusinessOperation\bin\Release\DTO.dll
+G:\Jaimin Office\Code_Test\DISoft _C\BusinessOperation\bin\Release\Utility.dll
+G:\Jaimin Office\Code_Test\DISoft _C\BusinessOperation\bin\Release\SS.Web.dll
+G:\Jaimin Office\Code_Test\DISoft _C\BusinessOperation\bin\Release\DatabaseOperation.pdb
+G:\Jaimin Office\Code_Test\DISoft _C\BusinessOperation\bin\Release\DTO.pdb
+G:\Jaimin Office\Code_Test\DISoft _C\BusinessOperation\bin\Release\Utility.pdb
+G:\Jaimin Office\Code_Test\DISoft _C\BusinessOperation\obj\Release\BusinessOperation.csproj.AssemblyReference.cache
+G:\Jaimin Office\Code_Test\DISoft _C\BusinessOperation\obj\Release\BusinessOperation.csproj.CoreCompileInputs.cache
+G:\Jaimin Office\Code_Test\DISoft _C\BusinessOperation\obj\Release\BusinessOperation.csproj.CopyComplete
+G:\Jaimin Office\Code_Test\DISoft _C\BusinessOperation\obj\Release\BusinessOperation.dll
+G:\Jaimin Office\Code_Test\DISoft _C\BusinessOperation\obj\Release\BusinessOperation.pdb

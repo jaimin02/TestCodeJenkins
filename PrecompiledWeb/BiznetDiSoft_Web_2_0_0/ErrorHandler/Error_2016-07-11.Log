@@ -1,0 +1,146 @@
+Err.Date: 7/11/2016 6:12:43 PM
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at frmMainPage.Page_Load(Object sender, EventArgs e) in D:\BizNET\BizNETCTM\BizNETCTM_WEB\frmMainPage.aspx.vb:line 118<BR> ...PageLoad
+UserNo :
+UserName :dhirajpatel
+User Division :
+URL:http://localhost/BizNETCTM_WEB/frmMainPage.aspx?usertype=0010
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+
+Err.Date: 7/11/2016 6:29:34 PM
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at frmMainPage.Page_Load(Object sender, EventArgs e) in D:\BizNET\BizNETCTM\BizNETCTM_WEB\frmMainPage.aspx.vb:line 118<BR> ...PageLoad
+UserNo :
+UserName :CPMAAdmin
+User Division :
+URL:http://localhost/BizNETCTM_WEB/frmMainPage.aspx?usertype=0014
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+
+Err.Date: 7/11/2016 6:29:53 PM
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at frmMainPage.Page_Load(Object sender, EventArgs e) in D:\BizNET\BizNETCTM\BizNETCTM_WEB\frmMainPage.aspx.vb:line 118<BR> ...PageLoad
+UserNo :
+UserName :CPMAAdmin
+User Division :
+URL:http://localhost/BizNETCTM_WEB/frmMainPage.aspx?usertype=0014
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+
+Err.Date: 7/11/2016 6:30:33 PM
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at frmMainPage.Page_Load(Object sender, EventArgs e) in D:\BizNET\BizNETCTM\BizNETCTM_WEB\frmMainPage.aspx.vb:line 118<BR> ...PageLoad
+UserNo :
+UserName :CPMAAdmin
+User Division :
+URL:http://localhost/BizNETCTM_WEB/frmMainPage.aspx?mode=1
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+
+Err.Date: 7/11/2016 6:32:57 PM
+Column 'vServiceName' does not belong to table VIEW_GETWORKSPACEDETAILFORHDR.<BR> ...ViewProjectSummary
+UserNo :
+UserName :CPMAAdmin
+User Division :
+URL:http://localhost/BizNETCTM_WEB/frmProjectDetailMst.aspx?WorkSpaceId=0000008961&Page=frmMyProject&Type=OPERATIONAL
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+
+Err.Date: 7/11/2016 6:38:47 PM
+Object reference not set to an instance of an object.<BR> .....GenCall_ShowUI
+UserNo :
+UserName :
+User Division :
+URL:http://localhost/BizNETCTM_WEB/frmMyProject.aspx?mode=1&Type=OPERATIONAL
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+
+Err.Date: 7/11/2016 7:28:41 PM
+System.Web.Services.Protocols.SoapException: System.Web.Services.Protocols.SoapException: Server was unable to process request. ---> System.Data.SqlClient.SqlException: Invalid column name 'ProjectManagerWithProfile'.
+   at ClsDataLogic_New.ExecuteQuery_DataSet(String strQuery, String strTableName) in D:\BizNET\BizNETCTM\DiSOft_WS\App_Code\ClsDataLogic_New.vb:line 510
+   at WS_HelpDbTable.GetResultSet(String strQuery, String strTableNAme) in D:\BizNET\BizNETCTM\DiSOft_WS\App_Code\WS_HelpDbTable.vb:line 359
+   --- End of inner exception stack trace ---
+   at System.Web.Services.Protocols.SoapHttpClientProtocol.ReadResponse(SoapClientMessage message, WebResponse response, Stream responseStream, Boolean asyncCall)
+   at System.Web.Services.Protocols.SoapHttpClientProtocol.Invoke(String methodName, Object[] parameters)
+   at WS_HelpDbTable.WS_HelpDbTable.GetResultSet(String strQuery, String strTableNAme) in c:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\biznetctm_web\11c0e8a3\3c4b24f2\App_WebReferences.xsky1s-b.0.cs:line 44449
+   at frmMainPage.Page_Load(Object sender, EventArgs e) in D:\BizNET\BizNETCTM\BizNETCTM_WEB\frmMainPage.aspx.vb:line 110<BR> ...PageLoad
+UserNo :
+UserName :CPMAAdmin
+User Division :
+URL:http://localhost/BizNETCTM_WEB/frmMainPage.aspx?usertype=0005
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+
+Err.Date: 7/11/2016 7:29:38 PM
+System.Web.Services.Protocols.SoapException: System.Web.Services.Protocols.SoapException: Server was unable to process request. ---> System.Data.SqlClient.SqlException: Invalid column name 'ProjectManagerWithProfile'.
+   at ClsDataLogic_New.ExecuteQuery_DataSet(String strQuery, String strTableName) in D:\BizNET\BizNETCTM\DiSOft_WS\App_Code\ClsDataLogic_New.vb:line 510
+   at WS_HelpDbTable.GetResultSet(String strQuery, String strTableNAme) in D:\BizNET\BizNETCTM\DiSOft_WS\App_Code\WS_HelpDbTable.vb:line 359
+   --- End of inner exception stack trace ---
+   at System.Web.Services.Protocols.SoapHttpClientProtocol.ReadResponse(SoapClientMessage message, WebResponse response, Stream responseStream, Boolean asyncCall)
+   at System.Web.Services.Protocols.SoapHttpClientProtocol.Invoke(String methodName, Object[] parameters)
+   at WS_HelpDbTable.WS_HelpDbTable.GetResultSet(String strQuery, String strTableNAme) in c:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\biznetctm_web\11c0e8a3\3c4b24f2\App_WebReferences.xsky1s-b.0.cs:line 44449
+   at frmMainPage.Page_Load(Object sender, EventArgs e) in D:\BizNET\BizNETCTM\BizNETCTM_WEB\frmMainPage.aspx.vb:line 110<BR> ...PageLoad
+UserNo :
+UserName :CPMAAdmin
+User Division :
+URL:http://localhost/BizNETCTM_WEB/frmMainPage.aspx?usertype=0005
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+
+Err.Date: 7/11/2016 7:31:19 PM
+System.Web.Services.Protocols.SoapException: System.Web.Services.Protocols.SoapException: Server was unable to process request. ---> System.Data.SqlClient.SqlException: Invalid column name 'ProjectManagerWithProfile'.
+   at ClsDataLogic_New.ExecuteQuery_DataSet(String strQuery, String strTableName) in D:\BizNET\BizNETCTM\DiSOft_WS\App_Code\ClsDataLogic_New.vb:line 510
+   at WS_HelpDbTable.GetResultSet(String strQuery, String strTableNAme) in D:\BizNET\BizNETCTM\DiSOft_WS\App_Code\WS_HelpDbTable.vb:line 359
+   --- End of inner exception stack trace ---
+   at System.Web.Services.Protocols.SoapHttpClientProtocol.ReadResponse(SoapClientMessage message, WebResponse response, Stream responseStream, Boolean asyncCall)
+   at System.Web.Services.Protocols.SoapHttpClientProtocol.Invoke(String methodName, Object[] parameters)
+   at WS_HelpDbTable.WS_HelpDbTable.GetResultSet(String strQuery, String strTableNAme) in c:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\biznetctm_web\11c0e8a3\3c4b24f2\App_WebReferences.xsky1s-b.0.cs:line 44449
+   at frmMainPage.Page_Load(Object sender, EventArgs e) in D:\BizNET\BizNETCTM\BizNETCTM_WEB\frmMainPage.aspx.vb:line 110<BR> ...PageLoad
+UserNo :
+UserName :CPMAAdmin
+User Division :
+URL:http://localhost/BizNETCTM_WEB/frmMainPage.aspx?usertype=0005
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+
+Err.Date: 7/11/2016 7:32:00 PM
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at frmMainPage.Page_Load(Object sender, EventArgs e) in D:\BizNET\BizNETCTM\BizNETCTM_WEB\frmMainPage.aspx.vb:line 118<BR> ...PageLoad
+UserNo :
+UserName :CPMAAdmin
+User Division :
+URL:http://localhost/BizNETCTM_WEB/frmMainPage.aspx?usertype=0005
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+

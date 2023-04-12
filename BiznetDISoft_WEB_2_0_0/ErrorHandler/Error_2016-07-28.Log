@@ -1,0 +1,13 @@
+Err.Date: 7/28/2016 3:35:32 PM
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at frmMainPage.Page_Load(Object sender, EventArgs e) in D:\BizNET\BizNETCTM\BizNETCTM_WEB\frmMainPage.aspx.vb:line 118<BR> ...PageLoad
+UserNo :
+UserName :CPMAAdmin
+User Division :
+URL:http://localhost/BizNETCTM_WEB/frmMainPage.aspx?usertype=0005
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+

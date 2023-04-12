@@ -1,0 +1,153 @@
+﻿@{
+    ViewBag.Title = "DI : CHECKLIST TEMPLATE";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{ 
+    @section Header{
+        <h1>CheckList<small>Master</small></h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i>Home</a></li>
+            <li class="active">CheckList Master</li>
+        </ol>
+    }
+    
+    <!-- Small boxes (Stat box) -->    
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header" style="text-align: right">
+                    <div class="row">
+                        <button style="text-align: right" type="button" id="btnAddCheckListTemplate" class="btn btn-primary margin" data-toggle="modal" data-target="#CheckListTemplateModel" title="Add CheckList Template">+ Add CheckList Template</button>
+                    </div>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <table id="tblCheckListTemplateHdrDetail" class="table table-bordered table-striped dataTable">
+                    </table>
+                </div>
+                <!-- /.box-body -->
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->
+    
+    <div class="modal fade" id="CheckListTemplateDtlModel" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                   <button type="button" class="btn btn-info btn-sm pull-right box-tools" data-widget="remove" data-dismiss="modal" data-toggle="tooltip" title="" data-original-title="Remove">
+                        <i class="fa fa-times"></i>
+                    </button>
+                    <h4 class="modal-title">CheckList Template Detail</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-xs-12 form-group">
+                            <div class="col-sm-12">
+                                <table id="tblCheckListTemplateDtlDetail" class="table table-bordered table-striped dataTable">
+                                </table>
+                            </div>
+                        </div>
+                        <!-- ./col -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal" id="btnCloseCheckListTemplateDtlModel">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="CheckListTemplateModel" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">                  
+                    <button type="button" class="btn btn-info btn-sm pull-right box-tools" data-widget="remove" data-dismiss="modal" data-toggle="tooltip" title="" data-original-title="Remove">
+                        <i class="fa fa-times"></i>
+                    </button>
+                    <h4 class="modal-title">CheckList Template Master</h4>
+                </div>
+                <div class="modal-body">
+
+                  @*  <div class="row">
+                         <div class="col-xs-6 form-group">
+                             <div class="col-sm-12">
+                                  <input type="radio" name="optionsRadios" id="rdbNewTemplate" value="1" checked="" class="rGroup">
+                                <label for="rdbNewTemplate">New Template</label>
+                             </div>                           
+                        </div>
+                        <div class="col-xs-6 form-group">
+                            <div class="col-sm-12">
+                                <input type="radio" name="optionsRadios" id="rdbExistingTemplate" value="2" class="rGroup">
+                                <label for="rdbExistingTemplate" id="lblExistingTemplate">Existing Template</label>
+                              
+                            </div>
+                        </div>                       
+                        <!-- ./col -->
+                    </div>*@
+
+                        <div class="row">
+                         <div class="col-xs-6 form-group">
+                            <div class="col-sm-12">
+                                <label for="txtCheckListQuestion">Question</label>
+                                <input type="text" id="txtCheckListQuestion" placeholder="CheckList Question" data-provide="typeahead" class="form-control ui-autocomplete-input" autocomplete="off">
+                            </div>
+                        </div>
+                       <div class="col-xs-6 form-group">
+                            <div class="col-sm-4">
+                               <label>&nbsp;</label>
+                                 <button type="button" class="form-control btn btn-primary" id="btnAddQuestion">+ Add</button>
+                               
+                            </div>
+                         </div>
+                        <!-- ./col -->
+                    </div>
+
+                    <div class="row" id="rowNewTemplate">
+                         <div class="col-xs-6 form-group">
+                           @* <div class="col-sm-12">
+                                <label for="ddlCheckListTemplate">Template</label>
+                                 <select class="form-control select2" id="ddlCheckListTemplate" >                                  
+                                  </select>                           
+                            </div>*@
+                              <div class="col-sm-12">
+                                <label for="ddlCheckListTemplate" id="lblddlCheckListTemplate">Template</label>
+                                <select class="form-control select2" id="ddlCheckListTemplate" >                                  
+                                  </select>
+                            </div>
+                        </div>
+                       <div class="col-xs-6 form-group">
+                            <div class="col-sm-4">                           
+                                <label>&nbsp;</label>
+                                 <button type="button" class="form-control btn btn-primary" id="btnAddTemplate">+ Add</button>
+                            </div>
+                         </div>
+                        <!-- ./col -->
+                    </div>                
+
+                    <div class="row">
+                         <div class="col-xs-12 form-group">
+                              <div class="col-sm-12">
+                                  <table id="tblCheckListTemplateQuestion" class="table table-bordered table-striped dataTable">
+                                </table>
+                              </div>
+                         </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal" id="btnCloseCheckListTemplateModel">Close</button>
+                    <button type="button" class="btn btn-primary" id="tbnSaveCheckListQuestionTemplate">Save changes</button>
+                </div>
+            </div>/
+        </div>
+    </div>
+    
+    @*<script type="text/javascript" src="@Url.Content("~/Contents/Themes/Js/jquery-2.2.3.min.js")"></script>*@
+    <script type="text/javascript" src="@Url.Content("~/Contents/Themes/Js/jquery-3.6.1.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/General.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/MICheckListTemplate.js")"></script>
+    
+}

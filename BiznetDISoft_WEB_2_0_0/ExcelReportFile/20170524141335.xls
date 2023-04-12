@@ -1,0 +1,204 @@
+<Html>
+<Head>
+<Style>
+tr 
+{mso-height-source:auto;} 
+ col 
+{mso-width-source:auto;} 
+ br 
+{mso-data-placement:same-cell;} 
+ .style0 
+{mso-number-format:General; 
+text-align:general; 
+vertical-align:top; 
+white-space:normal; 
+mso-rotate:0; 
+mso-background-source:auto; 
+mso-pattern:auto; 
+color:black; 
+font-size:11.0pt; 
+font-weight:400; 
+font-style:normal; 
+text-decoration:none; 
+font-family:Calibri, sans-serif; 
+mso-font-charset:0; 
+border:none; 
+mso-protection:locked visible; 
+mso-style-name:Normal; 
+mso-style-id:0;} 
+td 
+{mso-style-parent:style0; 
+padding-top:1pt; 
+padding-right:1pt; 
+padding-left:1pt; 
+mso-ignore:padding; 
+color:black; 
+font-size:11.0pt; 
+font-weight:400; 
+font-style:normal; 
+text-decoration:none; 
+font-family:Calibri, sans-serif; 
+mso-font-charset:0; 
+mso-number-format:General; 
+text-align:general; 
+vertical-align:bottom; 
+border:none; 
+mso-background-source:auto; 
+mso-pattern:auto; 
+mso-protection:locked visible; 
+white-space:nowrap; 
+mso-rotate:0;} 
+
+
+.SSPL1
+{mso-style-parent:style0; 
+mso-height-source:userset; 
+height:11pt;
+vertical-align:top;
+text-align:left;
+font-family:Verdana;
+font-size:11pt;
+mso-number-format:"\@";
+}
+
+.SSPL2
+{mso-style-parent:style0; 
+mso-height-source:userset; 
+height:16pt;
+vertical-align:middle;
+text-align:center;
+font-family:Verdana;
+font-size:12pt;
+font-weight:bold;
+color:Maroon;
+mso-number-format:"\@";
+}
+
+.SSPL3
+{mso-style-parent:style0; 
+mso-height-source:userset; 
+height:15pt;
+vertical-align:top;
+text-align:center;
+font-family:Verdana;
+font-size:11pt;
+font-weight:bold;
+border-top-style:solid;
+border-top-width:0.5pt;
+border-top-color:Black;
+border-left-style:solid;
+border-left-width:0.5pt;
+border-left-color:Black;
+border-bottom-style:solid;
+border-bottom-width:0.5pt;
+border-bottom-color:Black;
+border-right-style:solid;
+border-right-width:0.5pt;
+border-right-color:Black;
+mso-number-format:"\@";
+}
+
+.SSPL4
+{mso-style-parent:style0; 
+mso-height-source:userset; 
+height:13.5pt;
+vertical-align:top;
+text-align:left;
+font-family:Verdana;
+font-size:11pt;
+border-top-style:solid;
+border-top-width:0.5pt;
+border-top-color:Black;
+border-left-style:solid;
+border-left-width:0.5pt;
+border-left-color:Black;
+border-bottom-style:solid;
+border-bottom-width:0.5pt;
+border-bottom-color:Black;
+border-right-style:solid;
+border-right-width:0.5pt;
+border-right-color:Black;
+mso-number-format:"\@";
+}
+
+</Style>
+</Head>
+<Body>
+<Table  border=0 cellpadding=0 cellspacing=0  style='border-collapse: collapse;table-layout:fixed;'>
+<TR Style='mso-height-source:userset; height:16pt'>
+<td colspan=10  class=SSPL2> Lambda Therapeutic Research.</td>
+</TR>
+
+<TR Style='mso-height-source:userset; height:16pt'>
+<td colspan=10  class=SSPL2>Project Report</td>
+</TR>
+
+<TR Style='mso-height-source:userset; height:16pt'>
+<td colspan=10  class=SSPL2>Period: 01-May-2017 To 24-May-2017</td>
+</TR>
+
+<Tr><Td>&nbsp</Td></Tr>
+<TR Style='mso-height-source:userset; height:15pt'>
+<td colspan=1  class=SSPL3>Project No</td><td colspan=1  class=SSPL3>Sponsor Name</td><td colspan=1  class=SSPL3>Drug Name</td><td colspan=1  class=SSPL3>FastFed</td><td colspan=1  class=SSPL3>ProjectTypeName</td><td colspan=1  class=SSPL3>ProjectSubTypeName</td><td colspan=1  class=SSPL3>Study Type</td><td colspan=1  class=SSPL3>Submission</td><td colspan=1  class=SSPL3>ServiceName</td><td colspan=1  class=SSPL3>Location</td><td colspan=1  class=SSPL3>No Of Subjects</td><td colspan=1  class=SSPL3>Project Manager</td><td colspan=1  class=SSPL3>Clinical StartDate</td><td colspan=1  class=SSPL3>Clinical EndDate</td><td colspan=1  class=SSPL3>Analysis StartDate</td><td colspan=1  class=SSPL3></td><td colspan=1  class=SSPL3>Report Dispatch Date</td><td colspan=1  class=SSPL3>Project Status</td>
+</TR>
+
+<TR Style='mso-height-source:userset; height:13.5pt'>
+<td colspan=1  class=SSPL4>0046-17</td><td colspan=1  class=SSPL4>Sarjen System</td><td colspan=1  class=SSPL4>Alfacalcidol</td><td colspan=1  class=SSPL4>Fed</td><td colspan=1  class=SSPL4>Clinical Trial</td><td colspan=1  class=SSPL4>Bioequivalence Study</td><td colspan=1  class=SSPL4>Pivotal</td><td colspan=1  class=SSPL4>Africa</td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4>Ahmedabad</td><td colspan=1  class=SSPL4>10</td><td colspan=1  class=SSPL4>alok  (PMAdmin)</td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4>Study </td>
+</TR>
+
+<TR Style='mso-height-source:userset; height:13.5pt'>
+<td colspan=1  class=SSPL4>0060-17</td><td colspan=1  class=SSPL4>AceBIOS</td><td colspan=1  class=SSPL4>ALENDRONSÄURE BASICS 70 mg Tablets</td><td colspan=1  class=SSPL4>Fed</td><td colspan=1  class=SSPL4>BA-BE</td><td colspan=1  class=SSPL4>Bioavailability Study</td><td colspan=1  class=SSPL4>Pilot</td><td colspan=1  class=SSPL4>Africa</td><td colspan=1  class=SSPL4>BA</td><td colspan=1  class=SSPL4>Ahmedabad</td><td colspan=1  class=SSPL4>20</td><td colspan=1  class=SSPL4>mehulshah  (PMAdmin)</td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4>Study </td>
+</TR>
+
+<TR Style='mso-height-source:userset; height:13.5pt'>
+<td colspan=1  class=SSPL4>0061-17</td><td colspan=1  class=SSPL4>Galencia Pharma Group</td><td colspan=1  class=SSPL4>Bosentan</td><td colspan=1  class=SSPL4>Fed</td><td colspan=1  class=SSPL4>Clinical Trial</td><td colspan=1  class=SSPL4>Phase III</td><td colspan=1  class=SSPL4>Pivotal</td><td colspan=1  class=SSPL4>Korea</td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4>Ahmedabad</td><td colspan=1  class=SSPL4>25</td><td colspan=1  class=SSPL4>cpmaadmincanada  (PMUser)</td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4>Study </td>
+</TR>
+
+<TR Style='mso-height-source:userset; height:13.5pt'>
+<td colspan=1  class=SSPL4>0063-17</td><td colspan=1  class=SSPL4>Bharat Serums and Vaccines Ltd</td><td colspan=1  class=SSPL4>Progestrone</td><td colspan=1  class=SSPL4>Fed</td><td colspan=1  class=SSPL4>BA-BE</td><td colspan=1  class=SSPL4>Bioavailability Study</td><td colspan=1  class=SSPL4>Pilot</td><td colspan=1  class=SSPL4>USFDA</td><td colspan=1  class=SSPL4>BA + PK&Stat only Com</td><td colspan=1  class=SSPL4>Canada</td><td colspan=1  class=SSPL4>52</td><td colspan=1  class=SSPL4>cpmaadmincanada  (PMAdmin)</td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4>Study </td>
+</TR>
+
+<TR Style='mso-height-source:userset; height:13.5pt'>
+<td colspan=1  class=SSPL4>0066-17</td><td colspan=1  class=SSPL4>Abbott Healthcare Private Limited</td><td colspan=1  class=SSPL4>4.	Rosuvastatin  Calcium tablets 45mg</td><td colspan=1  class=SSPL4>Fasting</td><td colspan=1  class=SSPL4>BA-BE</td><td colspan=1  class=SSPL4>Bioavailability Study</td><td colspan=1  class=SSPL4>Pilot</td><td colspan=1  class=SSPL4>DCGI</td><td colspan=1  class=SSPL4>Full Study</td><td colspan=1  class=SSPL4>Ahmedabad</td><td colspan=1  class=SSPL4>12</td><td colspan=1  class=SSPL4>niharrohera  (PMAdmin)</td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4>Study </td>
+</TR>
+
+<TR Style='mso-height-source:userset; height:13.5pt'>
+<td colspan=1  class=SSPL4>0068-17</td><td colspan=1  class=SSPL4>Actavis</td><td colspan=1  class=SSPL4>amlodipine besylate atorvastatin calcium 10/80</td><td colspan=1  class=SSPL4>Fed</td><td colspan=1  class=SSPL4>Clinical Trial</td><td colspan=1  class=SSPL4>Phase IV</td><td colspan=1  class=SSPL4>Pivotal</td><td colspan=1  class=SSPL4>China</td><td colspan=1  class=SSPL4>Full Study</td><td colspan=1  class=SSPL4>Ahmedabad</td><td colspan=1  class=SSPL4>22</td><td colspan=1  class=SSPL4>mehul  (PMUser)</td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4>Study </td>
+</TR>
+
+<TR Style='mso-height-source:userset; height:13.5pt'>
+<td colspan=1  class=SSPL4>0069-17</td><td colspan=1  class=SSPL4>Abbott Healthcare Private Limited</td><td colspan=1  class=SSPL4>(R)-Amlodipine & (S)-Amlodipine.</td><td colspan=1  class=SSPL4>Fed</td><td colspan=1  class=SSPL4>Housing</td><td colspan=1  class=SSPL4>In-House</td><td colspan=1  class=SSPL4>Pilot</td><td colspan=1  class=SSPL4>Allemagne</td><td colspan=1  class=SSPL4>  test</td><td colspan=1  class=SSPL4>Ahmedabad</td><td colspan=1  class=SSPL4>34</td><td colspan=1  class=SSPL4>niharrohera  (PMAdmin)</td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4>Study </td>
+</TR>
+
+<TR Style='mso-height-source:userset; height:13.5pt'>
+<td colspan=1  class=SSPL4>0073-17</td><td colspan=1  class=SSPL4>Achlis Group</td><td colspan=1  class=SSPL4>Bupropion</td><td colspan=1  class=SSPL4>Fed</td><td colspan=1  class=SSPL4>Clinical Trial</td><td colspan=1  class=SSPL4>Phase II</td><td colspan=1  class=SSPL4>Pivotal</td><td colspan=1  class=SSPL4>Congo12</td><td colspan=1  class=SSPL4>Misc. activities</td><td colspan=1  class=SSPL4>Ahmedabad</td><td colspan=1  class=SSPL4>22</td><td colspan=1  class=SSPL4>cpmaadmincanada  (PMUser)</td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4>Study </td>
+</TR>
+
+<TR Style='mso-height-source:userset; height:13.5pt'>
+<td colspan=1  class=SSPL4>0097-16</td><td colspan=1  class=SSPL4>Glenmark Pharmaceuticals Ltd.</td><td colspan=1  class=SSPL4>Apremilast</td><td colspan=1  class=SSPL4>Fed</td><td colspan=1  class=SSPL4>Other</td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4>Pivotal</td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4>Ahmedabad</td><td colspan=1  class=SSPL4>20</td><td colspan=1  class=SSPL4>mignionnedesouza  (PMUser)</td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4>Sample Analysis </td>
+</TR>
+
+<TR Style='mso-height-source:userset; height:13.5pt'>
+<td colspan=1  class=SSPL4>0139-16</td><td colspan=1  class=SSPL4>Cipla Limited</td><td colspan=1  class=SSPL4>Doxorubicin HCL Liposomal Injection (20mg/10mL)</td><td colspan=1  class=SSPL4>Fasting</td><td colspan=1  class=SSPL4>Clinical Trial</td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4>Pivotal</td><td colspan=1  class=SSPL4>USFDA</td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4>Ahmedabad</td><td colspan=1  class=SSPL4>60</td><td colspan=1  class=SSPL4>ranjitrajput  (PMUser)</td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4>Study </td>
+</TR>
+
+<TR Style='mso-height-source:userset; height:13.5pt'>
+<td colspan=1  class=SSPL4>0254-16</td><td colspan=1  class=SSPL4>Intas Pharmaceuticals Ltd.</td><td colspan=1  class=SSPL4>Denosumab injection (60 mg single use vial) and Teriparatide injection (20 mcg/0.08 ml)</td><td colspan=1  class=SSPL4>Fasting</td><td colspan=1  class=SSPL4>Clinical Trial</td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4>Pivotal</td><td colspan=1  class=SSPL4>DCGI</td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4>Ahmedabad</td><td colspan=1  class=SSPL4>180</td><td colspan=1  class=SSPL4>manoranjmukundan  (PMAdmin)</td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4>Study </td>
+</TR>
+
+<TR Style='mso-height-source:userset; height:13.5pt'>
+<td colspan=1  class=SSPL4>0298-16</td><td colspan=1  class=SSPL4>Aspen Pharmacare</td><td colspan=1  class=SSPL4>Clozapine 100 mg tablets</td><td colspan=1  class=SSPL4>Fasting</td><td colspan=1  class=SSPL4>Clinical Trial</td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4>Pivotal</td><td colspan=1  class=SSPL4>TGA</td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4>Ahmedabad</td><td colspan=1  class=SSPL4>40</td><td colspan=1  class=SSPL4>ranjitrajput  (PMUser)</td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4>Study </td>
+</TR>
+
+<TR Style='mso-height-source:userset; height:13.5pt'>
+<td colspan=1  class=SSPL4>0457-16</td><td colspan=1  class=SSPL4>Abbott Healthcare Products B.V.</td><td colspan=1  class=SSPL4>LMWH-daltaparin</td><td colspan=1  class=SSPL4>Fed</td><td colspan=1  class=SSPL4>Clinical Trial</td><td colspan=1  class=SSPL4>Phase III</td><td colspan=1  class=SSPL4>Pivotal</td><td colspan=1  class=SSPL4>DCGI</td><td colspan=1  class=SSPL4>DM</td><td colspan=1  class=SSPL4>Ahmedabad</td><td colspan=1  class=SSPL4>300</td><td colspan=1  class=SSPL4>niharrohera  (PMAdmin)</td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4>Study </td>
+</TR>
+
+<TR Style='mso-height-source:userset; height:13.5pt'>
+<td colspan=1  class=SSPL4>175-14</td><td colspan=1  class=SSPL4>Intas Pharmaceuticals Ltd.</td><td colspan=1  class=SSPL4>Tacrolimus 0.1  % Ointment</td><td colspan=1  class=SSPL4>Fed</td><td colspan=1  class=SSPL4>Clinical Trial</td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4>Pivotal</td><td colspan=1  class=SSPL4>USFDA</td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4>Ahmedabad</td><td colspan=1  class=SSPL4>315</td><td colspan=1  class=SSPL4>manoranjmukundan  (PMAdmin)</td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4></td><td colspan=1  class=SSPL4>Study </td>
+</TR>
+
+
+</Table>
+</Body>
+</Html>

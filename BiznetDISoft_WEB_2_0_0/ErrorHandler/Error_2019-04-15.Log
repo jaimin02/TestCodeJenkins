@@ -1,0 +1,286 @@
+Err.Date: 4/15/2019 4:54:05 PM
+Database Not Connected. <BR> 'table' argument cannot be null.
+Parameter name: table
+UserNo :
+UserName :
+User Division :
+URL:http://localhost/BiznetDisoft_Web/default.aspx
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+
+Err.Date: 4/15/2019 5:44:30 PM
+Database Not Connected. <BR> 'table' argument cannot be null.
+Parameter name: table
+UserNo :
+UserName :
+User Division :
+URL:http://localhost/BiznetDisoft_Web/default.aspx
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+
+Err.Date: 4/15/2019 5:48:32 PM
+Database Not Connected. <BR> 'table' argument cannot be null.
+Parameter name: table
+UserNo :
+UserName :
+User Division :
+URL:http://localhost/BiznetDisoft_Web/default.aspx
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+
+Err.Date: 4/15/2019 5:55:00 PM
+Database Not Connected. <BR> The operation has timed out
+UserNo :
+UserName :
+User Division :
+URL:http://localhost/BiznetDisoft_Web/default.aspx
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+
+Err.Date: 4/15/2019 5:59:04 PM
+Database Not Connected. <BR> 'table' argument cannot be null.
+Parameter name: table
+UserNo :
+UserName :
+User Division :
+URL:http://localhost/BiznetDisoft_Web/default.aspx
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+
+Err.Date: 4/15/2019 7:13:54 PM
+Client found response content type of 'text/html; charset=utf-8', but expected 'text/xml'.
+The request failed with the error message:
+--
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Authentication is missing</title>
+        <meta name="viewport" content="width=device-width" />
+        <style>
+         body {font-family:"Verdana";font-weight:normal;font-size: .7em;color:black;} 
+         p {font-family:"Verdana";font-weight:normal;color:black;margin-top: -5px}
+         b {font-family:"Verdana";font-weight:bold;color:black;margin-top: -5px}
+         H1 { font-family:"Verdana";font-weight:normal;font-size:18pt;color:red }
+         H2 { font-family:"Verdana";font-weight:normal;font-size:14pt;color:maroon }
+         pre {font-family:"Consolas","Lucida Console",Monospace;font-size:11pt;margin:0;padding:0.5em;line-height:14pt}
+         .marker {font-weight: bold; color: black;text-decoration: none;}
+         .version {color: gray;}
+         .error {margin-bottom: 10px;}
+         .expandable { text-decoration:underline; font-weight:bold; color:navy; cursor:hand; }
+         @media screen and (max-width: 639px) {
+          pre { width: 440px; overflow: auto; white-space: pre-wrap; word-wrap: break-word; }
+         }
+         @media screen and (max-width: 479px) {
+          pre { width: 280px; }
+         }
+        </style>
+    </head>
+
+    <body bgcolor="white">
+
+            <span><H1>Server Error in '/BiznetDisoft_WS' Application.<hr width=100% size=1 color=silver></H1>
+
+            <h2> <i>Authentication is missing</i> </h2></span>
+
+            <font face="Arial, Helvetica, Geneva, SunSans-Regular, sans-serif ">
+
+            <b> Description: </b>An unhandled exception occurred during the execution of the current web request. Please review the stack trace for more information about the error and where it originated in the code.
+
+            <br><br>
+
+            <b> Exception Details: </b>System.Exception: Authentication is missing<br><br>
+
+            <b>Source Error:</b> <br><br>
+
+            <table width=100% bgcolor="#ffffcc">
+               <tr>
+                  <td>
+                      <code>
+
+An unhandled exception was generated during the execution of the current web request. Information regarding the origin and location of the exception can be identified using the exception stack trace below.</code>
+
+                  </td>
+               </tr>
+            </table>
+
+            <br>
+
+            <b>Stack Trace:</b> <br><br>
+
+            <table width=100% bgcolor="#ffffcc">
+               <tr>
+                  <td>
+                      <code><pre>
+
+[Exception: Authentication is missing]
+   SS.Web.sHttpApplication.cd4529bec32326b51d7d54f7bd38ffbea(HttpContext c1583706dbcbf01b8ce387066f32b25f4, HttpRequest caa5dd70948f2d360f27f7910b1690037) +597
+
+[SoapException: Unable to read SOAP request]
+   SS.Web.sHttpApplication.cd4529bec32326b51d7d54f7bd38ffbea(HttpContext c1583706dbcbf01b8ce387066f32b25f4, HttpRequest caa5dd70948f2d360f27f7910b1690037) +1728
+   SS.Web.sHttpApplication.c94e446eb1c8205b59b3ac51e2856cdc1(HttpContext c1583706dbcbf01b8ce387066f32b25f4) +611
+   SS.Web.sHttpApplication.sHttpApplication_AuthenticateRequest(Object sender, EventArgs e) +225
+   System.Web.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute() +142
+   System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) +92
+</pre></code>
+
+                  </td>
+               </tr>
+            </table>
+
+            <br>
+
+            <hr width=100% size=1 color=silver>
+
+            <b>Version Information:</b> Microsoft .NET Framework Version:4.0.30319; ASP.NET Version:4.6.1590.0
+
+            </font>
+
+    </body>
+</html>
+<!-- 
+[Exception]: Authentication is missing
+   at SS.Web.sHttpApplication.cd4529bec32326b51d7d54f7bd38ffbea(HttpContext c1583706dbcbf01b8ce387066f32b25f4, HttpRequest caa5dd70948f2d360f27f7910b1690037)
+[SoapException]: Unable to read SOAP request
+   at SS.Web.sHttpApplication.cd4529bec32326b51d7d54f7bd38ffbea(HttpContext c1583706dbcbf01b8ce387066f32b25f4, HttpRequest caa5dd70948f2d360f27f7910b1690037)
+   at SS.Web.sHttpApplication.c94e446eb1c8205b59b3ac51e2856cdc1(HttpContext c1583706dbcbf01b8ce387066f32b25f4)
+   at SS.Web.sHttpApplication.sHttpApplication_AuthenticateRequest(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+-->
+--.<BR>....GenCall_Data
+UserNo :
+UserName :
+User Division :
+URL:http://localhost/BiznetDisoft_Web/frmECRFProtocol_New.aspx
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+
+Err.Date: 4/15/2019 7:30:19 PM
+Client found response content type of 'text/html; charset=utf-8', but expected 'text/xml'.
+The request failed with the error message:
+--
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Authentication is missing</title>
+        <meta name="viewport" content="width=device-width" />
+        <style>
+         body {font-family:"Verdana";font-weight:normal;font-size: .7em;color:black;} 
+         p {font-family:"Verdana";font-weight:normal;color:black;margin-top: -5px}
+         b {font-family:"Verdana";font-weight:bold;color:black;margin-top: -5px}
+         H1 { font-family:"Verdana";font-weight:normal;font-size:18pt;color:red }
+         H2 { font-family:"Verdana";font-weight:normal;font-size:14pt;color:maroon }
+         pre {font-family:"Consolas","Lucida Console",Monospace;font-size:11pt;margin:0;padding:0.5em;line-height:14pt}
+         .marker {font-weight: bold; color: black;text-decoration: none;}
+         .version {color: gray;}
+         .error {margin-bottom: 10px;}
+         .expandable { text-decoration:underline; font-weight:bold; color:navy; cursor:hand; }
+         @media screen and (max-width: 639px) {
+          pre { width: 440px; overflow: auto; white-space: pre-wrap; word-wrap: break-word; }
+         }
+         @media screen and (max-width: 479px) {
+          pre { width: 280px; }
+         }
+        </style>
+    </head>
+
+    <body bgcolor="white">
+
+            <span><H1>Server Error in '/BiznetDisoft_WS' Application.<hr width=100% size=1 color=silver></H1>
+
+            <h2> <i>Authentication is missing</i> </h2></span>
+
+            <font face="Arial, Helvetica, Geneva, SunSans-Regular, sans-serif ">
+
+            <b> Description: </b>An unhandled exception occurred during the execution of the current web request. Please review the stack trace for more information about the error and where it originated in the code.
+
+            <br><br>
+
+            <b> Exception Details: </b>System.Exception: Authentication is missing<br><br>
+
+            <b>Source Error:</b> <br><br>
+
+            <table width=100% bgcolor="#ffffcc">
+               <tr>
+                  <td>
+                      <code>
+
+An unhandled exception was generated during the execution of the current web request. Information regarding the origin and location of the exception can be identified using the exception stack trace below.</code>
+
+                  </td>
+               </tr>
+            </table>
+
+            <br>
+
+            <b>Stack Trace:</b> <br><br>
+
+            <table width=100% bgcolor="#ffffcc">
+               <tr>
+                  <td>
+                      <code><pre>
+
+[Exception: Authentication is missing]
+   SS.Web.sHttpApplication.cd4529bec32326b51d7d54f7bd38ffbea(HttpContext c1583706dbcbf01b8ce387066f32b25f4, HttpRequest caa5dd70948f2d360f27f7910b1690037) +597
+
+[SoapException: Unable to read SOAP request]
+   SS.Web.sHttpApplication.cd4529bec32326b51d7d54f7bd38ffbea(HttpContext c1583706dbcbf01b8ce387066f32b25f4, HttpRequest caa5dd70948f2d360f27f7910b1690037) +1728
+   SS.Web.sHttpApplication.c94e446eb1c8205b59b3ac51e2856cdc1(HttpContext c1583706dbcbf01b8ce387066f32b25f4) +611
+   SS.Web.sHttpApplication.sHttpApplication_AuthenticateRequest(Object sender, EventArgs e) +225
+   System.Web.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute() +142
+   System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) +92
+</pre></code>
+
+                  </td>
+               </tr>
+            </table>
+
+            <br>
+
+            <hr width=100% size=1 color=silver>
+
+            <b>Version Information:</b> Microsoft .NET Framework Version:4.0.30319; ASP.NET Version:4.6.1590.0
+
+            </font>
+
+    </body>
+</html>
+<!-- 
+[Exception]: Authentication is missing
+   at SS.Web.sHttpApplication.cd4529bec32326b51d7d54f7bd38ffbea(HttpContext c1583706dbcbf01b8ce387066f32b25f4, HttpRequest caa5dd70948f2d360f27f7910b1690037)
+[SoapException]: Unable to read SOAP request
+   at SS.Web.sHttpApplication.cd4529bec32326b51d7d54f7bd38ffbea(HttpContext c1583706dbcbf01b8ce387066f32b25f4, HttpRequest caa5dd70948f2d360f27f7910b1690037)
+   at SS.Web.sHttpApplication.c94e446eb1c8205b59b3ac51e2856cdc1(HttpContext c1583706dbcbf01b8ce387066f32b25f4)
+   at SS.Web.sHttpApplication.sHttpApplication_AuthenticateRequest(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+-->
+--.<BR>....GenCall_Data
+UserNo :
+UserName :
+User Division :
+URL:http://localhost/BiznetDisoft_Web/frmECRFProtocol_New.aspx
+Javascript: 3.0
+VB Script: False
+Cookies: True
+Remote Address: ::1
+=========================================================
+
