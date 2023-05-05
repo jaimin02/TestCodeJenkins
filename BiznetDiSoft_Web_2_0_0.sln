@@ -1,9 +1,19 @@
-
+﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "BiznetDiSoft_Web_2_0_0", "http://localhost/BiznetDiSoft_Web_2_0_0", "{7004F2FB-B8E7-43ED-8272-B0483AEB2CA5}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1420579E-C56F-4F14-9965-754E0C53AD00} = {1420579E-C56F-4F14-9965-754E0C53AD00}
+		{340D9BCC-0076-4835-A88F-D2EF5C0AC471} = {340D9BCC-0076-4835-A88F-D2EF5C0AC471}
+		{7C6F27A0-E3B6-46CE-B904-3D2E863289FC} = {7C6F27A0-E3B6-46CE-B904-3D2E863289FC}
+		{82BF46EC-5CCF-47C0-97FC-29B8CF9100C4} = {82BF46EC-5CCF-47C0-97FC-29B8CF9100C4}
+		{99F627AF-7959-4273-A4E5-3235E0A5A731} = {99F627AF-7959-4273-A4E5-3235E0A5A731}
+		{CD07FEF1-B920-47D9-8001-48B1A131E68B} = {CD07FEF1-B920-47D9-8001-48B1A131E68B}
+		{CF549FE9-3059-4F89-A777-BA7F647C196E} = {CF549FE9-3059-4F89-A777-BA7F647C196E}
+		{F2060B3A-1EC9-4834-95FB-AB96DA8621B3} = {F2060B3A-1EC9-4834-95FB-AB96DA8621B3}
+	EndProjectSection
 	ProjectSection(WebsiteProperties) = preProject
 		SccProjectName = "Svn"
 		SccAuxPath = "Svn"
@@ -12,20 +22,20 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "BiznetDiSoft_Web_2_0_0", "h
 		UseIISExpress = "false"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8"
 		Debug.AspNetCompiler.VirtualPath = "/BiznetDiSoft_Web_2_0_0"
-		Debug.AspNetCompiler.PhysicalPath = "C:\Users\sspl1256\AppData\Local\Jenkins\.jenkins\workspace\Jenkins_Pipeline_17_Apr\BiznetDISoft_WEB_2_0_0\"
+		Debug.AspNetCompiler.PhysicalPath = "BiznetDISoft_WEB_2_0_0\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\BiznetDiSoft_Web_2_0_0\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
 		Release.AspNetCompiler.VirtualPath = "/BiznetDiSoft_Web_2_0_0"
-		Release.AspNetCompiler.PhysicalPath = "C:\Users\sspl1256\AppData\Local\Jenkins\.jenkins\workspace\Jenkins_Pipeline_17_Apr\BiznetDISoft_WEB_2_0_0\"
+		Release.AspNetCompiler.PhysicalPath = "BiznetDISoft_WEB_2_0_0\"
 		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\BiznetDiSoft_Web_2_0_0\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		SlnRelativePath = "C:\Users\sspl1256\AppData\Local\Jenkins\.jenkins\workspace\Jenkins_Pipeline_17_Apr\BiznetDISoft_WEB_2_0_0\"
+		SlnRelativePath = "BiznetDISoft_WEB_2_0_0\"
 	EndProjectSection
 	ProjectSection(SvnOrigin) = preProject
 		@Keys = Enlist,Svn.Uri
@@ -38,20 +48,20 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "BiznetDISoft_WS_2_0_0", "ht
 		UseIISExpress = "false"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8"
 		Debug.AspNetCompiler.VirtualPath = "/BiznetDISoft_WS_2_0_0"
-		Debug.AspNetCompiler.PhysicalPath = "C:\Users\sspl1256\AppData\Local\Jenkins\.jenkins\workspace\Jenkins_Pipeline_17_Apr\BiznetDISoft_WS_2_0_0\"
+		Debug.AspNetCompiler.PhysicalPath = "BiznetDISoft_WS_2_0_0\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\BiznetDISoft_WS_2_0_0\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
 		Release.AspNetCompiler.VirtualPath = "/BiznetDISoft_WS_2_0_0"
-		Release.AspNetCompiler.PhysicalPath = "C:\Users\sspl1256\AppData\Local\Jenkins\.jenkins\workspace\Jenkins_Pipeline_17_Apr\BiznetDISoft_WS_2_0_0\"
+		Release.AspNetCompiler.PhysicalPath = "BiznetDISoft_WS_2_0_0\"
 		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\BiznetDISoft_WS_2_0_0\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		SlnRelativePath = "C:\Users\sspl1256\AppData\Local\Jenkins\.jenkins\workspace\Jenkins_Pipeline_17_Apr\BiznetDISoft_WS_2_0_0\"
+		SlnRelativePath = "BiznetDISoft_WS_2_0_0\"
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedicalImaging", "C:\Users\sspl1256\AppData\Local\Jenkins\.jenkins\workspace\Jenkins_Pipeline_17_Apr\MedicalImaging\MedicalImaging.csproj", "{340D9BCC-0076-4835-A88F-D2EF5C0AC471}"
@@ -76,43 +86,20 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{7004F2FB-B8E7-43ED-8272-B0483AEB2CA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7004F2FB-B8E7-43ED-8272-B0483AEB2CA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7004F2FB-B8E7-43ED-8272-B0483AEB2CA5}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{7004F2FB-B8E7-43ED-8272-B0483AEB2CA5}.Release|Any CPU.Build.0 = Debug|Any CPU
+		
 		{F2060B3A-1EC9-4834-95FB-AB96DA8621B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F2060B3A-1EC9-4834-95FB-AB96DA8621B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2060B3A-1EC9-4834-95FB-AB96DA8621B3}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{F2060B3A-1EC9-4834-95FB-AB96DA8621B3}.Release|Any CPU.Build.0 = Debug|Any CPU
-		{340D9BCC-0076-4835-A88F-D2EF5C0AC471}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{340D9BCC-0076-4835-A88F-D2EF5C0AC471}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{340D9BCC-0076-4835-A88F-D2EF5C0AC471}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{340D9BCC-0076-4835-A88F-D2EF5C0AC471}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1420579E-C56F-4F14-9965-754E0C53AD00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1420579E-C56F-4F14-9965-754E0C53AD00}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1420579E-C56F-4F14-9965-754E0C53AD00}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1420579E-C56F-4F14-9965-754E0C53AD00}.Release|Any CPU.Build.0 = Release|Any CPU
-		{99F627AF-7959-4273-A4E5-3235E0A5A731}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{99F627AF-7959-4273-A4E5-3235E0A5A731}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{99F627AF-7959-4273-A4E5-3235E0A5A731}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{99F627AF-7959-4273-A4E5-3235E0A5A731}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CF549FE9-3059-4F89-A777-BA7F647C196E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CF549FE9-3059-4F89-A777-BA7F647C196E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CF549FE9-3059-4F89-A777-BA7F647C196E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CF549FE9-3059-4F89-A777-BA7F647C196E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{82BF46EC-5CCF-47C0-97FC-29B8CF9100C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{82BF46EC-5CCF-47C0-97FC-29B8CF9100C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{82BF46EC-5CCF-47C0-97FC-29B8CF9100C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{82BF46EC-5CCF-47C0-97FC-29B8CF9100C4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CD07FEF1-B920-47D9-8001-48B1A131E68B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CD07FEF1-B920-47D9-8001-48B1A131E68B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CD07FEF1-B920-47D9-8001-48B1A131E68B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CD07FEF1-B920-47D9-8001-48B1A131E68B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7C6F27A0-E3B6-46CE-B904-3D2E863289FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7C6F27A0-E3B6-46CE-B904-3D2E863289FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7C6F27A0-E3B6-46CE-B904-3D2E863289FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7C6F27A0-E3B6-46CE-B904-3D2E863289FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		
+		{7004F2FB-B8E7-43ED-8272-B0483AEB2CA5}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{7004F2FB-B8E7-43ED-8272-B0483AEB2CA5}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DF5CE78A-2535-48F5-956B-A36EB829F693}
 	EndGlobalSection
 	GlobalSection(S3CSubversionScc) = preSolution
 		Svn-Managed = True
